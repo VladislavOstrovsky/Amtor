@@ -1,0 +1,31 @@
+/**
+ Styles for Fancybox
+ */
+
+.fancybox-content {
+  border-radius: var(--border-radius-popup);
+  background: var(--color-white);
+  min-width: rem(320);
+  padding: rem(20);
+
+  .title_popup {
+    font: rem(20)/rem(28) Fregat-Bold, sans-serif;
+    color: var(--color-marine);
+    margin-bottom: rem(30);
+  }
+}
+
+.fancybox-close-small {
+  width: rem(14);
+  height: rem(14);
+  top: rem(18) !important;
+  right: rem(18) !important;
+  padding: 0 !important;
+  background: url('../img/svg/close-base.svg') center no-repeat;
+  background-size: 100%;
+  opacity: 1;
+
+  svg {
+    display: none;
+  }
+}

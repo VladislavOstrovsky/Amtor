@@ -1,0 +1,41 @@
+.change_region_popup {
+    .content {
+        margin-bottom: rem(80);
+    }
+
+    .select-item {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-bottom: rem(20);
+        cursor: pointer;
+
+        &:not(:first-child) {
+            border-top: 1px solid #d4ddec;
+            padding-top: rem(20);
+        }
+
+        &--icon {
+            margin-right: rem(10);
+        }
+
+        &--content {
+            flex: 1;
+
+            h1 {
+                font: rem(16)/rem(16) "Fregat-Bold", sans-serif;
+                color: var(--color-marine);
+                margin-bottom: rem(5);
+            }
+
+            p {
+                font: rem(12)/rem(12) "Open Sans", sans-serif;
+                color: var(--color-light-gray);
+            }
+        }
+
+        &--arrow {
+
+        }
+    }
+}

@@ -1,0 +1,11 @@
+div.slide_price_top
+  div.dFlex.flexColumn.slide_content
+    img(class='spt_image' src=slide.image)
+    p.name.js-pd-name #{slide.description}
+    div.card_bottom
+      div.price_wp
+        div.price_old.js-pt-old-price #{slide.old_price}
+        div.price_new.js-pt-new-price #{slide.new_price}
+      button(type='button' class='btn danger iconButton basket-btn')
+        span.icon
+          include ../../../img/svg/header/basket-dark.svg

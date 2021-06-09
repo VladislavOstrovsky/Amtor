@@ -1,0 +1,95 @@
+/* text
+ * _m        - main
+ * _bc       - bread crumbs
+ * _img_d    - image description
+ * _f        - footer
+ * _fb       - footer bottom
+*/
+
+.text_m {
+  font: rem(16)/rem(28) "Open Sans", sans-serif;
+  margin-bottom: rem(20);
+
+  @include xs(font, (rem(15)/rem(24) "Open Sans", sans-serif));
+  @include md(font, (rem(16)/rem(28) "Open Sans", sans-serif));
+}
+
+.text_bc {
+  font: rem(14)/rem(14) "Open Sans", sans-serif;
+  color: var(--color-light-gray);
+}
+
+.text_img_d {
+  font: rem(12)/rem(12) "Open Sans", sans-serif;
+  color: #303b44;
+}
+
+/* link */
+a {
+  text-decoration: none;
+  color: var(--color-white);
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.link {
+  font: rem(14)/rem(28) "Open Sans", sans-serif;
+}
+
+.dark_link {
+  font: rem(14)/rem(14) "Fregat-Bold", sans-serif;
+  color: var(--color-marine);
+}
+
+.text_normal {
+  font: rem(14)/rem(14) "Fregat", sans-serif;
+}
+
+/** Transformation */
+.textLowercase {
+  text-transform: lowercase !important;
+}
+
+.textUppercase {
+  text-transform: uppercase !important;
+}
+
+.textCapitalize {
+  text-transform: capitalize !important;
+}
+
+.textNowrap {
+  white-space: nowrap !important;
+}
+
+.textCenter {
+  text-align: center !important;
+}
+
+.textUnderline {
+  text-decoration: underline !important;
+}
+
+.textTruncate {
+  overflow: hidden !important;
+  white-space: nowrap !important;
+  text-overflow: ellipsis !important;
+}
+
+.fontWeightLight {
+  font-weight: 300 !important;
+}
+
+.fontWeightNormal {
+  font-weight: 400 !important;
+}
+
+.fontWeightSemibold {
+  font-weight: 600 !important;
+}
+
+.fontWeightBold {
+  font-weight: 700 !important;
+}

@@ -1,0 +1,30 @@
+/**
+ Variables for Tooltip
+ */
+
+@import "~styles/_variables.pcss";
+
+:root {
+  /* region Body */
+  --tooltip-body-z-index: var(--member-chat-tooltip-z-index);
+  --tooltip-body-padding: calc(var(--tooltip-pseudo-corner-border-width) + 6px);
+  /* endregion Body */
+
+  /* region Inner */
+  --tooltip-inner-color: var(--app-color-white);
+  --tooltip-inner-bg-color: #555;
+  --tooltip-inner-border-radius: var(--app-border-radius);
+  /* endregion Inner */
+
+  /* region Corner */
+  --tooltip-pseudo-corner-border-width: 4px;
+  --tooltip-pseudo-corner-border-color: var(--tooltip-inner-bg-color);
+
+  --tooltip-alignment-pseudo-corner-inset: 16px;
+  --tooltip-alignment-pseudo-corner-inset-vertical: 8px;
+  /* endregion Corner */
+
+  /* region Link */
+  --tooltip-content-link-color: #00b2ff;
+  /* endregion Link */
+}

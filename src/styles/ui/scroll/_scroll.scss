@@ -1,0 +1,59 @@
+/**
+ * Styles for Custom Scroll
+ */
+
+.shadowBottomScrollWrapper {
+  &:after {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background: linear-gradient(to top, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+    pointer-events: none;
+    content: "";
+  }
+}
+
+.scrollInner {
+  scrollbar-width: none; /* This is the magic bit for Firefox */
+  -ms-overflow-style: none; /* This is the magic bit for IE11 */
+  &::-webkit-scrollbar {
+    /* This is the magic bit for WebKit */
+    display: none;
+  }
+}
+
+.scrollContent {
+  padding-right: 12px;
+}
+
+.verticalTrack {
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+}
+
+.verticalThumb {
+  background: #e1e1e1;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: background-color .2s ease-in-out;
+
+  &:hover {
+    background: #9b9292;
+  }
+}
+
+[dir="rtl"] {
+  & .scrollContent {
+    padding-right: 0;
+    padding-left: 12px;
+  }
+
+  & .verticalTrack {
+    right: auto;
+    left: 0;
+  }
+}

@@ -1,0 +1,38 @@
+div.container.categories_wrapper.__collapsed
+  div.home_product_categories.js-categories-btn
+    div.hpc_header
+      h1.title ТОПчик 🤘
+      button(type='button' class='btn small')
+        span.icon
+          include ../../../../img/svg/arrow-white.svg
+        span.text См. все
+    div.products.top.creme
+      div.card.oil
+        h2.card_name Масло моторное
+        img(class='image' src='./img/home/products/top/engine_oil.png')
+      div.card.brake_discs
+        h2.card_name Тормозные диски
+        img(class='image' src='./img/home/products/top/brake_discs.png')
+      div.card.spark_plug
+        h2.card_name Свечи
+        img(class='image' src='./img/home/products/top/spark_plug.png')
+      div.card.transmission_oil
+        h2.card_name Масло трансмиссионное<br> и ГУР
+        div
+          img(class='image' src='./img/home/products/top/transmission_oil.png')
+      div.card.pads
+        h2.card_name Колодки
+        img(class='image' src='./img/home/products/top/pads.png')
+      div.card.filters
+        h2.card_name Фильтры
+        div
+          img(class='image' src='./img/home/products/top/filters.png')
+        div.buttons
+          button(type='button' class='btn success') Масляный
+          button(type='button' class='btn success') Солонный
+          button(type='button' class='btn success') Воздушный
+          button(type='button' class='btn success') Топливный
+      div.card.wiper_blades
+        h2.card_name Щетки стеклоочестителя
+        img(class='image' src='./img/home/products/top/wiper_blades.png')
+  include ../feedback_form_base

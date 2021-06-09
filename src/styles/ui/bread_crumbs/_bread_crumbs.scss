@@ -1,0 +1,25 @@
+/**
+ Styles for Fancybox
+ */
+
+.bread-crumbs {
+  display: flex;
+  font-size: 14px;
+  margin: rem(10) 0;
+
+  a {
+    padding-right: rem(10);
+    margin-right: rem(15);
+
+    &::after {
+      content: "/";
+      position: absolute;
+      right: rem(-5);
+      top: 0;
+    }
+  }
+
+  .bread-crumbs_item {
+    position: relative;
+  }
+}

@@ -1,0 +1,108 @@
+/**
+ Styles for Simple Select component
+ */
+
+@import "_variables.pcss";
+@import "_arabic.pcss";
+
+.wrapper {
+  position: relative;
+}
+
+.expandedSelect {
+  & .selectControl,
+  & .pointerDown {
+    border-color: var(--member-chat-simple-select-expanded-control-border-color);
+  }
+
+  & .pointerDown {
+    &:before {
+      border-width: 0 4px 4px;
+    }
+  }
+
+  & .dropdown {
+    display: block;
+  }
+}
+
+.selectControl {
+  height: 40px;
+  background: var(--member-chat-simple-select-control-bg-color);
+  border: 1px solid var(--member-chat-simple-select-control-border-color);
+  border-radius: var(--member-chat-simple-select-control-border-radius);
+  cursor: pointer;
+  user-select: none;
+}
+
+.roundedSelect {
+  border-radius: var(--member-chat-simple-select-rounded-control-border-radius);
+
+  & .selection {
+    padding: 4px 4px 4px 20px;
+  }
+
+  & .pointerDown {
+    width: 54px;
+    border: 0;
+
+    &:before {
+      border-color: var(--member-chat-simple-select-rounded-pointer-down-corner-border-vertical-color) transparent;
+    }
+  }
+
+  & + .dropdown {
+    left: 50%;
+    width: calc(100% - 18px);
+    transform: translateX(-50%);
+  }
+}
+
+.selection {
+  padding: 4px 10px;
+  font-size: 16px;
+}
+
+.pointerDown {
+  width: 28px;
+  border: solid var(--member-chat-simple-select-pointer-down-border-color);
+  border-width: 0 0 0 1px;
+
+  &:before {
+    border-width: 4px 4px 0;
+    border-style: solid;
+    border-color: var(--member-chat-simple-select-pointer-down-corner-border-vertical-color) var(--member-chat-simple-select-pointer-down-corner-border-horizontal-color);
+    content: "";
+  }
+}
+
+.dropdown {
+  position: absolute;
+  top: 100%;
+  z-index: var(--member-chat-instant-buy-simple-select-dropdown-z-index);
+  display: none;
+  width: 100%;
+  margin: 10px 0;
+  padding: 6px 0;
+  background: var(--member-chat-simple-select-dropdown-bg-color);
+  border-radius: var(--member-chat-simple-select-dropdown-border-radius);
+  box-shadow: var(--member-chat-simple-select-dropdown-box-shadow);
+
+  &.upsideDown {
+    top: auto;
+    bottom: 100%;
+  }
+}
+
+.option {
+  padding: 8px 12px;
+  color: var(--member-chat-simple-select-option-color);
+  cursor: pointer;
+
+  &.selected,
+  &:hover {
+    color: var(--member-chat-simple-select-option-active-color);
+    font-weight: 600;
+    background: var(--member-chat-simple-select-option-active-bg-color);
+  }
+}

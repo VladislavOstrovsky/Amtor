@@ -1,0 +1,12 @@
+div.slide_main
+  div.dFlex.flexColumn.slide_content
+    img(class='slide_main__image' src=slide.image)
+    p.name.js-pd-name #{slide.description}
+    div.card_bottom
+      div.price_wp
+        div.price_old.js-pd-old-price #{slide.old_price}
+        div.price_new.js-pd-new-price #{slide.new_price}
+      button(type='button' class='btn danger iconButton withText basket-btn')
+        span.icon
+          include ../../../img/svg/header/basket-dark.svg
+        span.text Купить

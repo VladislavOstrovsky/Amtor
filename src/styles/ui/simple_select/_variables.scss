@@ -1,0 +1,26 @@
+/**
+ Variables for Simple Select component
+ */
+
+@import "~styles/_variables.pcss";
+
+:root {
+  --member-chat-simple-select-control-bg-color: var(--app-color-white);
+  --member-chat-simple-select-control-border-color: #c5d2d8;
+  --member-chat-simple-select-expanded-control-border-color: #9dc9ec;
+  --member-chat-simple-select-control-border-radius: 4px;
+  --member-chat-simple-select-rounded-control-border-radius: 20px;
+
+  --member-chat-simple-select-pointer-down-border-color: var(--member-chat-simple-select-control-border-color);
+  --member-chat-simple-select-pointer-down-corner-border-vertical-color: #616168;
+  --member-chat-simple-select-rounded-pointer-down-corner-border-vertical-color: #ccc;
+  --member-chat-simple-select-pointer-down-corner-border-horizontal-color: transparent;
+
+  --member-chat-simple-select-dropdown-bg-color: var(--app-color-white);
+  --member-chat-simple-select-dropdown-box-shadow: var(--app-box-shadow);
+  --member-chat-simple-select-dropdown-border-radius: var(--app-border-radius);
+
+  --member-chat-simple-select-option-color: var(--app-color-black);
+  --member-chat-simple-select-option-active-bg-color: #009eeb;
+  --member-chat-simple-select-option-active-color: var(--app-color-white);
+}

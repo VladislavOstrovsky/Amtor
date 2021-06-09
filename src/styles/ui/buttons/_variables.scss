@@ -1,0 +1,39 @@
+/**
+ Variables for Button Component
+ */
+
+:root {
+  --button-border-radius: var(--border-radius);
+  --button-disabled-color: var(--color-gray);
+  --button-disabled-bg-color: var(--color-cyan);
+
+  --button-success-color: var(--color-white);
+  --button-success-bg-color: var(--color-success);
+  --button-success-hover-color: var(--color-success);
+  --button-success-hover-bg-color: var(--color-transparent);
+  --button-success-hover-border-color: var(--color-success);
+
+  --button-danger-color: var(--color-white);
+  --button-danger-bg-color: var(--color-danger);
+  --button-danger-hover-color: var(--color-danger);
+  --button-danger-hover-border-color: var(--color-danger);
+  --button-danger-hover-bg-color: var(--color-danger-hover);
+
+  --button-primary-color: var(--color-white);
+  --button-primary-border-color: var(--color-white);
+  --button-primary-bg-color: var(--color-transparent);
+  --button-primary-hover-color: var(--color-base);
+  --button-primary-hover-bg-color: var(--color-white);
+
+  --button-transparent-color: var(--color-base);
+  --button-transparent-border-color: var(--color-base);
+  --button-transparent-bg-color: var(--color-transparent);
+  --button-transparent-hover-color: var(--color-white);
+  --button-transparent-hover-bg-color: var(--color-base);
+
+  --button-small-color: #a8bada;
+  --button-small-border-color: #b8c9e7;
+  --button-small-bg-color: var(--color-transparent);
+  --button-small-hover-color: var(--color-base);
+  --button-small-hover-border-color: var(--color-base);
+}

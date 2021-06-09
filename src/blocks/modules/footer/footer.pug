@@ -1,0 +1,74 @@
+- var catalogLinks = [{text: 'Поиск по VIN', href: '/'}, {text: 'Каталог автомобилей', href: '/'}, {text: 'Кузовные детали и оптика', href: '/'}, {text: 'Моторные масла', href: '/'}, {text: 'Трансмиссионные масла', href: '/'}, {text: 'Шины', href: '/'}, {text: 'Аксессуары', href: '/'} , {text: 'Аккумуляторные батареи', href: '/'}, {text: 'Автосвет', href: '/'}, {text: 'Автостекла', href: '/'}];
+- var parentLinks = [{text: 'О компании', href: '/'}, {text: 'Франчайзинг', href: '/'}, {text: 'Поставщикам', href: '/'}];
+- var clientsLinks = [{text: 'Оплата', href: '/'}, {text: 'Доставка', href: '/'}, {text: 'Условия гарантии', href: '/'}, {text: 'VIN - запрос', href: '/'}, {text: 'Политика конфиденциальности', href: '/'}, {text: 'Оферта', href: '/'}, {text: 'Соглашение об авторских правах', href: '/'}];
+- var icons = ['telegram', 'vk', 'facebook', 'instagram'];
+
+footer
+  div.footer__header
+    div.container
+      img.logo(src="./img/svg/logo-white.svg")
+      div.header_info
+        div.header_phone
+          a(href='tel:8 800 550 5354' class='title_bc') 8 800 550 5354
+          h2 Заказать звонок
+        div.header_address
+          h1.title_bc Ташкентская 28 стр.1
+          h2 Москва
+      div.header_buttons
+        button(type='button' class='btn primary') Создать аккаунт
+        button(type='button' class='btn danger') Войти
+    div.header_mobile
+      div.container.mobile_info
+        div.header_phone
+          h1.title_bc 8 800 550 5354
+          h2 Заказать звонок
+        div.header_address
+          h1.title_bc Ташкентская 28 стр.1
+          h2 Москва
+  div.footer__content
+    div.container
+      div.content__list.dFlex.flexWrap.flexGrow1.justifyContentBetween
+        div.links_wrapper
+          h1.js-f-links Каталоги
+            span.icon_arrow
+          ul
+            each link in catalogLinks
+              include ../../components/footer/link
+        div.links_wrapper
+          h1.js-f-links Партнерам
+            span.icon_arrow
+          ul
+            each link in parentLinks
+              include ../../components/footer/link
+        div.links_wrapper
+          h1.js-f-links Клиентам
+            span.icon_arrow
+          ul
+            each link in clientsLinks
+              include ../../components/footer/link
+          div.social_icons_desktop
+           each icon in icons
+             include ../../components/social_icon/social_icon
+        div.subscribe_wrapper.dFlex.flexColumn.justifyContentBetween
+          div.subscribe_actions.dFlex.flexWrap
+            h1 Подпишись и будь в курсе <br/> новинок и акций
+            h1.mobile_header Подпишись и будь в курсе<br/> новинок и акций
+            div.subscribe_buttons.dFlex.flexGrow1
+              input(type='text' class='input' placeholder='Введите ваш e-mail')
+              button(type='button' class='btn danger') Подписаться
+          div.social_icons_tablet
+            each icon in icons
+              include ../../components/social_icon/social_icon
+          p.text_f Вся информация на сайте – собственность ООО «Энергорезерв» Публикация информации с сайта carex-parts.com без разрешения запрещена. Все права защищены.
+          div.payment_icons.dFlex.justifyContentBetween
+            img(class='payment_icon' src='./img/svg/payment-icons/maestro.svg')
+            img(class='payment_icon' src='./img/svg/payment-icons/master_card.svg')
+            img(class='payment_icon' src='./img/svg/payment-icons/visa.svg')
+            img(class='payment_icon' src='./img/svg/payment-icons/mir.svg')
+            img(class='payment_icon' src='./img/svg/payment-icons/sber.svg')
+  div.footer__bottom
+    div.container._bottom
+      p.text_fb © ООО «Энергорезерв» 2021
+      div
+        span.text_fb Разработка дизайна -
+        a(class='text_fba' href='http://mahaev.com' target='_blank') Махаев Никита

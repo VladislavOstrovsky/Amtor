@@ -1,0 +1,20 @@
+div.change_region_popup(style='display: none;' id='change-region-popup')
+  h1.title_popup Выберите подходящий <br> для вас офис!
+  div.content
+    div.select-item
+      .select-item--icon
+        include ../../../img/svg/location.svg
+      .select-item--content
+        h1 Москва
+        p 109472, Ташкентская 28 стр.1
+      .select-item--arrow
+        include ../../../img/svg/half-arrow-right.svg
+    div.select-item
+      .select-item--icon
+        include ../../../img/svg/location.svg
+      .select-item--content
+        h1 Омск
+        p 644027, ул 20 лет РККА дом 304Б
+      .select-item--arrow
+        include ../../../img/svg/half-arrow-right.svg
+  button(type='button' class='btn success fullWidth') Хочу открыть в своем городу

@@ -1,0 +1,29 @@
+/**
+ Variables Colors
+ */
+
+:root {
+  --color-base: #652efe;
+
+  --color-white: #fff;
+  --color-black: #000;
+  --color-transparent: rgba(255, 255, 255, 0);
+  --color-cyan: #ccd2dc;
+  --color-marine: #272262;
+  --color-dark-blue: #5928e3;
+  --color-gray: #808fab;
+  --color-light-gray: #8494b0;
+  --color-red: #ef4136;
+
+  --color-success: #652efe;
+  --color-success-hover: var(--color-transparent);
+  --color-danger: #f7941d;
+  --color-danger-hover: var(--color-transparent);
+  --color-primary: #652efe;
+  --color-primary-hover: var(--color-white);
+  --color-secondary: #d9d9d9;
+  --color-secondary-hover: #e0e0e0;
+  --color-dark: #878787;
+  --color-dark-hover: #6b6b6b;
+
+}

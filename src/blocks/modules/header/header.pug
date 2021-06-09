@@ -1,0 +1,59 @@
+header
+  div.header__top.container.dFlex.justifyContentBetween.alignItemsCenter
+    div(data-fancybox data-src='#change-region-popup' data-options={touch: false} class='dark_link select-region')
+      span.icon
+        include ../../../img/svg/header/location.svg
+      span Москва
+    div.header_links
+      a(href='/' class='dark_link') О компании
+      a(href='/' class='dark_link') Контакты
+      a(href='/' class='dark_link') Доставка
+      a(href='/' class='dark_link') Оплата
+    a(href='/' class='dark_link create-link js-reg-popup') Создать аккаунт
+    a(href='/' class='dark_link login-mobile-link js-login-popup') Войти в аккаунт
+  div.header__center.container.dFlex.flexWrap.justifyContentBetween.alignItemsCenter
+    div.btn_burger.mobile
+      span.burger_line._1
+      span.burger_line._2
+      span.burger_line._3
+    a(href='/' class='header_logo')
+      img.logo(src="./img/svg/logo.svg")
+    div.header_phone
+      a(href='tel:8 800 550 5354' class='title_bc') 8 800 550 5354
+      h2.text_normal Заказать звонок
+    div.header_actions
+      button(type='button' class='btn success login-btn') Войти
+      //button(type='button' class='btn transparent iconButton login-btn')
+        span.icon
+          include ../../../img/svg/header/user-login-dark.svg
+        span.icon._arrow
+      button(type='button' class='btn transparent iconButton withText basket-btn')
+        span.icon
+          include ../../../img/svg/header/basket-dark.svg
+        span.text В корзине <br> нет товаров
+    div.search_block.dFlex
+      div.btn_burger
+        span.burger_line._1
+        span.burger_line._2
+        span.burger_line._3
+      input(type='text' class='input search-input' placeholder='VIN, frame или номер детали')
+      button(type='button' class='btn success search-btn') Найти
+  div.header__tags_wrapper.container.without-navigation
+    div.header__tags_wp
+      div.header__tags.dFlex.tags-carousel
+        a(href='/' class='tag dark_link') Стойки
+        a(href='/' class='tag dark_link') Шины
+        a(href='/' class='tag dark_link') Автохимия
+        a(href='/' class='tag dark_link') Моторные масла
+        a(href='/' class='tag dark_link') Аккумуляторы
+        a(href='/' class='tag dark_link') Трансмисионные масла
+        a(href='/' class='tag dark_link') Инструменты
+        a(href='/' class='tag dark_link') Лампочки
+        a(href='/' class='tag dark_link') Присадки
+        a(href='/' class='tag dark_link') Колодки
+        a(href='/' class='tag dark_link') Стойки
+        a(href='/' class='tag dark_link') Шины
+        a(href='/' class='tag dark_link') Автохимия
+      button(type='button' class='btn success load-more-btn') Ещё
+  include ../../components/popups/change_region
+

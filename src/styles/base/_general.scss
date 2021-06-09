@@ -1,0 +1,24 @@
+@include reset();
+
+.container {
+    @include container();
+    @include xs(max-width, rem(576));
+    @include xs(padding-left, rem(20));
+    @include xs(padding-right, rem(20));
+
+    @include sm(max-width, rem(650));
+    @include sm(padding-left, rem(20));
+    @include sm(padding-right, rem(20));
+
+    @include md(max-width, rem(816));
+    @include md(padding-left, rem(24));
+    @include md(padding-right, rem(24));
+
+    @include lg(max-width, rem(1100));
+    @include lg(padding-left, rem(40));
+    @include lg(padding-right, rem(40));
+
+    @include xl(max-width, rem(1300));
+    @include xl(padding-left, rem(70));
+    @include xl(padding-right, rem(70));
+}
