@@ -53,6 +53,11 @@
       background-repeat: no-repeat;
       background-position: center;
     }
+
+    &:focus {
+      background-repeat: no-repeat;
+      background-position: center;
+    }
   }
 
   .slick-prev {

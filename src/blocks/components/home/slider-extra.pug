@@ -1,7 +1,8 @@
 div.slide_main
   div.dFlex.flexColumn.slide_content
-    img(class='slide_main__image' src=slide.image)
-    p.name.js-pd-name #{slide.description}
+    a(href=slide.href target='_blank' class='js-sm-image')
+      img(class='sm_image' src=slide.image)
+    a(href=slide.href class='name js-pd-name') #{slide.description}
     div.card_bottom
       div.price_wp
         div.price_old.js-pd-old-price #{slide.old_price}

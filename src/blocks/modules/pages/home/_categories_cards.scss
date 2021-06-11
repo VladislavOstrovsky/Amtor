@@ -1,992 +1,1542 @@
 // product categories
 .categories_wrapper {
-    &.__collapsed {
-        @include xs-block() {
-            .home_product_categories {
-                border-bottom: 1px solid #e5e9f1;
-                margin-bottom: 0;
-            }
+	&.__collapsed {
+		@include xs-block() {
+			.home_product_categories {
+				border-bottom: 1px solid #e5e9f1;
+				margin-bottom: 0;
+			}
 
-            .products, .home_feedback_form {
-                display: none;
-            }
-        }
+			.products,
+			.home_feedback_form {
+				display: none;
+			}
+		}
 
-        @include md-block() {
-            .home_product_categories {
-                border: none;
-            }
+		@include md-block() {
+			.home_product_categories {
+				border: none;
+			}
 
-            .products {
-                display: grid;
-                margin-bottom: rem(30);
-            }
+			.products {
+				display: grid;
+				margin-bottom: rem(30);
+			}
 
-            .home_feedback_form {
-                display: flex;
-            }
+			.home_feedback_form {
+				display: flex;
+			}
 
-            .hpc_header {
-                margin-bottom: rem(25);
-            }
-        }
+			.hpc_header {
+				margin-bottom: rem(25);
+			}
+		}
 
-        @include lg-block() {
-            .products {
-                margin-bottom: rem(50);
-            }
-        }
-    }
+		@include lg-block() {
+			.products {
+				margin-bottom: rem(50);
+			}
+		}
+	}
 }
 
 .home_product_categories {
-    @include xs(margin-bottom, rem(30));
-    @include md(margin-bottom, rem(40));
-    @include lg(margin-bottom, rem(50));
-
-    .hpc_header {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-
-        margin: rem(15) 0;
-    }
-
-    .title {
-
-        @include xs(font, (rem(20)/rem(20) Fregat-Bold, sans-serif));
-        @include md(font, (rem(24)/rem(24) Fregat-Bold, sans-serif));
-        margin: 0;
-    }
-
-    .icon {
-        transition: transform .3s;
-
-        &.rotate {
-            transform: rotate(180deg);
-        }
-    }
-
-    .products {
-        display: grid;
-        gap: 20px 20px;
-
-        .card_name {
-            @include xs(font, (rem(16)/rem(20) Fregat-Bold, sans-serif));
-            @include md(font, (rem(17)/rem(24) Fregat-Bold, sans-serif));
-        }
-
-        .card {
-
-            @include xs-block() {
-                padding: rem(15);
-            }
-
-            @include md-block() {
-                padding: rem(20);
-            }
-            box-sizing: border-box;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: space-between;
-            position: relative;
-            transition: all .2s ease-in;
-            border-radius: var(--border-radius-popup);
-            cursor: pointer;
-
-            .card_name {
-                align-self: flex-start;
-            }
-        }
-
-        .btn {
-
-            @include xs(font-size, rem(14));
-            height: rem(34);
-        }
-
-        &.creme {
-            .card {
-                background: #fceeca;
-
-                &:hover {
-                    box-shadow: 0 10px 15px 0 #dbc69096;
-                }
-            }
-        }
-
-        &.peach {
-            .card {
-                background: #f9ead9;
-
-                &:hover {
-                    box-shadow: 0 10px 15px 0 #dbc4ab96;
-                }
-            }
-        }
-
-        &.green {
-            .card {
-                background: #d4ebd3;
-
-                &:hover {
-                    box-shadow: 0 10px 15px 0 #adccac;
-                }
-            }
-        }
-
-        &.gray {
-            .card {
-                background: #eef1f6;
-
-                &:hover {
-                    box-shadow: 0 10px 15px 0 #bdc6d4a3;
-                }
-            }
-        }
-
-        // ТОПчик
-        &.top {
-            @include xs-block() {
-                grid-template-columns: repeat(2, 1fr);
-                grid-template-rows: rem(200) repeat(2, rem(150)) rem(252) rem(150);
-            }
-
-            @include md-block() {
-                grid-template-columns: repeat(3, 1fr);
-                grid-template-rows: repeat(3, rem(200));
-            }
-
-            @include lg-block() {
-                grid-template-columns: 1.65fr repeat(3, 1fr) 1.65fr;
-                grid-template-rows: repeat(2, rem(200));
-            }
-        }
-
-        .oil {
-
-            @include xs-block() {
-                grid-area: 1 / 1 / 1 / 1;
-            }
-
-            @include lg-block() {
-                grid-area: 1 / 1 / 3 / 2;
-            }
-            .image {
-                @include xs(max-width, rem(75));
-                @include md(max-width, rem(87));
-                @include lg(max-width, rem(221));
-            }
-        }
-
-        .brake_discs {
-            grid-area: 1 / 2 / 2 / 3;
-
-            .image {
-                @include xs(max-height, rem(100));
-                @include md(max-height, rem(145));
-            }
-        }
-
-        .spark_plug {
-            grid-area: 2 / 2 / 3 / 3;
-
-            .image {
-                @include xs(max-height, rem(90));
-                @include xs(position, relative);
-                @include md(max-height, rem(158));
-                @include md(position, absolute);
-            }
-        }
-
-        .transmission_oil {
-
-            @include xs-block() {
-                flex-direction: row;
-                grid-area: 3 / 1 / 3 / 3;
-            }
-
-            @include md-block() {
-                flex-direction: column;
-                grid-area: 1 / 3 / 3 / 3;
-            }
-
-            @include lg-block() {
-                flex-direction: row;
-                grid-area: 1 / 3 / 2 / 5;
-            }
-            .image {
-                @include xs(max-height, rem(118));
-                @include md(max-height, rem(232));
-                @include lg(max-height, rem(160));
-            }
-        }
-
-        .pads {
-
-            @include xs-block() {
-                grid-area: 2 / 1 / 3 / 2;
-            }
-
-            @include md-block() {
-                grid-area: 2 / 1 / 2 / 2;
-            }
-
-            @include lg-block() {
-                grid-area: 2 / 3 / 3 / 4;
-            }
-            .image {
-                @include xs(max-height, rem(83));
-                @include md(max-height, rem(122));
-            }
-        }
-
-        .filters {
-
-            @include xs-block() {
-                flex-direction: column;
-                grid-area: 4 / 1 / 5 / 3;
-
-                .image {
-                    max-height: rem(119);
-                }
-
-                .buttons {
-                    align-self: stretch;
-                    grid-gap: rem(10);
-                    margin-left: 0;
-                    grid-template-columns: 1fr 1fr;
-                }
-            }
-
-            @include md-block() {
-                flex-direction: row;
-                grid-area: 3 / 1 / 3 / 3;
-
-                .buttons {
-                    align-self: flex-end;
-                    grid-gap: rem(15);
-                    margin-left: rem(29);
-                }
-            }
-
-            @include lg-block() {
-                grid-area: 2 / 4 / 3 / 6;
-            }
-            flex-direction: row;
-            align-items: flex-end;
-
-            .card_name {
-                position: absolute;
-            }
-
-            .buttons {
-                display: grid;
-                grid-template-rows: repeat(2, rem(34));
-            }
-        }
-
-        .wiper_blades {
-
-            @include xs-block() {
-                grid-area: 5 / 1 / 6 / 3;
-            }
-
-            @include md-block() {
-                grid-area: 3 / 3 / 3 / 3;
-            }
-
-            @include lg-block() {
-                grid-area: 1 / 5 / 2 / 6;
-            }
-            .image {
-                @include xs(max-height, rem(75));
-                @include md(max-height, rem(95));
-            }
-        }
-
-        // oils
-        &.oils {
-            @include xs-block() {
-                grid-template-columns: repeat(2, 1fr);
-                grid-template-rows: repeat(4, rem(170)) rem(244);
-            }
-
-            @include md-block() {
-                grid-template-columns: repeat(3, 1fr);
-                grid-template-rows: repeat(4, rem(200));
-            }
-
-            @include lg-block() {
-                grid-template-columns: 1fr 0.45fr repeat(3, 1fr) 1.65fr;
-                grid-template-rows: repeat(2, rem(200));
-            }
-
-            .image {
-                @include xs(max-height, rem(100));
-                @include md(max-height, rem(126));
-            }
-
-            .toyota {
-
-                @include xs-block() {
-                    flex-direction: column;
-                    grid-area: 1 / 1 / 1 / 1;
-                }
-
-                @include lg-block() {
-                    flex-direction: row;
-                    align-items: flex-end;
-                    grid-area: 1 / 1 / 2 / 3;
-                }
-                .image {
-                    @include xs(margin-right, 0);
-                    @include lg(max-height, rem(160));
-                    @include lg(margin-right, rem(50));
-                }
-            }
-
-            .nissan {
-                @include xs-block() {
-                    grid-area: 1 / 2 / 1 / 2;
-                }
-
-                @include md-block() {
-                    grid-area: 1 / 2 / 1 / 3;
-                }
-
-                @include lg-block() {
-                    grid-area: 1 / 3 / 2 / 4;
-                }
-            }
-
-            .shell {
-                @include xs-block() {
-                    grid-area: 2 / 1 / 3 / 2;
-                }
-
-                @include md-block() {
-                    grid-area: 1 / 3 / 2 / 4;
-                }
-
-                @include lg-block() {
-                    grid-area: 1 / 4 / 2 / 5;
-                }
-            }
-
-            .mobil {
-                @include xs-block() {
-                    grid-area: 4 / 1 / 5 / 2;
-                }
-
-                @include md-block() {
-                    grid-area: 3 / 1 / 4 / 2;
-                }
-
-                @include lg-block() {
-                    grid-area: 1 / 5 / 2 / 6;
-                }
-            }
-
-            .vag {
-                @include xs-block() {
-                    grid-area: 2 / 2 / 3 / 3;
-                }
-
-                @include md-block() {
-                    grid-area: 2 / 1 / 3 / 2;
-                }
-
-                @include lg-block() {
-                    grid-area: 2 / 1 / 3 / 2;
-                }
-            }
-
-            .costrol {
-                @include xs-block() {
-                    flex-direction: column;
-                    grid-area: 3 / 1 / 4 / 2;
-                }
-
-                @include md-block() {
-                    grid-area: 2 / 2 / 3 / 3;
-                }
-
-                @include lg-block() {
-                    flex-direction: row;
-                    align-items: flex-end;
-                    grid-area: 2 / 2 / 3 / 4;
-
-                    .image {
-                        max-height: rem(160);
-                        margin-right: rem(20);
-                    }
-                }
-            }
-
-            .hyndai {
-                @include xs-block() {
-                    grid-area: 3 / 2 / 4 / 3;
-                }
-
-                @include md-block() {
-                    grid-area: 2 / 3 / 3 / 4;
-                }
-
-                @include lg-block() {
-                    grid-area: 2 / 4 / 3 / 5;
-                }
-            }
-
-            .total {
-                @include xs-block() {
-                    grid-area: 4 / 2 / 5 / 3;
-                }
-
-                @include md-block() {
-                    grid-area: 4 / 1 / 5 / 2;
-                }
-
-                @include lg-block() {
-                    grid-area: 2 / 5 / 3 / 6;
-                }
-            }
-
-            .oil_viscosity {
-
-                @include xs-block() {
-                    grid-area: 5 / 1 / 6 / 3;
-
-                    .buttons {
-                        grid-gap: rem(8);
-                        width: 100%;
-                        grid-template-columns: repeat(4, 1fr);
-
-                        .btn {
-                            width: rem(56);
-
-                            &:last-child {
-                                display: none;
-                            }
-                        }
-                    }
-                }
-
-                @include md-block() {
-                    grid-area: 3 / 2 / 5 / 4;
-
-                    .buttons {
-                        grid-gap: rem(20);
-                        grid-template-columns: repeat(5, 1fr);
-
-                        .btn {
-                            width: auto;
-                        }
-
-                        .btn:last-child {
-                            display: block;
-                        }
-                    }
-                }
-
-                @include lg-block() {
-                    grid-area: 1 / 6 / 3 / 7;
-
-                    .buttons {
-                        grid-template-columns: repeat(3, 1fr);
-                    }
-                }
-                .image {
-                    @include xs(max-height, rem(120));
-                    @include md(max-height, rem(269));
-                    @include lg(max-height, rem(218));
-                }
-
-                .buttons {
-                    display: grid;
-
-                    .btn {
-                        padding: rem(10) rem(15);
-                    }
-                }
-            }
-        }
-
-        // auto chemicals
-        &.auto_chemicals {
-            @include xs-block() {
-                grid-template-columns: repeat(2, 1fr);
-                grid-template-rows: repeat(4, rem(170));
-            }
-
-            @include md-block() {
-                grid-template-columns: repeat(3, 1fr);
-                grid-template-rows: repeat(3, rem(200));
-            }
-
-            @include lg-block() {
-                grid-template-columns: 1.65fr repeat(3, 1fr) 1.65fr;
-                grid-template-rows: repeat(2, rem(200));
-            }
-
-            .image {
-                @include xs(max-height, rem(100));
-                @include md(max-height, rem(126));
-            }
-
-            .antifreeze {
-
-                @include xs-block() {
-                    grid-area: 1 / 1 / 2 / 2;
-                }
-
-                @include md-block() {
-                    grid-area: 1 / 1 / 3 / 2;
-                }
-                .image {
-                    @include xs(max-height, rem(104));
-                    @include md(max-height, rem(240));
-                    @include lg(max-height, rem(296));
-                }
-            }
-
-            .trans_oil {
-
-                @include xs-block() {
-                    flex-direction: column;
-                    grid-area: 1 / 2 / 2 / 3;
-
-                    .card_name {
-                        white-space: normal;
-                        word-break: break-all;
-                    }
-
-                    .images {
-                        justify-content: center;
-                    }
-
-                    .image {
-                        max-height: rem(66);
-                    }
-
-                    .one {
-                        max-height: rem(42);
-                        margin-right: rem(3);
-                    }
-                }
-
-                @include md-block() {
-                    .card_name {
-                        white-space: nowrap;
-                    }
-
-                    .images {
-                        .image {
-                            max-height: rem(118);
-                        }
-
-                        .one {
-                            margin-right: rem(6);
-                            max-height: rem(75);
-                        }
-                    }
-                }
-
-                @include lg-block() {
-                    flex-direction: row;
-                    grid-area: 1 / 2 / 2 / 4;
-
-                    .images {
-                        justify-content: flex-end;
-
-                        .image {
-                            max-height: rem(160);
-                        }
-
-                        .one {
-                            margin-right: rem(9);
-                            max-height: rem(109);
-                        }
-                    }
-                }
-                .images {
-                    display: flex;
-                    align-items: flex-end;
-                    width: 100%;
-                }
-            }
-
-            .oil {
-                @include xs-block() {
-                    grid-area: 2 / 1 / 3 / 2;
-
-                    .image {
-                        max-height: rem(83);
-                    }
-                }
-
-                @include md-block() {
-                    grid-area: 1 / 3 / 2 / 4;
-
-                    .image {
-                        max-height: rem(126);
-                    }
-                }
-
-                @include lg-block() {
-                    grid-area: 2 / 2 / 3 / 3;
-                }
-            }
-
-            .lubricants {
-                @include xs-block() {
-                    grid-area: 2 / 2 / 3 / 3;
-                }
-
-                @include md-block() {
-                    grid-area: 2 / 2 / 3 / 3;
-                }
-
-                @include lg-block() {
-                    grid-area: 2 / 3 / 3 / 4;
-                }
-            }
-
-            .sealants {
-
-            }
-
-            .brake_fluids {
-                @include xs-block() {
-                    flex-direction: column;
-
-                    .image {
-                        max-height: rem(90);
-                    }
-                }
-
-                @include md-block() {
-                    .image {
-                        margin-right: 0;
-                        max-height: rem(126);
-                    }
-                }
-
-                @include lg-block() {
-                    flex-direction: row;
-
-                    .image {
-                        margin-right: rem(50);
-                        max-height: rem(160);
-                    }
-                }
-            }
-
-            .additives {
-            }
-
-            .adhesives {
-                @include md-block() {
-                    flex-direction: column;
-
-                    .image {
-                        margin-right: 0;
-                    }
-                }
-
-                @include lg-block() {
-                    flex-direction: row;
-
-                    .image {
-                        margin-right: rem(30);
-                        max-height: rem(160);
-                    }
-                }
-            }
-        }
-
-        // engine parts
-        &.engine_parts {
-            @include xs-block() {
-                grid-template-columns: repeat(2, 1fr);
-                grid-template-rows: repeat(5, rem(170));
-            }
-
-            @include md-block() {
-                grid-template-columns: repeat(3, 1fr);
-                grid-template-rows: repeat(4, rem(200));
-            }
-
-            @include lg-block() {
-                grid-template-columns: 1.55fr 1fr 1fr 1.55fr 1fr;
-                grid-template-rows: repeat(3, rem(200));
-            }
-
-            .image {
-                @include xs(max-height, rem(100));
-                @include md(max-height, rem(126));
-                @include lg(max-height, rem(160));
-            }
-
-            .timing_belt_kit {
-
-                @include xs-block() {
-                    .image {
-                        max-height: rem(67);
-                    }
-                }
-
-                @include md-block() {
-                    .image {
-                        max-height: rem(120);
-                    }
-                }
-
-                @include lg-block() {
-                    flex-direction: row;
-
-                    .card_name {
-                        margin-right: rem(180);
-                    }
-
-                    .image {
-                        position: absolute;
-                        top: rem(44);
-                        right: rem(25);
-                    }
-                }
-                position: relative;
-            }
-
-            .cooling_fan {
-                @include xs-block() {
-                    grid-area: 1 / 2 / 2 / 3;
-
-                    .image {
-                        max-height: rem(56);
-                    }
-                }
-
-                @include md-block() {
-                    flex-direction: row;
-                    grid-area: 1 / 2 / 2 / 4;
-
-                    .image {
-                        max-height: rem(150);
-                    }
-                }
-            }
-
-            .cooling_radiator {
-                @include xs-block() {
-                    grid-area: 2 / 1 / 3 / 2;
-
-                    .image {
-                        max-height: rem(82);
-                    }
-                }
-
-                @include md-block() {
-                    .image {
-                        max-height: rem(134);
-                    }
-                }
-
-
-                @include lg-block() {
-                    flex-direction: row;
-
-                    .image {
-                        max-height: rem(160);
-                    }
-                }
-            }
-
-            .thermostat {
-
-                @include xs-block() {
-                    grid-area: 2 / 2 / 3 / 3;
-
-                    .image {
-                        max-height: rem(110);
-                    }
-                }
-
-                @include md-block() {
-                    .image {
-                        max-height: rem(160);
-                    }
-                }
-
-                @include lg-block() {
-                    grid-area: 2 / 2 / 4 / 3;
-
-                    .image {
-                        position: absolute;
-                        bottom: rem(80);
-                        left: 0;
-                        max-height: rem(200);
-                    }
-                }
-                position: relative;
-            }
-
-            .water_pump {
-
-                @include xs-block() {
-                    grid-area: 3 / 2 / 4 / 3;
-
-                    .image {
-                        max-height: rem(67);
-                    }
-                }
-
-                @include md-block() {
-                    flex-direction: column;
-                    grid-area: 3 / 1 / 4 / 2;
-
-                    .image {
-                        max-height: rem(123);
-                    }
-                }
-
-                @include lg-block() {
-                    .card_name {
-                        margin-right: rem(148);
-                    }
-
-                    .image {
-                        position: absolute;
-                        top: rem(30);
-                        right: rem(30);
-                        max-height: rem(140);
-                    }
-                }
-                position: relative;
-            }
-
-            .generator {
-
-                @include xs-block() {
-                    grid-area: 3 / 1 / 4 / 2;
-                }
-
-                @include md-block() {
-                    grid-area: 2 / 3 / 3 / 4;
-
-                    .image {
-                        max-height: rem(160);
-                    }
-                }
-
-                @include lg-block() {
-                    grid-area: 2 / 3 / 4 / 4;
-
-                    .image {
-                        position: absolute;
-                        bottom: rem(80);
-                        left: 0;
-                        max-height: rem(200);
-                    }
-                }
-                position: relative;
-            }
-
-            .t_b_tensioner_roller {
-
-                @include xs-block() {
-                    grid-area: 4 / 1 / 5 / 2;
-                }
-
-
-                @include md-block() {
-                    flex-direction: row;
-                    grid-area: 3 / 2 / 4 / 4;
-
-                    .image {
-                        max-height: rem(200);
-                    }
-                }
-
-                @include lg-block() {
-                    grid-area: 1 / 4 / 3 / 5;
-
-                    .image {
-                        position: absolute;
-                        bottom: 0;
-                        left: 0;
-                        max-height: max-content;
-                    }
-                }
-                position: relative;
-            }
-
-            .workaround_roller {
-                @include xs-block() {
-                    grid-area: 4 / 2 / 5 / 3;
-
-                    .image {
-                        max-height: rem(75);
-                    }
-                }
-
-                @include md-block() {
-                    grid-area: 4 / 1 / 5 / 2;
-
-                    .image {
-                        max-height: rem(125);
-                    }
-                }
-
-                @include lg-block() {
-                    flex-direction: row;
-                    grid-area: 3 / 4 / 4 / 5;
-
-                    .card_name {
-                        margin-right: rem(30);
-                    }
-
-                    .image {
-                        max-height: rem(160);
-                    }
-                }
-            }
-
-            .timing_belt {
-                @include xs-block() {
-                    grid-area: 5 / 1 / 6 / 2;
-                }
-
-                @include md-block() {
-                    grid-area: 4 / 2 / 5 / 3;
-                }
-
-                @include lg-block() {
-                    grid-area: 1 / 5 / 2 / 6;
-                }
-            }
-
-            .timing_belt_tensioner {
-                @include xs-block() {
-                    grid-area: 5 / 2 / 6 / 3;
-                }
-
-                @include md-block() {
-                    grid-area: 4 / 3 / 5 / 4;
-                }
-
-                @include lg-block() {
-                    grid-area: 2 / 5 / 4 / 6;
-
-                    .image {
-                        position: absolute;
-                        bottom: rem(80);
-                        left: 0;
-                        max-height: rem(200);
-                    }
-                }
-            }
-        }
-    }
+	@include xs(margin-bottom, rem(30));
+	@include md(margin-bottom, rem(40));
+	@include lg(margin-bottom, rem(50));
+
+	.hpc_header {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+
+		margin: rem(15) 0;
+	}
+
+	.title {
+		margin: 0;
+
+		@include xs(font, (rem(20)/rem(20) Fregat-Bold, sans-serif));
+		@include md(font, (rem(24)/rem(24) Fregat-Bold, sans-serif));
+	}
+
+	.icon {
+		transition: transform .3s;
+
+		&.rotate {
+			transform: rotate(180deg);
+		}
+	}
+
+	.products {
+		display: grid;
+		gap: 20px 20px;
+
+		.card_name {
+			@include xs(font, (rem(16)/rem(20) Fregat-Bold, sans-serif));
+			@include md(font, (rem(17)/rem(24) Fregat-Bold, sans-serif));
+		}
+
+		.card {
+			position: relative;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+			align-items: center;
+			border-radius: var(--border-radius-popup);
+			box-sizing: border-box;
+			cursor: pointer;
+			transition: all .2s ease-in;
+			color: var(--color-black);
+
+			&:hover {
+				text-decoration: none;
+			}
+
+			.card_name {
+				align-self: flex-start;
+			}
+
+			@include xs-block() {
+				padding: rem(15);
+			}
+
+			@include md-block() {
+				padding: rem(20);
+			}
+		}
+
+		.btn {
+			height: rem(34);
+
+			@include xs(font-size, rem(14));
+		}
+
+		// colors
+		&.creme {
+			.card {
+				background: #fceeca;
+
+				&:hover {
+					box-shadow: 0 10px 15px 0 #DBC69096;
+				}
+			}
+		}
+
+		&.peach {
+			.card {
+				background: #f9ead9;
+
+				&:hover {
+					box-shadow: 0 10px 15px 0 #DBC4AB96;
+				}
+			}
+		}
+
+		&.green {
+			.card {
+				background: #d4ebd3;
+
+				&:hover {
+					box-shadow: 0 10px 15px 0 #ADCCAC;
+				}
+			}
+		}
+
+		&.gray {
+			.card {
+				background: #eef1f6;
+
+				&:hover {
+					box-shadow: 0 10px 15px 0 #BDC6D4A3;
+				}
+			}
+		}
+
+		&.blue {
+			.card {
+				background: #dfe8f8;
+
+				&:hover {
+					box-shadow: 0 10px 15px 0 #BFCEE9CC;
+				}
+			}
+		}
+
+		&.purple {
+			.card {
+				background: #ebe4ff;
+
+				&:hover {
+					box-shadow: 0 10px 15px 0 #D0C4F2B8;
+				}
+			}
+		}
+
+		&.pink {
+			.card {
+				background: #fee7e9;
+
+				&:hover {
+					box-shadow: 0 10px 15px 0 #EFC2C6A8;
+				}
+			}
+		}
+		// end colors
+
+		// ТОПчик
+		&.top {
+			@include xs-block() {
+				grid-template-columns: repeat(2, 1fr);
+				grid-template-rows: rem(200) repeat(2, rem(150)) rem(252) rem(150);
+			}
+
+			@include md-block() {
+				grid-template-columns: repeat(3, 1fr);
+				grid-template-rows: repeat(3, rem(200));
+			}
+
+			@include lg-block() {
+				grid-template-columns: 1.65fr repeat(3, 1fr) 1.65fr;
+				grid-template-rows: repeat(2, rem(200));
+			}
+
+			.oil {
+				.image {
+					@include xs(max-width, rem(75));
+					@include md(max-width, rem(87));
+					@include lg(max-width, rem(221));
+				}
+
+				@include xs-block() {
+					grid-area: 1 / 1 / 1 / 1;
+				}
+
+				@include lg-block() {
+					grid-area: 1 / 1 / 3 / 2;
+				}
+			}
+
+			.brake_discs {
+				grid-area: 1 / 2 / 2 / 3;
+
+				.image {
+					@include xs(max-height, rem(100));
+					@include md(max-height, rem(145));
+				}
+			}
+
+			.spark_plug {
+				grid-area: 2 / 2 / 3 / 3;
+
+				.image {
+					@include xs(max-height, rem(90));
+					@include xs(position, relative);
+					@include md(max-height, rem(158));
+					@include md(position, absolute);
+				}
+			}
+
+			.transmission_oil {
+				.image {
+					@include xs(max-height, rem(118));
+					@include md(max-height, rem(232));
+					@include lg(max-height, rem(160));
+				}
+
+				@include xs-block() {
+					grid-area: 3 / 1 / 3 / 3;
+					flex-direction: row;
+				}
+
+				@include md-block() {
+					grid-area: 1 / 3 / 3 / 3;
+					flex-direction: column;
+				}
+
+				@include lg-block() {
+					grid-area: 1 / 3 / 2 / 5;
+					flex-direction: row;
+				}
+			}
+
+			.pads {
+				.image {
+					@include xs(max-height, rem(83));
+					@include md(max-height, rem(122));
+				}
+
+				@include xs-block() {
+					grid-area: 2 / 1 / 3 / 2;
+				}
+
+				@include md-block() {
+					grid-area: 2 / 1 / 2 / 2;
+				}
+
+				@include lg-block() {
+					grid-area: 2 / 3 / 3 / 4;
+				}
+			}
+
+			.filters {
+				flex-direction: row;
+				align-items: flex-end;
+
+				.card_name {
+					position: absolute;
+				}
+
+				.buttons {
+					display: grid;
+					grid-template-rows: repeat(2, rem(34));
+				}
+
+				@include xs-block() {
+					grid-area: 4 / 1 / 5 / 3;
+					flex-direction: column;
+
+					.image {
+						max-height: rem(119);
+					}
+
+					.buttons {
+						grid-gap: rem(10);
+						margin-left: 0;
+						grid-template-columns: 1fr 1fr;
+						align-self: stretch;
+					}
+				}
+
+				@include md-block() {
+					grid-area: 3 / 1 / 3 / 3;
+					flex-direction: row;
+
+					.buttons {
+						grid-gap: rem(15);
+						margin-left: rem(29);
+						align-self: flex-end;
+					}
+				}
+
+				@include lg-block() {
+					grid-area: 2 / 4 / 3 / 6;
+				}
+			}
+
+			.wiper_blades {
+				.image {
+					@include xs(max-height, rem(75));
+					@include md(max-height, rem(95));
+				}
+
+				@include xs-block() {
+					grid-area: 5 / 1 / 6 / 3;
+				}
+
+				@include md-block() {
+					grid-area: 3 / 3 / 3 / 3;
+				}
+
+				@include lg-block() {
+					grid-area: 1 / 5 / 2 / 6;
+				}
+			}
+		}
+
+		// oils
+		&.oils {
+			@include xs-block() {
+				grid-template-columns: repeat(2, 1fr);
+				grid-template-rows: repeat(4, rem(170)) rem(244);
+			}
+
+			@include md-block() {
+				grid-template-columns: repeat(3, 1fr);
+				grid-template-rows: repeat(4, rem(200));
+			}
+
+			@include lg-block() {
+				grid-template-columns: 1fr 0.45fr repeat(3, 1fr) 1.65fr;
+				grid-template-rows: repeat(2, rem(200));
+			}
+
+			.image {
+				@include xs(max-height, rem(100));
+				@include md(max-height, rem(126));
+			}
+
+			.toyota {
+				.image {
+					@include xs(margin-right, 0);
+					@include lg(max-height, rem(160));
+					@include lg(margin-right, rem(50));
+				}
+
+				@include xs-block() {
+					grid-area: 1 / 1 / 1 / 1;
+					flex-direction: column;
+				}
+
+				@include lg-block() {
+					grid-area: 1 / 1 / 2 / 3;
+					flex-direction: row;
+					align-items: flex-end;
+				}
+			}
+
+			.nissan {
+				@include xs-block() {
+					grid-area: 1 / 2 / 1 / 2;
+				}
+
+				@include md-block() {
+					grid-area: 1 / 2 / 1 / 3;
+				}
+
+				@include lg-block() {
+					grid-area: 1 / 3 / 2 / 4;
+				}
+			}
+
+			.shell {
+				@include xs-block() {
+					grid-area: 2 / 1 / 3 / 2;
+				}
+
+				@include md-block() {
+					grid-area: 1 / 3 / 2 / 4;
+				}
+
+				@include lg-block() {
+					grid-area: 1 / 4 / 2 / 5;
+				}
+			}
+
+			.mobil {
+				@include xs-block() {
+					grid-area: 4 / 1 / 5 / 2;
+				}
+
+				@include md-block() {
+					grid-area: 3 / 1 / 4 / 2;
+				}
+
+				@include lg-block() {
+					grid-area: 1 / 5 / 2 / 6;
+				}
+			}
+
+			.vag {
+				@include xs-block() {
+					grid-area: 2 / 2 / 3 / 3;
+				}
+
+				@include md-block() {
+					grid-area: 2 / 1 / 3 / 2;
+				}
+
+				@include lg-block() {
+					grid-area: 2 / 1 / 3 / 2;
+				}
+			}
+
+			.costrol {
+				@include xs-block() {
+					grid-area: 3 / 1 / 4 / 2;
+					flex-direction: column;
+				}
+
+				@include md-block() {
+					grid-area: 2 / 2 / 3 / 3;
+				}
+
+				@include lg-block() {
+					grid-area: 2 / 2 / 3 / 4;
+					flex-direction: row;
+					align-items: flex-end;
+
+					.image {
+						max-height: rem(160);
+						margin-right: rem(20);
+					}
+				}
+			}
+
+			.hyndai {
+				@include xs-block() {
+					grid-area: 3 / 2 / 4 / 3;
+				}
+
+				@include md-block() {
+					grid-area: 2 / 3 / 3 / 4;
+				}
+
+				@include lg-block() {
+					grid-area: 2 / 4 / 3 / 5;
+				}
+			}
+
+			.total {
+				@include xs-block() {
+					grid-area: 4 / 2 / 5 / 3;
+				}
+
+				@include md-block() {
+					grid-area: 4 / 1 / 5 / 2;
+				}
+
+				@include lg-block() {
+					grid-area: 2 / 5 / 3 / 6;
+				}
+			}
+
+			.oil_viscosity {
+				.image {
+					@include xs(max-height, rem(120));
+					@include md(max-height, rem(269));
+					@include lg(max-height, rem(218));
+				}
+
+				.buttons {
+					display: grid;
+
+					.btn {
+						padding: rem(10) rem(15);
+					}
+				}
+
+				@include xs-block() {
+					grid-area: 5 / 1 / 6 / 3;
+
+					.buttons {
+						grid-gap: rem(8);
+						width: 100%;
+						grid-template-columns: repeat(4, 1fr);
+
+						.btn {
+							width: rem(56);
+
+							&:last-child {
+								display: none;
+							}
+						}
+					}
+				}
+
+				@include md-block() {
+					grid-area: 3 / 2 / 5 / 4;
+
+					.buttons {
+						grid-gap: rem(20);
+						grid-template-columns: repeat(5, 1fr);
+
+						.btn {
+							width: auto;
+						}
+
+						.btn:last-child {
+							display: block;
+						}
+					}
+				}
+
+				@include lg-block() {
+					grid-area: 1 / 6 / 3 / 7;
+
+					.buttons {
+						grid-template-columns: repeat(3, 1fr);
+					}
+				}
+			}
+		}
+
+		// auto chemicals
+		&.auto_chemicals {
+			@include xs-block() {
+				grid-template-columns: repeat(2, 1fr);
+				grid-template-rows: repeat(4, rem(170));
+			}
+
+			@include md-block() {
+				grid-template-columns: repeat(3, 1fr);
+				grid-template-rows: repeat(3, rem(200));
+			}
+
+			@include lg-block() {
+				grid-template-columns: 1.65fr repeat(3, 1fr) 1.65fr;
+				grid-template-rows: repeat(2, rem(200));
+			}
+
+			.image {
+				@include xs(max-height, rem(100));
+				@include md(max-height, rem(126));
+			}
+
+			.antifreeze {
+				.image {
+					@include xs(max-height, rem(104));
+					@include md(max-height, rem(240));
+					@include lg(max-height, rem(296));
+				}
+
+				@include xs-block() {
+					grid-area: 1 / 1 / 2 / 2;
+				}
+
+				@include md-block() {
+					grid-area: 1 / 1 / 3 / 2;
+				}
+			}
+
+			.trans_oil {
+				.images {
+					width: 100%;
+					display: flex;
+					align-items: flex-end;
+				}
+
+				@include xs-block() {
+					grid-area: 1 / 2 / 2 / 3;
+					flex-direction: column;
+
+					.card_name {
+						white-space: normal;
+						word-break: break-all;
+					}
+
+					.images {
+						justify-content: center;
+					}
+
+					.image {
+						max-height: rem(66);
+					}
+
+					.one {
+						margin-right: rem(3);
+						max-height: rem(42);
+					}
+				}
+
+				@include md-block() {
+					.card_name {
+						white-space: nowrap;
+					}
+
+					.images {
+						.image {
+							max-height: rem(118);
+						}
+
+						.one {
+							margin-right: rem(6);
+							max-height: rem(75);
+						}
+					}
+				}
+
+				@include lg-block() {
+					flex-direction: row;
+					grid-area: 1 / 2 / 2 / 4;
+
+					.images {
+						justify-content: flex-end;
+
+						.image {
+							max-height: rem(160);
+						}
+
+						.one {
+							margin-right: rem(9);
+							max-height: rem(109);
+						}
+					}
+				}
+			}
+
+			.oil {
+				@include xs-block() {
+					grid-area: 2 / 1 / 3 / 2;
+
+					.image {
+						max-height: rem(83);
+					}
+				}
+
+				@include md-block() {
+					grid-area: 1 / 3 / 2 / 4;
+
+					.image {
+						max-height: rem(126);
+					}
+				}
+
+				@include lg-block() {
+					grid-area: 2 / 2 / 3 / 3;
+				}
+			}
+
+			.lubricants {
+				@include xs-block() {
+					grid-area: 2 / 2 / 3 / 3;
+				}
+
+				@include md-block() {
+					grid-area: 2 / 2 / 3 / 3;
+				}
+
+				@include lg-block() {
+					grid-area: 2 / 3 / 3 / 4;
+				}
+			}
+
+			.sealants {
+
+			}
+
+			.brake_fluids {
+				@include xs-block() {
+					flex-direction: column;
+
+					.image {
+						max-height: rem(90);
+					}
+				}
+
+				@include md-block() {
+					.image {
+						margin-right: 0;
+						max-height: rem(126);
+					}
+				}
+
+				@include lg-block() {
+					flex-direction: row;
+
+					.image {
+						margin-right: rem(50);
+						max-height: rem(160);
+					}
+				}
+			}
+
+			.additives {
+			}
+
+			.adhesives {
+				@include md-block() {
+					flex-direction: column;
+
+					.image {
+						margin-right: 0;
+					}
+				}
+
+				@include lg-block() {
+					flex-direction: row;
+
+					.image {
+						margin-right: rem(30);
+						max-height: rem(160);
+					}
+				}
+			}
+		}
+
+		// engine parts
+		&.engine_parts {
+			@include xs-block() {
+				grid-template-columns: repeat(2, 1fr);
+				grid-template-rows: repeat(5, rem(170));
+			}
+
+			@include md-block() {
+				grid-template-columns: repeat(3, 1fr);
+				grid-template-rows: repeat(4, rem(200));
+			}
+
+			@include lg-block() {
+				grid-template-columns: 1.55fr 1fr 1fr 1.55fr 1fr;
+				grid-template-rows: repeat(3, rem(200));
+			}
+
+			.image {
+				@include xs(max-height, rem(100));
+				@include md(max-height, rem(126));
+				@include lg(max-height, rem(160));
+			}
+
+			.timing_belt_kit {
+				position: relative;
+
+				@include xs-block() {
+					.image {
+						max-height: rem(67);
+					}
+				}
+
+				@include md-block() {
+					.image {
+						max-height: rem(120);
+					}
+				}
+
+				@include lg-block() {
+					flex-direction: row;
+
+					.card_name {
+						margin-right: rem(180);
+					}
+
+					.image {
+						position: absolute;
+						top: rem(44);
+						right: rem(25);
+					}
+				}
+			}
+
+			.cooling_fan {
+				@include xs-block() {
+					grid-area: 1 / 2 / 2 / 3;
+
+					.image {
+						max-height: rem(56);
+					}
+				}
+
+				@include md-block() {
+					grid-area: 1 / 2 / 2 / 4;
+					flex-direction: row;
+
+					.image {
+						max-height: rem(150);
+					}
+				}
+			}
+
+			.cooling_radiator {
+				@include xs-block() {
+					grid-area: 2 / 1 / 3 / 2;
+
+					.image {
+						max-height: rem(82);
+					}
+				}
+
+				@include md-block() {
+					.image {
+						max-height: rem(134);
+					}
+				}
+
+
+				@include lg-block() {
+					flex-direction: row;
+
+					.image {
+						max-height: rem(160);
+					}
+				}
+			}
+
+			.thermostat {
+				position: relative;
+
+				@include xs-block() {
+					grid-area: 2 / 2 / 3 / 3;
+
+					.image {
+						max-height: rem(110);
+					}
+				}
+
+				@include md-block() {
+					.image {
+						max-height: rem(160);
+					}
+				}
+
+				@include lg-block() {
+					grid-area: 2 / 2 / 4 / 3;
+
+					.image {
+						position: absolute;
+						bottom: rem(80);
+						left: 0;
+						max-height: rem(200);
+					}
+				}
+			}
+
+			.water_pump {
+				position: relative;
+
+				@include xs-block() {
+					grid-area: 3 / 2 / 4 / 3;
+
+					.image {
+						max-height: rem(67);
+					}
+				}
+
+				@include md-block() {
+					grid-area: 3 / 1 / 4 / 2;
+					flex-direction: column;
+
+					.image {
+						max-height: rem(123);
+					}
+				}
+
+				@include lg-block() {
+					.card_name {
+						margin-right: rem(148);
+					}
+
+					.image {
+						top: rem(30);
+						right: rem(30);
+						position: absolute;
+						max-height: rem(140);
+					}
+				}
+			}
+
+			.generator {
+				position: relative;
+
+				@include xs-block() {
+					grid-area: 3 / 1 / 4 / 2;
+				}
+
+				@include md-block() {
+					grid-area: 2 / 3 / 3 / 4;
+
+					.image {
+						max-height: rem(160);
+					}
+				}
+
+				@include lg-block() {
+					grid-area: 2 / 3 / 4 / 4;
+
+					.image {
+						position: absolute;
+						bottom: rem(80);
+						left: 0;
+						max-height: rem(200);
+					}
+				}
+			}
+
+			.t_b_tensioner_roller {
+				position: relative;
+
+				@include xs-block() {
+					grid-area: 4 / 1 / 5 / 2;
+				}
+
+
+				@include md-block() {
+					grid-area: 3 / 2 / 4 / 4;
+					flex-direction: row;
+
+					.image {
+						max-height: rem(200);
+					}
+				}
+
+				@include lg-block() {
+					grid-area: 1 / 4 / 3 / 5;
+
+					.image {
+						position: absolute;
+						left: 0;
+						bottom: 0;
+						max-height: max-content;
+					}
+				}
+			}
+
+			.workaround_roller {
+				@include xs-block() {
+					grid-area: 4 / 2 / 5 / 3;
+
+					.image {
+						max-height: rem(75);
+					}
+				}
+
+				@include md-block() {
+					grid-area: 4 / 1 / 5 / 2;
+
+					.image {
+						max-height: rem(125);
+					}
+				}
+
+				@include lg-block() {
+					grid-area: 3 / 4 / 4 / 5;
+					flex-direction: row;
+
+					.card_name {
+						margin-right: rem(30);
+					}
+
+					.image {
+						max-height: rem(160);
+					}
+				}
+			}
+
+			.timing_belt {
+				@include xs-block() {
+					grid-area: 5 / 1 / 6 / 2;
+				}
+
+				@include md-block() {
+					grid-area: 4 / 2 / 5 / 3;
+				}
+
+				@include lg-block() {
+					grid-area: 1 / 5 / 2 / 6;
+				}
+			}
+
+			.timing_belt_tensioner {
+				@include xs-block() {
+					grid-area: 5 / 2 / 6 / 3;
+				}
+
+				@include md-block() {
+					grid-area: 4 / 3 / 5 / 4;
+				}
+
+				@include lg-block() {
+					grid-area: 2 / 5 / 4 / 6;
+
+					.image {
+						position: absolute;
+						bottom: rem(80);
+						left: 0;
+						max-height: rem(200);
+					}
+				}
+			}
+		}
+
+		// suspension and steering
+		&.suspension {
+			@include xs-block() {
+				grid-template-columns: repeat(2, 1fr);
+				grid-template-rows: repeat(5, rem(170));
+			}
+
+			@include md-block() {
+				grid-template-columns: repeat(3, 1fr);
+				grid-template-rows: repeat(4, rem(200));
+			}
+
+			@include lg-block() {
+				grid-template-columns: 1fr 1.2fr repeat(4, 1fr);
+				grid-template-rows: repeat(2, rem(200));
+			}
+
+			.image {
+				@include xs(max-height, rem(100));
+				@include md(max-height, rem(126));
+				@include lg(max-height, rem(160));
+			}
+
+			.shock_absorbers {
+				@include xs-block() {
+					.image {
+						margin-top: rem(-20);
+						max-height: rem(160);
+					}
+				}
+
+				@include md-block() {
+					.image {
+						margin-top: rem(-35);
+						max-height: rem(210);
+					}
+				}
+			}
+
+			.stabilizer_bar {
+				position: relative;
+
+				@include xs-block() {
+					align-items: center;
+					justify-content: flex-end;
+					grid-row: 2;
+					grid-column: span 2;
+
+					.card_name {
+						position: absolute;
+						top: rem(15);
+					}
+
+					.image {
+						max-height: rem(120);
+					}
+				}
+
+				@include md-block() {
+					grid-row: 1;
+					grid-column: 2 / 4;
+
+					.image {
+						max-height: rem(150);
+					}
+				}
+			}
+
+			.suspension_arms {
+				position: relative;
+
+				@include xs-block() {
+					.image {
+						max-height: rem(150);
+						margin-top: rem(-20);
+					}
+				}
+
+				@include lg-block() {
+					.image {
+						position: absolute;
+						left: rem(10);
+						bottom: rem(9);
+						max-height: rem(197);
+					}
+				}
+			}
+
+			.steering_rod {
+				position: relative;
+
+				.image {
+					@include md-block() {
+						position: absolute;
+						left: rem(20);
+						bottom: rem(15);
+						max-height: rem(205);
+					}
+
+					@include lg(left, 0);
+				}
+			}
+
+			.hub_bearing {
+				@include xs-block() {
+					grid-row: 1;
+					grid-column: 2;
+
+					.image {
+						max-height: rem(90);
+					}
+				}
+
+				@include md-block() {
+					grid-row: 2;
+					grid-column: span 2;
+					flex-direction: row;
+
+					.image {
+						max-height: rem(168);
+					}
+				}
+			}
+
+			.ball_bearing {
+				@include xs-block() {
+					grid-column: 1;
+					grid-row: 3;
+				}
+
+				@include md-block() {
+					grid-column: 3;
+					grid-row: 2;
+				}
+			}
+
+			.steering_tip {
+				position: relative;
+
+				@include md-block() {
+					grid-column: span 2;
+
+					.card_name {
+						position: absolute;
+					}
+
+					.image {
+						margin-top: rem(-10);
+						max-height: rem(220);
+					}
+				}
+			}
+		}
+
+		// interior and exterior
+		&.interior_exterior {
+			@include xs-block() {
+				grid-template-columns: repeat(2, 1fr);
+				grid-template-rows: repeat(4, rem(170));
+			}
+
+			@include md-block() {
+				grid-template-columns: repeat(3, 1fr);
+				grid-template-rows: repeat(3, rem(200));
+			}
+
+			@include lg-block() {
+				grid-template-columns: 2.1fr repeat(4, 1fr);
+				grid-template-rows: repeat(2, rem(200));
+			}
+
+			.image {
+				@include xs(max-height, rem(110));
+				@include md(max-height, rem(126));
+				@include lg(max-height, rem(160));
+			}
+
+			.tires {
+				@include md-block() {
+					grid-row: span 2;
+
+					.image {
+						max-height: rem(330);
+					}
+				}
+			}
+
+			.floor_mats {
+				@include md-block() {
+					grid-column: 2;
+					grid-row: 2;
+				}
+			}
+
+			.tow_bars {
+				@include md-block() {
+					grid-column: 3;
+					grid-row: 2;
+				}
+			}
+
+			.mudguards {
+				@include lg-block() {
+					grid-row: span 2;
+				}
+			}
+		}
+
+		// for garage and car service
+		&.for_garage_car_service {
+			@include xs-block() {
+				grid-template-columns: repeat(2, 1fr);
+				grid-template-rows: repeat(9, rem(170));
+
+				.card_name {
+					word-break: break-word;
+				}
+			}
+
+			@include md-block() {
+				grid-template-columns: repeat(3, 1fr);
+				grid-template-rows: repeat(7, rem(200));
+
+				.card_name {
+					word-break: initial;
+				}
+			}
+
+			@include lg-block() {
+				grid-template-columns: 3.1fr 2fr 0.9fr 0.9fr 2fr 0.9fr 2fr;
+				grid-template-rows: repeat(4, rem(200));
+			}
+
+			.image {
+				@include xs(max-height, rem(110));
+				@include md(max-height, rem(126));
+				@include lg(max-height, rem(160));
+			}
+
+			.universal_kits {
+				position: relative;
+
+				.image {
+					@include xs(max-height, rem(80));
+					@include md(max-height, rem(126));
+					@include md(margin-top, rem(-20));
+					@include lg(margin-top, 0);
+				}
+
+				@include md-block() {
+					justify-content: flex-end;
+					align-items: flex-end;
+
+					.card_name {
+						position: absolute;
+						top: rem(20);
+						padding-right: rem(140);
+					}
+				}
+			}
+
+			.screwdrivers {
+				.image {
+					@include xs(max-height, rem(100));
+					@include md(max-height, rem(160));
+				}
+
+				@include xs-block() {
+					grid-row: 2 / 3;
+					grid-column: 1 / 3;
+				}
+
+				@include md-block() {
+					flex-direction: row;
+					grid-column: span 2;
+				}
+
+				@include lg-block() {
+					grid-row: 1;
+					grid-column: 2 / 5;
+				}
+			}
+
+			.pullers_general_tools {
+				position: relative;
+
+				.image {
+					@include xs(max-height, rem(76));
+					@include md(max-height, rem(122));
+					@include lg(max-height, rem(148));
+				}
+
+				@include lg-block() {
+					grid-column: span 2;
+					align-items: flex-end;
+
+					.card_name {
+						position: absolute;
+						margin-right: rem(135);
+					}
+				}
+			}
+
+			.hydraulic_tools {
+				.image {
+					@include xs(max-height, rem(90));
+					@include md(max-height, rem(126));
+				}
+
+				@include xs-block() {
+					grid-row: 4 / 5;
+					grid-column: 1 / 3;
+				}
+
+				@include md-block() {
+					grid-row: 2;
+					grid-column: auto;
+				}
+			}
+
+			.electrical_equipment {
+				@include md-block() {
+					grid-column: span 2;
+					flex-direction: row;
+				}
+
+				@include lg-block() {
+					flex-direction: column;
+				}
+			}
+
+			.vw_audi_special_tools {
+				position: relative;
+
+				.image {
+					@include xs(max-height, rem(88));
+					@include md(max-height, rem(126));
+				}
+
+				@include md-block() {
+					align-items: flex-end;
+
+					.card_name {
+						margin-right: rem(30);
+					}
+
+					.image {
+						margin-top: rem(-10);
+					}
+				}
+
+				@include lg-block() {
+					grid-column: span 3;
+					justify-content: flex-end;
+
+					.card_name {
+						top: rem(20);
+						position: absolute;
+						white-space: nowrap;
+					}
+				}
+			}
+
+			.bmw_mercedes_special_tools {
+				position: relative;
+
+				.image {
+					@include xs(max-height, rem(77));
+					@include md(max-height, rem(126));
+				}
+
+				@include md-block() {
+					align-items: flex-end;
+					justify-content: flex-end;
+
+					.image {
+						margin-top: rem(-15);
+					}
+				}
+
+				@include lg-block() {
+					grid-row: 3;
+
+					.card_name {
+						position: absolute;
+						top: rem(20);
+						margin-right: rem(120);
+					}
+				}
+			}
+
+			.motor_group {
+				@include lg-block() {
+					grid-row: 3;
+					grid-column: 2;
+				}
+			}
+
+			.undercarriage {
+				.image {
+					@include xs(max-height, rem(77));
+					@include md(max-height, rem(126));
+				}
+
+				@include lg-block() {
+					grid-row: 3;
+					grid-column: 3 / 5;
+				}
+			}
+
+			.end_heads {
+				.image {
+					@include xs(max-height, rem(69));
+					@include md(max-height, rem(126));
+				}
+
+				@include lg-block() {
+					grid-row: 3;
+					grid-column: 5 / 7;
+				}
+			}
+
+			.pneumatic_tools {
+				.image {
+					@include xs(max-height, rem(75));
+					@include md(max-height, rem(175));
+				}
+
+				@include md-block() {
+					grid-row: 4 / 6;
+					grid-column: 3;
+
+					.image {
+						margin-bottom: rem(75);
+					}
+				}
+
+				@include lg-block() {
+					grid-row: span 2;
+					grid-column: 7;
+				}
+			}
+
+			.trolleys_lodgements {
+				position: relative;
+
+				.image {
+					@include xs(max-height, rem(93));
+					@include md(max-height, rem(126));
+				}
+
+				@include lg-block() {
+					align-items: flex-end;
+
+					.card_name {
+						position: absolute;
+						margin-right: rem(168);
+					}
+				}
+			}
+
+			.body_series {
+				position: relative;
+
+				@include md-block() {
+					flex-direction: row;
+					grid-column: span 2;
+
+					.image {
+						position: absolute;
+						top: 0;
+						right: rem(59);
+						max-height: rem(182);
+					}
+				}
+
+				@include lg-block() {
+					grid-column: span 3;
+
+					.image {
+						position: relative;
+						right: 0;
+					}
+				}
+			}
+
+			.consumables {
+				.image {
+					@include xs(max-height, rem(54));
+					@include md(max-height, rem(126));
+					@include md(height, rem(112));
+					@include lg(height, auto);
+				}
+
+				@include md-block() {
+					flex-direction: row;
+					grid-column: span 2;
+				}
+
+				@include lg-block() {
+					flex-direction: column;
+					grid-column: 5 / 6;
+				}
+			}
+
+			.tool_for_cargo_trucks {
+				@include lg-block() {
+					grid-column: span 2;
+				}
+			}
+		}
+	}
 }

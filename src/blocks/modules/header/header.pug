@@ -20,7 +20,7 @@ header
       img.logo(src="./img/svg/logo.svg")
     div.header_phone
       a(href='tel:8 800 550 5354' class='title_bc') 8 800 550 5354
-      h2.text_normal Заказать звонок
+      h2(data-fancybox data-src='#order-callback-popup' data-options={touch: false} class='text_normal') Заказать звонок
     div.header_actions
       button(type='button' class='btn success login-btn') Войти
       //button(type='button' class='btn transparent iconButton login-btn')
@@ -56,4 +56,5 @@ header
         a(href='/' class='tag dark_link') Автохимия
       button(type='button' class='btn success load-more-btn') Ещё
   include ../../components/popups/change_region
+  include ../../components/popups/order_callback
 

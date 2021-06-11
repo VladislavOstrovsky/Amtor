@@ -14,8 +14,13 @@ $(window).scroll(function(){
     const sticky = $('header');
     const scroll = $(window).scrollTop();
 
-    if (scroll >= 100) sticky.addClass('fixed');
-    else sticky.removeClass('fixed');
+    if (scroll >= 100) {
+        sticky.addClass('fixed');
+        $(document.body).css('padding-top', '237px');
+    } else {
+        sticky.removeClass('fixed');
+        $(document.body).css('padding-top', '0');
+    }
 });
 
 $('.tags-carousel').slick({

@@ -25,6 +25,7 @@
   outline: none;
   border: none;
   cursor: pointer;
+  box-sizing: border-box;
   transition: all .2s ease-in-out;
 
   @include xs-block() {
@@ -35,6 +36,10 @@
   @include sm-block() {
     width: auto;
     padding: 0 rem(20);
+  }
+
+  &:hover {
+    text-decoration: none;
   }
 
   &.success {

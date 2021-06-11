@@ -3,8 +3,8 @@ extends ../layouts/default
 block variables
 	- const title = "Amtor";
 	- var mainSlider = [{title: `Некогда объяснять - просто\u00A0дешевле`, description: 'Теже автозапчасти, только дешевле', text_button: 'Подобрать нужную запчасть', image: './img/slider/slider_main_1.png'}, {title: 'Некогда объяснять - просто\u00A0дешевле', description: 'Теже автозапчасти, только дешевле', text_button: 'Подобрать нужную запчасть', image: './img/slider/slider_main_1.png'}, {title: 'Некогда объяснять - просто\u00A0дешевле', description: 'Теже автозапчасти, только дешевле', text_button: 'Подобрать нужную запчасть', image: './img/slider/slider_main_1.png'}];
-	- var extraSlider = [{description: 'Моторное масло Shell HELIX HX7 5W-40 Полусинтетическое 4 л', image: './img/slider/slider_extra_1.png', old_price: '3 125 ₽', new_price: '2 990 ₽'}, {description: 'Моторное масло Shell HELIX HX7 5W-40 Полусинтетическое 4 л', image: './img/slider/slider_extra_1.png', old_price: '3 125 ₽', new_price: '2 990 ₽'}, {description: 'Моторное масло Shell HELIX HX7 5W-40 Полусинтетическое 4 л', image: './img/slider/slider_extra_1.png', old_price: '3 125 ₽', new_price: '2 990 ₽'}];
-	- var priceTopSlider = [{description: 'Моторное масло Shell HELIX HX7 5W-40 Полусинтетическое 4 л', image: './img/slider/price_top/slide_1.png', old_price: '3 125 ₽', new_price: '2 990 ₽'}, {description: 'Моторное масло Shell HELIX HX7 5W-40 Полусинтетическое 4 л', image: './img/slider/price_top/slide_2.png', old_price: '2 125 ₽', new_price: '1 990 ₽'}, {description: 'Моторное масло Shell HELIX HX7 5W-40 Полусинтетическое 4 л', image: './img/slider/price_top/slide_3.png', old_price: '', new_price: '890 ₽'}, {description: 'Моторное масло Shell HELIX HX7 5W-40 Полусинтетическое 4 л', image: './img/slider/price_top/slide_4.png', old_price: '1 925 ₽', new_price: '1 480 ₽'}, {description: 'Моторное масло Shell HELIX HX7 5W-40 Полусинтетическое 4 л', image: './img/slider/price_top/slide_5.png', old_price: '', new_price: '1 990 ₽'}, {description: 'Моторное масло Shell HELIX HX7 5W-40 Полусинтетическое 4 л', image: './img/slider/price_top/slide_6.png', old_price: '2 925 ₽', new_price: '2 460 ₽'}, {description: 'Моторное масло Shell HELIX HX7 5W-40 Полусинтетическое 4 л', image: './img/slider/price_top/slide_1.png', old_price: '3 125 ₽', new_price: '2 990 ₽'}];
+	- var extraSlider = [{description: 'Моторное масло Shell HELIX HX7 5W-40 Полусинтетическое 4 л', image: './img/slider/slider_extra_1.png', href: '/', old_price: '3 125 ₽', new_price: '2 990 ₽'}, {description: 'Моторное масло Shell HELIX HX7 5W-40 Полусинтетическое 4 л', image: './img/slider/slider_extra_1.png', href: '/', old_price: '3 125 ₽', new_price: '2 990 ₽'}, {description: 'Моторное масло Shell HELIX HX7 5W-40 Полусинтетическое 4 л', image: './img/slider/slider_extra_1.png', href: '/', old_price: '3 125 ₽', new_price: '2 990 ₽'}];
+	- var priceTopSlider = [{description: 'Моторное масло Shell HELIX HX7 5W-40 Полусинтетическое 4 л', image: './img/slider/price_top/slide_1.png', href: '/', old_price: '3 125 ₽', new_price: '2 990 ₽'}, {description: 'Моторное масло Shell HELIX HX7 5W-40 Полусинтетическое 4 л', image: './img/slider/price_top/slide_2.png', href: '/', old_price: '2 125 ₽', new_price: '1 990 ₽'}, {description: 'Моторное масло Shell HELIX HX7 5W-40 Полусинтетическое 4 л', image: './img/slider/price_top/slide_3.png', href: '/', old_price: '', new_price: '890 ₽'}, {description: 'Моторное масло Shell HELIX HX7 5W-40 Полусинтетическое 4 л', image: './img/slider/price_top/slide_4.png', href: '/', old_price: '1 925 ₽', new_price: '1 480 ₽'}, {description: 'Моторное масло Shell HELIX HX7 5W-40 Полусинтетическое 4 л', image: './img/slider/price_top/slide_5.png', href: '/', old_price: '', new_price: '1 990 ₽'}, {description: 'Моторное масло Shell HELIX HX7 5W-40 Полусинтетическое 4 л', image: './img/slider/price_top/slide_6.png', href: '/', old_price: '2 925 ₽', new_price: '2 460 ₽'}, {description: 'Моторное масло Shell HELIX HX7 5W-40 Полусинтетическое 4 л', image: './img/slider/price_top/slide_1.png', href: '/', old_price: '3 125 ₽', new_price: '2 990 ₽'}];
 
 block styles
 	link(rel="stylesheet" href="./styles/home.css")
@@ -57,8 +57,12 @@ block content
 				each slide in priceTopSlider
 					include ../../blocks/components/home/slider-top
 	div.container
-		include ../../blocks/components/home/feedback_form_base
+		include ../../blocks/components/home/feedback_form/base
 	include ../../blocks/components/home/product_categories/engine_parts
+	include ../../blocks/components/home/product_categories/suspension
+	include ../../blocks/components/home/product_categories/interior_exterior
+	include ../../blocks/components/home/product_categories/for_garage_car_service
+	include ../../blocks/components/home/about_company
 	include ../../blocks/modules/footer/footer
 
 block scripts
