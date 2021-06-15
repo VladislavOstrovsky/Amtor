@@ -1,122 +1,147 @@
-/**
- * Styles for Select component
- */
+$select-color: var(--color-marine);
+$hover-background: var(--color-base);
+$select-background: #f4f7fc;
+$select-border-color: #ccd6e9;
+$select-width: 100%;
+$select-height: rem(54);
 
-.wrapper {
-  position: relative;
+.simplebar-scrollbar::before {
+  background-color: red;
 }
 
-.expandedSelect {
-  & .selectControl,
-  & .pointerDown {
-    border-color: #9dc9ec;
-  }
+.select-container {
 
-  & .dropdown {
-    display: block;
-  }
-}
+  &.error {
+    .select-label {
+      color: #ef4136;
+    }
 
-.selectControl {
-  height: 40px;
-  max-height: 100%;
-  background: #fff;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  cursor: pointer;
-  user-select: none;
-}
+    .select-styled {
+      box-shadow: inset 0 0 0 1px #ef4136;
 
-.roundedSelect {
-  border-radius: 20px;
-
-  & .input {
-    padding: 4px 20px;
-  }
-
-  & .pointerDown {
-    width: 52px;
-    border: 0;
-
-    &:before {
-      border-top-color: #ccc;
+      &:after {
+        background: url('../img/svg/arrow-error.svg') no-repeat center;
+        background-size: 100%;
+      }
     }
   }
 }
 
-.input {
-  padding: 4px 10px;
-  color: #333;
-  font: 13px/1.4 "Open Sans", sans-serif;
-  background: transparent;
-  border: 0;
-  pointer-events: none;
+.select-label {
+  font: rem(14)/rem(14) "Fregat-Bold", sans-serif;
+  color: var(--color-marine);
+  margin-bottom: rem(5);
 }
 
-.pointerDown {
-  width: 28px;
-  border: solid #ccc;
-  border-width: 0 0 0 1px;
-
-  &:before {
-    content: "";
-    border-top: 4px solid #626169;
-    border-right: 4px solid transparent;
-    border-left: 4px solid transparent;
-  }
-}
-
-.largePointerDown {
-  width: 34px;
-  color: #c6c6c6;
-}
-
-.largePointerDownIcon {
-  width: 16px;
-  height: 10px;
-}
-
-.dropdown {
-  position: absolute;
-  top: 100%;
-  z-index: 10;
+.select-hidden {
   display: none;
-  width: 100%;
-  max-height: 300px;
-  margin: 10px 0;
-  padding: 6px 0;
-  overflow-y: auto;
-  background: #fff;
-  border-radius: 4px;
-  box-shadow: 0 2px 3px rgba(0, 0, 0, .1);
+  visibility: hidden;
+  padding-right: 10px;
 }
 
-.option {
-  padding: 8px 12px;
-  color: #000;
+.select {
   cursor: pointer;
-
-  &:hover {
-    color: #fff;
-    font-weight: 600;
-    background: #009eeb;
-  }
+  display: inline-block;
+  position: relative;
+  font: rem(14)/rem(14) "Open Sans", sans-serif;
+  color: $select-color;
+  width: $select-width;
+  height: $select-height;
 }
 
-.roundSelect {
-  & .arrow {
-    justify-content: flex-start;
-    width: 32px;
-    border: 0;
+.select-styled {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  background-color: var(--color-white);
+  padding: rem(20);
+  border-radius: var(--border-radius);
+  box-shadow: inset 0 0 0 1px #ccd6e9;
+  transition: all .2s ease-in;
+
+  &:after {
+    content:"";
+    position: absolute;
+    width: rem(12);
+    height: rem(7);
+    top: rem(25);
+    right: rem(20);
+
+    background: url('../../../img/svg/arrow-dark.svg') no-repeat center;
+    background-size: 100%;
+    transition: all .2s ease-in;
+  }
+
+  &:active, &.active {
 
     &:after {
-      border-top-color: #ccc;
+      transform: rotate(180deg);
     }
   }
 }
 
-[dir="rtl"] {
-  & .pointerDown {
-    border-width: 0 1px 0 0;
+.select-options {
+  display: none;
+  position: absolute;
+  top: calc(100% + 5px);
+  right: 0;
+  left: 0;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  background-color: var(--color-white);
+  box-shadow: var(--box-shadow-darker);
+  border-radius: var(--border-radius);
+  max-height: rem(270);
+  z-index: 3;
+
+  li {
+    margin: 0;
+    padding: rem(20);
+    transition: all .15s ease-in;
+
+    &:first-child {
+      border-top-left-radius: var(--border-radius);
+      border-top-right-radius: var(--border-radius);
+    }
+
+    &:last-child {
+      border-bottom-left-radius: var(--border-radius);
+      border-bottom-right-radius: var(--border-radius);
+    }
+
+    &:hover {
+      color: var(--color-white);
+      background: $hover-background;
+    }
+
+    &.active {
+      background: #F4F7FC;
+
+      &:hover {
+        color: var(--color-white);
+        background: $hover-background;
+      }
+    }
+
+    &[rel="hide"] {
+      display: none;
+    }
+  }
+
+  .mCSB_container {
+    margin-right: 0 !important;
+  }
+
+  .mCSB_dragger_bar {
+    background-color: rgba(0, 0, 0, 0.4) !important;
+  }
+
+  .mCSB_draggerRail {
+    background: transparent !important;
   }
 }

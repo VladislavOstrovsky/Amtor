@@ -12,13 +12,13 @@
 
 @import "ui/buttons/button";
 @import "ui/buttons/icon_button";
-@import "ui/buttons/icon_button_src";
 @import "ui/input/input";
+@import "ui/input/checkbox";
+@import "ui/select/select";
 @import "ui/slider/slider";
 @import "ui/fancybox/fancybox";
 @import "ui/bread_crumbs/bread_crumbs";
 
-//@import "../blocks/modules/pages/home";
-
 @import "../blocks/components/components";
 @import "../blocks/modules/modules";
+@import "../blocks/modules/pages/common_pages";

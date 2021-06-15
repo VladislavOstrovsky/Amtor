@@ -5,6 +5,10 @@
 			.home_product_categories {
 				border-bottom: 1px solid #e5e9f1;
 				margin-bottom: 0;
+
+				&.garage {
+					border: none;
+				}
 			}
 
 			.products,

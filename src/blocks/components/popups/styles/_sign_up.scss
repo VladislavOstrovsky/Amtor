@@ -1,0 +1,13 @@
+.sign_up_popup {
+	.input-container:not(:first-child) {
+		margin-top: rem(20);
+	}
+
+	.checkbox-wrapper {
+		margin: rem(20) 0;
+
+		.checkbox-container:not(:first-child) {
+			margin-top: rem(10);
+		}
+	}
+}

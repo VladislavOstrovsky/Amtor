@@ -1,0 +1,72 @@
+/**
+ * Styles for Checkbox
+ */
+
+.checkbox-container {
+  display: block;
+  position: relative;
+  padding-left: rem(45);
+  cursor: pointer;
+  font: rem(14)/rem(20) "Fregat", sans-serif;
+  color: var(--color-marine);
+  user-select: none;
+
+  /* Hide the browser's default checkbox */
+  input {
+    position: absolute;
+    width: 0;
+    height: 0;
+    opacity: 0;
+    cursor: pointer;
+  }
+
+  a {
+    color: var(--color-marine);
+    text-decoration: underline;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  /* Create a custom checkbox */
+  .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: rem(30);
+    height: rem(30);
+    background-color: #eef1f6;
+    border-radius: var(--border-radius);
+    transition: all .2s ease-in-out;
+
+    /* Style the checkmark/indicator */
+    &:after {
+      content: "";
+      position: absolute;
+      display: none;
+
+      top: rem(7);
+      left: rem(7);
+      background: url('../img/checkbox.png') no-repeat center;
+      background-size: 100%;
+      width: rem(16);
+      height: rem(15);
+    }
+  }
+}
+
+/* On mouse-over, add a grey background color */
+.checkbox-container:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+/* When the checkbox is checked, add a blue background */
+.checkbox-container input:checked ~ .checkmark {
+  background-color: var(--color-base);
+}
+
+/* Show the checkmark when checked */
+.checkbox-container input:checked ~ .checkmark:after {
+  display: block;
+}

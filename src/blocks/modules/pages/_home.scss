@@ -662,6 +662,14 @@
 			padding: rem(20) rem(30);
 		}
 
+		.car_wrapper {
+			flex-grow: 0;
+
+			@include xs(max-height, rem(240));
+			@include md(max-height, rem(400));
+			@include lg(max-height, rem(450));
+		}
+
 		.image_car {
 			@include xs(max-height, rem(240));
 			@include md(max-height, rem(400));
@@ -792,13 +800,23 @@
 			grid-gap: rem(10);
 
 			@include xs-block() {
+				grid-template-columns: 1fr 1fr;
 				grid-gap: rem(20);
 				margin: rem(20) 0;
+
+				.image {
+					width: auto;
+				}
 			}
 
 			@include md-block() {
+				grid-template-columns: repeat(auto-fit, rem(120));
 				grid-gap: rem(10);
 				margin: rem(10) 0 rem(30);
+
+				.image {
+					width: rem(120);
+				}
 			}
 
 			.image {

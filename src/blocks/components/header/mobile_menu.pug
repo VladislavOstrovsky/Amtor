@@ -1,0 +1,25 @@
+- var icons = ['telegram', 'vk', 'facebook', 'instagram'];
+
+div#mobile-menu
+  div.mm_wrapper
+    div.mm_links_wrapper
+      nav.mm_links
+        a(href='' class='mm_link dark_link') О компании
+        a(href='' class='mm_link dark_link') Поставщикам
+        a(href='' class='mm_link dark_link') Контакты
+        a(href='' class='mm_link dark_link') Доставка
+        a(href='' class='mm_link dark_link') Оплата
+      button(type='button' class='btn success iconButton withText catalog-button js-mobile-catalog')
+        div.dFlex.alignItemsCenter
+          span.icon
+            include ../../../img/svg/header/mobile-catalog.svg
+          span.text Каталог
+        span.icon.arrow
+          include ../../../img/svg/arrow-left-dark.svg
+    div.mm_social
+      div.social_icons
+        each icon in icons
+          include ../../components/social_icon/social_icon
+      div.phone
+        a(href='tel:8 800 550 5354' class='phone_title') 8 800 550 5354
+        h2(class='phone_text' data-fancybox data-src='#order-callback-popup' data-options=optionsPopup) Заказать звонок

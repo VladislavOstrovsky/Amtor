@@ -1,0 +1,37 @@
+.page_center_wrapper {
+	width: 100%;
+	height: 100%;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+
+	&.recovery {
+		@include xs(padding, rem(60) 0);
+		@include md(padding, rem(175) 0);
+	}
+
+	.title_page {
+		margin-bottom: rem(30);
+	}
+
+	.input-container {
+		margin-bottom: rem(30);
+
+		@include xs(min-width, calc(100vw - 40px));
+		@include md(min-width, rem(420));
+	}
+
+	.common_form_wrapper {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+
+	// password-recovery
+	.remind-me {
+		@include xs(margin-bottom, rem(20));
+		@include md(margin-bottom, rem(40));
+	}
+}

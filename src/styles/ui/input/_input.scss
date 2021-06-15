@@ -17,6 +17,7 @@ input {
   outline: none;
   background: white;
   box-sizing: border-box;
+  transition: all .2s ease-in-out;
 
   &::placeholder {
     color: var(--color-light-gray);
@@ -53,7 +54,8 @@ input {
   .input {
     border: none;
     background: #eef1f7;
-    height: rem(46);
+    padding: rem(20);
+    max-height: rem(54);
 
     &.empty {
       background: #eef1f7;

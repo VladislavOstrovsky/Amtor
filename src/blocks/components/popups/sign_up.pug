@@ -1,0 +1,17 @@
+div.sign_up_popup(style='display: none;' id='sign-up-popup')
+  h1.title_popup Регистрация
+  form(action='/sign-up' class='content' method='POST')
+    div.input-container
+      label(for='sup-username' class='label-input') Фамилия и имя
+      input(id="sup-username" type='text' class='input' placeholder='Введите фамилию и имя')
+    div.input-container
+      label(for='sup-phone-number' class='label-input') Номер телефона
+      input(id="sup-phone-number" type='text' class='input' placeholder='Введите номер телефона')
+    div.checkbox-wrapper
+      label(for='sup-check-1' class='checkbox-container') С <a href='/' target='_blank'>условиями</a> предоставления услуг ознакомлен и согласен
+        input(id="sup-check-1" type='checkbox')
+        span.checkmark
+      label(for='sup-check-2' class='checkbox-container') Даю согласие на получение информации о статусе заказов и на <a href='/' target='_blank'>обработку персональных данных.</a>
+        input(id="sup-check-2" type='checkbox')
+        span.checkmark
+    button(type='submit' class='btn success fullWidth') Зарегистрироваться

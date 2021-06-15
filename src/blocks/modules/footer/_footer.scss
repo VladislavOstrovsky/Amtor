@@ -36,7 +36,8 @@ footer {
     }
 
     .header_phone {
-      //margin-right: 10%;
+
+
     }
 
     .header_info {
@@ -85,6 +86,14 @@ footer {
 
     h2 {
       font: rem(14)/rem(14) Fregat, sans-serif;
+    }
+
+    .callback-popup {
+      cursor: pointer;
+
+      &:hover {
+        text-decoration: underline;
+      }
     }
 
     .header_buttons {
@@ -158,6 +167,14 @@ footer {
             display: block;
           }
         }
+
+        li {
+          cursor: pointer;
+
+          &:hover {
+            text-decoration: underline;
+          }
+        }
       }
 
       .social_icons_desktop {
@@ -175,6 +192,18 @@ footer {
           justify-content: space-between;
           order: 2;
           margin: rem(20) 0 rem(30);
+
+          .icon_button {
+            .icon {
+              &.instagram {
+                svg {
+                  display: none;
+                }
+
+                background: url('../img/svg/social-icons/instagram.svg') center no-repeat;
+              }
+            }
+          }
         }
 
         @include sm-block() {
@@ -208,9 +237,9 @@ footer {
             }
 
             &.instagram {
-              background: url('../img/svg/social-icons/instagram-h.svg') center no-repeat;
+              background: url('../img/svg/social-icons/instagram-h.svg') center no-repeat !important;
 
-              svg {display: none;}
+              svg {display: none !important;}
             }
           }
         }
@@ -354,6 +383,8 @@ footer {
     font: rem(13)/rem(20) "Open Sans 600", sans-serif;
 
     @include xs-block() {
+      padding-bottom: rem(80);
+
       ._bottom {
         flex-direction: column;
       }
@@ -373,6 +404,10 @@ footer {
       }
     }
 
+    @include md-block() {
+      padding-bottom: rem(20);
+    }
+
     .text_fb {
       font-family: "Open Sans 600", sans-serif;
     }
@@ -381,6 +416,165 @@ footer {
       margin-left: rem(3);
       font-family: "Open Sans", sans-serif;
       color: var(--color-white)
+    }
+  }
+
+  // mobile menu catalogs
+  .menu_catalogs_wrapper {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    background: rgba(39, 34, 98, 0.8);
+    z-index: 3;
+    visibility: collapse;
+    transition: all .3s;
+
+    &.__opened {
+      visibility: visible;
+
+      .menu_catalogs {
+        transform: translate3d(0, 0, 0);
+      }
+
+      .icon_close {
+        display: flex;
+      }
+    }
+
+    .menu_catalogs {
+      position: relative;
+      width: 100%;
+      height: 80vh;
+      align-self: flex-end;
+      color: var(--color-black);
+      background: var(--color-white);
+      padding: 0 rem(20) rem(80) rem(20);
+      box-shadow: 0px -4px 24px 0px #00000033;
+      border-top-left-radius: rem(30);
+      border-top-right-radius: rem(30);
+      border-top: 30px solid var(--color-white);
+      transform: translate3d(0, 100%, 0);
+      transition: all .3s;
+      overflow: auto;
+
+      @include xs(height, 60vh);
+      @include sm(height, 80vh);
+    }
+
+    .icon_close {
+      display: none;
+      position: sticky;
+      top: 0;
+      justify-content: flex-end;
+      z-index: 1;
+      margin-bottom: rem(5);
+    }
+
+    .links_wrapper {
+      .title {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        font: rem(16)/rem(24) "Fregat-Bold", sans-serif;
+        padding: rem(15) 0;
+        border-bottom: 1px solid #d4ddec;
+
+        .icon_arrow {
+          transition: all .3s;
+
+          svg path {
+            stroke: var(--color-black);
+          }
+
+          &.rotate {
+            transform: rotate(180deg);
+          }
+        }
+      }
+
+      .mc_list_wrapper {
+        display: none;
+        padding: rem(20) 0;
+        -webkit-overflow-scrolling: touch;
+
+        .title_list {
+          font: rem(16)/rem(24) "Fregat-Bold", sans-serif;
+          margin-bottom: rem(10);
+        }
+
+        .mc_inner_content {
+          font: rem(14)/rem(28) "Open Sans", sans-serif;
+          margin-bottom: rem(20);
+
+          &:last-of-type {
+            margin-bottom: 0;
+          }
+
+          a {
+            color: var(--color-black);
+          }
+        }
+      }
+
+      //.list {
+      //  display: none;
+      //
+      //  &.show {
+      //    display: block;
+      //  }
+      //}
+    }
+  }
+
+  // mobile toolbar
+  .footer_toolbar {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: rem(60);
+    background: var(--color-white);
+    box-shadow: 0px -4px 24px 0px #00000033;
+    border-top-left-radius: rem(24);
+    border-top-right-radius: rem(24);
+    z-index: 4;
+    padding-bottom: rem(10);
+
+    display: flex;
+    align-items: baseline;
+    justify-content: space-evenly;
+
+    @include md('display', none);
+
+    .toolbar_button {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 33%;
+      height: 100%;
+      font: rem(11)/rem(12) "Fregat-Bold", sans-serif;
+      color: var(--color-base);
+
+      .icon {
+        margin-bottom: rem(3);
+        text-decoration: none;
+
+        &.profile {
+          svg {
+            width: rem(20);
+            height: rem(20);
+          }
+        }
+      }
+
+      .icon rect {
+        stroke: var(--color-base);
+      }
     }
   }
 }

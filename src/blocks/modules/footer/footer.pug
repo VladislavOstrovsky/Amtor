@@ -1,27 +1,30 @@
-- var catalogLinks = [{text: 'Поиск по VIN', href: '/'}, {text: 'Каталог автомобилей', href: '/'}, {text: 'Кузовные детали и оптика', href: '/'}, {text: 'Моторные масла', href: '/'}, {text: 'Трансмиссионные масла', href: '/'}, {text: 'Шины', href: '/'}, {text: 'Аксессуары', href: '/'} , {text: 'Аккумуляторные батареи', href: '/'}, {text: 'Автосвет', href: '/'}, {text: 'Автостекла', href: '/'}];
+- var catalogLinks = [{text: 'Каталог автомобилей', href: '/'}, {text: 'Кузовные детали и оптика', href: '/'}, {text: 'Моторные масла', href: '/'}, {text: 'Трансмиссионные масла', href: '/'}, {text: 'Шины', href: '/'}, {text: 'Аксессуары', href: '/'} , {text: 'Аккумуляторные батареи', href: '/'}, {text: 'Автосвет', href: '/'}, {text: 'Автостекла', href: '/'}];
 - var parentLinks = [{text: 'О компании', href: '/'}, {text: 'Франчайзинг', href: '/'}, {text: 'Поставщикам', href: '/'}];
 - var clientsLinks = [{text: 'Оплата', href: '/'}, {text: 'Доставка', href: '/'}, {text: 'Условия гарантии', href: '/'}, {text: 'VIN - запрос', href: '/'}, {text: 'Политика конфиденциальности', href: '/'}, {text: 'Оферта', href: '/'}, {text: 'Соглашение об авторских правах', href: '/'}];
 - var icons = ['telegram', 'vk', 'facebook', 'instagram'];
+- var optionsPopup = {touch: false, enableEscapeButton: true};
 
 footer
+  include ../../components/footer/toolbar
+  include ../../components/footer/menu_catalogs
   div.footer__header
     div.container
       img.logo(src="./img/svg/logo-white.svg")
       div.header_info
         div.header_phone
           a(href='tel:8 800 550 5354' class='title_bc') 8 800 550 5354
-          h2 Заказать звонок
+          h2(class='callback-popup' data-fancybox data-src='#order-callback-popup' data-options=optionsPopup) Заказать звонок
         div.header_address
           h1.title_bc Ташкентская 28 стр.1
           h2 Москва
       div.header_buttons
-        button(type='button' class='btn primary') Создать аккаунт
-        button(type='button' class='btn danger') Войти
+        button(type='button' class='btn primary' data-fancybox data-src='#sign-up-popup' data-options=optionsPopup) Создать аккаунт
+        button(type='button' class='btn danger' data-fancybox href='#sign-in-popup' data-options=optionsPopup) Войти
     div.header_mobile
       div.container.mobile_info
         div.header_phone
           h1.title_bc 8 800 550 5354
-          h2 Заказать звонок
+          h2(class='callback-popup' data-fancybox data-src='#order-callback-popup' data-options=optionsPopup) Заказать звонок
         div.header_address
           h1.title_bc Ташкентская 28 стр.1
           h2 Москва
@@ -32,6 +35,8 @@ footer
           h1.js-f-links Каталоги
             span.icon_arrow
           ul
+            li
+              span(class='link' data-fancybox data-src='#request-vin-code-popup' data-options=optionsPopup) Поиск по VIN
             each link in catalogLinks
               include ../../components/footer/link
         div.links_wrapper

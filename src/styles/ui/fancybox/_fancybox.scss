@@ -5,8 +5,8 @@
 .fancybox-content {
   border-radius: var(--border-radius-popup);
   background: var(--color-white);
-  min-width: rem(320);
-  padding: rem(20);
+  width: rem(320);
+  padding: rem(20) !important;
 
   .title_popup {
     font: rem(20)/rem(28) Fregat-Bold, sans-serif;
@@ -16,16 +16,16 @@
 }
 
 .fancybox-close-small {
-  width: rem(14);
-  height: rem(14);
+  width: rem(14) !important;
+  height: rem(14) !important;
   top: rem(18) !important;
   right: rem(18) !important;
   padding: 0 !important;
-  background: url('../img/svg/close-base.svg') center no-repeat;
-  background-size: 100%;
+  background: url('../img/svg/close-base.svg') center no-repeat !important;
+  background-size: 100% !important;
   opacity: 1;
 
   svg {
-    display: none;
+    display: none !important;
   }
 }

@@ -1,0 +1,15 @@
+div.sign_in_popup(style='display: none;' id='sign-in-popup')
+  h1.title_popup Вход
+  form(action='/login' class='content' method='POST')
+    div.input-container
+      label(for='sip-phone-number' class='label-input') Номер телефона
+      input(id="sip-phone-number" type='text' class='input' placeholder='Введите номер телефона' required)
+    div.input-container
+      label(for='sip-password' class='label-input') Пароль
+      input(id="sip-password" type='password' class='input' placeholder='Введите ваш пароль' required)
+    div.remind-password
+      a(href='./password-recovery.html' class='form-link') Напомнить пароль?
+    div.sip_actions
+      button(type='submit' class='btn success') Войти
+      a(href='./sign-up.html' class='sign-up-link') Создать аккаунт
+        include ../../../img/svg/half-arrow-right.svg

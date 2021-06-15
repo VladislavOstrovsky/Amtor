@@ -10,60 +10,63 @@ block styles
 	link(rel="stylesheet" href="./styles/home.css")
 
 block content
-	include ../../blocks/modules/header/header
-	div.container
-		div.home_sliders_wrapper
-			div.home-slider-main
-				each slide in mainSlider
-					include ../../blocks/components/home/slider-main
-			div.home-slider-extra
-				h1.title Товар дня
-				div.home-slider-extra-wp
-					each slide in extraSlider
-						include ../../blocks/components/home/slider-extra
-	div.container
-		div.home_sub_menu_wrapper
-			div.hsm_item
-				img(class='hsmi__image' src='./img/home/sub_category_1.png')
-				div.hsmi_content
-					h1.title Оригинальные каталоги
-					h1.description свыше 392 000 запчастей
-				button(type='button' class='btn success iconButton')
-					span.icon
-						include ../../img/svg/arrow-left.svg
-			div.hsm_item
-				img(class='hsmi__image' src='./img/home/sub_category_2.png')
-				div.hsmi_content
-					h1.title Каталог TecDoc
-					h1.description свыше 392 000 запчастей
-				button(type='button' class='btn success iconButton')
-					span.icon
-						include ../../img/svg/arrow-left.svg
-			div.hsm_item
-				img(class='hsmi__image' src='./img/home/sub_category_3.png')
-				div.hsmi_content
-					h1.title Каталог ТО
-					h1.description свыше 392 000 запчастей
-				button(type='button' class='btn success iconButton')
-					span.icon
-						include ../../img/svg/arrow-left.svg
-	include ../../blocks/components/home/product_categories/topchik
-	include ../../blocks/components/home/product_categories/oils
-	include ../../blocks/components/home/product_categories/auto_chemicals
-	div.container
-		div.home_slider_top
-			h1.title Цена - «огонь» 🔥
-			div.hst_slider
-				each slide in priceTopSlider
-					include ../../blocks/components/home/slider-top
-	div.container
-		include ../../blocks/components/home/feedback_form/base
-	include ../../blocks/components/home/product_categories/engine_parts
-	include ../../blocks/components/home/product_categories/suspension
-	include ../../blocks/components/home/product_categories/interior_exterior
-	include ../../blocks/components/home/product_categories/for_garage_car_service
-	include ../../blocks/components/home/about_company
-	include ../../blocks/modules/footer/footer
+	div#page
+		include ../../blocks/components/header/mobile_menu
+		div.page
+			include ../../blocks/modules/header/header
+			div.container
+				div.home_sliders_wrapper
+					div.home-slider-main
+						each slide in mainSlider
+							include ../../blocks/components/home/slider-main
+					div.home-slider-extra
+						h1.title Товар дня
+						div.home-slider-extra-wp
+							each slide in extraSlider
+								include ../../blocks/components/home/slider-extra
+			div.container
+				div.home_sub_menu_wrapper
+					div.hsm_item
+						img(class='hsmi__image' src='./img/home/sub_category_1.png')
+						div.hsmi_content
+							h1.title Оригинальные каталоги
+							h1.description свыше 392 000 запчастей
+						button(type='button' class='btn success iconButton')
+							span.icon
+								include ../../img/svg/arrow-left.svg
+					div.hsm_item
+						img(class='hsmi__image' src='./img/home/sub_category_2.png')
+						div.hsmi_content
+							h1.title Каталог TecDoc
+							h1.description свыше 392 000 запчастей
+						button(type='button' class='btn success iconButton')
+							span.icon
+								include ../../img/svg/arrow-left.svg
+					div.hsm_item
+						img(class='hsmi__image' src='./img/home/sub_category_3.png')
+						div.hsmi_content
+							h1.title Каталог ТО
+							h1.description свыше 392 000 запчастей
+						button(type='button' class='btn success iconButton')
+							span.icon
+								include ../../img/svg/arrow-left.svg
+			include ../../blocks/components/home/product_categories/topchik
+			include ../../blocks/components/home/product_categories/oils
+			include ../../blocks/components/home/product_categories/auto_chemicals
+			div.container
+				div.home_slider_top
+					h1.title Цена - «огонь» 🔥
+					div.hst_slider
+						each slide in priceTopSlider
+							include ../../blocks/components/home/slider-top
+			div.container
+				include ../../blocks/components/home/feedback_form/base
+			include ../../blocks/components/home/product_categories/engine_parts
+			include ../../blocks/components/home/product_categories/suspension
+			include ../../blocks/components/home/product_categories/interior_exterior
+			include ../../blocks/components/home/product_categories/for_garage_car_service
+			include ../../blocks/components/home/about_company
+			include ../../blocks/modules/footer/footer
 
 block scripts
 	script(src="js/home.js")

@@ -1,0 +1,51 @@
+.sign_in_popup {
+	.input-container:not(:first-child) {
+		margin-top: rem(20);
+	}
+
+	a {
+		color: var(--color-base);
+	}
+
+	.remind-password {
+		margin: rem(15) 0 rem(40);
+
+		a {
+			font: rem(14)/rem(14) "Fregat", sans-serif;
+		}
+	}
+
+	.sip_actions {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+
+		.sign-up-link {
+			display: flex;
+			flex-shrink: 0;
+			align-items: center;
+			margin-left: rem(40);
+
+			@include xs(margin-right, 0);
+			@include md(margin-right, rem(15));
+		}
+
+		a {
+			font: rem(14)/rem(14) Fregat-Bold, sans-serif;
+		}
+
+		svg {
+			margin-left: rem(8);
+			width: rem(8);
+			height: rem(12);
+		}
+	}
+
+	.checkbox-wrapper {
+		margin: rem(20) 0;
+
+		.checkbox-container:not(:first-child) {
+			margin-top: rem(10);
+		}
+	}
+}

@@ -42,6 +42,14 @@
     text-decoration: none;
   }
 
+  &:disabled {
+    cursor: default;
+    color: var(--button-disabled-color);
+    background: var(--button-disabled-bg-color);
+    border: none;
+    pointer-events: none;
+  }
+
   &.success {
     color: var(--button-success-color);
     background-color: var(--button-success-bg-color);
@@ -49,6 +57,10 @@
     &.iconButton {
       .icon path {
         fill: var(--button-success-color);
+        stroke: var(--button-success-color);
+      }
+
+      .icon rect {
         stroke: var(--button-success-color);
       }
     }
@@ -61,6 +73,10 @@
       &.iconButton {
         .icon path {
           fill: var(--button-success-hover-border-color);
+          stroke: var(--button-success-hover-border-color);
+        }
+
+        .icon rect {
           stroke: var(--button-success-hover-border-color);
         }
       }
@@ -196,20 +212,26 @@
     width: auto;
   }
 
-  &:disabled {
-    cursor: default;
-    color: var(--button-disabled-color);
-    background: var(--button-disabled-bg-color);
-    border: none;
-    pointer-events: none;
-  }
-
   &.small_padding {
     padding: 0 rem(10);
   }
 
   &.large_padding {
     padding: 0 rem(20);
+  }
+
+  &.link {
+    background-color: transparent;
+    color: var(--color-base);
+    box-shadow: none;
+    border: none;
+    font-size: rem(14);
+    line-height: rem(14);
+    height: rem(14);
+
+    &:hover {
+      text-decoration: underline;
+    }
   }
 
   &.small {

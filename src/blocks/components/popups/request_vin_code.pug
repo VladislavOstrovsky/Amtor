@@ -1,0 +1,64 @@
+- var dateOptions = ['2021', '2020', '2019', '2018', '2017', '2016', '2015', '2014', '2013', '2012', '2011', '2010', '2009', '2008', '2007', '2006', '2005']
+
+div.request_vin_code_popup(style='display: none;' id='request-vin-code-popup')
+  h1.title_popup Запрос запчасти по VIN-коду автомобиля
+  form(action='/vin-code' id="vcp-form" class='content' method='POST')
+    div.fields_wrapper
+      div.field_item
+        h1.title Как с вами связаться
+        div.inputs_wrapper
+          div.input-container
+            label(for='rvc-email' class='label-input') E-mail
+            input(id="rvc-email" type='email' class='input' placeholder='Введите email' required)
+          div.input-container
+            label(for='rvc-name' class='label-input') Имя
+            input(id="rvc-name" type='text' class='input' placeholder='Введите имя' required)
+          div.input-container
+            label(for='rvc-middle-name' class='label-input') Отчество
+            input(id="rvc-middle-name" type='text' class='input' placeholder='Введите отчество' required)
+          div.input-container
+            label(for='rvc-phone-number' class='label-input') Номер телефона
+            input(id="rvc-phone-number" type='text' class='input' placeholder='Введите номер телефона' required)
+          div.input-container
+            label(for='rvc-surname' class='label-input') Фамилия
+            input(id="rvc-surname" type='text' class='input' placeholder='Введите фамилию' required)
+      div.field_item
+        h1.title Данные о автомобиле
+        div.inputs_wrapper
+          div.input-container
+            label(for='rvc-manufacturer' class='label-input') Производитель
+            input(id="rvc-manufacturer" type='text' class='input' placeholder='Введите производителя' required)
+          div.input-container
+            label(for='rvc-model' class='label-input') Модель
+            input(id="rvc-model" type='text' class='input' placeholder='Введите модель' required)
+          div.input-container
+            label(for='rvc-engine' class='label-input') Двигатель
+            input(id="rvc-engine" type='text' class='input' placeholder='Введите название двигателя' required)
+          div.input-container
+            label(for='rvc-vin' class='label-input') VIN номер
+            input(id="rvc-vin" type='text' class='input' placeholder='Введите VIN номер' required)
+          div.input-container
+            label(for='rvc-car-date' class='label-input') Дата выпуска
+            input(id="rvc-car-date" type='text' class='input' placeholder='Введите дату выпуска' required)
+      div.field_item
+        h1.title Необходимые вам запчасти и их количество
+        div.inputs_wrapper.js-spare-part
+          div.input-container
+            label(for='rvc-spare-part' class='label-input') Название детали
+            input(id="rvc-spare-part" type='text' class='input' placeholder='Введите название детали' required)
+          div.input-container
+            label(for='rvc-note' class='label-input') Примечание
+            input(id="rvc-note" type='text' class='input' placeholder='Введите примечание' required)
+          div.input-container
+            label(for='rvc-count' class='label-input') Количество
+            input(id="rvc-count" type='text' class='input' placeholder='Введите количество' required)
+          div.select-container
+            p.select-label Дата выпуска
+            select(name='spare-date-1')
+              option(value='') Выберите дату выпуска
+              option(value='original') Только оригинал
+              each option in dateOptions
+                option(value=option) #{option}
+    div.rvc_actions
+      button(type='button' class='btn transparent iconButton add-spare-part') + Добавить запчасть
+      button(type='submit' class='btn success') Сохранить в гараж

@@ -1,7 +1,9 @@
 @import "helpers/variables";
 @import "helpers/functions";
-@import "vendor/libs";
 @import "base/fonts";
+
+@import "vendor/import/normalize";
+@import "vendor/import/smart-grid";
 
 @import "../blocks/modules/pages/home";
 @import "../blocks/modules/pages/home/categories_cards";
