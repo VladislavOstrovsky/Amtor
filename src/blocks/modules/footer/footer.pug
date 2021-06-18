@@ -58,9 +58,9 @@ footer
           div.subscribe_actions.dFlex.flexWrap
             h1 Подпишись и будь в курсе <br/> новинок и акций
             h1.mobile_header Подпишись и будь в курсе<br/> новинок и акций
-            div.subscribe_buttons.dFlex.flexGrow1
-              input(type='text' class='input' placeholder='Введите ваш e-mail')
-              button(type='button' class='btn danger') Подписаться
+            form(action='/subscribe' class='subscribe_buttons dFlex flexGrow1')
+              input(type='text' class='input' name="subscribe-email" placeholder='Введите ваш e-mail')
+              button(type='submit' class='btn danger') Подписаться
           div.social_icons_tablet
             each icon in icons
               include ../../components/social_icon/social_icon

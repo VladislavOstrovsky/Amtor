@@ -27,7 +27,7 @@
 
 	.home-slider-main {
 		flex: 1;
-		width: calc(100% - 320px);
+		width: calc(100% - 330px);
 
 		.slick-prev,
 		.slick-next {
@@ -288,7 +288,7 @@
 		}
 	}
 
-	@include lg-block() {
+	@include md-block() {
 		padding: rem(20);
 
 		&:not(:first-child) {
@@ -332,6 +332,12 @@
 
 			@include xs(font-size, rem(10));
 			@include lg(font-size, rem(12));
+		}
+	}
+
+	@include xs-block() {
+		.btn.iconButton {
+			@include xs(padding, 0 !important);
 		}
 	}
 

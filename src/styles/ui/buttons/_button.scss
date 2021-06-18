@@ -186,7 +186,7 @@
     }
 
     @include xs-block() {
-      padding: 0;
+      padding: 0 rem(15);
 
       .icon {
         margin-right: 0;
@@ -199,8 +199,6 @@
     }
 
     @include sm-block() {
-      padding: 0 rem(15);
-
       .text {
         display: block;
         margin-left: rem(15);

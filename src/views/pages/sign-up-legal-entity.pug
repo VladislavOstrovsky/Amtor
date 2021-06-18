@@ -1,0 +1,37 @@
+extends ../layouts/default
+
+block variables
+    - const title = "Регистрация - Юридическое лицо";
+    - const countSteps = 5;
+
+block content
+  div#page
+    include ../../blocks/components/header/mobile_menu
+    div.page
+      include ../../blocks/modules/header/header
+      div.container
+        div.bread-crumbs
+          a(href='/home.html' class='text_bc bread-crumbs_item') Главная
+          a(href='/sign-up-select.html' class='text_bc bread-crumbs_item') Регистрация
+          span.text_bc.bread-crumbs_item Юридическое лицо
+        h1.title_bc Юридическое лицо
+      div.container
+        div.page_center_wrapper.sign-up-legal.step-1
+          div.step_page_wrapper
+            h1.sp_counter
+              span.js-reg-legal-counter 1
+              span &nbsp;из #{countSteps}
+            p.text шаг
+          div.sign-up-wrapper.__legal
+            h1.title_page.js-reg-legal-title Ключевые регистрационные данные
+            form(action='/sign-up-legal' class='form-content' method='POST')
+              include ../../blocks/components/sign-up/legal/sign_up_legal_step_1
+              include ../../blocks/components/sign-up/legal/sign_up_legal_step_2
+              include ../../blocks/components/sign-up/legal/sign_up_legal_step_3
+              include ../../blocks/components/sign-up/legal/sign_up_legal_step_4
+              include ../../blocks/components/sign-up/legal/sign_up_legal_step_5
+      include ../../blocks/modules/footer/footer
+
+block scripts
+  script(src="js/main.js")
+  script(src="js/vendor.js")

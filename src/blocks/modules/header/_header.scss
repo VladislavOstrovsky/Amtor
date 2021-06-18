@@ -4,6 +4,27 @@
   .__tags     - tags
  */
 
+body {
+	&.__hidden {
+		overflow: hidden;
+		width: 100%;
+		height: 100%;
+		pointer-events: none;
+		position: fixed;
+
+		.home_sliders_wrapper {
+			visibility: hidden;
+		}
+
+		header,
+		.footer_toolbar,
+		.fancybox-content,
+		.menu_catalogs_wrapper  {
+			pointer-events: auto;
+		}
+	}
+}
+
 header {
 	background: var(--color-white);
 	transition: all .3s ease-in;
@@ -39,8 +60,6 @@ header {
 			}
 
 			@include md-block() {
-
-
 				.header_phone {
 					display: none;
 				}
@@ -48,6 +67,11 @@ header {
 
 			@include lg-block() {
 				width: 95%;
+
+				.header_logo,
+				.header_actions {
+					display: block !important;
+				}
 
 				.header_phone {
 					display: block;
@@ -300,6 +324,7 @@ header {
 				font-size: 0;
 				background: url('../img/svg/header/search-dark.svg') center no-repeat;
 				background-size: 20px;
+				right: rem(10);
 
 				&:hover {
 					background-color: transparent;
@@ -314,11 +339,13 @@ header {
 			.basket-btn {
 				border: none;
 				height: auto;
+				padding: 0;
 			}
 		}
 
 		@include sm-block() {
 			.basket-btn {
+				padding: 0 rem(20);
 				border: 2px solid var(--button-transparent-border-color);
 				height: 46px;
 			}
@@ -366,6 +393,7 @@ header {
 			.search-btn {
 				font-size: inherit;
 				background: var(--color-base);
+				right: 0;
 
 				&:hover {
 					box-shadow: inset 0 0 0 2px var(--button-success-hover-border-color);
@@ -384,6 +412,10 @@ header {
 
 			.header_logo {
 				margin-right: 0;
+			}
+
+			.search-btn {
+				right: rem(10);
 			}
 		}
 
@@ -614,6 +646,7 @@ header {
 		display: flex;
 		flex-direction: column;
 		padding: rem(5) rem(10) rem(15);
+		pointer-events: auto;
 
 		width: 100%;
 		height: auto;
@@ -637,7 +670,8 @@ header {
 			box-shadow: none;
 			margin-left: -20px;
 			width: calc(100% + 40px);
-			height: 100vh;
+			height: 89vh;
+			padding-bottom: rem(130);
 			overflow: scroll;
 		}
 
@@ -648,6 +682,7 @@ header {
 			height: auto;
 			overflow: auto;
 			max-height: rem(606);
+			padding-bottom: rem(15);
 		}
 
 		.mCSB_draggerContainer {

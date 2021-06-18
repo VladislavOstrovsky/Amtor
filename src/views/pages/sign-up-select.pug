@@ -1,0 +1,40 @@
+extends ../layouts/default
+
+block variables
+  - const title = "Регистрация";
+
+block content
+  div#page
+    include ../../blocks/components/header/mobile_menu
+    div.page
+      include ../../blocks/modules/header/header
+      div.container
+        div.bread-crumbs
+          a(href='/home.html' class='text_bc bread-crumbs_item') Главная
+          span.text_bc.bread-crumbs_item Регистрация
+        h1.title_bc Регистрация
+      div.container
+        div.page_center_wrapper.sign-up-select
+          h1.title_page Выберите тип регистрации
+          div.sus_cards
+            div.card.legal_entity
+              div
+                h1.title_card Юридическое лицо
+                p.text_card Если Вы являетесь представителем юридического лица (ООО, ЗАО, ИП и т.д.). Оплата счетов будет совершаться только со счета организации. Отношения между Вами и магазином будут регламентироваться договором. Формирование заказа и доставку товара будут осуществлять сотрудники интернет-магазина.
+              a(href='/sign-up-legal-entity.html' class='btn success iconButton create-account')
+                span.text Создать аккаунт
+                span.icon
+                  include ../../img/svg/arrow-left.svg
+            div.card.natural_person
+              div
+                h1.title_card Физическое лицо
+                p.text_card Если Вы планируете оплачивать заказы как физ. лицо - при получении товара. Для совершения покупок достаточно пройти регистрацию на сайте. Отношения между вами и магазином будут регламентироваться законом "О защите прав потребителей"
+              a(href='/sign-up-natural-person.html' class='btn success iconButton create-account')
+                span.text Создать аккаунт
+                span.icon
+                  include ../../img/svg/arrow-left.svg
+      include ../../blocks/modules/footer/footer
+
+block scripts
+  script(src="js/main.js")
+  script(src="js/vendor.js")

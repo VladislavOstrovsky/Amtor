@@ -10,6 +10,7 @@
   font: rem(14)/rem(20) "Fregat", sans-serif;
   color: var(--color-marine);
   user-select: none;
+  min-height: rem(30);
 
   /* Hide the browser's default checkbox */
   input {

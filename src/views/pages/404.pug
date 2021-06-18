@@ -4,13 +4,16 @@ block variables
   - const title = "404";
 
 block content
-  include ../../blocks/modules/header/header
-  div.container
-    div.bread-crumbs
-      a(href='/home.html' class='text_bc bread-crumbs_item') Главная
-      span.text_bc.bread-crumbs_item 404 ошибка
+  div#page
+    include ../../blocks/components/header/mobile_menu
+    div.page
+      include ../../blocks/modules/header/header
+      div.container
+        div.bread-crumbs
+          a(href='/home.html' class='text_bc bread-crumbs_item') Главная
+          span.text_bc.bread-crumbs_item 404 ошибка
 
-  include ../../blocks/modules/footer/footer
+      include ../../blocks/modules/footer/footer
 
 block scripts
   script(src="js/main.js")

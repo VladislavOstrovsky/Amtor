@@ -1,0 +1,18 @@
+div.form-content-step1.flexColumn.alignItemsCenter
+  div.input-container
+    label(for='sup-l-email' class='label-input') Email
+    input(id="sup-l-email" type='email' name="sup-l-email" class='input' placeholder='Введите Еmail')
+  div.input-container
+    label(for='sup-l-password' class='label-input') Пароль
+    input(id="sup-l-password" type='password' name="sup-l-password" class='input' placeholder='Введите пароль')
+  div.input-container
+    label(for='sup-l-repeat-password' class='label-input') Подтверждение пароля
+    input(id="sup-l-repeat-password" type='password' name="sup-l-repeat-password" class='input' placeholder='Введите повторно пароль')
+  div.checkbox-wrapper
+    label(for='sup-l-check-1' class='checkbox-container center') С <a href='/' target='_blank'>условиями</a> предоставления услуг ознакомлен и согласен
+      input(id="sup-l-check-1" type='checkbox' name="sup-l-check-1")
+      span.checkmark
+    label(for='sup-l-check-2' class='checkbox-container') Согласен на обработку персональных данных и принимаю <a href='/' target='_blank'>условия соглашения</a>
+      input(id="sup-l-check-2" type='checkbox' name="sup-l-check-2")
+      span.checkmark
+  button(type='button' class='btn success js-reg-legal-next-step') Далее
