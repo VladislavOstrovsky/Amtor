@@ -1,0 +1,462 @@
+@import "../../../components/original-catalogs/styles/catalog_table";
+@import "../../../components/original-catalogs/styles/card_info_car";
+@import "../../../components/original-catalogs/styles/accordion";
+@import "../../../components/original-catalogs/styles/filters_by_issue";
+@import "../../../components/original-catalogs/styles/catalog_detail_table";
+
+.original_catalogs_wrapper {
+	display: flex;
+	justify-content: space-between;
+
+	@include xs-block() {
+		margin: rem(30) 0 rem(40);
+		flex-direction: column;
+	}
+
+	@include md-block() {
+		margin: rem(30) 0 rem(60);
+	}
+
+	@include lg-block() {
+		margin: rem(30) 0 rem(80);
+		flex-direction: row;
+	}
+
+	.oc_search {
+		flex: 1;
+
+		@include xs(padding-top, 0);
+		@include md(padding-top, rem(20));
+
+		.ocs_title {
+			display: flex;
+			justify-content: space-between;
+
+			.ocs_link {
+				color: #414141;
+				font: rem(14)/rem(14) "Open Sans", sans-serif;
+			}
+
+			@include xs-block() {
+				flex-direction: column;
+				margin-bottom: rem(10);
+
+				.ocs_link {
+					margin-top: rem(10);
+				}
+			}
+
+			@include md-block() {
+				margin-bottom: rem(15);
+				flex-direction: row;
+
+				.ocs_link {
+					margin-top: 0;
+				}
+			}
+		}
+
+		.ocs_help {
+			margin-top: rem(10);
+			font: rem(14)/rem(22) "Open Sans", sans-serif;
+
+			.example {
+				cursor: pointer;
+				text-decoration: underline;
+			}
+		}
+	}
+
+	.oc_filters {
+		flex: 1;
+		padding: rem(20);
+		background: var(--color-extra-light-gray);
+		border-radius: var(--border-radius);
+
+		@include xs-block() {
+			margin-top: rem(30);
+			margin-left: 0;
+		}
+
+		@include lg-block() {
+			margin-top: 0;
+			margin-left: rem(20);
+		}
+
+		.title {
+			margin-bottom: rem(20);
+		}
+
+		.select-container {
+			@include xs-block() {
+				&:first-of-type {
+					margin-top: rem(20);
+				}
+
+				margin-top: rem(15);
+			}
+
+			@include md-block() {
+				&:first-of-type {
+					margin-top: rem(20);
+				}
+
+				margin-top: rem(20);
+			}
+		}
+
+		.show-catalog {
+			margin-top: rem(20);
+
+			@include xs(align-self, center);
+			@include lg(align-self, flex-start);
+		}
+
+		.oc_form {
+			display: flex;
+			flex-direction: column;
+		}
+	}
+
+	.title {
+		font: rem(18)/rem(18) Fregat-Bold, sans-serif;
+	}
+}
+
+// step 2
+.original_catalogs_step_2 {
+	display: flex;
+	flex-direction: column;
+
+	@include xs(margin, rem(20) 0);
+	@include md(margin, rem(20) 0 rem(60));
+	@include lg(margin, rem(30) 0 rem(80));
+
+	.ocs_search {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		font: rem(14)/rem(22) 'Open Sans', sans-serif;
+		color: #414141;
+		padding: rem(20);
+		background: var(--color-extra-light-gray);
+		border-radius: var(--border-radius);
+
+		@include xs-block() {
+			flex-direction: column;
+			align-items: flex-start;
+			margin-bottom: rem(20);
+		}
+
+		@include md-block() {
+			flex-direction: row;
+			align-items: center;
+			margin-bottom: rem(40);
+		}
+
+		.search-input-wrapper {
+			flex: 1;
+			margin: 0 rem(60);
+
+			@include xs-block() {
+				width: 100%;
+				margin: rem(10) 0 0;
+			}
+
+			@include md-block() {
+				width: auto;
+				margin: 0 0 0 rem(20);
+			}
+
+			@include lg-block() {
+				margin: 0 rem(60);
+			}
+		}
+
+		.ocs_help {
+			@include xs-block() {
+				width: 100%;
+				display: flex;
+				justify-content: flex-end;
+				margin-top: rem(10);
+			}
+
+			@include lg-block() {
+				width: auto;
+				display: block;
+				margin-top: 0;
+			}
+
+			.example {
+				color: var(--color-base);
+				cursor: pointer;
+				text-decoration: underline;
+			}
+		}
+	}
+}
+
+// step 3
+.original_catalogs_step_3 {
+	@include xs(margin, rem(20) 0);
+	@include md(margin, rem(20) 0 rem(60));
+	@include lg(margin, rem(30) 0 rem(80));
+
+	.mc_classifier {
+		padding: rem(20);
+		box-shadow: inset 0 0 0 1px var(--color-cyan);
+		border-radius: var(--border-radius);
+
+		@include md(width, 100%);
+		@include lg(width, auto);
+
+		h1 {
+			font: rem(14)/rem(14) 'Fregat-Bold', sans-serif;
+			color: var(--color-marine);
+			margin-bottom: rem(10);
+		}
+
+		.tabs-wrapper {
+			@include xs(width, auto);
+			@include md(width, rem(320));
+
+			label {
+				padding: 0 rem(20);
+			}
+		}
+
+		.search-input-wrapper {
+			margin: rem(18) 0 rem(20);
+		}
+	}
+
+	.mc_cards {
+		flex: 1;
+		display: none;
+		grid-template-columns: repeat(3, 1fr);
+		grid-template-rows: repeat(4, rem(290));
+		grid-gap: rem(20);
+		font: rem(16)/rem(20) 'Fregat-Bold', sans-serif;
+		margin-left: rem(60);
+
+		@include lg(display, grid);
+
+		a {
+			position: relative;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			text-align: center;
+			border-radius: var(--border-radius-popup);
+			box-shadow: var(--box-shadow-card);
+			color: var(--color-marine);
+
+			&:after {
+				content: '';
+				position: absolute;
+				right: rem(20);
+				bottom: rem(20);
+				width: rem(23);
+				height: rem(16);
+				background: url('../img/svg/arrow-left-dark.svg') center no-repeat;
+				transform: rotate(180deg);
+			}
+		}
+	}
+}
+
+// step 4
+.original_catalogs_step_4 {
+	@include xs-block() {
+		margin: rem(20) 0;
+
+		.card_info_car {
+			margin-bottom: rem(20);
+		}
+	}
+
+	@include md(margin, rem(20) 0 rem(60));
+	@include lg-block() {
+		margin: rem(30) 0 rem(80);
+
+		.card_info_car {
+			margin-bottom: rem(30);
+		}
+	}
+
+	.mc_classifier_wrapper {
+		width: rem(321);
+		box-shadow: inset 0 0 0 1px var(--color-cyan);
+		border-radius: var(--border-radius);
+
+		@include xs(padding, rem(10));
+		@include xs(width, 100%);
+		@include sm(padding, rem(20));
+		@include lg(width, rem(321));
+
+		table {
+			width: 100%;
+		}
+	}
+
+	.zoom-image {
+		@include xs(display, flex);
+		@include lg(display, none);
+
+		margin-bottom: rem(20);
+	}
+
+	.mc_classifier_table {
+		a {
+			color: var(--color-black);
+			text-decoration: underline;
+
+			&:hover {
+				text-decoration: none;
+			}
+		}
+
+		thead > tr {
+			border: none;
+
+			&:hover {
+				background: transparent;
+
+				&:after {
+					display: none;
+				}
+			}
+		}
+
+		tr {
+			position: relative;
+			border-bottom: 1px solid var(--color-cyan);
+			transition: all .2s ease-in;
+
+			&:last-of-type {
+				border: none;
+
+				td {
+					padding-bottom: 0;
+				}
+			}
+
+			&:hover {
+				@include lg-block() {
+					border-color: transparent;
+
+					&:after {
+						content: '';
+						position: absolute;
+						left: rem(-10);
+						top: 0;
+						width: rem(340);
+						height: rem(56);
+						background: transparent;
+						box-shadow: var(--box-shadow-card);
+						border-radius: var(--border-radius-popup);
+						z-index: -1;
+					}
+				}
+			}
+		}
+
+		tr > th {
+			font: rem(14)/rem(14) Fregat-Bold, sans-serif;
+			text-align: left;
+			border-bottom: 1px solid var(--color-cyan);
+
+			@include xs(padding, 0 rem(7) rem(10));
+			@include sm(padding, 0 rem(10) rem(10));
+
+			&:first-child {
+				padding-left: 0;
+			}
+		}
+
+		tr > td {
+			font: rem(14)/rem(18) Fregat, sans-serif;
+			vertical-align: top;
+
+			@include xs(padding, rem(10) rem(7) rem(10));
+			@include sm(padding, rem(10));
+
+			&:first-child {
+				padding-left: 0;
+			}
+
+			&:last-of-type {
+				padding-right: 0;
+				text-align: right;
+			}
+		}
+	}
+
+	.mc_image {
+		display: none;
+		flex-direction: column;
+		flex: 1;
+		align-items: center;
+		font: rem(14)/rem(18) 'Fregat', sans-serif;
+
+		@include lg(display, flex);
+
+		img {
+			max-width: rem(585);
+		}
+
+		a {
+			align-self: flex-end;
+			color: var(--color-base);
+			text-decoration: underline;
+			margin-bottom: rem(7);
+
+			&:hover {
+				text-decoration: none;
+			}
+		}
+	}
+}
+
+// step 5
+.original_catalogs_step_5 {
+	display: flex;
+
+	@include xs-block() {
+		flex-direction: column;
+		margin: rem(20) 0;
+	}
+	@include md(margin, rem(20) 0 rem(60));
+
+	@include lg-block() {
+		flex-direction: row;
+		margin: rem(40) 0 rem(80);
+	}
+
+	.oc_mobile_show_filters {
+		@include xs-block() {
+			display: block;
+			margin-bottom: rem(20);
+		};
+
+		@include md(margin-bottom, rem(30));
+		@include lg(display, none);
+
+		.btn {
+			font-size: rem(14);
+			line-height: rem(14);
+			height: rem(39);
+		}
+	}
+
+	.oc_filters {
+		@include xs(margin, 0 0 rem(20));
+		@include xs(display, none);
+		@include md(margin, 0 0 rem(30));
+		@include lg(display, block);
+
+		&.__open {
+			display: block !important;
+		}
+	}
+}

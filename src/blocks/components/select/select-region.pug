@@ -1,0 +1,8 @@
+- var regions = ['Москва', 'Санкт-Петербург', 'Новосибирск', 'Барнаул'];
+
+div.select-container
+  p.select-label Регион
+  select(name='region')
+    option(value='') Выберите регион
+    each option in regions
+      option(value=option) #{option}

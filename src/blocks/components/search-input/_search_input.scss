@@ -1,0 +1,21 @@
+.search-input-wrapper {
+	display: flex;
+	justify-content: space-between;
+
+	.search-input {
+		flex: 1;
+		border: 2px solid var(--color-base);
+		height: rem(46);
+		border-bottom-right-radius: 0;
+		border-top-right-radius: 0;
+		border-right: 0;
+	}
+
+	.search-btn {
+		border-top-left-radius: 0;
+		border-bottom-left-radius: 0;
+
+		@include xs(width, max-content);
+		@include md(width, auto);
+	}
+}

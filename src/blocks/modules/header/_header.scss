@@ -246,7 +246,7 @@ header {
 			color: var(--color-marine);
 			margin: 0 rem(24);
 
-			.title_bc {
+			.title_p {
 				color: var(--color-marine);
 			}
 
@@ -635,7 +635,7 @@ header {
 	@include lg-block() {
 		.header__top {
 			padding-top: rem(20);
-			padding-bottom: rem(20);
+			padding-bottom: rem(10);
 		}
 	}
 
@@ -834,7 +834,7 @@ header {
 					bottom: rem(-20);
 					width: rem(199);
 					height: rem(1);
-					background: #eef1f6;
+					background: var(--color-extra-light-gray);
 				}
 
 				&:hover {
@@ -843,7 +843,7 @@ header {
 			}
 
 			&.show {
-				background: #eef1f6;
+				background: var(--color-extra-light-gray);
 				border-top-left-radius: var(--border-radius);
 				border-bottom-left-radius: var(--border-radius);
 
@@ -863,7 +863,7 @@ header {
 			height: calc(100% - 50px);
 			padding: rem(25) rem(30) rem(25) rem(37);
 			background: var(--color-white);
-			border-left: 2px solid #eef1f6;
+			border-left: 2px solid var(--color-extra-light-gray);
 			cursor: default;
 
 			a {

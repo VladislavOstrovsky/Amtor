@@ -3,13 +3,31 @@
  */
 
 .bread-crumbs {
+  position: relative;
   display: flex;
   font-size: 14px;
   margin: rem(10) 0;
+  overflow: hidden;
+  width: auto;
+
+  &.__hidden {
+    &::after {
+      content: ' ...';
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: rem(15);
+      height: rem(14);
+      background: var(--color-white);
+      color: var(--color-light-gray);
+      padding-left: rem(2);
+    }
+  }
 
   a {
     padding-right: rem(10);
     margin-right: rem(15);
+    white-space: nowrap;
 
     &::after {
       content: "/";
@@ -21,5 +39,6 @@
 
   .bread-crumbs_item {
     position: relative;
+    white-space: nowrap;
   }
 }

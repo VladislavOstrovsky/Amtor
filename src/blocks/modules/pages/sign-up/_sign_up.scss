@@ -36,13 +36,8 @@
 		.sus_cards {
 			display: flex;
 
-			@include xs-block() {
-				flex-direction: column;
-			}
-
-			@include lg-block() {
-				flex-direction: row;
-			}
+			@include xs(flex-direction, column);
+			@include lg(flex-direction, row);
 		}
 
 		.card {
@@ -60,13 +55,8 @@
 				@include lg(margin-bottom, 0);
 			}
 
-			@include xs-block() {
-				flex-direction: column;
-			}
-
-			@include md-block() {
-				flex-direction: row;
-			}
+			@include xs(flex-direction, column);
+			@include lg(flex-direction, row);
 		}
 
 		.create-account {
@@ -80,7 +70,6 @@
 					margin-left: 0;
 				}
 			}
-
 
 			@include md-block() {
 				align-self: flex-end;
@@ -101,7 +90,6 @@
 			.icon {
 				transform: rotate(180deg);
 			}
-
 		}
 	}
 

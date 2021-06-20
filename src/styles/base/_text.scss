@@ -15,8 +15,10 @@
 }
 
 .text_bc {
-  font: rem(14)/rem(14) "Open Sans", sans-serif;
   color: var(--color-light-gray);
+
+  @include xs(font, (rem(12)/rem(14) "Open Sans", sans-serif));
+  @include md(font, (rem(14)/rem(14) "Open Sans", sans-serif));
 }
 
 .text_img_d {

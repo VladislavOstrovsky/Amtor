@@ -6,6 +6,7 @@ $("#sip-phone-number").mask("+7(999) 999-9999");
 $("#ocp-phone-number").mask("+7(999) 999-9999");
 $("#sup-phone-number").mask("+7(999) 999-9999");
 $("#rvc-phone-number").mask("+7(999) 999-9999");
+$("#sup-l-phone-number").mask("+7(999) 999-9999");
 $('#sup-n-phone-number').mask("+7(999) 999-9999");
 $('.js-form-phone-number').mask("+7(999) 999-9999");
 
@@ -151,5 +152,10 @@ $(document).ready(function(){
             $('.page').attr('style', 'transform: initial;');
         }
     });
+
+    // bread-crumbs
+    if ($('.bread-crumbs').innerWidth() >= $(window).innerWidth() - 40) {
+        $('.bread-crumbs').addClass('__hidden');
+    }
 });
 

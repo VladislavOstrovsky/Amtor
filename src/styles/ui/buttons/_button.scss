@@ -142,9 +142,9 @@
       }
 
       @include xs-block() {
-        background-color: transparent;
-
         &.iconButton {
+          background-color: transparent;
+
           .icon path {
             fill: var(--button-transparent-color);
             stroke: var(--button-transparent-color);
@@ -156,6 +156,8 @@
         background-color: var(--button-transparent-hover-bg-color);
 
         &.iconButton {
+          background-color: var(--button-transparent-hover-bg-color);
+
           .icon path {
             fill: var(--button-transparent-hover-color);
             stroke: var(--button-transparent-hover-color);

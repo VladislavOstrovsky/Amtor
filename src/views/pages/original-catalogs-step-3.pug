@@ -1,0 +1,47 @@
+extends ../layouts/default
+
+block variables
+    - const title = "Оригинальные каталоги";
+
+block styles
+  link(rel="stylesheet" href="./styles/original-catalogs.css")
+
+block content
+  div#page
+    include ../../blocks/components/header/mobile_menu
+    div.page
+      include ../../blocks/modules/header/header
+      div.container
+        div.bread-crumbs
+          a(href='./home.html' class='text_bc bread-crumbs_item') Главная
+          a(href='./original-catalogs.html' class='text_bc bread-crumbs_item') Оригинальные каталоги
+          span.text_bc.bread-crumbs_item BMW
+        h1.title_p Оригинальные каталоги
+      div.container
+        div.original_catalogs_step_3
+          include ../../blocks/components/original-catalogs/card-info-car
+          div.oc_main_content.dFlex
+            div.mc_classifier
+              h1 Классификатор:
+              include ../../blocks/components/tabs/tabs-select-class-type
+              form(action='/search-name-node' class='search-input-wrapper')
+                input(type='text' name="search-name-node" class='input search-input js-name-node' placeholder='Название узла или детали')
+                button(type='submit' class='btn success search-btn') Найти
+              include ../../blocks/components/original-catalogs/accordion
+            div.mc_cards
+              a(href='/') Расширительный бачок
+              a(href='/') Шланги системы <br>охлаждения
+              a(href='/') Кожух вентилятора <br>с вентилятором
+              a(href='/') Расширительный бачок
+              a(href='/') Шланги системы <br>охлаждения
+              a(href='/') Кожух вентилятора <br>с вентилятором
+              a(href='/') Расширительный бачок
+              a(href='/') Шланги системы <br>охлаждения
+              a(href='/') Кожух вентилятора <br>с вентилятором
+              a(href='/') Расширительный бачок
+              a(href='/') Шланги системы <br>охлаждения
+      include ../../blocks/modules/footer/footer
+
+block scripts
+  script(src="js/main.js")
+  script(src="js/vendor.js")

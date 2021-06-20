@@ -1,0 +1,33 @@
+extends ../layouts/default
+
+block variables
+    - const title = "Оригинальные каталоги";
+
+block styles
+  link(rel="stylesheet" href="./styles/original-catalogs.css")
+
+block content
+  div#page
+    include ../../blocks/components/header/mobile_menu
+    div.page
+      include ../../blocks/modules/header/header
+      div.container
+        div.bread-crumbs
+          a(href='./home.html' class='text_bc bread-crumbs_item') Главная
+          a(href='./original-catalogs.html' class='text_bc bread-crumbs_item') Оригинальные каталоги
+          a(href='./original-catalogs-step-4.html' class='text_bc bread-crumbs_item') BMW
+          span.text_bc.bread-crumbs_item BMW FZ3127200A
+        h1.title_p BMW FZ3127200A
+      div.container
+        div.original_catalogs_step_5
+          div.oc_mobile_show_filters
+            button(type="button" class='btn transparent fullWidth js-oc-show-filters') Показать фильтр
+          div.oc_filters
+            include ../../blocks/components/select/select-sort-by
+            include ../../blocks/components/original-catalogs/filters-by-issue
+          include ../../blocks/components/original-catalogs/catalog-detail-table
+      include ../../blocks/modules/footer/footer
+
+block scripts
+  script(src="js/main.js")
+  script(src="js/vendor.js")

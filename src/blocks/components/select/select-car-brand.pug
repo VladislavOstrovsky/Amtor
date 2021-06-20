@@ -1,0 +1,8 @@
+- var brands = ['Mazda', 'BMW', 'Toyota', 'Nissan', 'Hyundai'];
+
+div.select-container
+  p.select-label Марка
+  select(name='car-brand')
+    option(value='') Выберите марку
+    each option in brands
+      option(value=option) #{option}

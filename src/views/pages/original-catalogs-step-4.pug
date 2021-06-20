@@ -1,0 +1,34 @@
+extends ../layouts/default
+
+block variables
+    - const title = "Оригинальные каталоги";
+
+block styles
+  link(rel="stylesheet" href="./styles/original-catalogs.css")
+
+block content
+  div#page
+    include ../../blocks/components/header/mobile_menu
+    div.page
+      include ../../blocks/modules/header/header
+      div.container
+        div.bread-crumbs
+          a(href='./home.html' class='text_bc bread-crumbs_item') Главная
+          a(href='./original-catalogs.html' class='text_bc bread-crumbs_item') Оригинальные каталоги
+          span.text_bc.bread-crumbs_item BMW
+        h1.title_p Оригинальные каталоги
+      div.container
+        div.original_catalogs_step_4
+          include ../../blocks/components/original-catalogs/card-info-car
+          a(href='./img/catalogs/details-image.png' data-fancybox class='btn transparent fullWidth zoom-image') Увеличить изображение
+          div.oc_main_content.dFlex
+            div.mc_classifier_wrapper
+              include ../../blocks/components/original-catalogs/catalog-table-step-4
+            div.mc_image
+              a(href='./img/catalogs/details-image.png' data-fancybox) Увеличить изображение
+              img(src='./img/catalogs/details-image.png' class='image')
+      include ../../blocks/modules/footer/footer
+
+block scripts
+  script(src="js/main.js")
+  script(src="js/vendor.js")

@@ -1,0 +1,43 @@
+extends ../layouts/default
+
+block variables
+    - const title = "Оригинальные каталоги";
+
+block styles
+  link(rel="stylesheet" href="./styles/original-catalogs.css")
+
+block content
+  div#page
+    include ../../blocks/components/header/mobile_menu
+    div.page
+      include ../../blocks/modules/header/header
+      div.container
+        div.bread-crumbs
+          a(href='./home.html' class='text_bc bread-crumbs_item') Главная
+          span.text_bc.bread-crumbs_item Оригинальные каталоги
+        h1.title_p Оригинальные каталоги
+      div.container
+        div.original_catalogs_wrapper
+          div.oc_search
+            div.ocs_title
+              h1.title Найдите модель авто по VIN номеру:
+              a(href='/' target='_blank' class='ocs_link') Как узнать номер?
+            include ../../blocks/components/search-input/search-input
+            div.ocs_help
+              p например: <span class='example js-search-help'>WAUBH54B11N111054</span>
+          div.oc_filters
+            h1.title По параметрам
+            include ../../blocks/components/tabs/tabs-select-car-type
+            form(action='/search-oc-parameters' class='oc_form')
+              include ../../blocks/components/select/select-car-brand
+              include ../../blocks/components/select/select-region
+              div.select-container
+                p.select-label Модель
+                select(name='car-model')
+                  option(value='') выберите модель
+              button(type='submit' class='btn success show-catalog') Показать каталог
+      include ../../blocks/modules/footer/footer
+
+block scripts
+  script(src="js/main.js")
+  script(src="js/vendor.js")

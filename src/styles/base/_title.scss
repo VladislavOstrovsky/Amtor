@@ -1,9 +1,9 @@
 /* title
- * _h1    - h1              - 32px/38px
- * _h2    - h2              - 24px/34px
- * _h3    - h3              - 18px/24px
- * _h4    - h4              - 16px/24px
- * _bc    - bread crumbs    - 24px/24px
+ * _h1    - h1        - 32px/38px
+ * _h2    - h2        - 24px/34px
+ * _h3    - h3        - 18px/24px
+ * _h4    - h4        - 16px/24px
+ * _p     - page      - 24px/24px
 */
 
 .title_h1 {
@@ -27,7 +27,7 @@
   @include md(font, (rem(16)/rem(24) Fregat-Bold, sans-serif));
 }
 
-.title_bc {
+.title_p {
   @include xs(font, (rem(20)/rem(20) Fregat-Bold, sans-serif));
   @include md(font, (rem(24)/rem(24) Fregat-Bold, sans-serif));
 }

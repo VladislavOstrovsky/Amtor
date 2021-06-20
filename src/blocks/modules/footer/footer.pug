@@ -12,10 +12,10 @@ footer
       img.logo(src="./img/svg/logo-white.svg")
       div.header_info
         div.header_phone
-          a(href='tel:8 800 550 5354' class='title_bc') 8 800 550 5354
+          a(href='tel:8 800 550 5354' class='title_p') 8 800 550 5354
           h2(class='callback-popup' data-fancybox data-src='#order-callback-popup' data-options=optionsPopup) Заказать звонок
         div.header_address
-          h1.title_bc Ташкентская 28 стр.1
+          h1.title_p Ташкентская 28 стр.1
           h2 Москва
       div.header_buttons
         button(type='button' class='btn primary' data-fancybox data-src='#sign-up-popup' data-options=optionsPopup) Создать аккаунт
@@ -23,10 +23,10 @@ footer
     div.header_mobile
       div.container.mobile_info
         div.header_phone
-          h1.title_bc 8 800 550 5354
+          h1.title_p 8 800 550 5354
           h2(class='callback-popup' data-fancybox data-src='#order-callback-popup' data-options=optionsPopup) Заказать звонок
         div.header_address
-          h1.title_bc Ташкентская 28 стр.1
+          h1.title_p Ташкентская 28 стр.1
           h2 Москва
   div.footer__content
     div.container
@@ -66,11 +66,16 @@ footer
               include ../../components/social_icon/social_icon
           p.text_f Вся информация на сайте – собственность ООО «Энергорезерв» Публикация информации с сайта carex-parts.com без разрешения запрещена. Все права защищены.
           div.payment_icons.dFlex.justifyContentBetween
-            img(class='payment_icon' src='./img/svg/payment-icons/maestro.svg')
-            img(class='payment_icon' src='./img/svg/payment-icons/master_card.svg')
-            img(class='payment_icon' src='./img/svg/payment-icons/visa.svg')
-            img(class='payment_icon' src='./img/svg/payment-icons/mir.svg')
-            img(class='payment_icon' src='./img/svg/payment-icons/sber.svg')
+            span.payment_icon
+              include ../../../img/svg/payment-icons/maestro.svg
+            span.payment_icon
+              include ../../../img/svg/payment-icons/master_card.svg
+            span.payment_icon
+              include ../../../img/svg/payment-icons/visa.svg
+            span.payment_icon
+              include ../../../img/svg/payment-icons/mir.svg
+            span.payment_icon
+              include ../../../img/svg/payment-icons/sber.svg
   div.footer__bottom
     div.container._bottom
       p.text_fb © ООО «Энергорезерв» 2021

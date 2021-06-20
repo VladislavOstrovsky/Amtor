@@ -1,0 +1,127 @@
+.catalog_table {
+	display: flex;
+	flex-wrap: wrap;
+
+	.ct_brand {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		margin-right: rem(40);
+		flex-shrink: 0;
+		color: var(--color-marine);
+
+		@include xs(width, 100%);
+		@include md-block() {
+			width: auto;
+			margin-right: rem(24);
+		}
+		@include lg(margin-right, rem(40));
+
+		.ct_image {
+			width: rem(50);
+			height: rem(50);
+		}
+
+		.text {
+			margin: rem(10) 0 rem(20);
+			font: rem(14)/rem(18) Fregat, sans-serif;
+		}
+	}
+
+	.ct_table {
+		flex: 1;
+
+		@include xs(display, none);
+		@include md(display, block);
+
+		tr {
+			border-bottom: 1px solid var(--color-cyan);
+			transition: all .2s ease-in;
+
+			&:last-of-type {border: none;}
+
+			&:hover {background: var(--color-extra-light-gray);}
+		}
+
+		thead > tr {
+			&:hover {
+				background: transparent;
+			}
+		}
+
+		a {color: var(--color-black);}
+
+		tr > th {
+			padding: 0 rem(15) rem(15) rem(15);
+			font: rem(14)/rem(14) Fregat-Bold, sans-serif;
+
+			@include md-block() {
+				white-space: inherit;
+				text-align: center;
+			}
+
+			@include lg-block() {
+				white-space: nowrap;
+				text-align: left;
+			}
+
+			&:first-child {
+				padding-left: rem(10);
+			}
+		}
+
+		tr > td {
+			padding: rem(15);
+			font: rem(14)/rem(18) Fregat, sans-serif;
+			vertical-align: top;
+
+			&:first-child {
+				padding-left: rem(10);
+			}
+		}
+	}
+
+	// mobile table
+	.ct_table_mobile {
+		@include md(display, none);
+
+		.ctm_item {
+			width: 100%;
+			padding: rem(20) 0;
+			border-bottom: 1px solid var(--color-cyan);
+
+			&:first-of-type {
+				padding-top: 0;
+			}
+
+			&:last-of-type {
+				border: none;
+			}
+
+			.row {
+				display: flex;
+				justify-content: space-between;
+				margin-bottom: rem(15);
+
+				&:last-of-type {
+					margin-bottom: 0;
+				}
+
+				&.last {
+					flex-direction: column;
+
+					.name {margin-bottom: rem(10);}
+					.value {color: #6d6d6d;}
+				}
+
+				.name {
+					font: rem(14)/rem(14) Fregat-Bold, sans-serif;
+				}
+
+				.value {
+					font: rem(14)/rem(18) Fregat, sans-serif;
+				}
+			}
+		}
+	}
+}

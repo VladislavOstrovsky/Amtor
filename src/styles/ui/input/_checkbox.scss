@@ -12,6 +12,11 @@
   user-select: none;
   min-height: rem(30);
 
+  &.center {
+    display: flex;
+    align-items: center;
+  }
+
   /* Hide the browser's default checkbox */
   input {
     position: absolute;
@@ -37,7 +42,7 @@
     left: 0;
     width: rem(30);
     height: rem(30);
-    background-color: #eef1f6;
+    background-color: var(--color-extra-light-gray);
     border-radius: var(--border-radius);
     transition: all .2s ease-in-out;
 

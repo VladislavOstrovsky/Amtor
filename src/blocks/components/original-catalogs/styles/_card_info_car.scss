@@ -1,0 +1,109 @@
+.card_info_car {
+	display: flex;
+	align-items: center;
+	width: 100%;
+
+	@include xs-block() {
+		flex-direction: column;
+		margin-bottom: rem(20);
+
+		.cic_content {
+			width: calc(100% - 40px);
+			flex-direction: column;
+			align-items: flex-start;
+			margin-top: rem(20);
+
+			.content_item {
+				margin-bottom: rem(20);
+			}
+		}
+	}
+
+	@include md-block() {
+		margin-bottom: rem(30);
+		flex-direction: row;
+
+		.cic_content {
+			width: auto;
+			flex-direction: row;
+			align-items: center;
+			margin-top: 0;
+
+			.content_item {
+				margin-bottom: 0;
+			}
+		}
+	}
+
+	.cic_brand {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		flex-shrink: 0;
+		color: var(--color-marine);
+
+		@include xs-block() {
+			width: 100%;
+			margin-right: 0;
+		}
+
+		@include md-block() {
+			width: auto;
+			margin-right: rem(24);
+		}
+		@include lg(margin-right, rem(40));
+
+		.cic_image {
+			width: rem(50);
+			height: rem(50);
+		}
+
+		.text {
+			margin-top: rem(10);
+			font: rem(14)/rem(18) Fregat, sans-serif;
+		}
+	}
+
+	.cic_content {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		flex: 1;
+		padding: rem(20);
+		background: var(--color-extra-light-gray);
+		border-radius: var(--border-radius);
+
+		.content_item {
+			color: var(--color-marine);
+			font: rem(14)/rem(14) Fregat-Bold, sans-serif;
+
+			div {
+				margin-bottom: rem(7);
+
+				&:last-of-type {
+					margin-bottom: 0;
+				}
+			}
+
+			span {
+				font-family: Fregat, sans-serif;
+			}
+		}
+
+		.content_change_car {
+			font: rem(12)/rem(18) 'Open Sans', sans-serif;
+
+			@include xs(width, auto);
+			@include md(width, rem(95));
+
+			a {
+				text-decoration: underline;
+				color: var(--color-black);
+
+				&:hover {
+					text-decoration: none;
+				}
+			}
+		}
+	}
+}

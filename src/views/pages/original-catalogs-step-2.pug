@@ -1,0 +1,32 @@
+extends ../layouts/default
+
+block variables
+    - const title = "Оригинальные каталоги";
+
+block styles
+  link(rel="stylesheet" href="./styles/original-catalogs.css")
+
+block content
+  div#page
+    include ../../blocks/components/header/mobile_menu
+    div.page
+      include ../../blocks/modules/header/header
+      div.container
+        div.bread-crumbs
+          a(href='./home.html' class='text_bc bread-crumbs_item') Главная
+          a(href='./original-catalogs.html' class='text_bc bread-crumbs_item') Оригинальные каталоги
+          span.text_bc.bread-crumbs_item BMW
+        h1.title_p Оригинальные каталоги
+      div.container
+        div.original_catalogs_step_2
+          div.ocs_search
+            p Найдите модель авто по VIN номеру:
+            include ../../blocks/components/search-input/search-input
+            div.ocs_help
+              p например: <span class='example js-search-help'>WAUBH54B11N111054</span>
+          include ../../blocks/components/original-catalogs/catalog-table
+      include ../../blocks/modules/footer/footer
+
+block scripts
+  script(src="js/main.js")
+  script(src="js/vendor.js")

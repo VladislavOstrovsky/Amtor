@@ -4,6 +4,9 @@
 	margin-bottom: rem(20);
 	box-sizing: border-box;
 
+	@include xs(max-height, auto);
+	@include md(max-height, rem(460));
+
 	.slick-prev {
 		left: rem(20);
 	}
@@ -14,6 +17,7 @@
 	}
 
 	.slick-track {
+		display: flex;
 		height: 100%;
 	}
 
@@ -26,8 +30,11 @@
 	}
 
 	.home-slider-main {
+		display: flex;
 		flex: 1;
 		width: calc(100% - 330px);
+
+		@include lg(oveflow, hidden);
 
 		.slick-prev,
 		.slick-next {
