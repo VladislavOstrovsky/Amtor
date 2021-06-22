@@ -78,3 +78,8 @@ input {
   color: var(--color-marine);
   margin-bottom: rem(5);
 }
+
+// tooltip
+[data-tippy-root] {
+  font-family: Fregat;
+}

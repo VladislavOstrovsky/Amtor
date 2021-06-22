@@ -13,9 +13,8 @@ div.catalog_table
         th Модель выпускается по
         th Модель
         th Опции
-    tr
-      td
-        a(href='/') BMW
+    tr(data-href='/' class='clickable_row')
+      td BMW
       td Amanti
       td Amanti
       td Passenger
@@ -23,9 +22,8 @@ div.catalog_table
       td.textCenter 2006
       td EHFSW6D
       td Класс: (S) LOW GRADE;Рабочий объем двигателя: (W) 3500 CC;Трансмиссия: (D) 5 SPEED AT 2WD;Топливо: (6) MPI-DOHC;Кузов: (F) 4 DR SEDAN
-    tr
-      td
-        a(href='/') BMW
+    tr(data-href='/' class='clickable_row')
+      td BMW
       td Amanti
       td Amanti
       td Passenger
@@ -35,7 +33,7 @@ div.catalog_table
       td Класс: (S) LOW GRADE;Рабочий объем двигателя: (W) 3500 CC;Трансмиссия: (D) 5 SPEED AT 2WD;Топливо: (6) MPI-DOHC;Кузов: (F) 4 DR SEDAN
   // mobile table
   div.ct_table_mobile
-    div.ctm_item
+    a(href='/' class='ctm_item')
       div.row
         h3.name Марка
         p.value BMW
@@ -60,7 +58,7 @@ div.catalog_table
       div.row.last
         h3.name Опции
         p.value Класс: (S) LOW GRADE;Рабочий объем двигателя: (W) 3500 CC;Трансмиссия: (D) 5 SPEED AT 2WD;Топливо: (6) MPI-DOHC;Кузов: (F) 4 DR SEDAN
-    div.ctm_item
+    a(href='/' class='ctm_item')
       div.row
         h3.name Марка
         p.value BMW

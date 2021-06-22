@@ -1,14 +1,15 @@
 /**
- Styles for Fancybox
+ Styles for Bread crumbs
  */
 
 .bread-crumbs {
   position: relative;
-  display: flex;
+  display: inline-block;
+  white-space: nowrap;
   font-size: 14px;
   margin: rem(10) 0;
   overflow: hidden;
-  width: auto;
+  max-width: 100%;
 
   &.__hidden {
     &::after {
@@ -33,7 +34,7 @@
       content: "/";
       position: absolute;
       right: rem(-5);
-      top: 0;
+      top: rem(2);
     }
   }
 

@@ -16,6 +16,9 @@ module.exports = {
     entry: {
         main: "./src/js/index.js",
         home: "./src/js/import/pages/home.js",
+        sign_up: "./src/js/import/pages/sign_up.js",
+        original_catalogs: "./src/js/import/pages/original_catalogs.js",
+        catalog_to: "./src/js/import/pages/catalog_to.js",
     },
 
     output: {

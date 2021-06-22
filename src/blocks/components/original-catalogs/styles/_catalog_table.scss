@@ -18,8 +18,7 @@
 		@include lg(margin-right, rem(40));
 
 		.ct_image {
-			width: rem(50);
-			height: rem(50);
+			width: rem(51);
 		}
 
 		.text {
@@ -32,18 +31,22 @@
 		flex: 1;
 
 		@include xs(display, none);
-		@include md(display, block);
+		@include md(display, table);
+
+		.clickable_row {
+			cursor: pointer;
+		}
 
 		tr {
-			border-bottom: 1px solid var(--color-cyan);
+			border-top: 1px solid var(--color-cyan);
 			transition: all .2s ease-in;
-
-			&:last-of-type {border: none;}
 
 			&:hover {background: var(--color-extra-light-gray);}
 		}
 
 		thead > tr {
+			border: none;
+
 			&:hover {
 				background: transparent;
 			}
@@ -58,11 +61,15 @@
 			@include md-block() {
 				white-space: inherit;
 				text-align: center;
+				padding-left: rem(10);
+				padding-right: rem(10);
 			}
 
 			@include lg-block() {
 				white-space: nowrap;
 				text-align: left;
+				padding-left: rem(15);
+				padding-right: rem(15);
 			}
 
 			&:first-child {
@@ -71,24 +78,35 @@
 		}
 
 		tr > td {
-			padding: rem(15);
 			font: rem(14)/rem(18) Fregat, sans-serif;
 			vertical-align: top;
 
 			&:first-child {
 				padding-left: rem(10);
 			}
+
+			@include md-block() {
+				padding: rem(10);
+			}
+
+			@include lg-block() {
+				padding: rem(15);
+			}
 		}
 	}
 
 	// mobile table
 	.ct_table_mobile {
+		width: 100%;
+
 		@include md(display, none);
 
 		.ctm_item {
+			display: block;
 			width: 100%;
 			padding: rem(20) 0;
 			border-bottom: 1px solid var(--color-cyan);
+			color: var(--color-black);
 
 			&:first-of-type {
 				padding-top: 0;
@@ -100,6 +118,7 @@
 
 			.row {
 				display: flex;
+				align-items: baseline;
 				justify-content: space-between;
 				margin-bottom: rem(15);
 
@@ -116,10 +135,12 @@
 
 				.name {
 					font: rem(14)/rem(14) Fregat-Bold, sans-serif;
+					margin-right: rem(15);
 				}
 
 				.value {
 					font: rem(14)/rem(18) Fregat, sans-serif;
+					text-align: right;
 				}
 			}
 		}

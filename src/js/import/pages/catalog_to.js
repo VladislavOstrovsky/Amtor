@@ -1,4 +1,5 @@
 import $ from "jquery";
+import tippy from "tippy.js";
 
 // insert example vin code in input
 $(".js-search-help").click(function () {
@@ -74,4 +75,24 @@ $('.js-mobile-show-more-a').click(function () {
         $(this).find('.text').html('Показать ещё');
     }
     $('div[data-analogs-hidden]').toggleClass('__hidden');
+});
+
+// clickable row table
+$(document).ready(function($) {
+    $('.clickable_row').click(function() {
+        window.location = $(this).data("href");
+    });
+});
+
+// tooltips
+tippy('.icon_revert', {
+    content: 'Возможность возврата',
+});
+
+tippy('.icon_count', {
+    content: 'Количество',
+});
+
+tippy('.icon_probability', {
+    content: 'Вероятность выдачи данным поставщиком',
 });

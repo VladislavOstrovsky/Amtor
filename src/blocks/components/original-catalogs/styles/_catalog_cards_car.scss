@@ -1,0 +1,56 @@
+.catalog_cards_car {
+	display: grid;
+	grid-gap: rem(20);
+
+	@include xs-block() {
+		grid-template-columns: repeat(auto-fill, minmax(rem(130), 1fr));
+		grid-template-rows: repeat(auto-fill, rem(130));
+
+		.ccc_item {min-height: rem(130);}
+		h2 {bottom: rem(5);}
+	}
+
+	@include md-block() {
+		grid-template-columns: repeat(auto-fill, minmax(rem(200), 1fr));
+		grid-template-rows: repeat(auto-fill, rem(226));
+
+		.ccc_item {min-height: rem(226);}
+		h2 {bottom: rem(10);}
+	}
+
+	@include lg-block() {
+		grid-template-rows: repeat(auto-fill, minmax(rem(200), 1fr));
+
+		.ccc_item {min-height: rem(200);}
+	}
+
+	.ccc_item {
+		position: relative;
+		min-height: rem(200);
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		box-shadow: inset 0 0 0 1px #d6deed;
+		border-radius: var(--border-radius);
+		background-color: var(--color-white);
+
+		&:hover {
+			box-shadow: var(--box-shadow-card);
+		}
+
+		img {
+			max-width: calc(100% - 40px);
+			object-fit: cover;
+		}
+
+		h2 {
+			position: absolute;
+			left: 0;
+			width: 100%;
+			text-align: center;
+			font: rem(14)/rem(18) Fregat, sans-serif;
+			color: var(--color-marine);
+		}
+	}
+}

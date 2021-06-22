@@ -13,7 +13,7 @@
 
 	.slick-next {
 		top: 44%;
-		right: rem(40);
+		right: rem(20);
 	}
 
 	.slick-track {
@@ -62,7 +62,7 @@
 			@include md-block() {
 				top: 85%;
 				left: auto;
-				right: rem(96);
+				right: rem(86);
 			}
 
 			@include lg-block() {
@@ -79,7 +79,7 @@
 
 			@include lg-block() {
 				top: 44%;
-				right: rem(40);
+				right: rem(20);
 			}
 		}
 
@@ -406,7 +406,7 @@
 
 			.slick-next {
 				top: 44%;
-				right: rem(10);
+				right: rem(15);
 			}
 		}
 

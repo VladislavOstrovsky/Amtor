@@ -1,0 +1,20 @@
+div.detail_graphic(style='display: none;' id='detail-graphic-popup')
+  h1.title_popup Вероятность выдачи данным поставщиком
+  div.dg_content
+    div.dg_good_content
+      include ../../../img/svg/catalogs/detail_graphic.svg
+      span.good_text.js-good-value 80%
+      div.dg_bad_content
+        include ../../../img/svg/catalogs/detailt_gr_bad.svg
+        span.bad_text.js-bag-value 20%
+  div.dg_help_info
+    div.info_bag
+      span.square.__bad
+      span.js-bag-value 20
+      span.value %
+      span отказано
+    div.info_good
+      span.square.__good
+      span.js-good-value 80
+      span.value %
+      span выдано
