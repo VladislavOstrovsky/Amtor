@@ -3,7 +3,9 @@
 @import "../../components/original-catalogs/styles/accordion";
 @import "../../components/original-catalogs/styles/filters_by_issue";
 @import "../../components/original-catalogs/styles/catalog_detail_table";
+// popups
 @import "../../components/popups/styles/graphic";
+@import "../../components/popups/styles/quick_view";
 
 .original_catalogs_wrapper {
 	display: flex;
@@ -432,32 +434,5 @@
 	@include lg-block() {
 		flex-direction: row;
 		margin: rem(40) 0 rem(80);
-	}
-
-	.oc_mobile_show_filters {
-		@include xs-block() {
-			display: block;
-			margin-bottom: rem(20);
-		};
-
-		@include md(margin-bottom, rem(30));
-		@include lg(display, none);
-
-		.btn {
-			font-size: rem(14);
-			line-height: rem(14);
-			height: rem(39);
-		}
-	}
-
-	.oc_filters {
-		@include xs(margin, 0 0 rem(20));
-		@include xs(display, none);
-		@include md(margin, 0 0 rem(30));
-		@include lg(display, block);
-
-		&.__open {
-			display: block !important;
-		}
 	}
 }

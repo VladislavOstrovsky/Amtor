@@ -44,9 +44,9 @@
 
   &:disabled {
     cursor: default;
-    color: var(--button-disabled-color);
-    background: var(--button-disabled-bg-color);
-    border: none;
+    color: var(--button-disabled-color) !important;
+    background: var(--button-disabled-bg-color) !important;
+    border-color: var(--button-disabled-bg-color) !important;
     pointer-events: none;
   }
 

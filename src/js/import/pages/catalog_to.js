@@ -1,29 +1,12 @@
 import $ from "jquery";
 import tippy from "tippy.js";
-
-// insert example vin code in input
-$(".js-search-help").click(function () {
-    $(".js-search-input").val("WAUBH54B11N111054");
-});
-
-// accordion toggle
-$('.js-accordion-link').on("click", function () {
-    var $this = $(this);
-
-    if ($this.next().hasClass("open")) {
-        $this.next().removeClass("open");
-        $this.toggleClass("active");
-    } else {
-        $this.toggleClass("active");
-        $this.next().slideToggle();
-    }
-});
+require('../../../js/jquery.fancybox.min');
 
 // mobile show filters
 $('.js-oc-show-filters').click(function () {
-    $('.oc_filters').toggleClass('__open');
+    $('.catalog_filters').toggleClass('__open');
 
-    if ($('.oc_filters').hasClass('__open')) {
+    if ($('.catalog_filters').hasClass('__open')) {
         $(this).html('Скрыть фильтр');
     } else {
         $(this).html('Показать фильтр');
@@ -96,3 +79,29 @@ tippy('.icon_count', {
 tippy('.icon_probability', {
     content: 'Вероятность выдачи данным поставщиком',
 });
+
+// js-detail-page slider
+$(document).on('click', '.js-slider-card > div', function () {
+    var $this = $(this),
+        data = $this.attr('data-img'),
+        imgSrc = $this.closest('.dpi_gallery').find('.dpi_gallery__main img').attr('src'),
+        img = $this.closest('.dpi_gallery').find('.dpi_gallery__main img');
+    $('.js-slider-card > div').removeClass('active');
+    $this.addClass('active');
+
+    if(!(data === imgSrc)) {
+        img.fadeOut('fast', function () {
+            img.attr('src', data);
+            img.fadeIn('fast');
+        });
+    }
+});
+
+// ajax popup content
+// $('#button').fancybox({
+//     width: 400,
+//     height: 400,
+//     autoSize: false,
+//     href: './quick_view.html',
+//     type: 'ajax'
+// });

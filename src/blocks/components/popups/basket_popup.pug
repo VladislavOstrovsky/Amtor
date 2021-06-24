@@ -1,0 +1,25 @@
+div.basket_popup(style='display: none;' id='basket-popup')
+  div.bp_title
+    h1.title_popup MAZDA 830077226
+    h2.subtitle_popup Моторное масло
+  form(action='/' class='bp_content')
+    div.bp_actions
+      div.bp_input_count
+        h2.title Количество
+        div.input_wrapper
+          button(type='button' class='btn transparent iconButton dec js-basket-dec')
+          input(id="bp-count" type='number' name="bp-count" class='input js-basket-count' value='3' placeholder='0')
+          button(type='button' class='btn transparent iconButton inc js-basket-inc')
+      div.bp_price
+        h2.title Цена
+        h1.price_title 7 990 ₽
+    div.textarea-container
+      label(for='bp-comment-text' class='label-textarea') Комментарий к заказу
+      textarea(id="bp-comment-text" name="bp-comment-text" class='input' placeholder='Введите ваш комментарий')
+    div.bc_delivery Срок поставки: 22 апреля
+    div.bp_buttons
+      a(href='./basket.html' class='btn danger iconButton withText basket-btn')
+        span.icon
+          include ../../../img/svg/header/basket-dark.svg
+        span.text В корзину
+      button(type='submit' class='btn success') Быстрый заказ

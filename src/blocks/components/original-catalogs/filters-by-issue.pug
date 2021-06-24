@@ -1,31 +1,35 @@
-form(action='/' class='filters_by_issue')
-  h1 Фильтры по выдачи
-  div.fbi_item
-    div.input-container
-      label(for='fbi-brand' class='label-input') Бренд
-      input(id='fbi-brand' type='text' name='fbi-brand' class='input' placeholder='Выберите модель')
-    label(for='fbi-sort-price' class='checkbox-container center') Сортировать по цене
-      input(id="fbi-sort-price" type='checkbox' name="fbi-sort-price")
-      span.checkmark
-    label(for='fbi-check-brand' class='checkbox-container center') BMW - 2 990 ₽
-      input(id="fbi-check-brand" type='checkbox' name="fbi-check-brand")
-      span.checkmark
-  div.fbi_item
-    div.input-container
-      label(for='fbi-delivery-time' class='label-input') Укажите срок доставки
-      input(id='fbi-delivery-time' type='text' name='fbi-delivery-time' class='input' placeholder='Выберите срок доставки')
-    label(for='fbi-delivery-time-all' class='checkbox-container center') Любой
-      input(id="fbi-delivery-time-all" type='checkbox' name="fbi-delivery-time-all")
-      span.checkmark
-    label(for='fbi-delivery-time-before' class='checkbox-container center') до 33 дней
-      input(id="fbi-delivery-time-before" type='checkbox' name="fbi-delivery-time-before")
-      span.checkmark
-  div.fbi_item.last
-    h2 Выберите необходимое количество
-    div.fbi_input_counts
-      input(type='text' name='fbi-count-from' class='input dark' placeholder='0')
-      span -
-      input(type='text' name='fbi-count-to' class='input dark' placeholder='0')
-  div.buttons
-    button(type='submit' class='btn success js-filters-submit') Применить фильтр
-    button(type='button' class='btn reset-filters js-filters-reset') Сбросить
+div.mobile_show_filters
+  button(type="button" class='btn transparent fullWidth js-oc-show-filters') Показать фильтр
+div.catalog_filters
+  include ../../../blocks/components/select/select-sort-by
+  form(action='/' class='filters_by_issue')
+    h1 Фильтры по выдачи
+    div.fbi_item
+      div.input-container
+        label(for='fbi-brand' class='label-input') Бренд
+        input(id='fbi-brand' type='text' name='fbi-brand' class='input' placeholder='Выберите модель')
+      label(for='fbi-sort-price' class='checkbox-container center') Сортировать по цене
+        input(id="fbi-sort-price" type='checkbox' name="fbi-sort-price")
+        span.checkmark
+      label(for='fbi-check-brand' class='checkbox-container center') BMW - 2 990 ₽
+        input(id="fbi-check-brand" type='checkbox' name="fbi-check-brand")
+        span.checkmark
+    div.fbi_item
+      div.input-container
+        label(for='fbi-delivery-time' class='label-input') Укажите срок доставки
+        input(id='fbi-delivery-time' type='text' name='fbi-delivery-time' class='input' placeholder='Выберите срок доставки')
+      label(for='fbi-delivery-time-all' class='checkbox-container center') Любой
+        input(id="fbi-delivery-time-all" type='checkbox' name="fbi-delivery-time-all")
+        span.checkmark
+      label(for='fbi-delivery-time-before' class='checkbox-container center') до 33 дней
+        input(id="fbi-delivery-time-before" type='checkbox' name="fbi-delivery-time-before")
+        span.checkmark
+    div.fbi_item.last
+      h2 Выберите необходимое количество
+      div.fbi_input_counts
+        input(type='text' name='fbi-count-from' class='input dark' placeholder='0')
+        span -
+        input(type='text' name='fbi-count-to' class='input dark' placeholder='0')
+    div.buttons
+      button(type='submit' class='btn success js-filters-submit') Применить фильтр
+      button(type='button' class='btn reset-filters js-filters-reset') Сбросить

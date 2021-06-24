@@ -1,0 +1,130 @@
+.quick_view_popup {
+	@include xs(width, rem(300));
+	@include md(width, rem(640));
+
+	.qv_content {
+		display: flex;
+		justify-content: space-between;
+
+		.dp_h1 {
+			color: var(--color-marine);
+			font: rem(18)/rem(18) Fregat-Bold, sans-serif;
+			margin-bottom: rem(20);
+			padding-left: rem(10);
+		}
+
+		@include xs-block() {
+			flex-direction: column;
+		}
+
+		@include md-block() {
+			flex-direction: row;
+
+			.dpi_about_product {
+				margin-left: rem(15);
+			}
+		}
+
+		.qv_image {
+			flex-grow: 1;
+			flex-shrink: 0;
+			display: flex;
+			justify-content: center;
+
+			img {
+				object-fit: contain;
+			}
+
+			@include xs(max-height, rem(142));
+			@include md(max-height, rem(400));
+		}
+	}
+}
+
+// with description
+.quick_view_description_popup {
+	@include xs-block() {
+		width: rem(300);
+
+		.dpi_gallery {
+			display: none;
+		}
+	}
+
+	@include md-block() {
+		width: rem(640);
+
+		.dpi_gallery {
+			display: flex;
+		}
+
+		.qvd_mobile_slider {
+			display: none !important;
+		}
+	}
+
+	.dp_h1 {
+		color: var(--color-marine);
+		font: rem(18)/rem(18) Fregat-Bold, sans-serif;
+		margin-bottom: rem(20);
+		padding-left: rem(10);
+	}
+
+	.dpi_about_product {
+		width: 100%;
+	}
+
+	.qvd_content {
+		display: flex;
+		flex-direction: column;
+
+		.dpi_gallery__main {
+			flex: 1;
+			display: flex;
+			justify-content: center;
+			margin-left: 0;
+
+			img {
+				@include xs(max-height, rem(142));
+				@include md(max-height, (rem(400) !important));
+			}
+		}
+
+		.qvd_text {
+			order: 2;
+			color: var(--color-marine);
+			margin: rem(20) 0 0;
+
+			@include md-block() {
+				margin-bottom: rem(30);
+			}
+
+			.title {
+				font: rem(18)/rem(18) Fregat-Bold, sans-serif;
+				margin-bottom: rem(10);
+			}
+
+			.content {
+				font: rem(15)/rem(26) Fregat, sans-serif;
+			}
+		}
+
+		// slider mobile
+		.qvd_mobile_slider {
+			display: flex;
+			height: rem(170);
+
+			img {
+				object-fit: contain;
+			}
+
+			.slick-slide {
+				height: rem(162) !important;
+
+				img {
+					height: rem(162) !important;
+				}
+			}
+		}
+	}
+}

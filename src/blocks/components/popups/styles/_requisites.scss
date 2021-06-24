@@ -1,0 +1,14 @@
+.requisites_popup {
+	@include xs(width, rem(300));
+	@include md(width, rem(440));
+
+	.rp_content {
+		font: rem(15)/rem(26) Fregat, sans-serif;
+		color: var(--color-marine);
+
+		.title {
+			font-family: Fregat-Bold, sans-serif;
+			margin-right: rem(2);
+		}
+	}
+}

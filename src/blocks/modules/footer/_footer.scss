@@ -443,9 +443,12 @@ footer {
       }
 
       .icon_close {
-        display: flex;
-        width: 100%;
+        display: block;
+        margin-left: auto;
+        width: rem(14);
         height: rem(14);
+        padding: 0 0 rem(10) rem(10);
+        background: var(--color-white);
       }
     }
 

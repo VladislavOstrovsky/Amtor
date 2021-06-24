@@ -21,9 +21,9 @@ $('.js-accordion-link').on("click", function () {
 
 // mobile show filters
 $('.js-oc-show-filters').click(function () {
-    $('.oc_filters').toggleClass('__open');
+    $('.catalog_filters').toggleClass('__open');
 
-    if ($('.oc_filters').hasClass('__open')) {
+    if ($('.catalog_filters').hasClass('__open')) {
         $(this).html('Скрыть фильтр');
     } else {
         $(this).html('Показать фильтр');

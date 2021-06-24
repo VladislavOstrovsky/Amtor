@@ -7,7 +7,7 @@ div.slide_main
       div.price_wp
         div.price_old.js-pd-old-price #{slide.old_price}
         div.price_new.js-pd-new-price #{slide.new_price}
-      button(type='button' class='btn danger iconButton withText basket-btn')
+      button(data-src='#basket-popup' type='button' class='btn danger iconButton withText basket-btn fancybox')
         span.icon
           include ../../../img/svg/header/basket-dark.svg
         span.text Купить

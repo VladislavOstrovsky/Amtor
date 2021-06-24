@@ -1,0 +1,34 @@
+- var optionsPopup = {touch: false, enableEscapeButton: true};
+
+div.detail_page_info
+  include ./gallery
+  include ./info
+  div.dpi_product_stock
+  div.dpi_extra_info
+    div.extra_actions
+      div.price
+        h1 от 2 990 ₽
+        a(href='/') другие предложения
+      button(data-src='#basket-popup' type='button' class='btn danger iconButton withText basket-btn fancybox')
+        span.icon
+          include ../../../img/svg/header/basket-dark.svg
+        span.text В корзину
+      div.delivery_count
+        div.dc_item
+          h3 Доставка:
+          p 5-10 дней
+        div.dc_item
+          h3 В наличии:
+          p 60 шт.
+    div.extra_advantages
+      h1.dp_h1 Наши преимущества
+      ul.advantages_list
+        li.list_item
+          img(src='./img/detail-page/icons/original.svg' class='list-image')
+          p.list-text 100% Оригинальная продукция
+        li.list_item
+          img(src='./img/detail-page/icons/calendar.svg' class='list-image')
+          p.list-text Возврат в течение 14 дней с момента получения
+        li.list_item
+          img(src='./img/detail-page/icons/delivery.svg' class='list-image')
+          p.list-text Отправляем в любые регионы РФ и СНГ

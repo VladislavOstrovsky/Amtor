@@ -1,0 +1,54 @@
+.dpi_about_product {
+	order: 2;
+
+	@include xs-block() {
+		width: 100%;
+		order: 4;
+		margin-top: rem(30);
+
+		.dp_h1 {
+			padding-left: 0;
+		}
+	}
+
+	@include md-block() {
+		margin-top: rem(10);
+	}
+
+	@include lg-block() {
+		width: rem(280);
+		order: 2;
+	}
+
+	@include xl-block() {
+		width: rem(330);
+	}
+
+	.dp_h1 {
+		padding-left: rem(10);
+	}
+
+	.about_table_list {
+		display: flex;
+		width: 100%;
+		flex-direction: column;
+
+		.atl_item {
+			display: flex;
+			justify-content: space-between;
+			padding: rem(10);
+			border-radius: rem(5);
+			font: rem(14)/rem(14) Fregat, sans-serif;
+
+			&:nth-child(even) {
+				background-color: #f4f7fc;
+			}
+		}
+	}
+
+	.dpi_gallery__main {
+		@include xs(margin-left, rem(38));
+		@include md(margin-left, rem(64));
+		@include lg(margin-left, rem(83));
+	}
+}

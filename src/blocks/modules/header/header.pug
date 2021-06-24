@@ -1,8 +1,6 @@
-- var optionsPopup = {touch: false, enableEscapeButton: true};
-
 header
   div.header__top.container.dFlex.justifyContentBetween.alignItemsCenter
-    div(data-fancybox data-src='#change-region-popup' data-options=optionsPopup class='dark_link select-region')
+    div(data-src='#change-region-popup' class='dark_link select-region fancybox')
       span.icon
         include ../../../img/svg/header/location.svg
       span Москва
@@ -11,8 +9,8 @@ header
       a(href='/' class='dark_link') Контакты
       a(href='/' class='dark_link') Доставка
       a(href='/' class='dark_link') Оплата
-    div(class='dark_link create-link' data-fancybox data-src='#sign-up-popup' data-options=optionsPopup) Создать аккаунт
-    div(class='dark_link login-mobile-link' data-fancybox data-src='#sign-in-popup' data-options=optionsPopup) Войти в аккаунт
+    div(class='dark_link create-link fancybox' data-src='#sign-up-popup') Создать аккаунт
+    div(class='dark_link login-mobile-link fancybox' data-src='#sign-in-popup') Войти в аккаунт
   div.header__center.container.dFlex.flexWrap.justifyContentBetween.alignItemsCenter
     div.btn_burger.mobile
       span.burger_line._1
@@ -22,9 +20,9 @@ header
       img.logo(src="./img/svg/logo.svg")
     div.header_phone
       a(href='tel:8 800 550 5354' class='title_p') 8 800 550 5354
-      h2(data-fancybox data-src='#order-callback-popup' data-options=optionsPopup class='text_normal') Заказать звонок
+      h2(data-src='#order-callback-popup' class='text_normal fancybox') Заказать звонок
     div.header_actions
-      a(class='btn success login-btn' data-fancybox href='#sign-in-popup' data-options=optionsPopup) Войти
+      a(class='btn success login-btn fancybox' data-src='#sign-in-popup') Войти
       //button(type='button' class='btn transparent iconButton login-btn')
       //  span.icon
       //    include ../../../img/svg/header/user-login-dark.svg
@@ -50,4 +48,5 @@ header
   include ../../components/popups/order_callback
   include ../../components/popups/change_region
   include ../../components/popups/request_vin_code
+  include ../../components/popups/basket_popup
 

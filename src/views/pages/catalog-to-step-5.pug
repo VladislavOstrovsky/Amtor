@@ -1,0 +1,31 @@
+extends ../layouts/default
+
+block variables
+    - const title = "Mazda 830077226 Масло моторное 1л";
+
+block styles
+  link(rel="stylesheet" href="./styles/catalog-to.css")
+
+block content
+  div#page
+    include ../../blocks/components/header/mobile_menu
+    div.page
+      include ../../blocks/modules/header/header
+      div.container
+        div.bread-crumbs
+          a(href='./home.html' class='text_bc bread-crumbs_item') Главная
+          a(href='./catalog-to.html' class='text_bc bread-crumbs_item') Каталог для ТО
+          a(href='./catalog-to.html' class='text_bc bread-crumbs_item') Mazda
+          span.text_bc.bread-crumbs_item Mazda 830077226 Масло моторное 1л
+        h1.title_p 830077226 MAZDA Масло моторное 1л
+      div.container
+        div.catalog_to_step_5
+          include ../../blocks/components/detail-page/detail-page
+          div.c_table
+            include ../../blocks/components/original-catalogs/filters-by-issue
+            include ../../blocks/components/original-catalogs/catalog-detail-table
+      include ../../blocks/modules/footer/footer
+block scripts
+  script(src="js/catalog_to.js")
+  script(src="js/main.js")
+  script(src="js/vendor.js")

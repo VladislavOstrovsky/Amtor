@@ -4,6 +4,33 @@
 	.fbi          - filters by issue
  */
 
+.mobile_show_filters {
+	@include xs-block() {
+		display: block;
+		margin-bottom: rem(20);
+	};
+
+	@include md(margin-bottom, rem(30));
+	@include lg(display, none);
+
+	.btn {
+		font-size: rem(14);
+		line-height: rem(14);
+		height: rem(39);
+	}
+}
+
+.catalog_filters {
+	@include xs(margin, 0 0 rem(20));
+	@include xs(display, none);
+	@include md(margin, 0 0 rem(30));
+	@include lg(display, block);
+
+	&.__open {
+		display: block !important;
+	}
+}
+
 .filters_by_issue {
 	margin-top: rem(20);
 	padding: rem(20);

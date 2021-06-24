@@ -26,11 +26,13 @@
 		&.star-yellow {
 			margin-left: rem(5);
 			background: url('../img/svg/catalogs/star_yellow.svg') center no-repeat;
+			cursor: pointer;
 		}
 
 		&.star-green {
 			margin-left: rem(5);
 			background: url('../img/svg/catalogs/star_green.svg') center no-repeat;
+			cursor: pointer;
 		}
 
 		&.count_1_4 {
@@ -136,8 +138,9 @@
 		}
 
 		.detail_cell {
-			a {
+			.link {
 				font: rem(16)/rem(40) Fregat-Bold, sans-serif;
+				cursor: pointer;
 				text-decoration: underline;
 
 				&:hover {
@@ -148,6 +151,12 @@
 			.sublink {
 				margin-left: rem(30);
 				font: rem(14)/rem(40) 'Open Sans', sans-serif;
+				text-decoration: underline;
+				cursor: pointer;
+
+				&:hover {
+					text-decoration: none;
+				}
 			}
 
 			.cell_text {
@@ -163,6 +172,7 @@
 
 		.cell_price {
 			font: rem(24)/rem(24) Fregat-Bold, sans-serif;
+			white-space: nowrap;
 
 			@include md(font, (rem(20)/rem(20) Fregat-Bold, sans-serif));
 			@include xl(font, (rem(24)/rem(24) Fregat-Bold, sans-serif));
@@ -200,6 +210,7 @@
 		}
 
 		.availability {
+			white-space: nowrap;
 			padding: rem(5) rem(10);
 			background: #299F34;
 			color: var(--color-white);
@@ -228,7 +239,7 @@
 		.dct_item_name {
 			padding: rem(15) 0 0;
 
-			a {
+			.link {
 				font: rem(16)/rem(30) Fregat-Bold, sans-serif;
 				text-decoration: underline;
 				color: var(--color-black);
@@ -240,6 +251,11 @@
 
 			.sublink {
 				font: rem(16)/rem(30) 'Open Sans', sans-serif;
+				text-decoration: underline;
+
+				&:hover {
+					text-decoration: none;
+				}
 			}
 
 			.top_name {

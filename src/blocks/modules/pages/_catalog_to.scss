@@ -3,9 +3,10 @@
 @import "../../components/original-catalogs/styles/catalog_detail_table";
 @import "../../components/original-catalogs/styles/catalog_marks";
 @import "../../components/original-catalogs/styles/catalog_cards_car";
-
-.catalog_to_wrapper {
-}
+@import "../../components/detail-page/styles/detail_page";
+// popups
+@import "../../components/popups/styles/graphic";
+@import "../../components/popups/styles/quick_view";
 
 // step 2
 .catalog_to_step_2 {
@@ -136,5 +137,26 @@
 }
 
 // step 5
-.catalog_to_detail {
+.catalog_to_step_5 {
+	display: flex;
+	flex-direction: column;
+
+	@include xs(margin, rem(20) 0);
+	@include md(margin, rem(30) 0 rem(60));
+	@include lg(margin, rem(40) 0 rem(80));
+
+	.c_table {
+		display: flex;
+
+		@include xs-block() {
+			flex-direction: column;
+			margin: rem(30) 0 0;
+		}
+		@include md(margin, rem(40) 0 0);
+
+		@include lg-block() {
+			flex-direction: row;
+			margin: rem(60) 0 0;
+		}
+	}
 }

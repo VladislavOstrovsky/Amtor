@@ -1,0 +1,29 @@
+.no_information_popup {
+	@include xs(width, rem(300));
+	@include md(width, rem(640));
+
+	.nip_content {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		font: rem(15)/rem(26) Fregat, sans-serif;
+		color: var(--color-marine);
+		text-align: center;
+
+		@include xs-block() {
+			padding: 0 rem(10);
+			margin-bottom: 0;
+		}
+
+		@include md-block() {
+			padding: 0 rem(105);
+			margin-bottom: rem(30);
+		}
+
+		.content_image {
+			@include xs(margin-bottom, rem(20));
+			@include md(margin-bottom, rem(25));
+		}
+	}
+}
