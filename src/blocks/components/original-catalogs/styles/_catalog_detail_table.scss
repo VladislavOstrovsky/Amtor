@@ -188,6 +188,7 @@
 		.basket-btn {
 			@include xs-block() {
 				width: rem(46);
+				padding: 0;
 
 				.text {
 					display: none;
@@ -202,6 +203,7 @@
 
 			@include xl-block() {
 				width: auto;
+				padding: 0 rem(15);
 
 				.text {
 					display: block;

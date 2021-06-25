@@ -215,3 +215,10 @@ $(".js-basket-inc").click(function () {
         }
     }
 });
+
+// clickable row table
+$(document).ready(function($) {
+    $('.clickable_row').click(function() {
+        window.location = $(this).data("href");
+    });
+});

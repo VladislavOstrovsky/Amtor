@@ -19,6 +19,7 @@ module.exports = {
         sign_up: "./src/js/import/pages/sign_up.js",
         original_catalogs: "./src/js/import/pages/original_catalogs.js",
         catalog_to: "./src/js/import/pages/catalog_to.js",
+        catalog_tec_doc: "./src/js/import/pages/catalog_tec_doc.js",
     },
 
     output: {

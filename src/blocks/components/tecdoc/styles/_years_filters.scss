@@ -1,0 +1,40 @@
+.years_filters {
+	display: flex;
+	flex-wrap: wrap;
+	gap: rem(10);
+
+	@include xs-block() {
+		flex-wrap: nowrap;
+		overflow-x: scroll;
+		padding: rem(18) 0;
+		margin-top: rem(-18);
+		margin-bottom: rem(12);
+	}
+
+	@include md-block() {
+		margin-top: 0;
+		padding: 0;
+		flex-wrap: wrap;
+		margin-bottom: rem(40);
+		overflow-x: inherit;
+	}
+
+	@include lg(margin-bottom, rem(30));
+
+	.yf_item {
+		display: flex;
+		align-items: center;
+		padding: rem(10);
+		height: rem(16);
+		box-shadow: var(--box-shadow);
+		font: rem(14)/rem(14) Fregat-Bold, sans-serif;
+		color: var(--color-marine);
+		border-radius: var(--border-radius);
+		cursor: pointer;
+
+		&.__selected {
+			color: var(--color-white);
+			background-color: var(--color-base);
+		}
+	}
+}

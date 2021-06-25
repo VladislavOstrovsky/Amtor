@@ -3,6 +3,7 @@
 @import "../../components/original-catalogs/styles/accordion";
 @import "../../components/original-catalogs/styles/filters_by_issue";
 @import "../../components/original-catalogs/styles/catalog_detail_table";
+@import "../../components/original-catalogs/styles/search_car";
 // popups
 @import "../../components/popups/styles/graphic";
 @import "../../components/popups/styles/quick_view";
@@ -134,69 +135,6 @@
 	@include xs(margin, rem(20) 0);
 	@include md(margin, rem(20) 0 rem(60));
 	@include lg(margin, rem(30) 0 rem(80));
-
-	.ocs_search {
-		display: flex;
-		flex-wrap: wrap;
-		justify-content: space-between;
-		font: rem(14)/rem(22) 'Open Sans', sans-serif;
-		color: #414141;
-		padding: rem(20);
-		background: var(--color-extra-light-gray);
-		border-radius: var(--border-radius);
-
-		@include xs-block() {
-			flex-direction: column;
-			align-items: flex-start;
-			margin-bottom: rem(20);
-		}
-
-		@include md-block() {
-			flex-direction: row;
-			align-items: center;
-			margin-bottom: rem(40);
-		}
-
-		.search-input-wrapper {
-			flex: 1;
-			margin: 0 rem(60);
-
-			@include xs-block() {
-				width: 100%;
-				margin: rem(10) 0 0;
-			}
-
-			@include md-block() {
-				width: auto;
-				margin: 0 0 0 rem(20);
-			}
-
-			@include lg-block() {
-				margin: 0 rem(60);
-			}
-		}
-
-		.ocs_help {
-			@include xs-block() {
-				width: 100%;
-				display: flex;
-				justify-content: flex-end;
-				margin-top: rem(10);
-			}
-
-			@include lg-block() {
-				width: auto;
-				display: block;
-				margin-top: 0;
-			}
-
-			.example {
-				color: var(--color-base);
-				cursor: pointer;
-				text-decoration: underline;
-			}
-		}
-	}
 }
 
 // step 3

@@ -1,10 +1,10 @@
 extends ../layouts/default
 
 block variables
-    - const title = "Оригинальные каталоги";
+    - const title = "Комплектующие Mazda MX-30";
 
 block styles
-  link(rel="stylesheet" href="./styles/original-catalogs.css")
+  link(rel="stylesheet" href="./styles/catalog-tec-doc.css")
 
 block content
   div#page
@@ -15,15 +15,17 @@ block content
         div.bread-crumbs
           a(href='./home.html' class='text_bc bread-crumbs_item') Главная
           a(href='./original-catalogs.html' class='text_bc bread-crumbs_item') Оригинальные каталоги
-          span.text_bc.bread-crumbs_item BMW
-        h1.title_p Оригинальные каталоги
+          a(href='./' class='text_bc bread-crumbs_item') MAZDA
+          a(href='./' class='text_bc bread-crumbs_item') MX-30
+          span.text_bc.bread-crumbs_item Комплектующие
+        h1.title_p Комплектующие Mazda MX-30
       div.container
-        div.original_catalogs_step_2
-          include ../../blocks/components/original-catalogs/search-car
-          include ../../blocks/components/original-catalogs/catalog-table/original-catalogs-table
+        div.catalog_tec_doc_step_5
+          include ../../blocks/components/cards/tecdoc/cards
+
       include ../../blocks/modules/footer/footer
 
 block scripts
-  script(src="js/original_catalogs.js")
+  script(src="js/catalog_tec_doc.js")
   script(src="js/main.js")
   script(src="js/vendor.js")

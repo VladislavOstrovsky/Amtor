@@ -1,0 +1,67 @@
+.cs_search {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	font: rem(14)/rem(22) 'Open Sans', sans-serif;
+	color: #414141;
+	padding: rem(20);
+	background: var(--color-extra-light-gray);
+	border-radius: var(--border-radius);
+
+	@include xs-block() {
+		flex-direction: column;
+		align-items: flex-start;
+		margin-bottom: rem(20);
+	}
+
+	@include md-block() {
+		flex-direction: row;
+		align-items: center;
+		margin-bottom: rem(40);
+	}
+
+	&.name_car {
+		@include xs(margin-bottom, rem(30));
+		@include md(margin-bottom, rem(20));
+	}
+
+	.search-input-wrapper {
+		flex: 1;
+		margin: 0 rem(60);
+
+		@include xs-block() {
+			width: 100%;
+			margin: rem(10) 0 0;
+		}
+
+		@include md-block() {
+			width: auto;
+			margin: 0 0 0 rem(20);
+		}
+
+		@include lg-block() {
+			margin: 0 rem(60);
+		}
+	}
+
+	.cs_help {
+		@include xs-block() {
+			width: 100%;
+			display: flex;
+			justify-content: flex-end;
+			margin-top: rem(10);
+		}
+
+		@include lg-block() {
+			width: auto;
+			display: block;
+			margin-top: 0;
+		}
+
+		.example {
+			color: var(--color-base);
+			cursor: pointer;
+			text-decoration: underline;
+		}
+	}
+}

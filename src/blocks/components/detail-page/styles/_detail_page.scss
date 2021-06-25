@@ -126,15 +126,15 @@
 					position: absolute;
 					top: 0;
 					right: 0;
+					padding: 0;
 					width: rem(46);
 				}
 
 				@include sm-block() {
 					position: relative;
 					width: auto;
+					padding: 0 rem(15);
 				}
-
-				@include sm(width, auto);
 			}
 		}
 

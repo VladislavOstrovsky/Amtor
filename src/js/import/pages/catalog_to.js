@@ -60,13 +60,6 @@ $('.js-mobile-show-more-a').click(function () {
     $('div[data-analogs-hidden]').toggleClass('__hidden');
 });
 
-// clickable row table
-$(document).ready(function($) {
-    $('.clickable_row').click(function() {
-        window.location = $(this).data("href");
-    });
-});
-
 // tooltips
 tippy('.icon_revert', {
     content: 'Возможность возврата',

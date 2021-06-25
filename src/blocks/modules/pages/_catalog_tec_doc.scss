@@ -1,0 +1,136 @@
+@import "../../components/original-catalogs/styles/catalog_table";
+@import "../../components/original-catalogs/styles/filters_by_issue";
+@import "../../components/original-catalogs/styles/catalog_detail_table";
+@import "../../components/original-catalogs/styles/catalog_marks";
+@import "../../components/original-catalogs/styles/catalog_cards_car";
+@import "../../components/original-catalogs/styles/search_car";
+@import "../../components/original-catalogs/styles/card_info_car";
+@import "../../components/original-catalogs/styles/accordion";
+
+@import "../../components/tecdoc/styles/years_filters";
+@import "../../components/cards/styles/cards";
+
+.catalog_tec_doc_wrapper {
+	@include xs(margin, rem(20) 0 0);
+	@include md(margin, rem(30) 0 rem(60));
+	@include lg(margin, rem(30) 0 0);
+}
+
+// step 2
+.catalog_tec_doc_step_2 {
+	@include xs(margin, rem(20) 0 rem(40));
+	@include md(margin, rem(30) 0 rem(60));
+	@include lg(margin, rem(30) 0 rem(80));
+}
+
+// step 3
+.catalog_tec_doc_step_3 {
+	@include xs(margin, rem(20) 0);
+	@include md(margin, rem(20) 0 rem(60));
+	@include lg(margin, rem(45) 0 rem(160));
+
+	.catalog_table {
+		@include md-block() {
+			.ct_table tr > th {
+				text-align: left;
+			}
+
+			.ct_brand {
+				width: 100%;
+			}
+		}
+
+		@include lg-block() {
+			.ct_brand {
+				width: auto;
+			}
+		}
+	}
+}
+
+// step 4
+.catalog_tec_doc_step_4 {
+	@include xs(margin, rem(20) 0 rem(60));
+	@include md(margin, rem(30) 0 rem(60));
+	@include lg(margin, rem(30) 0 rem(80));
+
+	.brand_image {
+		display: flex;
+		flex-shrink: 0;
+		width: rem(78);
+		height: rem(98);
+		padding: 0 rem(10);
+		box-shadow: inset 0 0 0 1px #d6deed;
+		border-radius: var(--border-radius);
+		background-color: var(--color-white);
+		margin-right: rem(20);
+
+		.image {
+			object-fit: contain;
+		}
+	}
+
+	.ctd_content {
+		display: flex;
+
+		@include xs(flex-direction, column);
+		@include lg(flex-direction, row);
+	}
+
+	.accordion_wrapper {
+		padding: rem(20);
+		box-shadow: inset 0 0 0 1px var(--color-cyan);
+		border-radius: var(--border-radius);
+	}
+
+	.ctd_cards {
+		flex: 1;
+		display: grid;
+		grid-auto-rows: rem(129);
+		justify-content: center;
+		grid-gap: rem(20);
+		font: rem(14)/rem(18) Fregat, sans-serif;
+
+		@include xs-block() {
+			margin-top: rem(20);
+			grid-template-columns: 1fr;
+		}
+
+		@include md-block() {
+			margin-left: 0;
+			margin-top: rem(30);
+			grid-template-columns: repeat(3, 1fr);
+		}
+
+		@include lg-block() {
+			margin-left: rem(15);
+			margin-top: 0;
+			grid-template-columns: repeat(3, rem(200));
+		}
+
+		a {
+			display: flex;
+			flex-direction: column;
+			gap: rem(4);
+			align-items: center;
+			justify-content: center;
+			text-align: center;
+			border-radius: var(--border-radius-popup);
+			box-shadow: inset 0 0 0 1px var(--color-cyan);
+			color: var(--color-marine);
+		}
+	}
+}
+
+// step 5
+.catalog_tec_doc_step_5 {
+	display: flex;
+	flex-direction: column;
+
+	@include xs(margin, rem(20) 0);
+	@include md(margin, rem(30) 0 rem(60));
+	@include lg(margin, rem(40) 0 rem(80));
+
+
+
+}

@@ -1,0 +1,29 @@
+extends ../layouts/default
+
+block variables
+    - const title = "Запчасти для MAZDA MX-30";
+
+block styles
+  link(rel="stylesheet" href="./styles/catalog-tec-doc.css")
+
+block content
+  div#page
+    include ../../blocks/components/header/mobile_menu
+    div.page
+      include ../../blocks/modules/header/header
+      div.container
+        div.bread-crumbs
+          a(href='./home.html' class='text_bc bread-crumbs_item') Главная
+          a(href='./home.html' class='text_bc bread-crumbs_item') MAZDA
+          a(href='./home.html' class='text_bc bread-crumbs_item') MX-30 (DR)
+          span.text_bc.bread-crumbs_item Двигатель
+        h1.title_p Запчасти для MAZDA MX-30
+      div.container
+        div.catalog_tec_doc_step_3
+          include ../../blocks/components/original-catalogs/catalog-table/catalog-tecdoc-table
+      include ../../blocks/modules/footer/footer
+
+block scripts
+  script(src="js/catalog_tec_doc.js")
+  script(src="js/main.js")
+  script(src="js/vendor.js")

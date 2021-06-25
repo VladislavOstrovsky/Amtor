@@ -1,10 +1,10 @@
 extends ../layouts/default
 
 block variables
-    - const title = "Оригинальные каталоги";
+    - const title = "Каталог неоригинальных запчастей";
 
 block styles
-  link(rel="stylesheet" href="./styles/original-catalogs.css")
+  link(rel="stylesheet" href="./styles/catalog-tec-doc.css")
 
 block content
   div#page
@@ -14,16 +14,15 @@ block content
       div.container
         div.bread-crumbs
           a(href='./home.html' class='text_bc bread-crumbs_item') Главная
-          a(href='./original-catalogs.html' class='text_bc bread-crumbs_item') Оригинальные каталоги
-          span.text_bc.bread-crumbs_item BMW
-        h1.title_p Оригинальные каталоги
+          span.text_bc.bread-crumbs_item Каталог неоригинальных запчастей
+        h1.title_p Каталог неоригинальных запчастей
       div.container
-        div.original_catalogs_step_2
+        div.catalog_tec_doc_wrapper
           include ../../blocks/components/original-catalogs/search-car
-          include ../../blocks/components/original-catalogs/catalog-table/original-catalogs-table
+          include ../../blocks/components/original-catalogs/catalog-marks
       include ../../blocks/modules/footer/footer
 
 block scripts
-  script(src="js/original_catalogs.js")
+  script(src="js/catalog_tec_doc.js")
   script(src="js/main.js")
   script(src="js/vendor.js")

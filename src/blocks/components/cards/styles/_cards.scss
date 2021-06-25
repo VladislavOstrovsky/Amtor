@@ -1,0 +1,196 @@
+.catalog_cards {
+	display: flex;
+	flex-direction: column;
+	gap: rem(20);
+
+	.cc_item {
+		display: flex;
+		padding: rem(20);
+		border-radius: var(--border-radius);
+		box-shadow: var(--box-shadow-card);
+
+		@include xs-block() {
+			flex-direction: column;
+		}
+
+		@include md-block() {
+			flex-direction: row;
+		}
+
+		.cc_image {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+
+			@include xs-block() {
+				margin-right: 0;
+				margin-bottom: rem(20);
+			}
+
+			@include md-block() {
+				flex-basis: 15%;
+				margin-bottom: 0;
+				margin-right: rem(30);
+			}
+
+			@include lg-block() {
+				flex-basis: 20%;
+			}
+
+			img {
+				object-fit: contain;
+			}
+		}
+
+		.cc_text_content {
+			display: flex;
+			flex-direction: column;
+			flex: 1;
+
+			@include md-block() {
+				margin-right: rem(20);
+			}
+
+			@include lg-block() {
+				margin-right: 0;
+			}
+
+			.title {
+				padding-left: rem(10);
+				font: rem(16)/rem(22) Fregat-Bold, sans-serif;
+				margin-bottom: rem(15);
+			}
+
+			.card_info {
+				@include xs(width, 100%);
+				@include md(width, rem(330));
+
+				.ci_item {
+					display: flex;
+					justify-content: space-between;
+					padding: rem(4) rem(10);
+					border-radius: rem(5);
+
+					&:nth-child(even) {
+						background-color: #f4f7fc;
+					}
+
+					.name {
+						font: rem(14)/rem(14) Fregat, sans-serif;
+						margin-right: rem(15);
+					}
+
+					.value {
+						font: rem(14)/rem(18) Fregat, sans-serif;
+						text-align: right;
+					}
+				}
+			}
+
+			.more_link {
+				font: rem(14)/rem(14) Fregat-Bold, sans-serif;
+				color: var(--color-base);
+				padding-left: rem(10);
+				margin-top: rem(20);
+			}
+		}
+
+		.cc_actions {
+			position: relative;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+
+			@include xs-block() {
+				margin-top: rem(15);
+				padding-left: 0;
+				padding-right: 0;
+				border: none;
+				flex-basis: auto;
+			}
+
+			@include md-block() {
+				flex-basis: rem(170);
+				padding-right: rem(10);
+				padding-left: rem(40);
+				margin-top: 0;
+				border-left: 1px solid #CED5E1;
+			}
+
+			@include lg-block() {
+				padding-right: rem(15);
+			}
+
+			.find-btn {
+				@include xs-block() {
+					width: 100%;
+					margin-top: rem(5);
+				}
+
+				@include md-block() {
+					margin-top: 0;
+					width: rem(128);
+				}
+
+				align-self: center;
+				font-size: rem(14);
+				line-height: rem(14);
+			}
+
+			.basket-btn {
+				@include xs-block() {
+					position: absolute;
+					right: 0;
+					top: 0;
+					padding: 0;
+					width: rem(46);
+				}
+
+				@include md-block() {
+					width: rem(153);
+					position: relative;
+				}
+			}
+
+			.price_title {
+				font: rem(34)/rem(34) Fregat-Bold, sans-serif;
+				margin-bottom: rem(20);
+
+				@include xs-block() {
+					padding-left: rem(10);
+					font-size: rem(28);
+					line-height: rem(28);
+				}
+
+				@include md-block() {
+					padding-left: 0;
+					font-size: rem(34);
+					line-height: rem(34);
+				}
+			}
+
+			.delivery_info {
+				display: flex;
+				flex-direction: column;
+				font: rem(14)/rem(18) Fregat, sans-serif;
+				color: #6A7A97;
+
+				@include xs-block() {
+					gap: rem(5);
+					margin-bottom: 0;
+					padding-left: rem(10);
+				}
+
+				@include md-block() {
+					gap: rem(4);
+					padding-left: 0;
+					margin-bottom: rem(20);
+				}
+
+				.bold {
+					font-family: Fregat-Bold, sans-serif;
+				}
+			}
+		}
+	}
+}

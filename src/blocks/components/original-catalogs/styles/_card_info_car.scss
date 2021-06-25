@@ -15,6 +15,10 @@
 
 			.content_item {
 				margin-bottom: rem(20);
+
+				&.last {
+					margin-bottom: 0;
+				}
 			}
 		}
 	}

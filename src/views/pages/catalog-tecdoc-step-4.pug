@@ -1,0 +1,83 @@
+extends ../layouts/default
+
+block variables
+    - const title = "Запчасти для BMW A6";
+
+block styles
+  link(rel="stylesheet" href="./styles/catalog-tec-doc.css")
+
+block content
+  div#page
+    include ../../blocks/components/header/mobile_menu
+    div.page
+      include ../../blocks/modules/header/header
+      div.container
+        div.bread-crumbs
+          a(href='./home.html' class='text_bc bread-crumbs_item') Главная
+          a(href='./original-catalogs.html' class='text_bc bread-crumbs_item') Оригинальные каталоги
+          span.text_bc.bread-crumbs_item Запчасти для BMW A6
+        h1.title_p Запчасти для BMW A6
+      div.container
+        div.catalog_tec_doc_step_4
+          include ../../blocks/components/tecdoc/card-info-car
+          div.ctd_content
+            div.accordion_wrapper
+              include ../../blocks/components/original-catalogs/accordion
+            div.ctd_cards
+              a(href='/')
+                img(class='image' src='./img/catalog-tec-doc/shock-absorber.png')
+                p Амортизатор
+              a(href='/')
+                img(class='image' src='./img/catalog-tec-doc/water-pump.png')
+                p Водяной насос
+              a(href='/')
+                img(class='image' src='./img/catalog-tec-doc/water-radiator.png')
+                p Водяной радиатор
+              a(href='/')
+                img(class='image' src='./img/catalog-tec-doc/air-filter.png')
+                p Воздушный фильтр
+              a(href='/')
+                img(class='image' src='./img/catalog-tec-doc/capacitor.png')
+                p Кондесатор
+              a(href='/')
+                img(class='image' src='./img/catalog-tec-doc/oil-filter.png')
+                p Масляный фильтр
+              a(href='/')
+                img(class='image' src='./img/catalog-tec-doc/individual-elements.png')
+                p Отдельные элементы
+              a(href='/')
+                img(class='image' src='./img/catalog-tec-doc/bearing.png')
+                p Подшипник
+              a(href='/')
+                img(class='image' src='./img/catalog-tec-doc/levers.png')
+                p Рычаги
+              a(href='/')
+                img(class='image' src='./img/catalog-tec-doc/spark-plug.png')
+                p Свеча зажигания
+              a(href='/')
+                img(class='image' src='./img/catalog-tec-doc/windscreen-wiper.png')
+                p Стеклоочиститель
+              a(href='/')
+                img(class='image' src='./img/catalog-tec-doc/stabilizer-bar.png')
+                p Стойка стабилизатора
+              a(href='/')
+                img(class='image' src='./img/catalog-tec-doc/wheel-hub.png')
+                p Ступица колеса
+              a(href='/')
+                img(class='image' src='./img/catalog-tec-doc/fuel-filter.png')
+                p Топливный фильтр
+              a(href='/')
+                img(class='image' src='./img/catalog-tec-doc/brake-disc.png')
+                p Тормозной диск
+              a(href='/')
+                img(class='image' src='./img/catalog-tec-doc/brake-pads.png')
+                p Тормозные колодки
+              a(href='/')
+                img(class='image' src='./img/catalog-tec-doc/interior-filter.png')
+                p Фильтр салона
+      include ../../blocks/modules/footer/footer
+
+block scripts
+  script(src="js/catalog_tec_doc.js")
+  script(src="js/main.js")
+  script(src="js/vendor.js")
