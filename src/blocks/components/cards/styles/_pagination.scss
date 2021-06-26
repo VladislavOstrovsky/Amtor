@@ -1,0 +1,65 @@
+.cards_pagination {
+	display: flex;
+	justify-content: center;
+	gap: rem(10);
+
+	@include xs-block() {
+		margin-top: rem(20);
+
+		.prev,
+		.next {
+			display: none;
+		}
+	};
+
+	@include md-block() {
+		margin-top: rem(20);
+
+		.prev,
+		.next {
+			display: flex;
+			font-size: rem(14);
+		}
+	}
+
+	@include lg-block() {
+		margin-top: rem(30);
+	}
+
+	li {
+		display: flex;
+		font: rem(16)/rem(16) 'Open Sans', sans-serif;
+		border-radius: var(--border-radius-small);
+		background-color: #dfe8f8;
+
+		&.disabled {
+			background-color: var(--color-cyan);
+			color: var(--color-gray);
+			pointer-events: none;
+			opacity: .5;
+		}
+
+		&:hover {
+			box-shadow: 0 4px 9px 0 #BFCEE9CC;
+		}
+	}
+
+	a {
+		color: var(--color-black);
+		text-decoration: none;
+		padding: rem(12) rem(15);
+	}
+
+	.cp_number {
+
+		&.active {
+			background-color: var(--color-base);
+			font-family: 'Open Sans 600', sans-serif;
+			pointer-events: none;
+
+			a {
+				color: var(--color-white);
+			}
+		}
+	}
+}

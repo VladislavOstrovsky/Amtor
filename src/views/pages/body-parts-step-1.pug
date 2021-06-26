@@ -1,0 +1,27 @@
+extends ../layouts/default
+
+block variables
+    - const title = "Кузовные детали";
+
+block styles
+  link(rel="stylesheet" href="./styles/body-parts.css")
+
+block content
+  div#page
+    include ../../blocks/components/header/mobile_menu
+    div.page
+      include ../../blocks/modules/header/header
+      div.container
+        div.bread-crumbs
+          a(href='./home.html' class='text_bc bread-crumbs_item') Главная
+          span.text_bc.bread-crumbs_item Кузовные детали
+        h1.title_p Кузовные детали
+      div.container
+        div.body_parts_wrapper
+          include ../../blocks/components/original-catalogs/catalog-marks
+      include ../../blocks/modules/footer/footer
+
+block scripts
+  script(src="js/body_parts.js")
+  script(src="js/main.js")
+  script(src="js/vendor.js")

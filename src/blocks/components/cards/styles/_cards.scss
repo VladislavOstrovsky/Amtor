@@ -1,7 +1,91 @@
+@import "./toggle_views";
+@import "./pagination";
+
 .catalog_cards {
 	display: flex;
 	flex-direction: column;
 	gap: rem(20);
+
+	// big
+	&.big {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(rem(310), 1fr));
+
+		.cc_item {
+			flex-direction: column;
+
+			.cc_image {
+				margin-right: 0;
+				margin-bottom: rem(20);
+			}
+
+			.card_info {
+				width: 100%;
+
+				.ci_item {
+					display: none;
+				}
+
+				.ci_item:nth-child(-n+2) {
+					display: flex;
+				}
+			}
+
+			.cc_actions {
+				margin-top: rem(15);
+				padding-left: 0;
+				padding-right: 0;
+				border: none;
+				flex-basis: auto;
+
+				.find-btn {
+					width: 100%;
+					margin-top: rem(5);
+				}
+
+				.basket-btn {
+					position: absolute;
+					right: 0;
+					top: 0;
+					padding: 0;
+					width: rem(46);
+				}
+
+				.price_title {
+					padding-left: rem(10);
+					font-size: rem(28);
+					line-height: rem(28);
+				}
+
+				.delivery_info {
+					gap: rem(5);
+					margin-bottom: 0;
+					padding-left: rem(10);
+				}
+			}
+		}
+	}
+
+	// small
+	&.small {
+
+		.cc_item {
+			.cc_image {
+				@include md(flex-basis, 15%);
+				@include lg(flex-basis, 9%);
+			}
+
+			.card_info {
+				.ci_item {
+					display: none;
+				}
+
+				.ci_item:nth-child(-n+2) {
+					display: flex;
+				}
+			}
+		}
+	}
 
 	.cc_item {
 		display: flex;
@@ -9,18 +93,14 @@
 		border-radius: var(--border-radius);
 		box-shadow: var(--box-shadow-card);
 
-		@include xs-block() {
-			flex-direction: column;
-		}
-
-		@include md-block() {
-			flex-direction: row;
-		}
+		@include xs(flex-direction, column);
+		@include md(flex-direction, row);
 
 		.cc_image {
 			display: flex;
 			justify-content: center;
 			align-items: center;
+			flex-basis: 15%;
 
 			@include xs-block() {
 				margin-right: 0;
@@ -28,13 +108,8 @@
 			}
 
 			@include md-block() {
-				flex-basis: 15%;
 				margin-bottom: 0;
 				margin-right: rem(30);
-			}
-
-			@include lg-block() {
-				flex-basis: 20%;
 			}
 
 			img {
@@ -47,44 +122,16 @@
 			flex-direction: column;
 			flex: 1;
 
-			@include md-block() {
-				margin-right: rem(20);
-			}
-
-			@include lg-block() {
-				margin-right: 0;
-			}
+			@include md(margin-right, rem(20));
+			@include lg(margin-right, 0);
 
 			.title {
 				padding-left: rem(10);
 				font: rem(16)/rem(22) Fregat-Bold, sans-serif;
 				margin-bottom: rem(15);
-			}
 
-			.card_info {
-				@include xs(width, 100%);
-				@include md(width, rem(330));
-
-				.ci_item {
-					display: flex;
-					justify-content: space-between;
-					padding: rem(4) rem(10);
-					border-radius: rem(5);
-
-					&:nth-child(even) {
-						background-color: #f4f7fc;
-					}
-
-					.name {
-						font: rem(14)/rem(14) Fregat, sans-serif;
-						margin-right: rem(15);
-					}
-
-					.value {
-						font: rem(14)/rem(18) Fregat, sans-serif;
-						text-align: right;
-					}
-				}
+				@include xs(font-size, rem(14));
+				@include md(font-size, rem(16));
 			}
 
 			.more_link {
@@ -92,6 +139,32 @@
 				color: var(--color-base);
 				padding-left: rem(10);
 				margin-top: rem(20);
+			}
+		}
+
+		.card_info {
+			@include xs(width, 100%);
+			@include md(width, rem(330));
+
+			.ci_item {
+				display: flex;
+				justify-content: space-between;
+				padding: rem(4) rem(10);
+				border-radius: rem(5);
+
+				&:nth-child(even) {
+					background-color: #f4f7fc;
+				}
+
+				.name {
+					font: rem(14)/rem(14) Fregat, sans-serif;
+					margin-right: rem(15);
+				}
+
+				.value {
+					font: rem(14)/rem(18) Fregat, sans-serif;
+					text-align: right;
+				}
 			}
 		}
 
@@ -144,11 +217,19 @@
 					top: 0;
 					padding: 0;
 					width: rem(46);
+
+					.text {
+						display: none;
+					}
 				}
 
 				@include md-block() {
 					width: rem(153);
 					position: relative;
+
+					.text {
+						display: block;
+					}
 				}
 			}
 

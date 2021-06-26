@@ -1,11 +1,6 @@
 import $ from "jquery";
 import tippy from "tippy.js";
 
-// insert example vin code in input
-$(".js-search-help").click(function () {
-    $(".js-search-input").val($(this).html());
-});
-
 // accordion toggle
 $('.js-accordion-link').on("click", function () {
     var $this = $(this);

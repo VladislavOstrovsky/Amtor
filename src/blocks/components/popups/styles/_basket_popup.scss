@@ -66,7 +66,7 @@
 				&:disabled {
 					&::before,
 					&::after {
-						background-color: #808FAB !important;
+						background-color: var(--color-gray) !important;
 					}
 				}
 

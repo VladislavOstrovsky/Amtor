@@ -222,3 +222,8 @@ $(document).ready(function($) {
         window.location = $(this).data("href");
     });
 });
+
+// insert example vin code in input
+$(".js-search-help").click(function () {
+    $(".js-search-input").val($(this).html());
+});

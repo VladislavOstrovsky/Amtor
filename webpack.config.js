@@ -20,6 +20,7 @@ module.exports = {
         original_catalogs: "./src/js/import/pages/original_catalogs.js",
         catalog_to: "./src/js/import/pages/catalog_to.js",
         catalog_tec_doc: "./src/js/import/pages/catalog_tec_doc.js",
+        body_parts: "./src/js/import/pages/body_parts.js",
     },
 
     output: {

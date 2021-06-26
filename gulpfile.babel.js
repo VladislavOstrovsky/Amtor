@@ -22,6 +22,7 @@ const requireDir = require("require-dir"),
                 "./src/styles/original-catalogs.{scss,sass}",
                 "./src/styles/catalog-to.{scss,sass}",
                 "./src/styles/catalog-tec-doc.{scss,sass}",
+                "./src/styles/body-parts.{scss,sass}",
             ],
             dist: "./dist/styles/",
             watch: [

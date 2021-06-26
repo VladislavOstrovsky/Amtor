@@ -26,7 +26,11 @@
   border: none;
   cursor: pointer;
   box-sizing: border-box;
-  transition: all .2s ease-in-out;
+  transition:
+    background .2s ease-in-out,
+    border-color .2s ease-in-out,
+    color .2s ease-in-out,
+    box-shadow .2s ease-in-out;
 
   @include xs-block() {
     width: 100%;

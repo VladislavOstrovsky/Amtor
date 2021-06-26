@@ -1,7 +1,6 @@
 .years_filters {
 	display: flex;
 	flex-wrap: wrap;
-	gap: rem(10);
 
 	@include xs-block() {
 		flex-wrap: nowrap;
@@ -9,6 +8,11 @@
 		padding: rem(18) 0;
 		margin-top: rem(-18);
 		margin-bottom: rem(12);
+
+		.yf_item:not(:last-child) {
+			margin-right: rem(10);
+			margin-bottom: rem(10);
+		}
 	}
 
 	@include md-block() {
@@ -17,6 +21,12 @@
 		flex-wrap: wrap;
 		margin-bottom: rem(40);
 		overflow-x: inherit;
+		gap: rem(10);
+
+		.yf_item:not(:last-child) {
+			margin-right: initial;
+			margin-bottom: initial;
+		}
 	}
 
 	@include lg(margin-bottom, rem(30));

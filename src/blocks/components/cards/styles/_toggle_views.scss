@@ -1,0 +1,20 @@
+.cards_toggle_view {
+	display: flex;
+	gap: rem(20);
+
+	@include xs(display, none);
+	@include md(display, flex);
+
+	.ctv_item {
+		width: rem(18);
+		height: rem(18);
+		cursor: pointer;
+
+		&.__selected {
+			svg path,
+			svg rect {
+				fill: var(--color-base);
+			}
+		}
+	}
+}

@@ -1,0 +1,33 @@
+extends ../layouts/default
+
+block variables
+    - const title = "Комплектующие Mazda MX-30";
+
+block styles
+  link(rel="stylesheet" href="./styles/body-parts.css")
+
+block content
+  div#page
+    include ../../blocks/components/header/mobile_menu
+    div.page
+      include ../../blocks/modules/header/header
+      div.container
+        div.bread-crumbs
+          a(href='./home.html' class='text_bc bread-crumbs_item') Главная
+          a(href='./original-catalogs.html' class='text_bc bread-crumbs_item') Оригинальные каталоги
+          a(href='./' class='text_bc bread-crumbs_item') MAZDA
+          a(href='./' class='text_bc bread-crumbs_item') MX-30
+          span.text_bc.bread-crumbs_item Комплектующие
+        div.dFlex.justifyContentBetween
+          h1.title_p Комплектующие Mazda MX-30
+          include ../../blocks/components/cards/toggle-buttons
+      div.container
+        div.body_parts_step_3
+          include ../../blocks/components/cards/body-parts/cards
+          include ../../blocks/components/cards/pagination
+      include ../../blocks/modules/footer/footer
+
+block scripts
+  script(src="js/body_parts.js")
+  script(src="js/main.js")
+  script(src="js/vendor.js")

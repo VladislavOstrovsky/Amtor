@@ -1,10 +1,5 @@
 import $ from "jquery";
 
-// insert example vin code in input
-$(".js-search-help").click(function () {
-    $(".js-search-input").val($(this).html());
-});
-
 // years filters
 $('.js_years_filter').click(function () {
     if ($('.js_years_filter').hasClass('__selected')) {

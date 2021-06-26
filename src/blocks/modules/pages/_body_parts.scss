@@ -1,0 +1,27 @@
+@import "../../components/original-catalogs/styles/catalog_marks";
+@import "../../components/original-catalogs/styles/catalog_cards_car";
+
+@import "../../components/cards/styles/cards";
+
+.body_parts_wrapper {
+	@include xs(margin, rem(20) 0 0);
+	@include md(margin, rem(30) 0 rem(60));
+	@include lg(margin, rem(40) 0 0);
+}
+
+// step 2
+.body_parts_step_2 {
+	@include xs(margin, rem(20) 0 rem(40));
+	@include md(margin, rem(30) 0 rem(60));
+	@include lg(margin, rem(30) 0 rem(80));
+}
+
+// step 3
+.body_parts_step_3 {
+	display: flex;
+	flex-direction: column;
+
+	@include xs(margin, rem(20) 0);
+	@include md(margin, rem(20) 0 rem(60));
+	@include lg(margin, rem(45) 0 rem(80));
+}

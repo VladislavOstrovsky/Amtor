@@ -1,6 +1,4 @@
 @import "../../components/original-catalogs/styles/catalog_table";
-@import "../../components/original-catalogs/styles/filters_by_issue";
-@import "../../components/original-catalogs/styles/catalog_detail_table";
 @import "../../components/original-catalogs/styles/catalog_marks";
 @import "../../components/original-catalogs/styles/catalog_cards_car";
 @import "../../components/original-catalogs/styles/search_car";
@@ -130,7 +128,4 @@
 	@include xs(margin, rem(20) 0);
 	@include md(margin, rem(30) 0 rem(60));
 	@include lg(margin, rem(40) 0 rem(80));
-
-
-
 }
