@@ -26,6 +26,8 @@ const requireDir = require("require-dir"),
                 "./src/styles/passenger-tires.{scss,sass}",
                 "./src/styles/lamp-catalog.{scss,sass}",
                 "./src/styles/engine-oils.{scss,sass}",
+                "./src/styles/search-results.{scss,sass}",
+                "./src/styles/errors.{scss,sass}",
             ],
             dist: "./dist/styles/",
             watch: [

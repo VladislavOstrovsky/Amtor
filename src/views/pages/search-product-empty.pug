@@ -1,0 +1,33 @@
+extends ../layouts/default
+
+block variables
+  - const title = "Vag N10065003 Allen Bolt";
+
+block styles
+    link(rel="stylesheet" href="./styles/errors.css")
+
+block content
+  div#page
+    include ../../blocks/components/header/mobile_menu
+    div.page
+      include ../../blocks/modules/header/header
+      div.container
+        div.bread-crumbs
+          a(href='./home.html' class='text_bc bread-crumbs_item') Главная
+          a(href='./' class='text_bc bread-crumbs_item') Бренды
+          a(href='./' class='text_bc bread-crumbs_item') Vag
+          span.text_bc.bread-crumbs_item Vag N10065003 Allen Bolt
+        h1.title_p Купить Allen Bolt производителя VAG (артикул N10065003)
+      div.container
+        div.page_center_wrapper.empty_search_product
+          div.content_image
+            include ../../img/svg/extra/search-product.svg
+          div.content_text По данным параметрам деталь не найдена. Поробуйте изменить параметры поиска или обратитесь к менеджеру компании
+          div.content_buttons
+            a(href='/' class='btn transparent first-btn') Обратиться к менеджеру
+            a(href='/' class='btn success') Изменить параметры
+      include ../../blocks/modules/footer/footer
+
+block scripts
+  script(src="js/main.js")
+  script(src="js/vendor.js")

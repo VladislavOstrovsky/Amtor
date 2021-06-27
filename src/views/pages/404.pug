@@ -3,6 +3,9 @@ extends ../layouts/default
 block variables
   - const title = "404";
 
+block styles
+    link(rel="stylesheet" href="./styles/errors.css")
+
 block content
   div#page
     include ../../blocks/components/header/mobile_menu
@@ -12,7 +15,14 @@ block content
         div.bread-crumbs
           a(href='./home.html' class='text_bc bread-crumbs_item') Главная
           span.text_bc.bread-crumbs_item 404 ошибка
-
+        h1.title_p 404 ошибка
+      div.container
+        div.page_center_wrapper.error_404
+          div.content_image
+            include ../../img/svg/extra/404.svg
+          div.content_text
+            h1.title Страница, которую вы ищете, не существует.
+            p.text Возможно, вы ошиблись при вводе URL-адреса, либо искомая страница была перемещена. <a href='./home.html'>Вернуться на главную</a>
       include ../../blocks/modules/footer/footer
 
 block scripts

@@ -1,0 +1,43 @@
+.page_center_wrapper {
+
+	&.search_empty {
+		@include xs(padding, rem(150) 0 rem(200));
+		@include md(padding, rem(217) 0 rem(290));
+		@include lg(padding, rem(150) 0 rem(250));
+
+		.content_image {
+			position: relative;
+			margin-bottom: rem(18);
+			width: rem(50);
+			height: rem(50);
+
+			.absolute {
+				position: absolute;
+				left: rem(16);
+				top: rem(15)
+			}
+
+			.animate_load {
+				margin-bottom: rem(15);
+
+				svg {
+					animation: rotation 2s infinite linear;
+				}
+			}
+		}
+
+		.content_text {
+			font: rem(14)/rem(18) Fregat, sans-serif;
+			color: var(--color-marine);
+		}
+	}
+}
+
+@keyframes rotation {
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(359deg);
+	}
+}

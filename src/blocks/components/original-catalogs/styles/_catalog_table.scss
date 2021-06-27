@@ -33,6 +33,10 @@
 		@include xs(display, none);
 		@include md(display, table);
 
+		.bold {
+			font-weight: bold;
+		}
+
 		.clickable_row {
 			cursor: pointer;
 		}
@@ -120,6 +124,14 @@
 				border: none;
 			}
 
+			&.smallPadding {
+				padding: rem(10) 0;
+
+				.row {
+					margin-bottom: rem(10);
+				}
+			}
+
 			.row {
 				display: flex;
 				align-items: baseline;
@@ -135,6 +147,12 @@
 
 					.name {margin-bottom: rem(10);}
 					.value {color: #6d6d6d;}
+				}
+
+				&.alignLeft {
+					.value {
+						text-align: left;
+					}
 				}
 
 				.name {

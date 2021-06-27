@@ -1,0 +1,28 @@
+extends ../layouts/default
+
+block variables
+    - const title = "Результат поиска";
+
+block styles
+  link(rel="stylesheet" href="./styles/search-results.css")
+
+block content
+  div#page
+    include ../../blocks/components/header/mobile_menu
+    div.page
+      include ../../blocks/modules/header/header
+      div.container
+        div.bread-crumbs
+          a(href='./home.html' class='text_bc bread-crumbs_item') Главная
+          span.text_bc.bread-crumbs_item Результат поиска
+        h1.title_p Результат поиска
+      div.container
+        div.page_center_wrapper.search_empty
+          div.content_image
+            include ../../img/svg/extra/empty-search.svg
+          div.content_text Результат поиска ничего не дал
+      include ../../blocks/modules/footer/footer
+
+block scripts
+  script(src="js/main.js")
+  script(src="js/vendor.js")
