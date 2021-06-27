@@ -1,6 +1,38 @@
+@import "../../components/original-catalogs/styles/catalog_table";
+
+.search_result_wrapper {
+	@include xs(margin, rem(20) 0 rem(40));
+	@include md(margin, rem(40) 0 rem(100));
+	@include lg(margin, rem(40) 0 rem(160));
+
+	.catalog_table {
+		@include md-block() {
+			.ct_table tr > th {
+				text-align: left;
+			}
+		}
+	}
+}
+
 .page_center_wrapper {
 
 	&.search_empty {
+		@include xs(padding, rem(150) 0 rem(200));
+		@include md(padding, rem(217) 0 rem(290));
+		@include lg(padding, rem(150) 0 rem(250));
+
+		.content_image {
+			position: relative;
+			margin-bottom: rem(18);
+		}
+
+		.content_text {
+			font: rem(14)/rem(18) Fregat, sans-serif;
+			color: var(--color-marine);
+		}
+	}
+
+	&.loading {
 		@include xs(padding, rem(150) 0 rem(200));
 		@include md(padding, rem(217) 0 rem(290));
 		@include lg(padding, rem(150) 0 rem(250));
