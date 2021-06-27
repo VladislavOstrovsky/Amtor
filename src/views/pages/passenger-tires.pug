@@ -1,0 +1,32 @@
+extends ../layouts/default
+
+block variables
+    - const title = "Легковые шины";
+
+block styles
+  link(rel="stylesheet" href="./styles/passenger-tires.css")
+
+block content
+  div#page
+    include ../../blocks/components/header/mobile_menu
+    div.page
+      include ../../blocks/modules/header/header
+      div.container
+        div.bread-crumbs
+          a(href='./home.html' class='text_bc bread-crumbs_item') Главная
+          span.text_bc.bread-crumbs_item Легковые шины
+        h1.title_p Легковые шины
+      div.container
+        div.passenger_tires_wrapper
+          include ../../blocks/components/cards/sub-filters/passenger-tires
+          include ../../blocks/components/cards/filters/passenger-tires
+          div.toggle_buttons_wrapper
+            include ../../blocks/components/cards/toggle-buttons
+          include ../../blocks/components/cards/passenger-tires/cards
+          include ../../blocks/components/cards/pagination
+      include ../../blocks/modules/footer/footer
+
+block scripts
+  script(src="js/passenger_tires.js")
+  script(src="js/main.js")
+  script(src="js/vendor.js")

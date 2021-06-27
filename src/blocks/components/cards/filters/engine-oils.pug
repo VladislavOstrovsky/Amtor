@@ -1,0 +1,74 @@
+- var manufacturers = ['ALTENZO', 'AMTEL', 'AVATYRE', 'BARUM', 'BFGOODRICH', 'CASTROL', 'G-ENERGY', 'GAZPROMNEFT'];
+- var structure = ['Синтетическое', 'Полусинтетическое', 'Минеральное', 'HC-Синтетическое'];
+- var acea = ['A3', 'B3', 'B4', 'C3', 'A5', 'B5', 'A1', 'B1', 'E7', 'E3', 'C2', 'E4-12', 'E7-12', 'C5', 'C1', 'B3-98', 'B4-02', 'B4-12', 'B3-12', 'B4-08'];
+- var api = ['CA', 'CB', 'CC', 'CD', 'CE', 'CF', 'CF-2', 'CF-3', 'CF-4', 'CG-4', 'CH-4', 'CH-5', 'CH-6', 'CI-4', 'CI-4 PLUS', 'CI-4+', 'CJ-4', 'CJ-4 –CI-4 PLUS', 'CK-4', 'EC'];
+- var oem = ['BMW Longlife-98', 'MB 229.3', 'PORSCHE', 'VW 502.00', 'VW 503.01', 'BMW Longlife LL04', 'BMW Longlife-14 FE+', 'Cat ECF-1', 'CAT ECF-2', 'CAT ECF-3'];
+
+div.mobile_show_filters
+  button(type="button" class='btn transparent fullWidth js-show-filters') Показать фильтр
+div.filter_cards
+  form(action='/' class='fc_form' method='post')
+    div.fc_item.__open
+      div.fci_header
+        h2.title Производитель
+        span.icon
+          include ../../../../img/svg/arrow-dark.svg
+      div.fci_input
+        input(type='text' class='input dark' name="name-manufacturers" placeholder='Найти производителя')
+      div.fci_inner.grid_one_column.js-custom-scroll
+        each value in manufacturers
+          label(for=value class='checkbox-container') #{value}
+            input(id=value type='checkbox' name="manufacturers")
+            span.checkmark
+    div.fc_item.__open
+      div.fci_header
+        h2.title Объем
+        span.icon
+          include ../../../../img/svg/arrow-dark.svg
+      include ../../range-slider/range-slider
+      //  radio slider
+    div.fc_item
+      div.fci_header
+        h2.title Состав
+        span.icon
+          include ../../../../img/svg/arrow-dark.svg
+      div.fci_inner.grid_one_column
+        each value in structure
+          label(for=value class='checkbox-container') #{value}
+            input(id=value type='checkbox' name="structure")
+            span.checkmark
+    div.fc_item
+      div.fci_header
+        h2.title ACEA
+        span.icon
+          include ../../../../img/svg/arrow-dark.svg
+      div.fci_inner.grid_one_column.js-custom-scroll
+        each value in acea
+          label(for=value class='checkbox-container') #{value}
+            input(id=value type='checkbox' name="ACEA")
+            span.checkmark
+    div.fc_item
+      div.fci_header
+        h2.title API
+        span.icon
+          include ../../../../img/svg/arrow-dark.svg
+      div.fci_inner.grid_one_column.js-custom-scroll
+        each value in api
+          label(for=value class='checkbox-container') #{value}
+            input(id=value type='checkbox' name="API")
+            span.checkmark
+    div.fc_item.__open
+      div.fci_header
+        h2.title ОЕМ
+        span.icon
+          include ../../../../img/svg/arrow-dark.svg
+      div.fci_input
+        input(type='text' class='input dark' name="name-oem" placeholder='Поиск по названию')
+      div.fci_inner.grid_one_column.js-custom-scroll
+        each value in oem
+          label(for=value class='checkbox-container') #{value}
+            input(id=value type='checkbox' name="ОЕМ")
+            span.checkmark
+    div.fc_buttons
+      button(type='submit' class='btn success js-filters-submit') Применить фильтр
+      button(type='button' class='btn reset-filters js-filters-reset') Сбросить

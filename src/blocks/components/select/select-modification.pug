@@ -1,0 +1,8 @@
+- var modifications = ['модификация 1', 'модификация 2', 'модификация 3', 'модификация 4'];
+
+div.select-container
+  p.select-label Модификация
+  select(name='modification')
+    option(value='') Выберите модификацию
+    each option in modifications
+      option(value=option) #{option}

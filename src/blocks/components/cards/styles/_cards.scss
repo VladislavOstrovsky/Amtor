@@ -1,5 +1,7 @@
 @import "./toggle_views";
 @import "./pagination";
+@import "./filters";
+@import "./subfilters";
 
 .catalog_cards {
 	display: flex;
@@ -15,12 +17,18 @@
 			flex-direction: column;
 
 			.cc_image {
+				margin-left: 0 !important;
 				margin-right: 0;
 				margin-bottom: rem(20);
 			}
 
+			.title {
+				padding-left: 0 !important;
+			}
+
 			.card_info {
-				width: 100%;
+				width: calc(100% + 10px);
+				margin-left: rem(-10);
 
 				.ci_item {
 					display: none;
@@ -31,8 +39,13 @@
 				}
 			}
 
+			.more_link {
+				text-align: center !important;
+				padding-left: 0 !important;
+			}
+
 			.cc_actions {
-				margin-top: rem(15);
+				margin-top: rem(20);
 				padding-left: 0;
 				padding-right: 0;
 				border: none;
@@ -47,20 +60,84 @@
 					position: absolute;
 					right: 0;
 					top: 0;
-					padding: 0;
-					width: rem(46);
+				}
+
+				.price_block {
+					height: rem(46);
+
+					@include md-block() {
+						margin-bottom: rem(10);
+					}
+				}
+
+				.old_price {
+					font-size: rem(16);
+					line-height: rem(16);
 				}
 
 				.price_title {
-					padding-left: rem(10);
-					font-size: rem(28);
-					line-height: rem(28);
+					font-size: rem(24);
+					line-height: rem(24);
+					margin-bottom: 0;
 				}
 
 				.delivery_info {
 					gap: rem(5);
 					margin-bottom: 0;
-					padding-left: rem(10);
+				}
+			}
+		}
+	}
+
+	&.medium,
+	&.small {
+		@include md-block() {
+			.cc_actions {
+				.delivery_info {
+					flex-direction: column;
+					font: rem(14)/rem(18) Fregat, sans-serif;
+					color: #6A7A97;
+
+					.bold {
+						font-family: Fregat-Bold, sans-serif;
+					}
+				}
+			}
+		}
+
+		.cc_item {
+			.basket-btn {
+				@include lg-block() {
+					width: rem(120);
+					padding: 0 rem(10);
+
+					.text {
+						margin-left: rem(5);
+						font-size: rem(13);
+					}
+				}
+
+				@include xl-block() {
+					width: rem(153);
+
+					.text {
+						margin-left: rem(15);
+						font-size: rem(16);
+					}
+				}
+			}
+		}
+	}
+
+	// medium
+	&.medium {
+		.cc_item.__stock {
+			@include md-block() {
+				&::after {
+					position: absolute;
+					top: rem(20);
+					left: rem(20);
+					right: auto;
 				}
 			}
 		}
@@ -68,8 +145,29 @@
 
 	// small
 	&.small {
-
 		.cc_item {
+			@include md-block() {
+				&.__stock {
+					&::after {
+						display: none;
+					}
+
+					.title {
+						&::after {
+							margin: 0 rem(20) 0 rem(10);
+							content: 'На складе';
+							background-color: #3BA336;
+							border-radius: var(--border-radius-big);
+							padding: rem(8) rem(15);
+							font: rem(14)/rem(14) Fregat-Bold, sans-serif;
+							color: var(--color-white);
+							height: rem(14);
+							white-space: nowrap;
+						}
+					}
+				}
+			}
+
 			.cc_image {
 				@include md(flex-basis, 15%);
 				@include lg(flex-basis, 9%);
@@ -88,19 +186,44 @@
 	}
 
 	.cc_item {
+		position: relative;
 		display: flex;
 		padding: rem(20);
 		border-radius: var(--border-radius);
 		box-shadow: var(--box-shadow-card);
 
-		@include xs(flex-direction, column);
-		@include md(flex-direction, row);
+		@include xs-block() {
+			flex-direction: column;
+
+			&.__stock {
+				&::after {
+					position: absolute;
+					top: rem(20);
+					right: rem(20);
+					content: 'На складе';
+					background-color: #3BA336;
+					border-radius: var(--border-radius-big);
+					padding: rem(8) rem(15);
+					font: rem(14)/rem(14) Fregat-Bold, sans-serif;
+					color: var(--color-white);
+				}
+			}
+		}
+
+		@include md-block() {
+			flex-direction: row;
+		}
 
 		.cc_image {
+			position: relative;
 			display: flex;
 			justify-content: center;
 			align-items: center;
 			flex-basis: 15%;
+
+			img {
+				object-fit: contain;
+			}
 
 			@include xs-block() {
 				margin-right: 0;
@@ -110,41 +233,72 @@
 			@include md-block() {
 				margin-bottom: 0;
 				margin-right: rem(30);
+				flex-shrink: 0;
+				margin-left: rem(10);
 			}
 
-			img {
-				object-fit: contain;
-			}
+			@include lg(margin-right, rem(10));
+			@include xl(margin-right, rem(30));
 		}
 
 		.cc_text_content {
+			position: relative;
 			display: flex;
 			flex-direction: column;
 			flex: 1;
 
 			@include md(margin-right, rem(20));
-			@include lg(margin-right, 0);
+			@include lg(margin-right, rem(10));
+			@include xl(margin-right, 0);
 
 			.title {
+				display: flex;
+				justify-content: space-between;
 				padding-left: rem(10);
 				font: rem(16)/rem(22) Fregat-Bold, sans-serif;
 				margin-bottom: rem(15);
 
-				@include xs(font-size, rem(14));
-				@include md(font-size, rem(16));
+				@include xs-block() {
+					padding-left: 0;
+					font-size: rem(14);
+				}
+
+				@include md-block() {
+					font-size: rem(16);
+					padding-left: rem(10);
+				}
 			}
 
 			.more_link {
 				font: rem(14)/rem(14) Fregat-Bold, sans-serif;
 				color: var(--color-base);
-				padding-left: rem(10);
 				margin-top: rem(20);
+
+				@include xs-block() {
+					padding-left: 0;
+					text-align: center;
+				}
+
+				@include md-block() {
+					padding-left: rem(10);
+					text-align: left;
+				}
 			}
 		}
 
 		.card_info {
-			@include xs(width, 100%);
-			@include md(width, rem(330));
+			@include xs-block() {
+				width: calc(100% + 20px);
+				margin-left: rem(-10);
+			}
+
+			@include md-block() {
+				width: rem(330);
+				margin-left: 0;
+			}
+
+			@include lg(width, rem(280));
+			@include xl(width, rem(330));
 
 			.ci_item {
 				display: flex;
@@ -185,16 +339,27 @@
 			@include md-block() {
 				flex-basis: rem(170);
 				padding-right: rem(10);
-				padding-left: rem(40);
+				padding-left: rem(30);
 				margin-top: 0;
 				border-left: 1px solid #CED5E1;
 			}
 
 			@include lg-block() {
 				padding-right: rem(15);
+				padding-left: rem(25);
+				flex-basis: rem(125);
+			}
+
+			@include xl-block() {
+				padding-left: rem(40);
+				flex-basis: rem(170);
 			}
 
 			.find-btn {
+				align-self: center;
+				font-size: rem(14);
+				line-height: rem(14);
+
 				@include xs-block() {
 					width: 100%;
 					margin-top: rem(5);
@@ -205,9 +370,8 @@
 					width: rem(128);
 				}
 
-				align-self: center;
-				font-size: rem(14);
-				line-height: rem(14);
+				@include lg(width, auto);
+				@include xl(width, rem(128));
 			}
 
 			.basket-btn {
@@ -233,18 +397,48 @@
 				}
 			}
 
+			.price_block {
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				height: rem(46);
+				margin-bottom: rem(10);
+
+				@include xs(margin-bottom, rem(10));
+				@include md-block() {
+					height: auto;
+					margin-bottom: 0;
+				}
+			}
+
+			.old_price {
+				font: rem(18)/rem(18) Fregat, sans-serif;
+				text-decoration-line: line-through;
+				color: #979797;
+				margin-bottom: rem(5);
+			}
+
 			.price_title {
 				font: rem(34)/rem(34) Fregat-Bold, sans-serif;
-				margin-bottom: rem(20);
 
 				@include xs-block() {
-					padding-left: rem(10);
+					margin-bottom: 0;
 					font-size: rem(28);
 					line-height: rem(28);
 				}
 
 				@include md-block() {
-					padding-left: 0;
+					margin-bottom: rem(20);
+					font-size: rem(34);
+					line-height: rem(34);
+				}
+
+				@include lg-block() {
+					font-size: rem(28);
+					line-height: rem(28);
+				}
+
+				@include xl-block() {
 					font-size: rem(34);
 					line-height: rem(34);
 				}
@@ -259,12 +453,18 @@
 				@include xs-block() {
 					gap: rem(5);
 					margin-bottom: 0;
-					padding-left: rem(10);
+					flex-direction: row;
+					justify-content: space-between;
+					font: rem(12)/rem(26) 'Open Sans', sans-serif;
+					color: var(--color-marine);
+
+					.bold {
+						font-family: "Open Sans", sans-serif;
+					}
 				}
 
 				@include md-block() {
 					gap: rem(4);
-					padding-left: 0;
 					margin-bottom: rem(20);
 				}
 

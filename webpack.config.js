@@ -21,6 +21,9 @@ module.exports = {
         catalog_to: "./src/js/import/pages/catalog_to.js",
         catalog_tec_doc: "./src/js/import/pages/catalog_tec_doc.js",
         body_parts: "./src/js/import/pages/body_parts.js",
+        passenger_tires: "./src/js/import/pages/passenger_tires.js",
+        lamp_catalog: "./src/js/import/pages/lamp_catalog.js",
+        engine_oils: "./src/js/import/pages/engine_oils.js",
     },
 
     output: {

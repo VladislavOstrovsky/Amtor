@@ -1,0 +1,42 @@
+.range_slider {
+	margin-top: rem(24);
+	height: rem(6);
+	border: none;
+	box-shadow: none;
+	border-radius: var(--border-radius);
+	background: #d4dbec;
+
+	.noUi-connect {
+		background: var(--color-base);
+	}
+
+	.noUi-handle-upper {
+		right: rem(-1);
+	}
+
+	.noUi-handle {
+		width: rem(17);
+		height: rem(17);
+		right: rem(-16);
+		border: none;
+		box-shadow: none;
+		background: var(--color-base);
+		border-radius: var(--border-radius);
+
+		&::before,
+		&::after {
+			display: none;
+		}
+	}
+}
+
+.rs_inputs {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin-top: rem(24);
+
+	span {
+		margin: 0 rem(9);
+	}
+}

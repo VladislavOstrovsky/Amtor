@@ -1,0 +1,8 @@
+- var models = ['model 1', 'model 2', 'model 3', 'model 4'];
+
+div.select-container
+  p.select-label Модель
+  select(name='model')
+    option(value='') Выберите модель
+    each option in models
+      option(value=option) #{option}

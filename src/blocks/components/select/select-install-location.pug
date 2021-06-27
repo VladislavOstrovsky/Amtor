@@ -1,0 +1,8 @@
+- var installationLocation = ['Перед', 'Салон', 'Зад'];
+
+div.select-container
+  p.select-label Место установки
+  select(name='modification')
+    option(value='') Выберите место
+    each option in installationLocation
+      option(value=option) #{option}

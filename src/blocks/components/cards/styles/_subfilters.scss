@@ -1,0 +1,23 @@
+.subfilters_cards {
+	display: grid;
+	grid-gap: rem(21);
+	margin-bottom: rem(20);
+
+	@include md-block() {
+		grid-template-columns: repeat(auto-fill, minmax(rem(340), 1fr));
+	}
+
+	@include lg-block() {
+		grid-template-columns: repeat(auto-fill, minmax(rem(212), 1fr));
+	}
+
+	// select dark
+	.select-container {
+
+		.select-styled {
+			background-color: var(--color-extra-light-gray);
+			box-shadow: none;
+			color: var(--color-light-gray);
+		}
+	}
+}

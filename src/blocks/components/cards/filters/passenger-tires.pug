@@ -1,0 +1,88 @@
+- var manufacturers = ['ALTENZO', 'AMTEL', 'AVATYRE', 'BARUM', 'BFGOODRICH', 'BRIDGESTONE', 'CONTINENTAL'];
+- var profileWidth = [185, 195, 205, 215, 225, 245, 255, 265, 275, 285, 295, 305, 315, 325];
+- var firstDiameter = 12; // 12-24
+- var spikes = ['Есть', 'Нет'];
+- var season = ['Лето', 'Зима', 'Всесезонная'];
+- var firstLoadIndex = 70; // 70-123
+- var speedIndex = ['H', 'N', 'Q', 'R', 'S', 'T', 'V', 'W', 'Y', 'Z'];
+
+div.mobile_show_filters
+  button(type="button" class='btn transparent fullWidth js-show-filters') Показать фильтр
+div.filter_cards
+  form(action='/' class='fc_form' method='post')
+    div.fc_item.__open
+      div.fci_header
+        h2.title Производитель
+        span.icon
+          include ../../../../img/svg/arrow-dark.svg
+      div.fci_input
+        input(type='text' class='input dark' name="name-manufacturers" placeholder='Найти производителя')
+      div.fci_inner.grid_one_column.js-custom-scroll
+        each value in manufacturers
+          label(for=value class='checkbox-container') #{value}
+            input(id=value type='checkbox' name="manufacturers")
+            span.checkmark
+    div.fc_item.__open
+      div.fci_header
+        h2.title Ширина профиля
+        span.icon
+          include ../../../../img/svg/arrow-dark.svg
+      include ../../tabs/sort-cards-popular
+      div.fci_inner.js-custom-scroll
+        each value in profileWidth
+          label(for=value class='checkbox-container') #{value}
+            input(id=value type='checkbox' name='profileWidth')
+            span.checkmark
+    div.fc_item
+      div.fci_header
+        h2.title Диаметр
+        span.icon
+          include ../../../../img/svg/arrow-dark.svg
+      div.fci_inner.js-custom-scroll
+        while firstDiameter < 25
+          label(for=firstDiameter class='checkbox-container') #{firstDiameter++}
+            input(id=firstDiameter - 1 type='checkbox' name='diameter')
+            span.checkmark
+    div.fc_item
+      div.fci_header
+        h2.title Шипы
+        span.icon
+          include ../../../../img/svg/arrow-dark.svg
+      div.fci_inner.grid_two_column
+        each value in spikes
+          label(for=value class='checkbox-container') #{value}
+            input(id=value type='checkbox' name='spikes')
+            span.checkmark
+    div.fc_item
+      div.fci_header
+        h2.title Сезон
+        span.icon
+          include ../../../../img/svg/arrow-dark.svg
+      div.fci_inner.grid_one_column
+        each value in season
+          label(for=value class='checkbox-container') #{value}
+            input(id=value type='checkbox' name='season')
+            span.checkmark
+    div.fc_item
+      div.fci_header
+        h2.title Индекс нагрузки
+        span.icon
+          include ../../../../img/svg/arrow-dark.svg
+      div.fci_inner.js-custom-scroll
+        while firstLoadIndex < 124
+          label(for=firstLoadIndex class='checkbox-container') #{firstLoadIndex++}
+            input(id=firstLoadIndex - 1 type='checkbox' name='loadIndex')
+            span.checkmark
+    div.fc_item
+      div.fci_header
+        h2.title Индекс скорости
+        span.icon
+          include ../../../../img/svg/arrow-dark.svg
+      div.fci_inner.grid_two_column
+        each value in speedIndex
+          label(for=value class='checkbox-container') #{value}
+            input(id=value type='checkbox' name='speedIndex')
+            span.checkmark
+    div.fc_buttons
+      button(type='submit' class='btn success js-filters-submit') Применить фильтр
+      button(type='button' class='btn reset-filters js-filters-reset') Сбросить

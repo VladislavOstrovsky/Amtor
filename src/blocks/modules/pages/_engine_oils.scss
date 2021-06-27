@@ -1,0 +1,21 @@
+@import "../../components/original-catalogs/styles/catalog_marks";
+@import "../../components/original-catalogs/styles/catalog_cards_car";
+
+@import "../../components/cards/styles/cards";
+
+.engine_oils_wrapper {
+	position: relative;
+
+	@include xs(margin, rem(20) 0 rem(40));
+	@include md(margin, rem(30) 0 rem(60));
+	@include lg-block() {
+		padding-left: rem(330);
+		margin: rem(30) 0 rem(80);
+	}
+
+	.toggle_buttons_wrapper {
+		position: absolute;
+		top: rem(-50);
+		right: 0;
+	}
+}

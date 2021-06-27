@@ -221,9 +221,12 @@ $(document).ready(function($) {
     $('.clickable_row').click(function() {
         window.location = $(this).data("href");
     });
+
+    $(".js-custom-scroll").mCustomScrollbar();
 });
 
 // insert example vin code in input
 $(".js-search-help").click(function () {
     $(".js-search-input").val($(this).html());
 });
+
