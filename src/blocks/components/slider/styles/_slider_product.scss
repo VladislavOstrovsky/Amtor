@@ -1,0 +1,141 @@
+// home_slider_top
+.slider_product {
+	@include md(margin-bottom, rem(10));
+	@include lg(margin-bottom, rem(20));
+
+	.title {
+		margin: rem(30) 0 0 0;
+
+		@include xs(font, (rem(20)/rem(20) Fregat-Bold, sans-serif));
+		@include md(font, (rem(24)/rem(24) Fregat-Bold, sans-serif));
+	}
+
+	.sp_slider {
+		position: relative;
+		width: calc(100% + 25px);
+		margin-left: rem(-25);
+
+		@include xs-block() {
+			margin-left: rem(-52);
+			width: calc(100% + 75px);
+			overflow: hidden;
+
+			.slick-prev {
+				left: rem(45);
+			}
+
+			.slick-next {
+				top: 44%;
+				right: rem(15);
+			}
+		}
+
+		@include md-block() {
+			width: calc(100% + 45px);
+			margin-left: rem(-25);
+
+			.slick-prev {
+				left: rem(5);
+			}
+
+			.slick-next {
+				right: rem(5);
+			}
+		}
+
+		.slick-prev,
+		.slick-next {
+			background-color: var(--color-white);
+			box-shadow: inset 0 0 0 2px var(--color-base);
+			background-image: url('../img/svg/arrow-left-dark.svg');
+
+			&:hover {
+				background-color: var(--color-base);
+				background-image: url('../img/svg/arrow-left.svg');
+				box-shadow: none;
+			}
+		}
+
+		.slick-list {
+			padding-left: rem(25);
+
+			.slick-slide {
+				width: rem(160);
+				height: rem(350) !important;
+				padding: rem(20);
+				margin: rem(30) rem(10);
+				background: var(--color-white);
+				border-radius: var(--border-radius);
+				box-shadow: var(--box-shadow-card);
+				transition: all .2s ease-in;
+
+				@include xs-block() {
+					margin: rem(30) rem(25) rem(30) rem(30);
+					opacity: 0;
+
+					&.slick-current {
+						opacity: 1;
+					}
+				}
+
+				@include md-block() {
+					margin: rem(30) rem(10);
+					opacity: 0;
+					width: rem(186);
+
+					&.slick-active {
+						opacity: 1;
+					}
+				}
+
+				@include lg-block() {
+					width: rem(160);
+				}
+			}
+		}
+
+		.slide_price_top {
+			height: 100%;
+
+			.slide_content {
+				align-items: center;
+				justify-content: space-between;
+				height: 100%;
+			}
+
+			.name {
+				font: rem(14)/rem(22) "Open Sans", sans-serif;
+				margin-bottom: rem(23);
+				color: var(--color-black);
+			}
+
+			img {
+				max-height: rem(160);
+				margin-bottom: rem(38);
+			}
+
+			.card_bottom {
+				display: flex;
+				width: 100%;
+				justify-content: space-between;
+			}
+
+			.price_wp {
+				display: flex;
+				flex-direction: column;
+				justify-content: flex-end;
+			}
+
+			.price_old {
+				font: rem(14)/rem(16) Fregat, sans-serif;
+				text-decoration-line: line-through;
+				color: #979797;
+				margin-bottom: rem(2);
+			}
+
+			.price_new {
+				font: rem(24)/rem(24) Fregat-Bold, sans-serif;
+			}
+		}
+	}
+}

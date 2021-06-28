@@ -1,9 +1,9 @@
 .years_filters {
-	display: flex;
-	flex-wrap: wrap;
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(rem(50), 1fr));
 
 	@include xs-block() {
-		flex-wrap: nowrap;
+		display: flex;
 		overflow-x: scroll;
 		padding: rem(18) 0;
 		margin-top: rem(-18);
@@ -16,12 +16,12 @@
 	}
 
 	@include md-block() {
+		display: grid;
 		margin-top: 0;
 		padding: 0;
-		flex-wrap: wrap;
 		margin-bottom: rem(40);
 		overflow-x: inherit;
-		gap: rem(10);
+		grid-gap: rem(10);
 
 		.yf_item:not(:last-child) {
 			margin-right: initial;
@@ -34,6 +34,7 @@
 	.yf_item {
 		display: flex;
 		align-items: center;
+		justify-content: center;
 		padding: rem(10);
 		height: rem(16);
 		box-shadow: var(--box-shadow);

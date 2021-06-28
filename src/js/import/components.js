@@ -61,3 +61,20 @@ $('select').each(function(){
     });
 });
 
+// js-detail-page slider
+$(document).on('click', '.js-slider-card > div', function () {
+    var $this = $(this),
+        data = $this.attr('data-img'),
+        imgSrc = $this.closest('.dpi_gallery').find('.dpi_gallery__main img').attr('src'),
+        img = $this.closest('.dpi_gallery').find('.dpi_gallery__main img');
+    $('.js-slider-card > div').removeClass('active');
+    $this.addClass('active');
+
+    if(!(data === imgSrc)) {
+        img.fadeOut('fast', function () {
+            img.attr('src', data);
+            img.fadeIn('fast');
+        });
+    }
+});
+

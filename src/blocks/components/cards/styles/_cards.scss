@@ -4,13 +4,11 @@
 @import "./subfilters";
 
 .catalog_cards {
-	display: flex;
-	flex-direction: column;
-	gap: rem(20);
+	display: grid;
+	grid-gap: rem(20);
 
 	// big
 	&.big {
-		display: grid;
 		grid-template-columns: repeat(auto-fill, minmax(rem(310), 1fr));
 
 		.cc_item {

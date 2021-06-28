@@ -17,11 +17,6 @@
 
 	@include md-block() {
 		margin-top: rem(20);
-		gap: rem(10);
-
-		li:not(:last-child) {
-			margin-right: initial;
-		}
 
 		.prev,
 		.next {

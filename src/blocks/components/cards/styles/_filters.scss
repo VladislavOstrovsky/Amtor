@@ -165,9 +165,9 @@
 				grid-gap: rem(15);
 
 				.mCSB_container {
-					display: flex;
-					flex-direction: column;
-					flex-wrap: nowrap;
+					display: grid;
+					grid-gap: rem(15);
+					grid-template-columns: 1fr;
 				}
 			}
 

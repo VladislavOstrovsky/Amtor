@@ -2,44 +2,45 @@ div.catalog_table
   div.ct_brand
     img(class='ct_image js-catalog-brand-image' src='./img/catalogs/mazda.png')
     p.text.js-catalog-brand-name MAZDA
-  table.ct_table
-    thead
-      tr
-        th Модификация
-        th Год выпуска
-        th.noWrap Код двигателя
-        th Двигатель
-        th.textCenter квт
-        th.textCenter л.с.
-        th Цилиндры
-        th Кузов
-    tr(data-href='/' class='clickable_row')
-      td MAZDA 6 седан III 2.0 Sky GJ_26
-      td 2012 - Выпускается
-      td MH01
-      td Электродвигатель
-      td.textCenter 105
-      td.textCenter 150
-      td 0
-      td SUV
-    tr(data-href='/' class='clickable_row')
-      td MAZDA 6 седан III 2.5 Sky GJ_23
-      td 2012 - Выпускается
-      td MH01
-      td
-      td.textCenter 107
-      td.textCenter 192
-      td 0
-      td SUV
-    tr(data-href='/' class='clickable_row')
-      td MAZDA 6 седан III 3 Sky GJ_23
-      td 2012 - Выпускается
-      td MH01
-      td
-      td.textCenter 100
-      td.textCenter 299
-      td 0
-      td SUV
+  div.ct_table_wrapper
+    table.ct_table
+      thead
+        tr
+          th Модификация
+          th Год выпуска
+          th.noWrap Код двигателя
+          th Двигатель
+          th.textCenter квт
+          th.textCenter л.с.
+          th Цилиндры
+          th Кузов
+      tr(data-href='/' class='clickable_row')
+        td MAZDA 6 седан III 2.0 Sky GJ_26
+        td 2012 - Выпускается
+        td MH01
+        td Электродвигатель
+        td.textCenter 105
+        td.textCenter 150
+        td 0
+        td SUV
+      tr(data-href='/' class='clickable_row')
+        td MAZDA 6 седан III 2.5 Sky GJ_23
+        td 2012 - Выпускается
+        td MH01
+        td
+        td.textCenter 107
+        td.textCenter 192
+        td 0
+        td SUV
+      tr(data-href='/' class='clickable_row')
+        td MAZDA 6 седан III 3 Sky GJ_23
+        td 2012 - Выпускается
+        td MH01
+        td
+        td.textCenter 100
+        td.textCenter 299
+        td 0
+        td SUV
   // mobile table
   div.ct_table_mobile
     a(href='/' class='ctm_item')

@@ -4,7 +4,6 @@ block variables
 	- const title = "Amtor";
 	- var mainSlider = [{title: `Некогда объяснять - просто\u00A0дешевле`, description: 'Теже автозапчасти, только дешевле', text_button: 'Подобрать нужную запчасть', image: './img/slider/slider_main_1.png'}, {title: 'Некогда объяснять - просто\u00A0дешевле', description: 'Теже автозапчасти, только дешевле', text_button: 'Подобрать нужную запчасть', image: './img/slider/slider_main_1.png'}, {title: 'Некогда объяснять - просто\u00A0дешевле', description: 'Теже автозапчасти, только дешевле', text_button: 'Подобрать нужную запчасть', image: './img/slider/slider_main_1.png'}];
 	- var extraSlider = [{description: 'Моторное масло Shell HELIX HX7 5W-40 Полусинтетическое 4 л', image: './img/slider/slider_extra_1.png', href: '/', old_price: '3 125 ₽', new_price: '2 990 ₽'}, {description: 'Моторное масло Shell HELIX HX7 5W-40 Полусинтетическое 4 л', image: './img/slider/slider_extra_1.png', href: '/', old_price: '3 125 ₽', new_price: '2 990 ₽'}, {description: 'Моторное масло Shell HELIX HX7 5W-40 Полусинтетическое 4 л', image: './img/slider/slider_extra_1.png', href: '/', old_price: '3 125 ₽', new_price: '2 990 ₽'}];
-	- var priceTopSlider = [{description: 'Моторное масло Shell HELIX HX7 5W-40 Полусинтетическое 4 л', image: './img/slider/price_top/slide_1.png', href: '/', old_price: '3 125 ₽', new_price: '2 990 ₽'}, {description: 'Моторное масло Shell HELIX HX7 5W-40 Полусинтетическое 4 л', image: './img/slider/price_top/slide_2.png', href: '/', old_price: '2 125 ₽', new_price: '1 990 ₽'}, {description: 'Моторное масло Shell HELIX HX7 5W-40 Полусинтетическое 4 л', image: './img/slider/price_top/slide_3.png', href: '/', old_price: '', new_price: '890 ₽'}, {description: 'Моторное масло Shell HELIX HX7 5W-40 Полусинтетическое 4 л', image: './img/slider/price_top/slide_4.png', href: '/', old_price: '1 925 ₽', new_price: '1 480 ₽'}, {description: 'Моторное масло Shell HELIX HX7 5W-40 Полусинтетическое 4 л', image: './img/slider/price_top/slide_5.png', href: '/', old_price: '', new_price: '1 990 ₽'}, {description: 'Моторное масло Shell HELIX HX7 5W-40 Полусинтетическое 4 л', image: './img/slider/price_top/slide_6.png', href: '/', old_price: '2 925 ₽', new_price: '2 460 ₽'}, {description: 'Моторное масло Shell HELIX HX7 5W-40 Полусинтетическое 4 л', image: './img/slider/price_top/slide_1.png', href: '/', old_price: '3 125 ₽', new_price: '2 990 ₽'}];
 
 block styles
 	link(rel="stylesheet" href="./styles/home.css")
@@ -54,11 +53,7 @@ block content
 			include ../../blocks/components/home/product_categories/oils
 			include ../../blocks/components/home/product_categories/auto_chemicals
 			div.container
-				div.home_slider_top
-					h1.title Цена - «огонь» 🔥
-					div.hst_slider
-						each slide in priceTopSlider
-							include ../../blocks/components/home/slider-top
+				include ../../blocks/components/slider/home-slieder-top
 			div.container
 				include ../../blocks/components/home/feedback_form/base
 			include ../../blocks/components/home/product_categories/engine_parts

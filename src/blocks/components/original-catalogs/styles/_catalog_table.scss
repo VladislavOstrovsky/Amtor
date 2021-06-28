@@ -27,8 +27,12 @@
 		}
 	}
 
-	.ct_table {
+	.ct_table_wrapper {
 		flex: 1;
+	}
+
+	.ct_table {
+		width: 100%;
 
 		@include xs(display, none);
 		@include md(display, table);

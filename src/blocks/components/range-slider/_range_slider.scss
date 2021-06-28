@@ -10,10 +10,6 @@
 		background: var(--color-base);
 	}
 
-	.noUi-handle-upper {
-		right: rem(-1);
-	}
-
 	.noUi-handle {
 		width: rem(17);
 		height: rem(17);
@@ -22,6 +18,15 @@
 		box-shadow: none;
 		background: var(--color-base);
 		border-radius: var(--border-radius);
+
+		&.noUi-handle-upper {
+			right: 0;
+
+			@include lg-block() {
+				right: rem(-1);
+			}
+		}
+
 
 		&::before,
 		&::after {

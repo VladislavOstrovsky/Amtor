@@ -5,7 +5,7 @@ $('.home-slider-main').slick({
     speed: 300,
     slidesToShow: 1,
     slidesToScroll: 1,
-    // autoplay: true,
+    autoplay: true,
     dots: true,
 });
 
@@ -16,7 +16,7 @@ $('.home-slider-extra-wp').slick({
     dots: true,
 });
 
-$('.hst_slider').slick({
+$('.sp_slider').slick({
     speed: 300,
     slidesToShow: 6,
     slidesToScroll: 1,
