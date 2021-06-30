@@ -1,0 +1,32 @@
+extends ../layouts/default
+
+block variables
+  - const title = "Оформить заказ";
+
+block styles
+    link(rel="stylesheet" href="./styles/basket.css")
+
+block content
+  div#page
+    include ../../blocks/components/header/mobile_menu
+    div.page
+      include ../../blocks/modules/header/header
+      div.container
+        div.bread-crumbs
+          a(href='./home.html' class='text_bc bread-crumbs_item') Главная
+          span.text_bc.bread-crumbs_item Оформить заказ
+        h1.title_p Оформить заказ
+      div.container
+        div.page_center_wrapper.place_order
+          form(action='/place-order' class="po_form")
+            include ../../blocks/components/select/select-payment-type
+            include ../../blocks/components/select/select-delivery-type
+            div.textarea-container
+              label(for='comment-text' class='label-textarea') Комментарий к заказу
+              textarea(id="comment-text" name="comment-order" class='input' placeholder='Введите ваш комментарий')
+            button(type='submit' class='btn success') Подтвердить
+      include ../../blocks/modules/footer/footer
+
+block scripts
+  script(src="js/main.js")
+  script(src="js/vendor.js")

@@ -28,10 +28,9 @@ header
       //    include ../../../img/svg/header/user-login-dark.svg
       //  span.icon._arrow
       //    include ../../../img/svg/arrow-dark.svg
-      button(type='button' class='btn transparent iconButton withText basket-btn')
-        span.icon
-          include ../../../img/svg/header/basket-dark.svg
-        span.text В корзине <br> нет товаров
+
+      include ../../components/header/basket_btn/basket
+      //include ../../components/header/basket_btn/empty
     div.search_block.dFlex
       div.btn_burger.desktop
         span.burger_line._1

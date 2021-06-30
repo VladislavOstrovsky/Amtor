@@ -1,5 +1,6 @@
 .page_center_wrapper {
 
+	// 404
 	&.error_404 {
 		@include xs(padding, rem(40) 0);
 		@include md(padding, rem(60) 0);
@@ -64,6 +65,7 @@
 		}
 	}
 
+	// search vin
 	&.empty_search_vin {
 		@include xs(padding, rem(130) 0 rem(125));
 		@include md(padding, rem(180) 0 rem(206));
@@ -97,6 +99,7 @@
 		}
 	}
 
+	// search product
 	&.empty_search_product {
 		@include xs(padding, rem(60) 0);
 		@include md(padding, rem(140) 0 rem(174));
@@ -142,6 +145,90 @@
 					margin-right: rem(20);
 				}
 			}
+		}
+	}
+
+	// basket
+	&.empty_basket {
+		@include xs(padding, rem(159) 0 rem(194));
+		@include md(padding, rem(221) 0 rem(287));
+		@include lg(padding, rem(142) 0 rem(210));
+
+		.content_image {
+			margin-bottom: rem(18);
+			height: rem(78);
+		}
+
+		.content_text {
+			text-align: center;
+			font: rem(14)/rem(18) Fregat, sans-serif;
+			color: var(--color-marine);
+		}
+	}
+
+	// payment failed
+	&.payment_page {
+		@include xs(padding, rem(40) 0);
+		@include md(padding, rem(60) 0);
+		@include lg(padding, rem(30) 0 rem(80));
+
+		.pp_wrapper {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			text-align: center;
+			border-radius: var(--border-radius);
+			border: 1px solid #CCD6E9;
+
+			@include xs(padding, rem(30) rem(20));
+			@include md-block() {
+				width: rem(420);
+				padding: rem(30);
+			}
+		}
+
+		.pp_image {
+			@include lg(margin-top, rem(20));
+		}
+
+		.pp_text {
+			@include xs(margin-top, rem(20));
+			@include md(margin-top, rem(40));
+			margin-bottom: rem(30);
+			font: rem(14)/rem(14) 'Open Sans', sans-serif;
+
+			.title {
+				margin: rem(10) 0 0;
+				font: rem(24)/rem(24) Fregat-Bold, sans-serif;
+			}
+
+			.text.last {
+				margin-top: rem(20);
+			}
+		}
+
+		.pp_extra_info {
+			padding: rem(20);
+			background-color: var(--color-extra-light-gray);
+			border-radius: var(--border-radius);
+			font: rem(14)/rem(22) 'Open Sans', sans-serif;
+			text-align: left;
+
+			@include xs(margin-bottom, rem(20));
+			@include md(margin-bottom, rem(30));
+
+			.title {
+				margin-bottom: rem(10);
+				font: rem(16)/rem(16) Fregat-Bold, sans-serif;
+			}
+		}
+
+		.pp_extra_comment {
+			@include xs(margin-bottom, rem(10));
+			@include md(margin-bottom, rem(30));
+
+			font: rem(14)/rem(20) 'Open Sans', sans-serif;
+			color: #8E8E8E;
 		}
 	}
 }

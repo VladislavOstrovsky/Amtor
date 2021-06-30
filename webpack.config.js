@@ -24,6 +24,7 @@ module.exports = {
         passenger_tires: "./src/js/import/pages/passenger_tires.js",
         lamp_catalog: "./src/js/import/pages/lamp_catalog.js",
         engine_oils: "./src/js/import/pages/engine_oils.js",
+        basket: "./src/js/import/pages/basket.js",
     },
 
     output: {

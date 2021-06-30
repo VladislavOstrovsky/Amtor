@@ -1,0 +1,43 @@
+extends ../layouts/default
+
+block variables
+  - const title = "Корзина";
+
+block styles
+    link(rel="stylesheet" href="./styles/basket.css")
+
+block content
+  div#page
+    include ../../blocks/components/header/mobile_menu
+    div.page
+      include ../../blocks/modules/header/header
+      div.container
+        div.bread-crumbs
+          a(href='./home.html' class='text_bc bread-crumbs_item') Главная
+          span.text_bc.bread-crumbs_item Корзина
+        h1.title_p Корзина
+      div.container
+        div.basket_wrapper
+          div.bw_products
+            div.bwp_table
+              include ../../blocks/modules/basket/basket-table
+              button(class='btn link js-basket-remove' type='button') Удалить отмеченные
+            div.bwpt_total_wrapper
+              div.bwp_total
+                div.bwpt_header
+                  h1.title Итого
+                  h2.value.js-bskt-tl-price-result 31 225 руб.
+                div.bwpt_extra_info
+                  h1.title.js-bskt-tl-count Товары, 5 шт.
+                  h2.value.js-bskt-tl-price 51 225 руб.
+                div.bwpt_extra_info
+                  h1.title Скидка
+                  h2.value.js-bskt-tl-price-sale - 20 000 руб.
+                button(class='btn success' type='submit') Оплатить заказ
+          include ../../blocks/components/slider/slider-product
+      include ../../blocks/modules/footer/footer
+
+block scripts
+  script(src="js/basket.js")
+  script(src="js/main.js")
+  script(src="js/vendor.js")

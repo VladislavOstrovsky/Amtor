@@ -1,0 +1,267 @@
+.basket_table {
+	margin-bottom: rem(15);
+	transition: all .2s ease-in-out;
+
+	.bt_row_header {
+		position: relative;
+		display: grid;
+		align-items: center;
+		justify-content: space-between;
+		grid-gap: rem(15);
+		grid-template-columns: rem(30) rem(100) rem(195) rem(45) rem(101) rem(100);
+		height: rem(30);
+		font: rem(16)/rem(16) Fregat-Bold, sans-serif;
+
+		@include xs-block() {
+			padding: rem(15) 0;
+
+			.title {
+				display: none;
+			}
+		}
+
+		@include md-block() {
+			padding: rem(8) rem(20) rem(8) rem(10);
+
+			.title {
+				display: block;
+			}
+		}
+		@include lg(padding, rem(8) rem(30) rem(8) rem(15));
+
+		.mobile-link {
+			@include xs-block() {
+				position: absolute;
+				right: 0;
+				bottom: rem(23);
+				display: block;
+				padding: 0;
+				width: auto;
+			}
+
+			@include md(display, none);
+		}
+	}
+
+	.bt_row_wrapper {
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		box-sizing: border-box;
+		min-height: rem(100);
+		width: 100%;
+		padding: rem(15) rem(30) rem(13) rem(15);
+		border-top: 1px solid var(--color-cyan);
+
+		@include xs(padding, rem(15) 0);
+		@include md(padding, rem(15) rem(20) rem(15) rem(10));
+		@include lg(padding, rem(15) rem(30) rem(15) rem(15));
+
+		@include md-block() {
+			&:hover {
+				box-shadow: var(--box-shadow-card);
+				border-color: transparent;
+				border-radius: var(--border-radius);
+				cursor: pointer;
+
+				& + .bt_row_wrapper {
+					border-color: transparent;
+				}
+			}
+		}
+
+		.bt_row {
+			position: relative;
+			display: grid;
+			align-items: flex-start;
+			justify-content: space-between;
+			font: rem(14)/rem(18) Fregat, sans-serif;
+
+			@include xs-block() {
+				grid-template-columns: 1fr;
+				padding-left: rem(50);
+				grid-gap: rem(15);
+
+				.bt_checkbox {
+					position: absolute;
+					left: 0;
+					top: 0;
+				}
+			}
+
+			@include md-block() {
+				padding-left: 0;
+				grid-template-columns: rem(30) rem(100) rem(195) rem(45) rem(101) rem(100);
+
+				.bt_checkbox {
+					position: relative;
+				}
+			}
+
+			.paddingTop {
+				padding-top: rem(7);
+			}
+
+			.bt_name_product {
+				.title {
+					font: rem(16)/rem(16) Fregat-Bold, sans-serif;
+				}
+
+				.value {
+					margin-bottom: rem(5);
+				}
+			}
+
+			.mobile_title {
+				font: rem(16)/rem(16) Fregat-Bold, sans-serif;
+				margin-bottom: rem(5);
+
+				@include xs(display, block);
+				@include md(display, none);
+			}
+
+			.bt_change_cont {
+				display: flex;
+				align-items: center;
+
+				@include xs(justify-content, space-between);
+				@include md(justify-content, flex-start);
+
+				.btc_wrapper {
+					display: flex;
+					align-items: center;
+				}
+
+				.value {
+					margin: 0 rem(15);
+				}
+
+				.btc_mobile_price {
+					font: rem(18)/rem(18) Fregat-Bold, sans-serif;
+					@include xs(display, block);
+					@include md(display, none);
+				}
+
+				.btn {
+					width: rem(32);
+					height: rem(32);
+					padding: 0 rem(7);
+
+					@include xs-block() {
+						&:hover {
+							background-color: var(--color-base) !important;
+						}
+					}
+
+					&::before,
+					&::after {
+						background-color: var(--color-base) !important;
+						border-radius: var(--border-radius);
+					}
+
+					&:hover {
+						&::before,
+						&::after {
+							background-color: var(--color-white) !important;
+						}
+					}
+
+					&:disabled {
+						&::before,
+						&::after {
+							border-radius: var(--border-radius);
+							background-color: var(--color-base);
+						}
+					}
+
+					&.dec {
+						position: relative;
+
+						&::before {
+							content: '';
+							width: rem(15);
+							height: rem(2);
+						}
+					}
+
+					&.inc {
+						position: relative;
+
+						&::before {
+							content: '';
+							width: rem(15);
+							height: rem(2);
+						}
+
+						&::after {
+							content: '';
+							position: absolute;
+							top: rem(7);
+							left: rem(13);
+							width: rem(2);
+							height: rem(15);
+						}
+					}
+				}
+			}
+
+			.bt_price {
+				font: rem(18)/rem(18) Fregat-Bold, sans-serif;
+
+				@include xs(display, none);
+				@include md(display, block);
+			}
+		}
+
+		.bt_row_extra {
+			display: flex;
+			justify-content: flex-end;
+
+			@include xs-block() {
+				margin-top: rem(15);
+				align-self: flex-start;
+				flex-direction: column;
+				padding-left: rem(50);
+
+				p {
+					margin-left: 0;
+
+					&:not(:last-child) {
+						margin-bottom: rem(10);
+					}
+				}
+			}
+
+			@include md-block() {
+				margin-top: rem(6);
+				align-self: flex-end;
+				flex-direction: row;
+				padding-left: 0;
+
+				p {
+					margin-left: rem(24);
+
+					&:not(:last-child) {
+						margin-bottom: 0;
+					}
+				}
+			}
+
+			p {
+				font: rem(12)/rem(12) 'Open Sans', sans-serif;
+				color: #838181;
+			}
+		}
+
+		.bt_btn_delete {
+			display: flex;
+			position: absolute;
+			top: rem(15);
+			width: rem(12);
+			height: rem(12);
+
+			@include xs(right, 0);
+			@include md(right, rem(20));
+		}
+	}
+}

@@ -1,0 +1,15 @@
+- var productIds = [1, 2, 3, 4, 5];
+
+div.basket_table
+  div.bt_row_header
+    label(for='basket-product-all' class='checkbox-container bt_checkbox js-basket-check-all')
+      input(id="basket-product-all" type='checkbox' name="basket-product-all")
+      span.checkmark
+    button(class='btn link mobile-link js-basket-remove' type='button') Удалить отмеченные
+    h1.title Артикул
+    h1.title Описание
+    h1.title Срок
+    h1.title.textCenter Кол-во
+    h1.title Цена
+  each product in productIds
+    include ../../../blocks/modules/basket/basket-row

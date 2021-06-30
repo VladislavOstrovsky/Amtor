@@ -1,0 +1,37 @@
+extends ../layouts/default
+
+block variables
+    - const title = "Платёж не прошёл";
+
+block styles
+  link(rel="stylesheet" href="./styles/errors.css")
+
+block content
+  div#page
+    include ../../blocks/components/header/mobile_menu
+    div.page
+      include ../../blocks/modules/header/header
+      div.container
+        div.bread-crumbs
+          a(href='./home.html' class='text_bc bread-crumbs_item') Главная
+          span.text_bc.bread-crumbs_item Платёж не прошёл
+        h1.title_p Платёж не прошёл
+      div.container
+        div.page_center_wrapper.payment_page
+          div.pp_wrapper
+            div.pp_image
+              include ../../img/svg/extra/payment-failed.svg
+            div.pp_text
+              p.text Уважаемый покупатель!
+              h1.title Платёж не прошёл
+              p.text.last Недостаточно средств на карте.
+            div.pp_extra_info
+              h1.title Информация об операции
+              p.text Услуга: оплата заказа 1 | Сумма платежа: 123, 00 руб. | Дата и время: 01.01.2017 14:00:00 | Номер транзакции: 1000000
+            div.pp_extra_comment По вопросам, связанным с выполнением оплаченного заказа, обращайтесь в "Амтор" по эл. почте support@amtor.su или телефону 8 800 550 5354
+            a(href='./home.html' class='btn success') Вернуться на главную
+      include ../../blocks/modules/footer/footer
+
+block scripts
+  script(src="js/main.js")
+  script(src="js/vendor.js")

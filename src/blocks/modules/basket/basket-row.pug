@@ -1,0 +1,27 @@
+div.bt_row_wrapper.js-bt-row
+  div.bt_row
+    label(for=`basket-product-${product}` class='checkbox-container bt_checkbox')
+      input(id=`basket-product-${product}` type='checkbox' name=`basket-product-${product}`)
+      span.checkmark
+    div.bt_name_product
+      p.value 0888080370GO
+      h1.title TOYOTA-LEXUS
+    div.bt_extra_content.description
+      h1.mobile_title Описание
+      p.text Сцепление комплект BMW 3/ 5 E36/ E34 518/ 318 BMW 3/ 5 E36/ E34 518/ 318
+    div.bt_extra_content.paddingTop
+      h1.mobile_title Срок
+      p.text 2-3 дня
+    div.bt_change_cont
+      div.btc_wrapper
+        button(type='button' class='btn transparent iconButton dec js-basket-page-dec')
+        p.value.js-basket-page-count 1
+        button(type='button' class='btn transparent iconButton inc js-basket-page-inc')
+      div.btc_mobile_price 2 247 руб
+    div.bt_price.paddingTop 2 247 руб
+  div.bt_row_extra
+    p Склад: BERG MSK
+    p Цена за шт: 2 247 руб.
+    p Вес: 800 г
+  span.bt_btn_delete
+    include ../../../img/svg/close-base.svg

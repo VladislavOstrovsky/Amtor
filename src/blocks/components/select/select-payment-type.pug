@@ -1,0 +1,8 @@
+- var paymentType = ['Оплата банковской картой', 'Оплата банковской картой 2', 'Оплата банковской картой 3'];
+
+div.select-container
+  p.select-label Марка
+  select(name='payment-type' required)
+    option(value='') Выберите вид оплаты
+    each option in paymentType
+      option(value=option) #{option}

@@ -209,12 +209,21 @@ $(".js-basket-inc").click(function () {
 
     if ($countValue > 0) {
         $(".js-basket-count").val(+$countValue + 1);
+        // const $convertPrice = $('.js-bp-price').html()
+        //     .replace('₽', '')
+        //     .replace(' ', '');
+        // const $newPrice = +$convertPrice + ($convertPrice / +$countValue);
+        // $('.js-bp-price').html(`${numberWithSpaces($newPrice)} ₽`);
 
         if ($(".js-basket-dec").prop("disabled")) {
             $(".js-basket-dec").prop("disabled", false);
         }
     }
 });
+
+function numberWithSpaces(x) {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+}
 
 // clickable row table
 $(document).ready(function($) {

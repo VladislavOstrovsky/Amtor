@@ -78,3 +78,22 @@ $(document).on('click', '.js-slider-card > div', function () {
     }
 });
 
+// product slider
+$('.sp_slider').slick({
+    speed: 300,
+    slidesToShow: 6,
+    slidesToScroll: 1,
+    variableWidth: true,
+    infinite: true,
+    responsive: [
+        {
+            breakpoint: 767,
+            settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                variableWidth: false,
+            }
+        }
+    ]
+});
+

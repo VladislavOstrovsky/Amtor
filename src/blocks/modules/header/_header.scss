@@ -271,6 +271,34 @@ header {
 			.basket-btn {
 				font-size: rem(13);
 				text-align: left;
+
+				&.__not-empty {
+					position: relative;
+
+					.text {
+						display: flex;
+						flex-direction: column;
+					}
+
+					.counter {
+						position: absolute;
+						right: rem(-8);
+						top: rem(-8);
+						width: rem(26);
+						height: rem(26);
+						display: flex;
+						align-items: center;
+						justify-content: center;
+						color: var(--color-white);
+						background: var(--color-red);
+						border: 2px solid var(--color-white);
+						border-radius: var(--border-radius-circle);
+					}
+
+					h1 {
+						font-family: Fregat, sans-serif;
+					}
+				}
 			}
 		}
 

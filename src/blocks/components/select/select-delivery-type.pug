@@ -1,0 +1,8 @@
+- var deliveryType = ['Отправка ТК (Оплачивается отдельно)', 'Отправка ТК (Оплачивается отдельно) 2', 'Отправка ТК (Оплачивается отдельно) 3'];
+
+div.select-container
+  p.select-label Вид доставки
+  select(name='delivery-type' required)
+    option(value='') Выберите вид доставки
+    each option in deliveryType
+      option(value=option) #{option}

@@ -28,6 +28,7 @@ const requireDir = require("require-dir"),
                 "./src/styles/engine-oils.{scss,sass}",
                 "./src/styles/search-results.{scss,sass}",
                 "./src/styles/errors.{scss,sass}",
+                "./src/styles/basket.{scss,sass}",
             ],
             dist: "./dist/styles/",
             watch: [
