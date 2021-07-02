@@ -1,0 +1,18 @@
+@import "../lc/styles/lc_author_card";
+@import "../lc/styles/lc_menu_cards";
+@import "../lc/styles/lc_menu";
+
+.personal_account {
+	@include xs(margin, rem(20) 0 rem(40));
+	@include md(margin, rem(30) 0 rem(60));
+	@include lg(margin, rem(30) 0 rem(80));
+
+	// balance
+	&.__balance {
+		display: flex;
+
+		.pab_content {
+			flex: 1;
+		}
+	}
+}

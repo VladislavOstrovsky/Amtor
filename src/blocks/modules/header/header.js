@@ -195,6 +195,7 @@ $(".js-basket-dec").click(function () {
 
     if ($countValue > 1) {
         $(".js-basket-count").val(+$countValue - 1);
+        convertPrice($countValue, false);
     }
 
     if ($countValue - 1 === 1 || "") {
@@ -209,17 +210,23 @@ $(".js-basket-inc").click(function () {
 
     if ($countValue > 0) {
         $(".js-basket-count").val(+$countValue + 1);
-        // const $convertPrice = $('.js-bp-price').html()
-        //     .replace('₽', '')
-        //     .replace(' ', '');
-        // const $newPrice = +$convertPrice + ($convertPrice / +$countValue);
-        // $('.js-bp-price').html(`${numberWithSpaces($newPrice)} ₽`);
+        convertPrice($countValue, true);
 
         if ($(".js-basket-dec").prop("disabled")) {
             $(".js-basket-dec").prop("disabled", false);
         }
     }
 });
+
+function convertPrice(value, inc) {
+    const $convertPrice = $('.js-bp-price').html()
+        .replace('₽', '')
+        .replace(' ', '');
+    const $newPrice = inc
+        ? +$convertPrice + ($convertPrice / +value)
+        : +$convertPrice - ($convertPrice / +value);
+    $('.js-bp-price').html(`${numberWithSpaces($newPrice)} ₽`);
+}
 
 function numberWithSpaces(x) {
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");

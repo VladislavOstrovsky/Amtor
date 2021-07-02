@@ -1,0 +1,30 @@
+extends ../layouts/default
+
+block variables
+  - const title = "Баланс";
+
+block styles
+    link(rel="stylesheet" href="./styles/lc.css")
+
+block content
+  div#page
+    include ../../blocks/components/header/mobile_menu
+    div.page
+      include ../../blocks/modules/header/header
+      div.container
+        div.bread-crumbs
+          a(href='./home.html' class='text_bc bread-crumbs_item') Главная
+          a(href='./lc-main.html' class='text_bc bread-crumbs_item') Личный кабинет
+          span.text_bc.bread-crumbs_item Баланс
+        h1.title_p Баланс
+      div.container
+        div.personal_account.__balance
+          include ../../blocks/modules/lc/pages/balance/lc-menu
+          div.pab_content
+            include ../../blocks/modules/lc/lc-author-card
+      include ../../blocks/modules/footer/footer
+
+block scripts
+  script(src="js/lc.js")
+  script(src="js/main.js")
+  script(src="js/vendor.js")

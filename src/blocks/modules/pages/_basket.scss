@@ -116,7 +116,10 @@
 			display: flex;
 			flex-direction: column;
 			align-items: center;
-			grid-gap: rem(20);
+
+			& > div {
+				margin-bottom: rem(20);
+			}
 
 			@include xs(width, 100%);
 			@include md(width, rem(420));

@@ -13,7 +13,6 @@ $('.js-toggle-view').click(function () {
     $(this).addClass('__selected');
 });
 
-
 // filters
 $('.fci_header').click(function () {
    $(this).parent().toggleClass('__open');

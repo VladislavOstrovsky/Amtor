@@ -1,0 +1,52 @@
+extends ../layouts/default
+
+block variables
+  - const title = "Контакты";
+  - var addressList = ['Москва, ул. Таншкентская 28 стр.1', 'Москва, ул. Таншкентская 28 стр.1', 'Москва, ул. Таншкентская 28 стр.1', 'Москва, ул. Таншкентская 28 стр.1', 'Москва, ул. Таншкентская 28 стр.1', 'Москва, ул. Таншкентская 28 стр.1', 'Москва, ул. Таншкентская 28 стр.1'];
+
+block styles
+    link(rel="stylesheet" href="./styles/contacts.css")
+
+block content
+  div#page
+    include ../../blocks/components/header/mobile_menu
+    div.page
+      include ../../blocks/modules/header/header
+      div.container
+        div.bread-crumbs
+          a(href='./home.html' class='text_bc bread-crumbs_item') Главная
+          span.text_bc.bread-crumbs_item Контакты
+        h1.title_p Контакты
+      div.container
+        div.contacts_wrapper
+          div.cw_city_buttons
+            button(type='button' class='btn success selected js-change-city' data-city="moscow") Москва
+            button(type='button' class='btn success js-change-city' data-city="omsk") Омск
+            button(type='button' class='btn success js-change-city' data-city="saint-petersburg") Санкт-Петербург
+          div.cw_map_wrapper
+            div#map.cw_map
+            div.cw_find_wrapper
+              include ../../blocks/components/search-input/search-name-car-input
+              div.cw_find_list.js-custom-scroll
+                each address in addressList
+                  div.cffl_item
+                    p.title.js-change-address #{address}
+                    p.opening_hours Время работы: <b>пн-пт</b> с 9:00 до 18:00
+          div.cw_text Мы всегда на связи по удобным для Вас способом:
+          div.cw_contact_info
+            div.ci_item
+              p.text Многоканальный номер телефона
+              a(href="tel:8 800 550 5354" class="value") 8 800 550 5354
+            div.ci_item
+              p.text Почта для связи
+              a(href="mailto:sale@amtor.su" class="value") sale@amtor.su
+            div.ci_item
+              p.text Для поставщиков
+              a(href="mailto:office@amtor.su" class="value") office@amtor.su
+      include ../../blocks/modules/footer/footer
+
+block scripts
+  script(src="https://api-maps.yandex.ru/2.1/?apikey=e5b77d97-ba13-430d-a07f-429993064cce&lang=ru_RU")
+  script(src="js/contacts.js")
+  script(src="js/main.js")
+  script(src="js/vendor.js")

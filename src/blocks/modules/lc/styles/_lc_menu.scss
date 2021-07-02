@@ -1,0 +1,50 @@
+.lc-menu {
+
+	// desktop
+	.lcm_wrapper_desktop {
+		display: flex;
+		flex-direction: column;
+		grid-gap: rem(20);
+		margin-right: rem(25);
+
+		.lcm_item {
+			display: flex;
+			align-items: center;
+			transition: all .2s ease-in-out;
+
+			&.active {
+
+				.title {
+					color: var(--color-base);
+				}
+			}
+
+			&:hover {
+				.title {
+					color: var(--color-base);
+				}
+			}
+		}
+
+		.lcmi_icon {
+			width: rem(40);
+			height: rem(40);
+			margin-right: rem(15);
+
+			svg {
+				max-width: rem(40);
+				max-height: rem(40);
+			}
+		}
+
+		.title {
+			color: var(--color-black);
+			font: rem(14)/rem(22) "Open Sans 600", sans-serif;
+		}
+	}
+
+	// mobile
+	.lcm_wrapper_mobile {
+		display: none;
+	}
+}

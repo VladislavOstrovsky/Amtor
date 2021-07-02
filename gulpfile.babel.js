@@ -29,6 +29,8 @@ const requireDir = require("require-dir"),
                 "./src/styles/search-results.{scss,sass}",
                 "./src/styles/errors.{scss,sass}",
                 "./src/styles/basket.{scss,sass}",
+                "./src/styles/contacts.{scss,sass}",
+                "./src/styles/lc.{scss,sass}",
             ],
             dist: "./dist/styles/",
             watch: [

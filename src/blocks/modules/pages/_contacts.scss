@@ -1,0 +1,243 @@
+@import "../../components/slider/styles/slider_product";
+
+.contacts_wrapper {
+	@include xs(margin, rem(10) 0 rem(40));
+	@include md(margin, rem(20) 0 rem(60));
+	@include lg(margin, rem(30) 0 rem(80));
+
+	.cw_city_buttons {
+		padding: rem(15) 0;
+		margin-bottom: rem(11);
+		display: flex;
+
+		@include xs-block() {
+			margin-left: rem(-20);
+			overflow-x: scroll;
+			width: calc(100% + 20px);
+			padding: rem(15) rem(20);
+
+			.btn {
+				width: auto;
+				white-space: nowrap;
+				margin-right: rem(10);
+			}
+		}
+
+		@include md-block() {
+			overflow: inherit;
+			margin-left: 0;
+			width: auto;
+			padding: rem(15) 0;
+			grid-gap: rem(10);
+
+			.btn {
+				margin-right: 0;
+			}
+		}
+
+		.btn {
+			padding: 0 rem(20);
+			font-size: rem(14);
+			line-height: rem(14);
+			background-color: var(--color-white);
+			box-shadow: var(--box-shadow);
+			color: var(--color-marine);
+
+			&:hover {
+				box-shadow: var(--box-shadow-card);
+			}
+
+			&.selected {
+				box-shadow: none;
+				color: var(--color-white);
+				background-color: var(--color-base);
+
+				&:hover {
+					box-shadow: none;
+				}
+			}
+		}
+	}
+
+	.cw_map_wrapper {
+		display: flex;
+		justify-content: space-between;
+		grid-gap: rem(20);
+
+		@include xs-block() {
+			flex-direction: column;
+
+			.cw_map {
+				max-height: rem(200);
+				min-height: rem(200);
+				border-radius: var(--border-radius-popup);
+			}
+		}
+
+		@include md-block() {
+			flex-direction: row;
+
+			.cw_map {
+				min-height: rem(394);
+				max-height: rem(394);
+				border-radius: var(--border-radius);
+			}
+		}
+	}
+
+	.cw_map {
+		flex: 1;
+		overflow: hidden;
+	}
+
+	.cw_find_wrapper {
+		@include md(width, rem(419));
+	}
+
+	.cw_find_list {
+		margin-top: rem(30);
+		overflow: hidden;
+
+		.mCSB_dragger_bar {
+			background-color: var(--color-base) !important;
+		}
+
+		.mCSB_draggerRail {
+			background: transparent !important;
+		}
+
+		@include xs-block() {
+			height: rem(300);
+
+			.mCSB_container {
+				margin-right: rem(10) !important;
+			}
+		}
+
+		@include md-block() {
+			height: rem(318);
+
+			.mCSB_container {
+				margin-right: rem(15) !important;
+			}
+		}
+	}
+
+	.cffl_item {
+		padding: rem(20) 0;
+
+		&:first-child {
+			padding-top: 0;
+		}
+
+		&:not(:last-child) {
+			border-bottom: 1px solid #D4D9E2;
+		}
+
+		&:last-child {
+			padding-bottom: 0;
+		}
+
+		.title {
+			font: rem(18)/rem(18) Fregat-Bold, sans-serif;
+			margin-bottom: rem(10);
+			cursor: pointer;
+
+			&:hover {
+				color: var(--color-base);
+			}
+
+			@include xs-block() {
+				font-size: rem(16);
+				line-height: rem(16);
+			}
+
+			@include md-block() {
+				font-size: rem(18);
+				line-height: rem(18);
+			}
+		}
+
+		.opening_hours {
+			font: rem(14)/rem(18) Fregat, sans-serif;
+			color: var(--color-marine);
+		}
+	}
+
+	.cw_text {
+		font: rem(20)/rem(20) Fregat, sans-serif;
+		color: var(--color-marine);
+
+		@include xs-block() {
+			margin: rem(30) 0 rem(20);
+		}
+
+		@include md-block() {
+			text-align: center;
+			margin: rem(40) 0 rem(30);
+		}
+
+		@include lg-block() {
+			text-align: left;
+			margin: rem(30) 0;
+			padding-left: rem(129);
+		}
+
+		@include xl(padding-left, rem(209));
+		@include xl(padding-left, rem(209));
+	}
+
+	.cw_contact_info {
+		display: flex;
+
+		@include xs-block() {
+			flex-direction: column;
+			justify-content: flex-start;
+		}
+
+		@include md-block() {
+			flex-direction: row;
+			justify-content: space-between;
+		}
+
+		@include lg-block() {
+			justify-content: flex-start;
+			margin-bottom: 0;
+
+			&:not(:last-child) {
+				margin-right: rem(129);
+			}
+		}
+
+		.ci_item {
+			display: flex;
+			flex-direction: column;
+
+			&:not(:last-child) {
+				@include xs(margin-bottom, rem(20));
+
+				@include md-block() {
+					margin-bottom: 0;
+					margin-right: 9%;
+				}
+			}
+
+			.text {
+				font: rem(16)/rem(18) Fregat, sans-serif;
+				color: var(--color-marine);
+
+				@include xs(margin-bottom, rem(5));
+				@include md(margin-bottom, rem(10));
+			}
+
+			.value {
+				font: rem(24)/rem(24) Fregat-Bold, sans-serif;
+				color: var(--color-black);
+
+				&:hover {
+					text-decoration: underline;
+				}
+			}
+		}
+	}
+}
