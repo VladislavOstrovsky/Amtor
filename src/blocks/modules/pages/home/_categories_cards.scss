@@ -218,6 +218,9 @@
 				grid-area: 1 / 2 / 2 / 3;
 
 				.image {
+					position: absolute;
+					bottom: rem(20);
+
 					@include xs(max-height, rem(100));
 					@include md(max-height, rem(145));
 				}
@@ -318,6 +321,10 @@
 
 				@include lg-block() {
 					grid-area: 2 / 4 / 3 / 6;
+
+					.image {
+						max-height: rem(149);
+					}
 				}
 			}
 
@@ -573,8 +580,16 @@
 			.antifreeze {
 				.image {
 					@include xs(max-height, rem(104));
-					@include md(max-height, rem(240));
-					@include lg(max-height, rem(296));
+
+					@include md-block() {
+						max-height: rem(240);
+						margin-bottom: rem(48);
+					}
+
+					@include lg-block() {
+						max-height: rem(296);
+						margin-bottom: 0;
+					}
 				}
 
 				@include xs-block() {
@@ -860,7 +875,7 @@
 
 					.image {
 						position: absolute;
-						bottom: rem(80);
+						bottom: rem(115);
 						left: 0;
 						max-height: rem(200);
 					}
@@ -921,7 +936,7 @@
 
 					.image {
 						position: absolute;
-						bottom: rem(80);
+						bottom: rem(115);
 						left: 0;
 						max-height: rem(200);
 					}
@@ -1144,6 +1159,13 @@
 
 					.image {
 						max-height: rem(168);
+						margin-right: rem(35);
+					}
+				}
+
+				@include lg-block() {
+					.image {
+						margin-right: rem(22);
 					}
 				}
 			}
@@ -1180,6 +1202,8 @@
 
 		// interior and exterior
 		&.interior_exterior {
+			position: relative;
+
 			@include xs-block() {
 				grid-template-columns: repeat(2, 1fr);
 				grid-template-rows: repeat(4, rem(170));
@@ -1202,11 +1226,26 @@
 			}
 
 			.tires {
+				position: relative;
+
 				@include md-block() {
 					grid-row: span 2;
 
 					.image {
 						max-height: rem(330);
+						position: absolute;
+						left: 0;
+						bottom: rem(50);
+					}
+				}
+
+				@include lg-block() {
+					margin-bottom: 0;
+
+					.image {
+						position: relative;
+						left: inherit;
+						bottom: inherit;
 					}
 				}
 			}
@@ -1228,6 +1267,15 @@
 			.mudguards {
 				@include lg-block() {
 					grid-row: span 2;
+
+					.image {
+						position: absolute;
+						bottom: rem(111);
+						left: 0;
+						width: 100%;
+						object-fit: contain;
+						max-height: rem(198);
+					}
 				}
 			}
 		}
@@ -1268,9 +1316,16 @@
 
 				.image {
 					@include xs(max-height, rem(80));
-					@include md(max-height, rem(126));
-					@include md(margin-top, rem(-20));
-					@include lg(margin-top, 0);
+
+					@include md-block() {
+						max-height: rem(126);
+						margin-top: rem(-20);
+					}
+
+					@include xl-block() {
+						max-height: rem(160);
+						margin-top: 0;
+					}
 				}
 
 				@include md-block() {
@@ -1286,6 +1341,8 @@
 			}
 
 			.screwdrivers {
+				position: relative;
+
 				.image {
 					@include xs(max-height, rem(100));
 					@include md(max-height, rem(160));
@@ -1299,6 +1356,16 @@
 				@include md-block() {
 					flex-direction: row;
 					grid-column: span 2;
+
+					justify-content: flex-end;
+					align-items: flex-end;
+
+					.card_name {
+						position: absolute;
+						left: rem(20);
+						top: rem(20);
+						padding-right: rem(200);
+					}
 				}
 
 				@include lg-block() {
@@ -1361,6 +1428,7 @@
 				.image {
 					@include xs(max-height, rem(88));
 					@include md(max-height, rem(126));
+					@include xl(max-height, rem(160));
 				}
 
 				@include md-block() {
@@ -1393,6 +1461,7 @@
 				.image {
 					@include xs(max-height, rem(77));
 					@include md(max-height, rem(126));
+					@include xl(max-height, rem(164));
 				}
 
 				@include md-block() {
@@ -1402,6 +1471,11 @@
 					.image {
 						margin-top: rem(-15);
 					}
+
+					.card_name {
+						position: absolute;
+						top: rem(20);
+					}
 				}
 
 				@include lg-block() {
@@ -1410,7 +1484,7 @@
 					.card_name {
 						position: absolute;
 						top: rem(20);
-						margin-right: rem(120);
+						margin-right: rem(122);
 					}
 				}
 			}

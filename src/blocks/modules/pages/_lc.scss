@@ -14,5 +14,13 @@
 		.pab_content {
 			flex: 1;
 		}
+
+		@include xs-block() {
+			flex-direction: column;
+		}
+
+		@include lg-block() {
+			flex-direction: row;
+		}
 	}
 }

@@ -28,11 +28,6 @@
 			margin-left: 0;
 			width: auto;
 			padding: rem(15) 0;
-			grid-gap: rem(10);
-
-			.btn {
-				margin-right: 0;
-			}
 		}
 
 		.btn {
@@ -62,12 +57,12 @@
 	.cw_map_wrapper {
 		display: flex;
 		justify-content: space-between;
-		grid-gap: rem(20);
 
 		@include xs-block() {
 			flex-direction: column;
 
 			.cw_map {
+				margin-bottom: rem(30);
 				max-height: rem(200);
 				min-height: rem(200);
 				border-radius: var(--border-radius-popup);
@@ -78,6 +73,8 @@
 			flex-direction: row;
 
 			.cw_map {
+				margin-bottom: 0;
+				margin-right: rem(20);
 				min-height: rem(394);
 				max-height: rem(394);
 				border-radius: var(--border-radius);
@@ -91,7 +88,8 @@
 	}
 
 	.cw_find_wrapper {
-		@include md(width, rem(419));
+		@include md(width, rem(308));
+		@include lg(width, rem(419));
 	}
 
 	.cw_find_list {

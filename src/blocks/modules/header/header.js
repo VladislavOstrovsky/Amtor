@@ -135,6 +135,14 @@ if (isMobile) {
     });
 }
 
+// reset search desktop
+$('.js-reset-search').click(function () {
+    $(".js-header-search").val("");
+    $(".sb_dropdown").addClass("hidden");
+    $(".search-input_wrapper").removeClass("with-dropdown");
+    $(document.body).removeClass("__hidden");
+});
+
 // input add class logic
 $(".input").on("input change", function (e) {
     e.stopPropagation();

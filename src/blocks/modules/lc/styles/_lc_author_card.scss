@@ -68,6 +68,7 @@
 		.ach_actions {
 			display: none;
 			align-items: center;
+			white-space: nowrap;
 			@include md(display, flex);
 
 			.btn {
@@ -171,9 +172,14 @@
 			display: flex;
 			flex-direction: column;
 
-			@include xs(margin-bottom, 0);
-			@include md(margin-bottom, 0);
-			@include lg(margin-bottom, rem(10));
+			@include md-block() {
+				padding-right: 0;
+			}
+
+			@include lg-block() {
+				padding-right: 3%;
+				margin-bottom: rem(10);
+			}
 
 			&:not(:last-child) {
 				@include xs-block() {
@@ -187,8 +193,12 @@
 				}
 
 				@include lg-block() {
-					padding-right: 9%;
+					padding-right: 5%;
 					margin-bottom: rem(10);
+				}
+
+				@include xl-block() {
+					padding-right: 9%;
 				}
 			}
 

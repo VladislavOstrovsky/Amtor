@@ -11,7 +11,6 @@
 	.bw_products {
 		display: flex;
 		justify-content: space-between;
-		grid-gap: rem(30);
 		margin-bottom: rem(60);
 
 		@include xs(flex-direction, column);
@@ -24,6 +23,8 @@
 		flex-direction: column;
 
 		@include xs-block() {
+			margin-bottom: rem(30);
+
 			.btn.link {
 				width: auto;
 				padding: 0;
@@ -36,6 +37,11 @@
 				padding: 0 rem(10);
 				align-self: flex-start;
 			}
+		}
+
+		@include lg-block() {
+			margin-bottom: 0;
+			margin-right: rem(30);
 		}
 	}
 

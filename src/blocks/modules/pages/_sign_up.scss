@@ -171,10 +171,8 @@
 					margin-top: rem(10);
 				}
 
-				.checkbox-container {
-					&.center {
-						@include md(padding-top, rem(5));
-					}
+				.sgl-check {
+					margin: 0 rem(5);
 				}
 			}
 

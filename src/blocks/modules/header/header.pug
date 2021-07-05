@@ -40,6 +40,8 @@ header
       div.search-input_wrapper
         input(type='text' class='input search-input js-header-search' placeholder='VIN, frame или номер детали')
         button(type='button' class='btn success search-btn js-search-btn') Найти
+        button(type='button' class='btn iconButton reset-btn js-reset-search')
+          include ../../../img/svg/header/reset-search.svg
         include ../../components/header/search_dropdown
   include ../../components/header/tags
   include ../../components/popups/sign_up

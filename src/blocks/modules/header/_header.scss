@@ -187,9 +187,14 @@ header {
 			width: 100%;
 			background: var(--color-white);
 			border-radius: var(--border-radius-popup);
+			transition: box-shadow .2s ease-in-out;
 
 			@include xs(padding, 0);
 			@include md(padding, rem(10));
+
+			.reset-btn {
+				display: none;
+			}
 
 			&.with-dropdown {
 				border-bottom-left-radius: 0;
@@ -201,6 +206,19 @@ header {
 
 				@include md-block() {
 					box-shadow: var(--box-shadow-search-dropdown);
+
+					.reset-btn {
+						display: block;
+						position: absolute;
+						top: rem(10);
+						right: rem(93);
+						background: transparent;
+
+						svg {
+							width: rem(12);
+							height: rem(12);
+						}
+					}
 				}
 
 				.search-btn {

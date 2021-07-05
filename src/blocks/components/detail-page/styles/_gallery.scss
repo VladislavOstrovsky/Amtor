@@ -54,6 +54,10 @@
 	}
 
 	.dpi_gallery__main {
+		@include lg-block() {
+			height: rem(400);
+		}
+
 		@include xs(margin-left, rem(38));
 		@include md(margin-left, rem(50));
 		@include xl(margin-left, rem(83));

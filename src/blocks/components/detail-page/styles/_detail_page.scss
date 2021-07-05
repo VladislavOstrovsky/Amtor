@@ -6,7 +6,7 @@
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-between;
-	@include lg(height, rem(405));
+	@include lg(min-height, rem(405));
 
 	.dpi_product_stock {
 		position: absolute;
@@ -22,6 +22,11 @@
 			@include xs(content, 'На складе');
 			@include md(content, 'Товар на складе');
 		}
+
+		@include md-block() {
+			right: rem(20);
+			top: rem(30);
+		}
 	}
 
 	.dp_h1 {
@@ -30,18 +35,23 @@
 	}
 
 	.dpi_extra_info {
+		box-shadow: var(--box-shadow-card);
+		border-radius: var(--border-radius);
+
 		@include xs-block() {
+			padding: rem(20);
 			order: 2;
 			width: 100%;
 		}
 
 		@include md-block() {
-			flex-basis: 55%;
+			flex-basis: 50%;
 		}
 
 		@include lg-block() {
+			padding: rem(30) rem(20);
 			order: 3;
-			flex-basis: 35%;
+			flex-basis: 32%;
 		}
 
 		.extra_actions {
@@ -51,10 +61,26 @@
 			justify-content: space-between;
 			align-items: center;
 
+			@include xs-block() {
+
+			}
+
+			@include md-block() {
+
+			}
+
 			.price {
 				width: 100%;
-				@include xs(margin-bottom, rem(18));
-				@include md(margin-bottom, rem(25));
+
+				@include xs-block() {
+					margin-bottom: rem(20);
+					text-align: center;
+				}
+
+				@include md-block() {
+					margin-bottom: rem(25);
+					text-align: left;
+				}
 
 				h1 {
 					font: rem(40)/rem(40) Fregat-Bold, sans-serif;
@@ -94,6 +120,24 @@
 				align-items: center;
 				height: rem(46);
 
+				@include xs-block() {
+					width: 100%;
+					justify-content: space-between;
+
+					.dc_item {
+						flex: 1;
+					}
+				}
+
+				@include md-block() {
+					width: auto;
+					justify-content: inherit;
+
+					.dc_item {
+						flex: inherit;
+					}
+				}
+
 				.dc_item {
 					display: flex;
 					flex-direction: column;
@@ -123,24 +167,36 @@
 
 			.basket-btn {
 				@include xs-block() {
-					position: absolute;
-					top: 0;
-					right: 0;
-					padding: 0;
-					width: rem(46);
+					width: 100%;
+					margin-bottom: rem(23);
+
+					.text {
+						display: block;
+						margin-left: rem(15);
+					}
 				}
 
 				@include sm-block() {
-					position: relative;
+					width: 100%;
+					margin-bottom: rem(23);
+
+					.text {
+						display: block;
+						margin-left: rem(15);
+					}
+				}
+
+				@include md-block() {
 					width: auto;
-					padding: 0 rem(15);
+					margin-bottom: 0;
 				}
 			}
 		}
 
 		.extra_advantages {
-			@include xs(margin-top, rem(30));
-			@include xl(margin-top, rem(60));
+			@include xs(margin-top, rem(20));
+			@include md(margin-top, rem(30));
+			@include xl(margin-top, rem(35));
 		}
 
 		.advantages_list {
@@ -156,7 +212,8 @@
 				color: #6A7A97;
 
 				&:not(:last-child) {
-					@include md(margin-right, rem(34));
+					@include md(margin-right, rem(30));
+					@include lg(margin-right, rem(10));
 					@include xl(margin-right, rem(52));
 				}
 

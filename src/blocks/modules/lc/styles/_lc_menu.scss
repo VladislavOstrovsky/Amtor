@@ -1,11 +1,25 @@
 .lc-menu {
+	@include xs-block() {
+		width: 100%;
+		margin: rem(20) 0;
+		order: 2;
+	}
+
+	@include lg-block() {
+		width: auto;
+		margin: inherit;
+		order: inherit;
+	}
 
 	// desktop
 	.lcm_wrapper_desktop {
-		display: flex;
+		display: none;
 		flex-direction: column;
-		grid-gap: rem(20);
 		margin-right: rem(25);
+
+		@include lg-block() {
+			display: flex;
+		}
 
 		.lcm_item {
 			display: flex;
@@ -23,6 +37,10 @@
 				.title {
 					color: var(--color-base);
 				}
+			}
+
+			&:not(:last-child) {
+				margin-bottom: rem(20);
 			}
 		}
 
@@ -45,6 +63,27 @@
 
 	// mobile
 	.lcm_wrapper_mobile {
+		position: relative;
 		display: none;
+		width: 100%;
+		height: rem(36);
+
+		@include xs(display, block);
+		@include lg(display, none);
+
+		.select {
+			height: rem(36);
+		}
+
+		.select-styled {
+			padding: rem(10) rem(18);
+			font-family: Fregat-Bold, sans-serif;
+			color: var(--color-base);
+			box-shadow: inset 0 0 0 2px var(--color-base);
+
+			&:after {
+				top: rem(14);
+			}
+		}
 	}
 }

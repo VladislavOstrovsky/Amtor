@@ -13,6 +13,10 @@
 
 	@include md-block() {
 		margin-top: rem(10);
+
+		.dp_h1 {
+			padding-left: rem(10);
+		}
 	}
 
 	@include lg-block() {
@@ -22,10 +26,6 @@
 
 	@include xl-block() {
 		width: rem(330);
-	}
-
-	.dp_h1 {
-		padding-left: rem(10);
 	}
 
 	.about_table_list {
