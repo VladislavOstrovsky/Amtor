@@ -1,5 +1,8 @@
+@import "../../../components/detail-page/styles/gallery";
+@import "../../../components/detail-page/styles/info";
+
 .quick_view_popup {
-	@include xs(width, rem(300));
+	@include xs(width, calc(100% - 20px));
 	@include md(width, rem(640));
 
 	.qv_content {
@@ -44,7 +47,7 @@
 // with description
 .quick_view_description_popup {
 	@include xs-block() {
-		width: rem(300);
+		width: calc(100% - 20px);
 
 		.dpi_gallery {
 			display: none;

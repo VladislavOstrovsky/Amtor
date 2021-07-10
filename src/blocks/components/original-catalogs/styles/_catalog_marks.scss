@@ -1,33 +1,33 @@
 .catalog_marks {
-	@include xs-block() {
-		margin: rem(30) 0 rem(20);
-		height: rem(780);
-		align-content: space-between;
-	}
-
-	@include md-block() {
-		margin: rem(30) 0 rem(60);
-		height: rem(520);
-	}
-
-	@include lg-block() {
-		margin: rem(40) 0 rem(130);
-		align-content: inherit;
-		height: rem(260);
-	}
-
 	display: flex;
 	flex-direction: column;
 	flex-wrap: wrap;
+
+	@include xs-block() {
+		height: rem(780);
+		margin: rem(30) 0 rem(20);
+	}
+
+	@include md-block() {
+		height: rem(520);
+		margin: rem(30) 0 rem(60);
+		align-content: space-between;
+	}
+
+	@include lg-block() {
+		height: rem(260);
+		margin: rem(40) 0 rem(130);
+		align-content: inherit;
+	}
 
 	.cm_item {
 		display: flex;
 		margin-bottom: rem(20);
 
 		.cm_main_symbol {
+			width: rem(17);
 			font: rem(24)/rem(24) Fregat-Bold, sans-serif;
 			margin-right: rem(20);
-			width: rem(17);
 		}
 
 		.cm_inner_marks {

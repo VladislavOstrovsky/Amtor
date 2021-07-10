@@ -1,4 +1,7 @@
 .order_callback_popup {
+	@include xs(width, calc(100% - 20px));
+	@include md(width, rem(320));
+
 	.input-container {
 		margin-bottom: rem(10);
 	}

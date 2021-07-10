@@ -4,7 +4,7 @@ block variables
   - const title = "Баланс";
 
 block styles
-    link(rel="stylesheet" href="./styles/lc.css")
+    link(rel="stylesheet" href="./styles/lc-balance.css")
 
 block content
   div#page
@@ -19,12 +19,29 @@ block content
         h1.title_p Баланс
       div.container
         div.personal_account.__balance
-          include ../../blocks/modules/lc/pages/balance/lc-menu
-          div.pab_content
+          include ../../blocks/modules/lc/lc-menu/lc-menu
+          div.pa_content
             include ../../blocks/modules/lc/lc-author-card
+            include ../../blocks/modules/lc/lc-menu/lc-menu-mobile
+            include ../../blocks/modules/lc/pages/balance/statistic
+            div.pac_datepicker_wrp.bwc.__desc
+              div.pac_datepicker
+                div.datepicker_wrapper.input-daterange
+                  div.datepicker_item
+                    label(for='datepicker-start' class='label-datepicker') дд / мм /гг
+                    input(id="datepicker-start" type='text' class='form-control' name="start" value="26 / 06 / 2021")
+                    span.di_prefix от
+                  span.datepicker_addon -
+                  div.datepicker_item
+                    label(for='datepicker-end' class='label-datepicker') дд / мм /гг
+                    input(id="datepicker-end" type='text' class='form-control' name="end" value="26 / 06 / 2021")
+                    span.di_prefix до
+                button(type='button' class='btn success filter-btn') Фильтровать
+              include ../../blocks/modules/lc/pages/balance/balance-table
       include ../../blocks/modules/footer/footer
 
 block scripts
   script(src="js/lc.js")
+  script(src="js/lc_balance.js")
   script(src="js/main.js")
   script(src="js/vendor.js")

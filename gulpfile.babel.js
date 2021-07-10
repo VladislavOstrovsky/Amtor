@@ -31,6 +31,7 @@ const requireDir = require("require-dir"),
                 "./src/styles/basket.{scss,sass}",
                 "./src/styles/contacts.{scss,sass}",
                 "./src/styles/lc.{scss,sass}",
+                "./src/styles/lc-balance.{scss,sass}",
             ],
             dist: "./dist/styles/",
             watch: [

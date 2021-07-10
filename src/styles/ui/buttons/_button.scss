@@ -54,6 +54,10 @@
     pointer-events: none;
   }
 
+  &.big {
+    height: rem(54);
+  }
+
   &.success {
     color: var(--button-success-color);
     background-color: var(--button-success-bg-color);

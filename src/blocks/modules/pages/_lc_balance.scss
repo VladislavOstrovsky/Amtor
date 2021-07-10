@@ -1,0 +1,33 @@
+@import "../lc/pages/balance/styles/statistic";
+@import "../lc/pages/balance/styles/balance_table";
+
+.personal_account {
+
+	&.__balance {
+		display: flex;
+
+		@include xs(flex-direction, column);
+		@include lg(flex-direction, row);
+
+		.pac_datepicker {
+			display: flex;
+			justify-content: space-between;
+
+			@include xs-block() {
+				flex-direction: column;
+				margin-bottom: rem(30);
+			}
+
+			@include md-block() {
+				flex-direction: row;
+				margin-bottom: 0;
+			}
+
+			.filter-btn {
+				align-self: flex-end;
+				margin-left: rem(20);
+				height: rem(52);
+			}
+		}
+	}
+}

@@ -1,0 +1,40 @@
+.pac_download_actions {
+	display: flex;
+	justify-content: space-between;
+
+	@include xs-block() {
+		flex-direction: column;
+
+		.download_btn {
+			margin-bottom: rem(20);
+			width: auto;
+		}
+	}
+
+	@include md-block() {
+		flex-direction: row;
+
+		.download_btn {
+			margin-bottom: 0;
+			width: rem(145);
+		}
+	}
+
+	.download_btn {
+		display: flex;
+		align-items: center;
+		font: rem(14)/rem(16) Fregat, sans-serif;
+		color: var(--color-marine);
+		text-decoration: underline;
+
+		&:hover {
+			text-decoration: none;
+		}
+
+		.icon {
+			width: rem(40);
+			height: rem(40);
+			margin-right: rem(15);
+		}
+	}
+}

@@ -1,5 +1,5 @@
 .requisites_popup {
-	@include xs(width, rem(300));
+	@include xs(width, calc(100% - 20px));
 	@include md(width, rem(440));
 
 	.rp_content {

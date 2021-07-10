@@ -1,0 +1,37 @@
+extends ../layouts/default
+
+block variables
+  - const title = "История заказов";
+
+block styles
+    link(rel="stylesheet" href="./styles/lc.css")
+
+block content
+  div#page
+    include ../../blocks/components/header/mobile_menu
+    div.page
+      include ../../blocks/modules/header/header
+      div.container
+        div.bread-crumbs
+          a(href='./home.html' class='text_bc bread-crumbs_item') Главная
+          a(href='./lc-main.html' class='text_bc bread-crumbs_item') Личный кабинет
+          span.text_bc.bread-crumbs_item История заказов
+        h1.title_p История заказов
+      div.container
+        div.personal_account.__history
+          include ../../blocks/modules/lc/lc-menu/lc-menu
+          div.pa_content
+            include ../../blocks/modules/lc/lc-author-card
+            include ../../blocks/modules/lc/lc-menu/lc-menu-mobile
+            include ../../blocks/modules/lc/pages/history/filter-wrapper
+            div.pac_empty_wrapper
+              span.icon.__history
+                include ../../img/svg/lc/history.svg
+              p.text У вас нет истории заказов
+
+      include ../../blocks/modules/footer/footer
+
+block scripts
+  script(src="js/main.js")
+  script(src="js/lc.js")
+  script(src="js/vendor.js")

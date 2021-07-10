@@ -157,6 +157,14 @@ $select-height: rem(54);
   max-height: rem(270);
   z-index: 3;
 
+  @include xs-block() {
+    overflow-y: scroll;
+  }
+
+  @include md-block() {
+    overflow-y: inherit;
+  }
+
   li {
     margin: 0;
     padding: rem(20);

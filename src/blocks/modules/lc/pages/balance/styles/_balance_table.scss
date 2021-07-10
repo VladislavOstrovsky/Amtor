@@ -1,0 +1,100 @@
+.pabc_table {
+		margin-top: rem(40);
+		width: 100%;
+
+		@include xs(display, none);
+		@include md(display, table);
+
+		.alignRight {
+			text-align: right;
+		}
+
+		tr {
+			border-top: 1px solid var(--color-cyan);
+			transition: all .2s ease-in;
+
+			&:last-of-type {
+				td {
+					padding-bottom: rem(8);
+				}
+			}
+		}
+
+		thead > tr {
+			border: none;
+		}
+
+		tr > th {
+			padding: 0 rem(15) rem(15) rem(15);
+			font: rem(16)/rem(16) Fregat-Bold, sans-serif;
+
+			&:first-child {
+				@include md(padding-left, 0);
+				@include lg(padding-left, rem(15));
+			}
+		}
+
+		tr > td {
+			font: rem(14)/rem(18) Fregat, sans-serif;
+			vertical-align: top;
+			padding: rem(15);
+
+			&:first-child {
+				@include md(padding-left, 0);
+				@include lg(padding-left, rem(15));
+			}
+		}
+}
+
+// mobile table
+.pabc_table_mobile {
+	width: 100%;
+
+	@include md(display, none);
+
+	.title {
+		font: rem(16)/rem(16) Fregat-Bold, sans-serif;
+		margin-bottom: rem(20);
+	}
+
+	.table_item {
+		display: block;
+		width: 100%;
+		padding: rem(20) 0;
+		border-bottom: 1px solid var(--color-cyan);
+		color: var(--color-black);
+
+		&:first-of-type {
+			padding-top: 0;
+		}
+
+		&:last-of-type {
+			border: none;
+		}
+
+		.subtitle {
+			font: rem(14)/rem(18) Fregat, sans-serif;
+		}
+
+		.row {
+			display: flex;
+			align-items: baseline;
+			justify-content: space-between;
+			margin-bottom: rem(12);
+
+			&:last-of-type {
+				margin-bottom: 0;
+			}
+
+			.name {
+				font: rem(12)/rem(12) "Open Sans", sans-serif;
+				color: #838181;
+			}
+
+			.value {
+				font: rem(14)/rem(16) Fregat-Bold, sans-serif;
+				text-align: right;
+			}
+		}
+	}
+}

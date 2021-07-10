@@ -1,5 +1,6 @@
 .detail_graphic {
-	width: rem(680);
+	@include xs(width, calc(100% - 20px));
+	@include md(width, rem(680));
 
 	.dg_content {
 		width: 100%;
@@ -11,6 +12,10 @@
 
 		.dg_good_content {
 			position: relative;
+
+			svg {
+				width: 100%;
+			}
 
 			.good_text {
 				position: absolute;
@@ -29,6 +34,10 @@
 				left: rem(25);
 				top: 35%;
 			}
+
+			svg {
+				width: 100%;
+			}
 		}
 
 		span {
@@ -42,13 +51,24 @@
 		display: flex;
 		font: rem(16)/rem(16) "Fregat", sans-serif;
 
+		@include xs-block() {
+			font-size: rem(14);
+			line-height: rem(14);
+		}
+
+		@include md-block() {
+			font-size: rem(16);
+			line-height: rem(16);
+		}
+
 		.info_bag, .info_good {
 			display: flex;
 			align-items: center;
 		}
 
 		.info_bag {
-			margin-right: rem(50);
+			@include xs(margin-right, rem(20));
+			@include md(margin-right, rem(50));
 		}
 
 		.value {
@@ -56,10 +76,19 @@
 		}
 
 		.square {
-			width: rem(30);
-			height: rem(30);
 			border-radius: rem(3);
-			margin-right: rem(20);
+
+			@include xs-block() {
+				width: rem(25);
+				height: rem(25);
+				margin-right: rem(10);
+			}
+
+			@include md-block() {
+				width: rem(30);
+				height: rem(30);
+				margin-right: rem(20);
+			}
 
 			&.__bad {
 				background: var(--color-danger);

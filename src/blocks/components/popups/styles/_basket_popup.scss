@@ -1,11 +1,6 @@
 .basket_popup {
-	@include xs-block() {
-		width: rem(300);
-	}
-
-	@include md-block() {
-		width: rem(360);
-	}
+	@include xs(width, calc(100% - 20px));
+	@include md(width, rem(360));
 
 	.title_popup {
 		font: rem(16)/rem(16) Fregat-Bold, sans-serif;

@@ -1,0 +1,8 @@
+- var status = ['Статус 1', 'Статус 2', 'Статус 3', 'Статус 4', 'Статус 5'];
+
+div.select-container
+  p.select-label Статус
+  select(name='filter-status')
+    option(value='') Выберите статус
+    each option in status
+      option(value=option) #{option}

@@ -1,12 +1,6 @@
 .request_vin_code_popup {
-
 	@include xs(width, (calc(100% - 20px)));
 	@include md(width, rem(660));
-
-	.test-scroll {
-		height: 100px;
-		overflow: auto;
-	}
 
 	.inputs_wrapper {
 		display: grid;

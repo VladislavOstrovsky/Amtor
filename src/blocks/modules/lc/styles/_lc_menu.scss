@@ -1,89 +1,80 @@
-.lc-menu {
-	@include xs-block() {
-		width: 100%;
-		margin: rem(20) 0;
-		order: 2;
-	}
+// desktop
+.lcm_wrapper_desktop {
+	display: none;
+	flex-direction: column;
+	margin-right: rem(25);
 
 	@include lg-block() {
-		width: auto;
-		margin: inherit;
-		order: inherit;
+		display: flex;
 	}
 
-	// desktop
-	.lcm_wrapper_desktop {
-		display: none;
-		flex-direction: column;
-		margin-right: rem(25);
+	.lcm_item {
+		display: flex;
+		align-items: center;
+		transition: all .2s ease-in-out;
 
-		@include lg-block() {
-			display: flex;
-		}
+		&.active {
 
-		.lcm_item {
-			display: flex;
-			align-items: center;
-			transition: all .2s ease-in-out;
-
-			&.active {
-
-				.title {
-					color: var(--color-base);
-				}
-			}
-
-			&:hover {
-				.title {
-					color: var(--color-base);
-				}
-			}
-
-			&:not(:last-child) {
-				margin-bottom: rem(20);
+			.title {
+				color: var(--color-base);
 			}
 		}
 
-		.lcmi_icon {
-			width: rem(40);
-			height: rem(40);
-			margin-right: rem(15);
-
-			svg {
-				max-width: rem(40);
-				max-height: rem(40);
+		&:hover {
+			.title {
+				color: var(--color-base);
 			}
 		}
 
-		.title {
-			color: var(--color-black);
-			font: rem(14)/rem(22) "Open Sans 600", sans-serif;
+		&:not(:last-child) {
+			margin-bottom: rem(20);
 		}
 	}
 
-	// mobile
-	.lcm_wrapper_mobile {
-		position: relative;
-		display: none;
+	.lcmi_icon {
+		width: rem(40);
+		height: rem(40);
+		margin-right: rem(15);
+
+		svg {
+			max-width: rem(40);
+			max-height: rem(40);
+		}
+	}
+
+	.title {
+		color: var(--color-black);
+		font: rem(14)/rem(22) "Open Sans 600", sans-serif;
+	}
+}
+
+// mobile
+.lcm_wrapper_mobile {
+	position: relative;
+	display: none;
+	width: 100%;
+	height: rem(36);
+
+	@include xs-block() {
+		display: block;
 		width: 100%;
+		margin: rem(20) 0;
+	}
+
+	@include lg(display, none);
+
+	.select {
 		height: rem(36);
+	}
 
-		@include xs(display, block);
-		@include lg(display, none);
+	.select-styled {
+		padding: rem(10) rem(18);
+		font-family: Fregat-Bold, sans-serif;
+		color: var(--color-base);
+		box-shadow: inset 0 0 0 2px var(--color-base);
 
-		.select {
-			height: rem(36);
-		}
-
-		.select-styled {
-			padding: rem(10) rem(18);
-			font-family: Fregat-Bold, sans-serif;
-			color: var(--color-base);
-			box-shadow: inset 0 0 0 2px var(--color-base);
-
-			&:after {
-				top: rem(14);
-			}
+		&:after {
+			top: rem(14);
 		}
 	}
 }

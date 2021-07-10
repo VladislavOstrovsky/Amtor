@@ -1,0 +1,74 @@
+@import "../lc/styles/lc_author_card";
+@import "../lc/styles/lc_menu_cards";
+@import "../lc/styles/lc_menu";
+
+.personal_account {
+	@include xs(margin, rem(20) 0 rem(40));
+	@include md(margin, rem(30) 0 rem(60));
+	@include lg(margin, rem(30) 0 rem(80));
+
+	.pa_content {
+		flex: 1;
+
+		.label-input,
+		.select-label {
+			color: var(--color-black);
+		}
+	}
+
+	// border wrap container
+	.bwc {
+		padding: rem(20);
+		border: 1px solid #D4DBEC;
+		border-radius: var(--border-radius);
+
+		&.__desc {
+			@include xs-block() {
+				padding: 0;
+				border: none;
+			}
+
+			@include md-block() {
+				padding: rem(20);
+				border: 1px solid #D4DBEC;
+			}
+		}
+	}
+
+	// empty wrapper
+	.pac_empty_wrapper {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+
+		text-align: center;
+		font: rem(14)/rem(18) Fregat, sans-serif;
+		color: var(--color-marine);
+
+		.icon {
+			height: auto;
+			max-height: rem(80);
+			margin-bottom: rem(15);
+
+			&.__balance,
+			&.__basket,
+			&.__my_car {
+				width: rem(80);
+			}
+
+			&.__history {
+				width: rem(65);
+			}
+
+			svg {
+				width: 100%;
+				height: 100%;
+			}
+		}
+
+		@include xs(margin, rem(130) 0);
+		@include md(margin, rem(50) 0);
+		@include lg(margin, rem(80) 0);
+	}
+}

@@ -1,0 +1,14 @@
+- var productIds = ['processing', 'in-the-work', 'reject', 'success'];
+
+div.history_table
+  div.ht_row_header
+    h1.htr_title Дата
+    h1.htr_title Наименование
+    h1.htr_title Срок
+    h1.htr_title Склад
+    h1.htr_title.textCenter Цена
+    h1.htr_title.textCenter Кол-во
+    h1.htr_title.textCenter Стоимость
+  each product in productIds
+    include cell
+include ../../popups/quick_view_description

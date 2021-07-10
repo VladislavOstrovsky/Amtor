@@ -1,0 +1,32 @@
+div.add_car_popup(style='display: none;' id='add-car-popup')
+  h1.title_popup Мои автомобили
+  form(action='/add-car' class='content' method='POST')
+    div.input-container
+      label(for='ac-vin' class='label-input') VIN / FRAME
+      input(id="ac-vin" type='email' name="ac-vin" class='input' placeholder='Введите ваш VIN / FRAME' required)
+    div.inputs_wrapper
+      include ../select/select-car-brand
+      include ../select/select-model
+      include ../select/select-modification
+      div.input-container
+        label(for='ac-manufacturer' class='label-input') Производитель
+        input(id="ac-manufacturer" type='text' name="ac-manufacturer" class='input' placeholder='Введите производителя' required)
+      div.input-container
+        label(for='ac-model' class='label-input') Модель
+        input(id="ac-model" type='text' name="ac-model" class='input' placeholder='Введите модель' required)
+      include ../select/select-years
+    div.inputs_wrapper
+      div.input-container
+        label(for='ac-engine' class='label-input') Двигатель
+        input(id="ac-engine" type='text' name="ac-engine" class='input' placeholder='Двигатель' required)
+      div.input-container
+        label(for='ac-power' class='label-input') Мощность
+        input(id="ac-power" type='text' name="ac-power" class='input' placeholder='Введите мощность' required)
+      div.input-container
+        label(for='ac-bodywork' class='label-input') Кузов
+        input(id="ac-bodywork" type='text' name="ac-bodywork" class='input' placeholder='Введите кузов' required)
+    div.textarea-container
+      label(for='comment-text' class='label-textarea') Комментарий
+      textarea(id="comment-text" name="comment-order" class='input' placeholder='Введите комментарий')
+    div.acp_actions
+      button(type='submit' class='btn success') Сохранить в гараж

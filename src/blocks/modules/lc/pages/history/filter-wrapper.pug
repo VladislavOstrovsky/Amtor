@@ -1,0 +1,21 @@
+form(action='/history-filters' class='pac_filters bwc __desc' method='POST')
+  div.pacf_header
+    div.input-container
+      label(for='filter-name-detail' class='label-input') Номер детали
+      input(id="filter-name-detail" type='text' name="filter-name-detail" class='input light' placeholder='Номер детали, производель, название')
+    include ./select-status
+  div.pacf_bottom
+    div.pacf_checkbox
+      div.checkbox-wrapper
+        label(for='filter-archives' class='checkbox-container light center') Показать архив заказов
+          input(id="filter-archives" type='checkbox' name="filter-archives")
+          span.checkmark
+      button(type="submit" class='btn success big') Применить
+    div.pacf_sort
+      h2.title Заказы за:
+      div.sort_items
+        a(href="#" class='sort_item link' data-sort-value="last-three-days") 3 дня
+        a(href="#" class='sort_item link' data-sort-value="week") Неделю
+        a(href="#" class='sort_item link' data-sort-value="month") Месяц
+        a(href="#" class='sort_item link' data-sort-value="year") Год
+        a(href="#" class='sort_item link' data-sort-value="all") Все

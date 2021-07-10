@@ -18,10 +18,15 @@ block content
           span.text_bc.bread-crumbs_item История заказов
         h1.title_p История заказов
       div.container
-        div.personal_account.__balance
-          include ../../blocks/modules/lc/pages/history/lc-menu
-          div.pab_content
+        div.personal_account.__history
+          include ../../blocks/modules/lc/lc-menu/lc-menu
+          div.pa_content
             include ../../blocks/modules/lc/lc-author-card
+            include ../../blocks/modules/lc/lc-menu/lc-menu-mobile
+            include ../../blocks/modules/lc/pages/history/filter-wrapper
+            include ../../blocks/components/table/lc-history/table
+            include ../../blocks/modules/lc/pages/history/download_actions
+
       include ../../blocks/modules/footer/footer
 
 block scripts

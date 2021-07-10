@@ -1,4 +1,7 @@
 .change_region_popup {
+	@include xs(width, calc(100% - 20px));
+	@include md(width, rem(320));
+
 	.content {
 		margin-bottom: rem(80);
 	}

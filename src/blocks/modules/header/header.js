@@ -20,7 +20,7 @@ if (/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elain
     isMobile = true;
 }
 
-// category dropdohff_formwn
+// category dropdown_form
 $(".btn_burger.desktop").click(function (e) {
     e.stopPropagation();
     $(this).toggleClass("open");
@@ -112,8 +112,42 @@ $(document).ready(function () {
     });
 });
 
+// input add class logic
+$(".input").on("input change", function (e) {
+    e.stopPropagation();
+    const tmpval = $(this).val();
+    if (tmpval === "") {
+        $(this).addClass("empty");
+        $(this).removeClass("not-empty");
+    } else {
+        $(this).addClass("not-empty");
+        $(this).removeClass("empty");
+    }
+
+    if ($(this).hasClass("js-header-search")) {
+        // search input
+        if ($(this).hasClass("not-empty")) {
+            window.scrollTo(0, 0);
+
+            if (isMobile) {
+                $(document.body).addClass("__hidden");
+            }
+            $(".sb_dropdown").removeClass("hidden");
+            $(".search-input_wrapper").addClass("with-dropdown");
+        } else {
+            if (isMobile) {
+                $(document.body).removeClass("__hidden");
+            }
+            $(".sb_dropdown").addClass("hidden");
+            $(".search-input_wrapper").removeClass("with-dropdown");
+        }
+    }
+});
+
 if (isMobile) {
-    $(".js-search-btn").on("click", function () {
+    $(".js-search-btn").on("click", function (e) {
+        e.preventDefault();
+        e.stopImmediatePropagation();
         const $searchInput = $(".js-header-search");
 
         if ($searchInput.hasClass("not-empty")) {
@@ -141,36 +175,6 @@ $('.js-reset-search').click(function () {
     $(".sb_dropdown").addClass("hidden");
     $(".search-input_wrapper").removeClass("with-dropdown");
     $(document.body).removeClass("__hidden");
-});
-
-// input add class logic
-$(".input").on("input change", function (e) {
-    e.stopPropagation();
-    const tmpval = $(this).val();
-    if (tmpval === "") {
-        $(this).addClass("empty");
-        $(this).removeClass("not-empty");
-    } else {
-        $(this).addClass("not-empty");
-        $(this).removeClass("empty");
-    }
-
-    if ($(this).hasClass("js-header-search")) {
-        // search input
-        if ($(".js-header-search").hasClass("not-empty")) {
-            if (isMobile) {
-                $(document.body).addClass("__hidden");
-            }
-            $(".sb_dropdown").removeClass("hidden");
-            $(".search-input_wrapper").addClass("with-dropdown");
-        } else {
-            if (isMobile) {
-                $(document.body).removeClass("__hidden");
-            }
-            $(".sb_dropdown").addClass("hidden");
-            $(".search-input_wrapper").removeClass("with-dropdown");
-        }
-    }
 });
 
 // request vin code add spare
@@ -236,9 +240,7 @@ function convertPrice(value, inc) {
     $('.js-bp-price').html(`${numberWithSpaces($newPrice)} ₽`);
 }
 
-function numberWithSpaces(x) {
-    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
-}
+const numberWithSpaces = (x) => x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
 
 // clickable row table
 $(document).ready(function($) {
@@ -253,4 +255,3 @@ $(document).ready(function($) {
 $(".js-search-help").click(function () {
     $(".js-search-input").val($(this).html());
 });
-

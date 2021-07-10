@@ -1,0 +1,58 @@
+.pac_statistic {
+	display: flex;
+	justify-content: space-between;
+	margin: rem(20) 0;
+
+	@include xs(flex-direction, column);
+	@include md(flex-direction, row);
+
+	.pacs_item {
+		flex: 1;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+
+		&:not(:last-child) {
+			@include xs-block() {
+				margin-bottom: rem(12);
+			}
+
+			@include md-block() {
+				border-right: 1px solid #D4DBEC;
+				margin-bottom: 0;
+			}
+		}
+
+		.title {
+			font: rem(12)/rem(12) "Open Sans", sans-serif;
+			color: #838181;
+
+			@include md-block() {
+				margin-bottom: rem(7);
+			}
+		}
+
+		.value {
+			font: rem(24)/rem(24) Fregat-Bold, sans-serif;
+		}
+
+		@include xs-block() {
+			flex-direction: row;
+			justify-content: space-between;
+
+			.value {
+				font-size: rem(14);
+				line-height: rem(14);
+			}
+		}
+
+		@include md-block() {
+			flex-direction: column;
+
+			.value {
+				font-size: rem(24);
+				line-height: rem(24);
+			}
+		}
+	}
+}

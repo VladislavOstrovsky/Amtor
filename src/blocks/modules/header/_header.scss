@@ -12,7 +12,18 @@ body {
 		pointer-events: none;
 		position: fixed;
 
-		.home_sliders_wrapper {
+		// ios fix dropdown search
+		.home_sliders_wrapper,
+		.page_center_wrapper,
+		.bread-crumbs,
+		.basket_wrapper,
+		.catalog_cards_car,
+		.detail_page_info,
+		.lamp_catalog_wrapper,
+		.engine_oils_wrapper,
+		.passenger_tires_wrapper,
+		.contacts_wrapper,
+		.personal_account {
 			visibility: hidden;
 		}
 

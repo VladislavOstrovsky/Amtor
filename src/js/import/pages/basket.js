@@ -61,11 +61,15 @@ $(".js-basket-page-dec").click(function (e) {
     e.stopPropagation();
     const $countValue = $(this).parent().find(".js-basket-page-count").html();
 
-    if (+$countValue > 0) {
+    if (+$countValue > 1) {
         $(this).parent().find(".js-basket-page-count").html(+$countValue - 1);
+        const updatePriceEl = $(this).closest('.bt_row').find(".js-basket-page-price");
+        const currentPriceVal = getPrice(updatePriceEl);
+        const newPriceValue = convertPricePage(currentPriceVal, $countValue, false);
+        updatePriceEl.html(`${numberWithSpaces(newPriceValue)} руб`);
     }
 
-    if (+$countValue - 1 === 0) {
+    if (+$countValue - 1 === 1) {
         $(this).parent().find(".js-basket-page-dec").prop("disabled", true);
     } else {
         $(this).parent().find(".js-basket-page-dec").prop("disabled", false);
@@ -77,11 +81,36 @@ $(".js-basket-page-inc").click(function (e) {
     e.stopPropagation();
     const $countValue = $(this).parent().find(".js-basket-page-count").html();
 
-    if (+$countValue >= 0) {
+    if (+$countValue >= 1) {
         $(this).parent().find(".js-basket-page-count").html(+$countValue + 1);
+        const updatePriceEl = $(this).closest('.bt_row').find(".js-basket-page-price");
+        const currentPriceVal = getPrice(updatePriceEl);
+        const newPriceValue = convertPricePage(currentPriceVal, $countValue, true);
+        updatePriceEl.html(`${numberWithSpaces(newPriceValue)} руб`);
 
         if ($(this).parent().find(".js-basket-page-dec").prop("disabled")) {
             $(this).parent().find(".js-basket-page-dec").prop("disabled", false);
         }
     }
 });
+
+function getPrice(item) {
+    let $item = $(item);
+
+    if (item.length > 1) {
+        $item = $(item[0]);
+    }
+
+    return $item.html()
+        .replace('₽', '')
+        .replace('руб', '')
+        .replace(' ', '');
+}
+
+function convertPricePage(price, value, inc) {
+    return inc
+        ? +price + (price / +value)
+        : +price - (price / +value);
+}
+
+const numberWithSpaces = (x) => x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");

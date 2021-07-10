@@ -27,6 +27,7 @@ module.exports = {
         basket: "./src/js/import/pages/basket.js",
         contacts: "./src/js/import/pages/contacts.js",
         lc: "./src/js/import/pages/lc.js",
+        lc_balance: "./src/js/import/pages/lc_balance.js",
     },
 
     output: {

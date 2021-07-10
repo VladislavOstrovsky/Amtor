@@ -1,4 +1,7 @@
 .sign_up_popup {
+	@include xs(width, calc(100% - 20px));
+	@include md(width, rem(320));
+
 	.input-container:not(:first-child) {
 		margin-top: rem(20);
 	}

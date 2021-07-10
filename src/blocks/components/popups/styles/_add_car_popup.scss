@@ -1,0 +1,38 @@
+.add_car_popup {
+	@include xs(width, (calc(100% - 20px)));
+	@include md(width, rem(660));
+	@include lg(width, rem(760));
+
+	.inputs_wrapper {
+		margin: rem(20) 0;
+		display: grid;
+
+		@include xs-block() {
+			grid-template-columns: 1fr;
+			grid-gap: rem(15);
+		}
+
+		@include md-block() {
+			grid-template-columns: 1fr 1fr 1fr;
+			grid-gap: rem(20);
+		}
+	}
+
+	.title {
+		font: rem(18)/rem(24) "Fregat-Bold", sans-serif;
+		color: var(--color-marine);
+		margin-bottom: rem(20);
+	}
+
+	.text {
+		font: rem(14)/rem(20) "Fregat", sans-serif;
+		color: #838181;
+	}
+
+	.acp_actions {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		margin-top: rem(30);
+	}
+}

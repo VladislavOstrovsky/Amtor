@@ -1,12 +1,15 @@
 @import "../../components/original-catalogs/styles/catalog_table";
 @import "../../components/original-catalogs/styles/filters_by_issue";
-@import "../../components/original-catalogs/styles/catalog_detail_table";
 @import "../../components/original-catalogs/styles/catalog_marks";
 @import "../../components/original-catalogs/styles/catalog_cards_car";
 @import "../../components/detail-page/styles/detail_page";
+
+// table
+@import "../../components/table/detail-page/styles/detail_page_table";
 // popups
 @import "../../components/popups/styles/graphic";
 @import "../../components/popups/styles/quick_view";
+@import "../../components/popups/styles/add_car_popup";
 
 // step 2
 .catalog_to_step_2 {

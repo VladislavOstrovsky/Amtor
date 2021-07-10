@@ -1,0 +1,84 @@
+/**
+ * Styles for Datepicker
+ */
+
+.datepicker_wrapper {
+  display: flex;
+  align-items: center;
+  flex: 1;
+
+  @include xs(flex-direction, column);
+  @include md(flex-direction, row);
+}
+
+.datepicker_item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  flex: 1;
+
+  @include xs(margin-bottom, rem(15));
+  @include md(margin-bottom, 0);
+
+  .di_prefix {
+    position: absolute;
+    left: rem(20);
+    top: rem(41);
+    height: rem(14);
+    color: #8494B0;
+    font: rem(14)/rem(14) "Open Sans", sans-serif;
+  }
+}
+
+.label-datepicker {
+  font: rem(14)/rem(14) "Fregat-Bold", sans-serif;
+  color: var(--color-black);
+  margin-bottom: rem(5);
+}
+
+.datepicker_addon {
+  display: none;
+  padding-top: rem(12);
+  margin: 0 rem(8);
+
+  @include md(display, block);
+}
+
+.datepicker_wrapper {
+
+  input {
+    position: relative;
+    padding: rem(17) rem(20) rem(17) rem(55);
+    color: var(--color-black);
+    font: rem(14)/rem(14) "Open Sans", sans-serif;
+    background: var(--color-white);
+    border: none;
+    border-radius: var(--border-radius) !important;
+    box-shadow: inset 0 0 0 1px #CCD2DC;
+    text-align: left;
+
+    &:focus {
+      box-shadow: inset 0 0 0 1px var(--color-base);
+      outline: none;
+    }
+  }
+}
+
+.century.active,
+.decade.active,
+.year.active,
+.month.active,
+.active.day {
+  background-color: var(--color-base) !important;
+  text-shadow: none;
+}
+
+.datepicker-dropdown {
+  font-family: Fregat, sans-serif;
+
+  .prev,
+  .next {
+    font-size: rem(18);
+  }
+}

@@ -1,4 +1,5 @@
 .dpi_gallery {
+	position: relative;
 	display: flex;
 	order: 1;
 
@@ -18,6 +19,19 @@
 	.dpi_gallery_images {
 		display: flex;
 		flex-direction: column;
+
+		@include xs-block() {
+			position: absolute;
+			left: 0;
+			top: 0;
+			z-index: 1;
+		}
+
+		@include md-block() {
+			position: relative;
+			left: inherit;
+			top: inherit;
+		}
 
 		.gallery-img {
 			display: flex;
@@ -54,15 +68,22 @@
 	}
 
 	.dpi_gallery__main {
+		@include xs-block() {
+			flex: 1;
+			display: flex;
+			justify-content: center;
+		}
+
 		@include lg-block() {
+			display: block;
 			height: rem(400);
 		}
 
-		@include xs(margin-left, rem(38));
 		@include md(margin-left, rem(50));
 		@include xl(margin-left, rem(83));
 
 		img {
+			object-fit: contain;
 			@include xs(max-height, rem(220));
 			@include md(max-height, rem(259));
 			@include lg(max-height, rem(400));

@@ -75,12 +75,6 @@
   }
 }
 
-.label-textarea {
-  font: rem(14)/rem(14) "Fregat-Bold", sans-serif;
-  color: var(--color-marine);
-  margin-bottom: rem(5);
-}
-
 .input-container {
   display: flex;
   flex-direction: column;
@@ -99,10 +93,20 @@
       background: var(--color-white);
       box-shadow: inset 0 0 0 1px var(--color-cyan);
     }
+
+    &.light {
+      background: var(--color-white);
+      border: solid 1px var(--color-cyan);
+
+      &.not-empty {
+        box-shadow: none;
+      }
+    }
   }
 }
 
-.label-input {
+.label-input,
+.label-textarea {
   font: rem(14)/rem(14) "Fregat-Bold", sans-serif;
   color: var(--color-marine);
   margin-bottom: rem(5);

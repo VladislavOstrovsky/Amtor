@@ -1,0 +1,118 @@
+.my_car_table {
+	width: 100%;
+	@include xs(margin, rem(10) 0 rem(15) 0);
+	@include lg(margin, rem(30) 0);
+
+	.mc_title {
+		font: rem(16)/rem(16) Fregat-Bold, sans-serif;
+
+		@include xs-block() {
+			margin-bottom: rem(20);
+		}
+
+		@include lg-block() {
+			padding-left: rem(20);
+			margin-bottom: rem(13);
+		};
+	}
+
+	.mc_row {
+		position: relative;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		border-top: 1px solid #D5DCE8;
+
+		&:first-of-type {
+
+			@include xs-block() {
+				border: none;
+				padding-top: 0;
+
+				.mcr_link_remove {
+					top: 0 !important;
+				}
+			}
+
+			@include md-block() {
+				border-top: 1px solid #D5DCE8;
+				padding-top: rem(15);
+			}
+		}
+
+		@include xs-block() {
+			padding: rem(20) 0;
+			align-items: flex-start;
+			flex-direction: column;
+		}
+
+		@include md-block() {
+			padding: rem(15) 0;
+			align-items: center;
+			flex-direction: row;
+		}
+
+		@include lg-block() {
+			padding: rem(15) rem(20);
+		}
+
+		.mcr_name {
+			font: rem(14)/rem(18) Fregat, sans-serif;
+
+			@include xs(margin-bottom, rem(10));
+			@include md(margin-bottom, 0);
+		}
+
+		.mc_brand_name {
+			font: rem(18)/rem(18) Fregat-Bold, sans-serif;
+		}
+
+		.mcr_actions {
+			display: flex;
+			align-items: center;
+
+			@include xs-block() {
+				width: 100%;
+				justify-content: space-between;
+			}
+
+			@include md-block() {
+				width: auto;
+				justify-content: flex-start;
+			}
+
+			.mcr_link {
+				font: rem(14)/rem(18) Fregat, sans-serif;
+				color: var(--color-black);
+				text-decoration: underline;
+
+				@include md(margin-right, rem(40));
+
+				&:hover {
+					text-decoration: none;
+				}
+
+				&.mcr_link_remove {
+					margin-right: 0;
+				}
+			}
+
+			.mcr_link_remove {
+				@include xs(display, none);
+				@include md(display, block);
+
+				&.mobile {
+					@include xs(display, block);
+					@include md(display, none);
+
+					position: absolute;
+					right: 0;
+					top: rem(20);
+
+					width: rem(14);
+					height: rem(14);
+				}
+			}
+		}
+	}
+}

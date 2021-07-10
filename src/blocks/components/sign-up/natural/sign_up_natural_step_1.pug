@@ -6,10 +6,12 @@ div.form-content-step1.flexColumn.alignItemsCenter
     label(for='sup-n-password' class='label-input') Пароль
     input(id="sup-n-password" type='password' name="sup-n-password" class='input' placeholder='Введите пароль')
   div.checkbox-wrapper
-    label(for='sup-n-check-1' class='checkbox-container center') С <a href='/' target='_blank' class='sgl-check'>условиями</a> предоставления услуг ознакомлен и согласен
+    label(for='sup-n-check-1' class='checkbox-container desc-center') С <a href='/' target='_blank' class='sgl-check'>условиями</a> предоставления услуг ознакомлен и согласен
       input(id="sup-n-check-1" type='checkbox' name="sup-n-check-1")
       span.checkmark
     label(for='sup-n-check-2' class='checkbox-container') Согласен на обработку персональных данных и принимаю <a href='/' target='_blank'>условия соглашения</a>
       input(id="sup-n-check-2" type='checkbox' name="sup-n-check-2")
       span.checkmark
-  button(type='button' class='btn success js-reg-next-step') Далее
+  div.buttons.dFlex
+    button(type='button' class='btn transparent prev-btn js-history-back') Назад
+    button(type='button' class='btn success js-reg-next-step') Далее

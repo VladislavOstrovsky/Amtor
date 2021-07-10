@@ -87,6 +87,10 @@ $(".js-reg-legal-next-step").click(function () {
     $("html, body").animate({ scrollTop: 0 }, 600);
 });
 
+$(".js-history-back").click(function () {
+   window.location.href = "./sign-up-select.html";
+});
+
 // prev step
 $(".js-reg-legal-prev-step").click(function () {
     switch (currentStep) {

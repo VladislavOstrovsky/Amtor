@@ -1,26 +1,121 @@
-@import "../lc/styles/lc_author_card";
-@import "../lc/styles/lc_menu_cards";
-@import "../lc/styles/lc_menu";
+// history page
+@import "../lc/pages/history/styles/filter_wrapper";
+@import "../lc/pages/history/styles/download_actions";
+@import "../../components/table/lc-history/table";
+// basket page
+@import "../../components/table/basket/bakset_table";
+// my car page
+@import "../../components/table/lc-my-car/table";
+// popups
+@import "../../components/popups/styles/quick_view";
+@import "../../components/popups/styles/add_car_popup";
 
 .personal_account {
-	@include xs(margin, rem(20) 0 rem(40));
-	@include md(margin, rem(30) 0 rem(60));
-	@include lg(margin, rem(30) 0 rem(80));
 
-	// balance
-	&.__balance {
+	// history
+	&.__history {
 		display: flex;
 
-		.pab_content {
-			flex: 1;
+		@include xs(flex-direction, column);
+		@include lg(flex-direction, row);
+
+		.pac_empty_wrapper {
+			@include xs(margin, rem(120) 0);
+			@include md(margin, rem(120) 0);
+			@include lg(margin, rem(120) 0);
+		}
+	}
+
+	// basket
+	&.__basket {
+		display: flex;
+
+		@include xs(flex-direction, column);
+		@include lg(flex-direction, row);
+
+		.pac_empty_wrapper {
+			@include xs(margin, rem(120) 0);
+			@include md(margin, rem(120) 0);
+			@include lg(margin, rem(150) 0);
 		}
 
-		@include xs-block() {
+		.pac_basket_table {
+			@include lg(margin-top, rem(30));
+
+			.pacb_actions {
+				display: flex;
+				justify-content: space-between;
+
+				margin-top: rem(15);
+
+				@include xs-block() {
+					align-items: flex-start;
+					flex-direction: column;
+
+					.btn.link {
+						width: auto;
+						padding-left: 0;
+						padding-right: 0;
+					}
+				}
+
+				@include md-block() {
+					flex-direction: row;
+					align-items: center;
+				}
+			}
+
+			.pacba_right {
+				display: flex;
+				font: rem(14)/rem(18) Fregat-Bold, sans-serif;
+				color: var(--color-marine);
+
+				@include xs-block() {
+					flex-direction: column;
+					align-items: flex-start;
+					margin-top: rem(30);
+					width: 100%;
+				}
+
+				@include md-block() {
+					align-items: center;
+					flex-direction: row;
+					width: auto;
+					margin-top: 0;
+				}
+
+				.text {
+					@include xs(margin-bottom, rem(20));
+					@include md-block() {
+						margin-bottom: 0;
+						margin-right: rem(30);
+					}
+				}
+			}
+		}
+	}
+
+	// my car
+	&.__my_car {
+		display: flex;
+
+		@include xs(flex-direction, column);
+		@include lg(flex-direction, row);
+
+		.pac_my_car_table {
+			display: flex;
 			flex-direction: column;
+			align-items: center;
 		}
 
-		@include lg-block() {
-			flex-direction: row;
+		.pac_empty_wrapper {
+			@include xs(margin, rem(120) 0);
+			@include md(margin, rem(120) 0);
+			@include lg(margin, rem(130) 0);
+
+			.btn {
+				margin-top: rem(33);
+			}
 		}
 	}
 }

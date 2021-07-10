@@ -151,6 +151,26 @@
 			}
 		}
 
+		@include xs-block() {
+			.buttons {
+				width: 100%;
+				justify-content: space-between;
+				margin-top: rem(5);
+			}
+		}
+
+		@include md-block() {
+			.buttons {
+				width: auto;
+				justify-content: center;
+				margin-top: 0;
+			}
+		}
+
+		.prev-btn {
+			margin-right: rem(20);
+		}
+
 		.sign-up-wrapper {
 			@include xs(width, 100%);
 			@include md(width, rem(420));
@@ -172,7 +192,9 @@
 				}
 
 				.sgl-check {
-					margin: 0 rem(5);
+					@include md-block() {
+						margin: 0 rem(5);
+					}
 				}
 			}
 
@@ -197,26 +219,6 @@
 		.form-content-step5, {
 			width: 100%;
 			display: none;
-		}
-
-		.prev-btn {
-			margin-right: rem(20);
-		}
-
-		@include xs-block() {
-			.buttons {
-				width: 100%;
-				justify-content: space-between;
-				margin-top: rem(5);
-			}
-		}
-
-		@include md-block() {
-			.buttons {
-				width: auto;
-				justify-content: center;
-				margin-top: 0;
-			}
 		}
 
 		&.step-1 {
@@ -260,10 +262,6 @@
 
 		&.step-2 {
 			.form-content-step2 {display: flex;}
-
-			.prev-btn {
-				margin-right: rem(20);
-			}
 
 			@include xs-block() {
 				.buttons {

@@ -1,0 +1,132 @@
+.pac_filters {
+	margin-bottom: rem(20);
+	@include lg(margin-top, rem(20));
+
+	.pacf_header {
+		display: flex;
+		justify-content: space-between;
+
+		@include xs-block() {
+			flex-direction: column;
+			margin-bottom: rem(15);
+		}
+
+		@include md-block() {
+			flex-direction: row;
+			margin-bottom: rem(20);
+		}
+
+		.input-container {
+			@include xs-block() {
+				flex-basis: 100%;
+				margin-bottom: rem(15);
+			}
+
+			@include md-block() {
+				margin-bottom: 0;
+				margin-right: rem(20);
+				flex-basis: 50%;
+			}
+		}
+
+		.select-container {
+			@include xs(flex-basis, 100%);
+			@include md(flex-basis, 50%);
+		}
+	}
+
+	.pacf_bottom {
+		display: flex;
+		justify-content: space-between;
+
+		@include xs(flex-direction, column);
+		@include lg(flex-direction, row);
+
+		.pacf_checkbox {
+			display: flex;
+			justify-content: space-between;
+
+			@include xs-block() {
+				flex-direction: column;
+				flex-basis: 100%;
+				margin-bottom: rem(20);
+			}
+
+			@include md-block() {
+				flex-direction: row;
+			}
+
+			@include lg-block() {
+				margin-right: rem(20);
+				margin-bottom: 0;
+				flex-basis: 50%;
+			}
+
+			.checkbox-wrapper {
+				flex: 1;
+				padding: rem(12) rem(15);
+				border-radius: var(--border-radius);
+				background-color: #DFE8F8;
+
+				@include xs-block() {
+					margin-bottom: rem(20);
+				}
+
+				@include md-block() {
+					margin-right: rem(15);
+					margin-bottom: 0;
+				}
+			}
+		}
+
+		.pacf_sort {
+			display: flex;
+			align-items: center;
+			flex-basis: 50%;
+
+			@include xs-block() {
+				flex-direction: column;
+				align-items: flex-start;
+			}
+
+			@include md-block() {
+				flex-direction: row;
+				align-items: center;
+			}
+
+			.title {
+				font: rem(14)/rem(18) Fregat, sans-serif;
+				color: var(--color-marine);
+				margin-right: rem(20);
+
+				@include xs(margin-bottom, rem(10));
+				@include md(margin-bottom, 0);
+			}
+
+			.sort_items {
+				display: flex;
+
+				@include xs-block() {
+					width: 100%;
+					justify-content: space-between;
+				}
+
+				@include md-block() {
+					width: auto;
+					justify-content: flex-start;
+				}
+
+				.sort_item {
+					font: rem(14)/rem(14) Fregat-Bold, sans-serif;
+					color: var(--color-base);
+
+					&:not(:last-child) {
+
+						@include md(margin-right, rem(20));
+						@include xl(margin-right, rem(30));
+					}
+				}
+			}
+		}
+	}
+}

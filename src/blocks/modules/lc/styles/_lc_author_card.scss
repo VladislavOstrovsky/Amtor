@@ -1,8 +1,5 @@
 .lc-author-card {
 	position: relative;
-	padding: rem(20);
-	border: 1px solid #D4DBEC;
-	border-radius: var(--border-radius);
 
 	.under_text {
 		text-decoration: underline;
@@ -34,6 +31,7 @@
 					line-height: rem(12);
 				}
 			};
+
 			@include md-block() {
 				.title {
 					font-size: rem(24);
@@ -45,7 +43,9 @@
 					line-height: rem(14);
 				}
 			}
+
 			@include lg-block() {
+				margin-right: rem(10);
 				align-items: center;
 				flex-direction: row;
 			};
@@ -207,7 +207,7 @@
 				color: #838181;
 
 				@include md-block() {
-					margin-bottom: rem(10);
+					margin-bottom: rem(7);
 				}
 			}
 

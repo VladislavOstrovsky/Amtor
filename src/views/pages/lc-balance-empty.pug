@@ -1,0 +1,50 @@
+extends ../layouts/default
+
+block variables
+  - const title = "Баланс";
+
+block styles
+    link(rel="stylesheet" href="./styles/lc-balance.css")
+
+block content
+  div#page
+    include ../../blocks/components/header/mobile_menu
+    div.page
+      include ../../blocks/modules/header/header
+      div.container
+        div.bread-crumbs
+          a(href='./home.html' class='text_bc bread-crumbs_item') Главная
+          a(href='./lc-main.html' class='text_bc bread-crumbs_item') Личный кабинет
+          span.text_bc.bread-crumbs_item Баланс
+        h1.title_p Баланс
+      div.container
+        div.personal_account.__balance
+          include ../../blocks/modules/lc/lc-menu/lc-menu
+          div.pa_content
+            include ../../blocks/modules/lc/lc-author-card
+            include ../../blocks/modules/lc/lc-menu/lc-menu-mobile
+            include ../../blocks/modules/lc/pages/balance/statistic
+            div.pac_datepicker_wrp.bwc.__desc
+              div.pac_datepicker
+                div.datepicker_wrapper.input-daterange
+                  div.datepicker_item
+                    label(for='datepicker-start' class='label-datepicker') дд / мм /гг
+                    input(id="datepicker-start" type='text' class='form-control' name="start" value="26 / 06 / 2021")
+                    span.di_prefix от
+                  span.datepicker_addon -
+                  div.datepicker_item
+                    label(for='datepicker-end' class='label-datepicker') дд / мм /гг
+                    input(id="datepicker-end" type='text' class='form-control' name="end" value="26 / 06 / 2021")
+                    span.di_prefix до
+                button(type='button' class='btn success filter-btn') Фильтровать
+              div.pac_empty_wrapper
+                span.icon.__balance
+                  include ../../img/svg/lc/balance.svg
+                p.text Вы еще ни разу не пополняли<br>свой баланс
+      include ../../blocks/modules/footer/footer
+
+block scripts
+  script(src="js/lc.js")
+  script(src="js/lc_balance.js")
+  script(src="js/main.js")
+  script(src="js/vendor.js")
