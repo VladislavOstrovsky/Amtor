@@ -1,0 +1,95 @@
+.batch_percentage_table {
+	width: 100%;
+
+	@include xs(margin, rem(10) 0 rem(15) 0);
+	@include lg(margin, rem(30) 0);
+
+	.bpt_header {
+		display: grid;
+		align-items: center;
+		justify-content: space-between;
+		grid-gap: rem(15);
+		grid-template-columns: repeat(4, 1fr);
+		font: rem(16)/rem(16) Fregat-Bold, sans-serif;
+
+		@include xs(display, none);
+		@include md-block() {
+			display: grid;
+			padding: rem(10) 0 rem(15) 0;
+		}
+		@include lg(padding, 0 rem(20) rem(15) rem(20));
+	}
+
+	.bpt_row {
+		display: grid;
+		align-items: center;
+		justify-content: space-between;
+		font: rem(14)/rem(18) Fregat, sans-serif;
+		border-top: 1px solid #D5DCE8;
+
+		&:first-of-type {
+			@include xs-block() {
+				border: none;
+				padding-top: 0;
+			}
+
+			@include md-block() {
+				border-top: 1px solid #D5DCE8;
+				padding-top: rem(15);
+			}
+		}
+
+		@include xs-block() {
+			grid-gap: rem(10);
+			grid-template-columns: 1fr;
+			padding: rem(20) 0;
+		}
+
+		@include md-block() {
+			grid-gap: rem(15);
+			grid-template-columns: repeat(4, 1fr);
+			grid-template-rows: 1fr;
+			padding: rem(15) 0;
+		}
+
+		@include lg-block() {
+			padding: rem(15) rem(20);
+		}
+
+		.bpr_item {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+
+			&.__center {
+				@include md(justify-content, center);
+			}
+
+			a {
+				color: var(--color-black);
+				text-decoration: underline;
+
+				&:hover {
+					text-decoration: none;
+				}
+			}
+
+			.value {
+				@include xs(font-family, (Fregat-Bold, sans-sans-serif));
+				@include md(font-family, (Fregat, sans-sans-serif));
+
+				&.bpr_batch_link {
+					font: rem(14)/rem(18) Fregat-Bold, sans-serif;
+				}
+			}
+		}
+
+		.mobile_title {
+			font: rem(12)/rem(12) "Open Sans", sans-serif;
+			color: #838181;
+
+			@include xs(display, block);
+			@include md(display, none);
+		}
+	}
+}

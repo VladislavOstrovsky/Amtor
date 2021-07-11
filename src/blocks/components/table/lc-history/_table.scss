@@ -4,7 +4,6 @@
 	@include lg(margin-bottom, rem(20));
 }
 
-/* grid table */
 .ht_row_header {
 	position: relative;
 	display: grid;
@@ -236,7 +235,7 @@
 			font: rem(14)/rem(18) Fregat, sans-serif;
 			margin-right: rem(139);
 
-			.status {
+			.history_status {
 				margin-left: rem(10);
 				white-space: nowrap;
 				padding: rem(5) rem(10);

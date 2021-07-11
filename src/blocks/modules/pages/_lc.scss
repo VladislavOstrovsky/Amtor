@@ -6,18 +6,34 @@
 @import "../../components/table/basket/bakset_table";
 // my car page
 @import "../../components/table/lc-my-car/table";
+// invoices
+@import "../lc/pages/invoices/styles/form_pay_confirmation";
+@import "../../components/table/lc-invoices/table";
+// invoice account
+@import "../../components/table/lc-invoice-account/table";
+// vin requests
+@import "../../components/table/lc-vin-requests/table";
+@import "../lc/pages/vin-requests/styles/vin_request_code";
+// dispatches
+@import "../../components/table/lc-dispatches/table";
+// messages
+@import "../../components/table/lc-messages/table";
+// friends
+@import "../../components/table/lc-friends/table";
+// batch-percentage
+@import "../../components/table/lc-batch-percentage/table";
+@import "../lc/pages/batch-percentage/find_form";
+// manager
+@import "../lc/pages/manager/manager_card";
+// status cell
+@import "../../components/table/status";
 // popups
 @import "../../components/popups/styles/quick_view";
 @import "../../components/popups/styles/add_car_popup";
 
 .personal_account {
-
 	// history
 	&.__history {
-		display: flex;
-
-		@include xs(flex-direction, column);
-		@include lg(flex-direction, row);
 
 		.pac_empty_wrapper {
 			@include xs(margin, rem(120) 0);
@@ -28,10 +44,6 @@
 
 	// basket
 	&.__basket {
-		display: flex;
-
-		@include xs(flex-direction, column);
-		@include lg(flex-direction, row);
 
 		.pac_empty_wrapper {
 			@include xs(margin, rem(120) 0);
@@ -97,10 +109,6 @@
 
 	// my car
 	&.__my_car {
-		display: flex;
-
-		@include xs(flex-direction, column);
-		@include lg(flex-direction, row);
 
 		.pac_my_car_table {
 			display: flex;
@@ -112,10 +120,49 @@
 			@include xs(margin, rem(120) 0);
 			@include md(margin, rem(120) 0);
 			@include lg(margin, rem(130) 0);
+		}
+	}
 
-			.btn {
-				margin-top: rem(33);
-			}
+	// pay confirmation
+	&.__pay_confirmation {}
+
+	// vin requests
+	&.__vin_requests {
+
+		.pac_vin_requests_table {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+		}
+
+		.pac_empty_wrapper {
+			@include xs(margin, rem(100) 0);
+			@include md(margin, rem(90) 0);
+			@include lg(margin, rem(130) 0);
+		}
+	}
+
+	// invoices
+	&.__invoices {}
+
+	// invoice account
+	&.__invoice_account {}
+
+	// dispatches
+	&.__dispatches {}
+
+	// messages
+	&.__messages {}
+
+	// friends
+	&.__friends {}
+
+	// batch-percentage
+	&.__batch_percentage {
+		.pac_empty_wrapper {
+			@include xs(margin, rem(120) 0);
+			@include md(margin, rem(100) 0);
+			@include lg(margin, rem(80) 0);
 		}
 	}
 }

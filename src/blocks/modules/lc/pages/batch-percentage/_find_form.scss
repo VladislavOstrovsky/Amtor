@@ -1,0 +1,44 @@
+.batch_percentage_form {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+
+	@include xs(margin, rem(20) 0 rem(30));
+	@include md(margin, rem(30) 0 rem(40));
+
+	.bpf_actions {
+		display: flex;
+		justify-content: space-between;
+		margin: rem(15) 0 rem(20);
+
+		@include xs(flex-direction, column);
+		@include md(flex-direction, row);
+
+		.checkbox-container {
+			white-space: nowrap;
+		}
+
+		.file-container-input {
+			@include xs-block() {
+				margin-top: rem(15);
+				margin-bottom: 0;
+			}
+
+			@include md-block() {
+				margin-top: 0;
+				width: auto;
+			}
+
+			.file-message {
+				@include md(margin-left, rem(30));
+				@include lg(margin-left, rem(50));
+			}
+		}
+	}
+
+	.bpf_submit_btn {
+		margin-top: rem(20);
+		display: flex;
+		justify-content: center;
+	}
+}

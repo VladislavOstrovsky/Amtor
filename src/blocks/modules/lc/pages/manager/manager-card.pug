@@ -1,0 +1,25 @@
+div.manager_card
+  div.mc_header
+    h1.title_name Филипов Константин
+    h1.text Ваш менеджер
+  div.mc_content
+    div.mcc_avatar
+      img(src='./img/lc/manager-avatar.png' class='image')
+    div.mcc_location_info
+      div.li_address
+        span.icon
+          include ../../../../../img/svg/header/location.svg
+        h1.title.__address Москва, Ташкентская 28 стр.1
+      div.li_contacts
+        h2.title Контакты
+        a(href="tel:8 913 243 6573" class='lic_phone') +7(913) 243-6573 (многоканальный)
+        a(href="tel:215" class='lic_phone last') 215 (доп. номер)
+    div.mcc_time_info
+      h2.title Время работы
+      p.time_value с 8:00 до 18:00
+    div.mcc_soc_info
+      h2.title Месенджеры
+      div.si_links
+        a(href='#' class="soc_link" target='_blank') Telegram
+        a(href='#' class="soc_link" target='_blank') WhatsApp
+        a(href='#' class="soc_link" target='_blank') Skype

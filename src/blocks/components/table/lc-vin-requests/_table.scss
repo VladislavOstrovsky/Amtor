@@ -1,0 +1,119 @@
+.vin_requests_table {
+	width: 100%;
+
+	@include xs(margin, rem(10) 0 rem(15) 0);
+	@include lg(margin, rem(30) 0);
+
+	.vrt_header {
+		display: grid;
+		align-items: center;
+		justify-content: space-between;
+		grid-gap: rem(15);
+		grid-template-columns: repeat(3, 0.7fr) 2fr;
+		font: rem(16)/rem(16) Fregat-Bold, sans-serif;
+
+		@include xs(display, none);
+		@include md-block() {
+			display: grid;
+			padding: rem(10) 0 rem(15) 0;
+		}
+		@include lg(padding, 0 rem(20) rem(15) rem(20));
+	}
+
+	.vrt_row {
+		display: grid;
+		align-items: center;
+		justify-content: space-between;
+		grid-template-columns: repeat(3, 0.7fr) 2fr;
+		font: rem(14)/rem(18) Fregat, sans-serif;
+		border-top: 1px solid #D5DCE8;
+
+		&:first-of-type {
+			@include xs-block() {
+				border: none;
+				padding-top: 0;
+			}
+
+			@include md-block() {
+				border-top: 1px solid #D5DCE8;
+				padding-top: rem(15);
+			}
+		}
+
+		@include xs-block() {
+			grid-gap: rem(10);
+			grid-template-columns: repeat(3, 1fr);
+			grid-template-rows: 1fr 1fr;
+			padding: rem(20) 0;
+		}
+
+		@include md-block() {
+			grid-gap: rem(15);
+			grid-template-columns: repeat(3, 0.7fr) 2fr;
+			grid-template-rows: 1fr;
+			padding: rem(15) 0;
+		}
+
+		@include lg-block() {
+			padding: rem(15) rem(20);
+		}
+
+		.vrr_name {
+			font-family: Fregat-Bold, sans-serif;
+		}
+
+		.vrr_actions {
+			display: flex;
+			align-items: center;
+			width: 100%;
+			white-space: nowrap;
+
+			@include xs-block() {
+				justify-content: space-between;
+				grid-row: 2;
+				grid-column: span 3;
+			}
+
+			@include md-block() {
+				grid-column: 4;
+				grid-row: 1;
+				justify-content: flex-end;
+			}
+
+			.vrr_link {
+				font: rem(14)/rem(18) Fregat, sans-serif;
+				color: var(--color-black);
+				text-decoration: underline;
+
+				&:hover {
+					text-decoration: none;
+				}
+
+				&.__create {
+					display: flex;
+					align-items: center;
+
+					@include xs-block() {
+						font-size: 0;
+
+						&:before {
+							content: 'Создать новый запрос';
+							font-size: rem(14);
+							line-height: rem(18);
+						}
+					}
+
+					@include md-block() {
+						font-size: rem(14);
+						&:before {display: none;}
+						margin-right: rem(40);
+					}
+
+					@include md(margin-right, rem(40));
+					@include lg(margin-right, rem(20));
+					@include xl(margin-right, rem(40));
+				}
+			}
+		}
+	}
+}

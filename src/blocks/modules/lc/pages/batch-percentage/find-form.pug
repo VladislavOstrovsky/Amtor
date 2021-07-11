@@ -1,0 +1,18 @@
+form(action='/find-batch-percentage' class='batch_percentage_form' method='POST')
+  div.textarea-container
+    label(for='comment-percentage' class='label-textarea') Комментарий к проценки
+    textarea(id="comment-percentage" name="comment-percentage" class='input' placeholder='Например C110;DOLZ;3;1254.3 где C110 - номер, DOLZ - бренд, 3 - кол. к заказу')
+  div.bpf_actions
+    label(for='find-cross' class='checkbox-container center') Искать с кроссами
+      input(id="find-cross" type='checkbox' name="with-cross")
+      span.checkmark
+    div.file-container-input
+      label(for='attach-file' class='file-input btn success') Выбрать файл
+      input(id='attach-file' type='file' name="attach-file" class='input file')
+      span.file-name Файл не выбран
+      span.file-message Добавить номера из Excel файла
+  div.input-container
+    label(for='find-date' class='label-input') Максимальный срок доставки
+    input(id="find-date" type='text' name="sup-username" class='input' placeholder='Введите максимальный срок доставки')
+  div.bpf_submit_btn
+    button(type='submit' class='btn success big_padding') Найти

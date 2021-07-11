@@ -1,0 +1,18 @@
+div.message_block.__hidden
+  div.mb_history.js-custom-scroll
+    include ./message-block/message
+    include ./message-block/message-me
+    include ./message-block/message
+    include ./message-block/message-me
+    include ./message-block/message
+    include ./message-block/message-me
+  form(action='/send-message' class='mb_add_message')
+    div.mba_input_wrapper
+      textarea(name="message" class='input dark textarea-input' placeholder='Ваше сообщение')
+      div.file-container-input
+        label(for=`attach-file-${message.id}` class='file-input btn success') Выбрать файл
+        input(id=`attach-file-${message.id}` type='file' name="attach-file" class='input file')
+        span.file-name Файл не выбран
+        span.file-message Размер файла не должен превышать 2 Мб.
+    div.mba_btn_wrapper
+      button(type="submit" class='btn success') Отправить

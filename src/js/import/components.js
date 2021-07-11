@@ -7,8 +7,7 @@ $("#vcp-form").submit(function (e) {
     }
 });
 
-// select box
-$("select").each(function () {
+function prepareSelectbox() {
     var $this = $(this), numberOfOptions = $(this).children("option").length;
 
     $this.addClass("select-hidden");
@@ -77,6 +76,28 @@ $("select").each(function () {
             });
         }
     });
+}
+
+// select box
+$("select").each(prepareSelectbox);
+
+// add spare part vin code popup
+$(document).ready(function($) {
+    var $copyEl = $('.js-spare-part');
+
+    $('.js-add-part').click(function () {
+        // TODO - fix
+        const ab = $(this).parent().before($copyEl.clone());
+        setTimeout(() => {
+            ab.parent().find('select').each(prepareSelectbox);
+        }, 1);
+
+        // setTimeout(() => {
+        //     $(".select-options").mCustomScrollbar({
+        //         autoHideScrollbar: true,
+        //     });
+        // }, 1);
+    });
 });
 
 // js-detail-page slider
@@ -139,7 +160,8 @@ function getTextForSelectBox(value) {
         return 'VIN запросы';
     }
     case 'lc-invoices':
-    case 'lc-invoices-empty': {
+    case 'lc-invoices-empty':
+    case 'lc-invoices-pay-confirmation': {
         return 'Счета';
     }
     case 'lc-invoice-account':
@@ -166,5 +188,7 @@ function getTextForSelectBox(value) {
     case 'lc-bonuses-empty': {
         return 'Бонусы';
     }
+    case 'lc-manager':
+        return 'Менеджер';
     }
 }

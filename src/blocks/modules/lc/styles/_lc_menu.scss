@@ -14,6 +14,7 @@
 		transition: all .2s ease-in-out;
 
 		&.active {
+			pointer-events: none;
 
 			.title {
 				color: var(--color-base);
@@ -22,7 +23,7 @@
 
 		&:hover {
 			.title {
-				color: var(--color-base);
+				color: var(--color-marine);
 			}
 		}
 

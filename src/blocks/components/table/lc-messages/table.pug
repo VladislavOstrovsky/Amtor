@@ -1,0 +1,12 @@
+- var messagesCells = [{id: 1, status: 'wait-payment'}, {id: 2, status: 'wait-payment'}, {id: 3, status: 'reject'}, {id: 4, status: 'success'}];
+
+div.messages_table
+  div.mt_row_header
+    h1.mtr_title Дата
+    h1.mtr_title Описание
+    h1.mtr_title Состояние
+    h1.mtr_title Срок
+    h1.mtr_title.textCenter Кол-во
+    h1.mtr_title Цена
+  each message in messagesCells
+    include cell

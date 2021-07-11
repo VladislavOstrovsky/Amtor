@@ -1,0 +1,36 @@
+extends ../layouts/default
+
+block variables
+  - const title = "Сообщения";
+
+block styles
+    link(rel="stylesheet" href="./styles/lc.css")
+
+block content
+  div#page
+    include ../../blocks/components/header/mobile_menu
+    div.page
+      include ../../blocks/modules/header/header
+      div.container
+        div.bread-crumbs
+          a(href='./home.html' class='text_bc bread-crumbs_item') Главная
+          a(href='./lc-main.html' class='text_bc bread-crumbs_item') Личный кабинет
+          span.text_bc.bread-crumbs_item Сообщения
+        h1.title_p Сообщения
+      div.container
+        div.personal_account.__messages
+          include ../../blocks/modules/lc/lc-menu/lc-menu
+          div.pa_content
+            include ../../blocks/modules/lc/lc-author-card
+            include ../../blocks/modules/lc/lc-menu/lc-menu-mobile
+            div.pac_empty_wrapper.__common_margin
+              span.icon.__messages
+                include ../../img/svg/lc/messages.svg
+              p.text У вас нет сообщений
+
+      include ../../blocks/modules/footer/footer
+
+block scripts
+  script(src="js/main.js")
+  script(src="js/lc.js")
+  script(src="js/vendor.js")

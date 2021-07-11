@@ -1,0 +1,195 @@
+.invoice_account_table {
+	width: 100%;
+
+	@include xs(margin, rem(10) 0 rem(15) 0);
+	@include lg(margin, rem(30) 0);
+
+	.iat_header {
+		display: grid;
+		align-items: center;
+		justify-content: space-between;
+		grid-gap: rem(15);
+		grid-template-columns: repeat(3, 1fr) 1.5fr;
+		font: rem(16)/rem(16) Fregat-Bold, sans-serif;
+
+		@include xs(display, none);
+		@include md-block() {
+			display: grid;
+			padding: rem(10) 0 rem(15) 0;
+		}
+		@include lg(padding, 0 rem(20) rem(15) rem(20));
+	}
+
+	.iat_row {
+		display: grid;
+		align-items: center;
+		justify-content: space-between;
+		font: rem(14)/rem(18) Fregat, sans-serif;
+		border-top: 1px solid #D5DCE8;
+
+		&:first-of-type {
+			@include xs-block() {
+				border: none;
+				padding-top: 0;
+			}
+
+			@include md-block() {
+				border-top: 1px solid #D5DCE8;
+				padding-top: rem(15);
+			}
+		}
+
+		@include xs-block() {
+			grid-gap: rem(10);
+			grid-template-columns: 1fr;
+			padding: rem(20) 0;
+		}
+
+		@include md-block() {
+			grid-gap: rem(15);
+			grid-template-columns: repeat(3, 1fr) 1.5fr;
+			grid-template-rows: 1fr;
+			padding: rem(15) 0;
+		}
+
+		@include lg-block() {
+			padding: rem(15) rem(20);
+		}
+
+		.iar_item {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+
+			.iar_code {
+				@include xs-block() {
+					font: rem(16)/rem(18) Fregat-Bold, sans-serif;
+
+					&:before {
+						content: 'Код: ';
+					}
+				}
+
+				@include md-block() {
+					font: rem(14)/rem(18) Fregat, sans-serif;
+					&:before {display: none;}
+				}
+			}
+
+			.value.__mobile {
+				@include xs(display, block);
+				@include md(display, none);
+			}
+		}
+
+		.iar_date {
+			@include xs(display, none);
+			@include md(display, block);
+		}
+
+		.mobile_title {
+			font: rem(12)/rem(12) "Open Sans", sans-serif;
+			color: #838181;
+
+			@include xs(display, block);
+			@include md(display, none);
+		}
+
+		.iar_actions {
+			position: relative;
+			flex: 1;
+			display: flex;
+			align-items: center;
+
+			@include xs(justify-content, flex-start);
+			@include md(justify-content, space-between);
+
+			.btn {
+				@include xs(margin-left, rem(30));
+				@include md(margin-left, 0);
+			}
+
+			.iar_dropdown {
+				position: absolute;
+				right: 0;
+				top: rem(25);
+				width: rem(220);
+				height: auto;
+				background-color: var(--color-white);
+				border-radius: var(--border-radius);
+				box-shadow: var(--box-shadow-card);
+				padding: rem(10) 0;
+				z-index: 1;
+				text-align: left;
+				display: flex;
+				flex-direction: column;
+
+				&.__hidden {display: none;}
+
+				@include xs-block() {
+					right: auto;
+					left: rem(20);
+				}
+
+				@include md-block() {
+					right: 0;
+					left: auto;
+				}
+
+				.dropdown_item {
+					width: calc(100% - 40px);
+					padding: rem(10) rem(20);
+					color: var(--color-black);
+					font-family: Fregat-Bold, sans-serif;
+					transition: all .2s ease-in-out;
+
+					&:hover {
+						background-color: var(--color-danger);
+						color: var(--color-white);
+						text-decoration: none;
+					}
+				}
+			}
+		}
+
+		.iar_price {
+			font: rem(16)/rem(18) Fregat-Bold, sans-serif;
+
+			.value {
+				@include xs(font-size, rem(14));
+				@include xs(line-height, rem(16));
+			}
+		}
+
+		.iar_link {
+			font: rem(14)/rem(18) Fregat, sans-serif;
+			color: var(--color-black);
+			text-decoration: underline;
+			padding: 0;
+
+			&:hover {
+				text-decoration: none;
+			}
+
+			.text {
+				margin-right: rem(10);
+			}
+
+			@include xs-block() {
+				width: auto;
+			}
+
+			.icon_arrow {
+				width: 12px;
+				height: 12px;
+				background: url('../img/svg/arrow-dark.svg') center no-repeat;
+				background-size: 100%;
+				transition: transform .3s;
+
+				&.rotate {
+					transform: rotate(180deg);
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,17 @@
+div.form-content-step1.flexColumn.alignItemsCenter
+  div.input-container
+    label(for='vrc-vin' class='label-input') VIN
+    input(id="vrc-vin" type='text' name="vin" class='input' placeholder='Введите VIN')
+  div.input-container
+    label(for='vrc-brand' class='label-input') Марка
+    input(id="vrc-brand" type='text' name="brand" class='input' placeholder='Введите марку')
+  div.input-container
+    label(for='vrc-model' class='label-input') Модель
+    input(id="vrc-model" type='text' name="model" class='input' placeholder='Введите модель')
+  include ../../../../components/select/select-release-date
+  div.input-container
+    label(for='vrc-engine' class='label-input') Двигатель
+    input(id="vrc-engine" type='text' name="engine" class='input' placeholder='Введите двигатель')
+  div.buttons.dFlex
+    button(type='button' class='btn transparent prev-btn js-history-back') Назад
+    button(type='button' class='btn success js-next-step') Далее

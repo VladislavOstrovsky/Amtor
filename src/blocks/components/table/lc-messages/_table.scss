@@ -1,0 +1,143 @@
+@import "./message-block/message_block";
+
+.messages_table {
+	@include xs(margin, rem(10) 0 rem(15) 0);
+	@include lg(margin, rem(30) 0);
+}
+
+.mt_row_header {
+	position: relative;
+	display: grid;
+	align-items: center;
+	justify-content: space-between;
+	grid-gap: rem(15);
+	grid-template-columns: 0.8fr 1.5fr 0.8fr 0.4fr repeat(2, 0.8fr);
+	font: rem(14)/rem(14) Fregat-Bold, sans-serif;
+
+	@include xs(display, none);
+	@include md-block() {
+		display: grid;
+		padding: 0 rem(20) rem(15) rem(20);
+	}
+}
+
+.mt_row_wrapper {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	box-sizing: border-box;
+	width: 100%;
+}
+
+.mt_row_full {
+	border-radius: var(--border-radius);
+	background-color: var(--color-extra-light-gray);
+	font: rem(14)/rem(18) Fregat-Bold, sans-serif;
+
+	@include xs-block() {
+		width: calc(100% - 20px);
+		padding: rem(6) rem(10);
+	}
+
+	@include md-block() {
+		width: calc(100% - 40px);
+		padding: rem(6) rem(20);
+	}
+}
+
+.mt_row {
+	display: grid;
+	align-items: flex-start;
+	justify-content: space-between;
+	font: rem(14)/rem(18) Fregat, sans-serif;
+
+	@include xs-block() {
+		grid-template-columns: 1fr;
+		grid-gap: rem(10);
+		padding: rem(15) 0 rem(20);
+	}
+
+	@include md-block() {
+		grid-gap: rem(15);
+		grid-template-columns: 0.8fr 1.5fr 0.8fr 0.4fr repeat(2, 0.8fr);
+		padding: rem(15) rem(20);
+	}
+
+	.mobile_title {
+		font: rem(12)/rem(12) "Open Sans", sans-serif;
+		color: #838181;
+
+		@include xs(display, block);
+		@include md(display, none);
+	}
+
+	.mt_date {
+		@include xs-block() {
+			position: absolute;
+			right: rem(10);
+			top: rem(6)
+		}
+
+		@include md-block() {
+			position: relative;
+			right: auto;
+			top: auto;
+		}
+	}
+
+	.mt_description {
+		padding-right: rem(30);
+	}
+
+	.mtr_item {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+
+		@include md-block() {
+			display: block;
+		}
+
+		.value {
+			white-space: nowrap;
+			font: rem(14)/rem(16) Fregat-Bold, sans-serif;
+
+			@include xs(font-family, (Fregat-Bold, sans-serif));
+			@include md(font-family, (Fregat, sans-serif));
+		}
+
+		&.__count {
+			@include md(text-align, center);
+		}
+
+		&.__price {
+			.value {
+				@include md-block() {
+					font: rem(18)/rem(18) Fregat-Bold, sans-serif;
+				}
+			}
+		}
+	}
+}
+
+.mt_row_extra {
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+
+	@include xs(padding, 0 0 rem(20));
+	@include md(padding, 0 0 rem(15));
+	@include lg(padding, 0 rem(20) rem(15));
+
+	.cell_link {
+		font: rem(14)/rem(18) Fregat, sans-serif;
+		padding: 0;
+		color: var(--color-black);
+		text-decoration: underline;
+		width: auto;
+
+		&:hover {
+			text-decoration: none;
+		}
+	}
+}

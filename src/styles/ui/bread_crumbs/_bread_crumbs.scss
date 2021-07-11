@@ -17,9 +17,11 @@
       position: absolute;
       right: 0;
       top: 0;
-      width: rem(15);
+      width: rem(25);
       height: rem(14);
-      background: var(--color-white);
+      text-align: right;
+      background: linear-gradient(270deg, rgba(255, 255, 255, 0.95) 32.81%, rgba(255, 255, 255, 0.5) 100%);
+      //background: var(--color-white);
       color: var(--color-light-gray);
       padding-left: rem(2);
     }

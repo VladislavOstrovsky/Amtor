@@ -1,0 +1,19 @@
+form(action='/pay-confirmation' class='form_pay_confirmation' method='POST')
+  div.inputs_wrapper
+    div.input-container
+      label(for='ac-price' class='label-input') Сумма
+      input(id="ac-price" type='number' name="ac-price" class='input' placeholder='Введите сумму' required)
+    div.input-container
+      label(for='ac-comment' class='label-input') Комментарий
+      input(id="ac-comment" type='text' name="ac-comment" class='input' placeholder='Введите комментарий')
+    div.input-container
+      label(for='ac-date' class='label-input') Дата оплаты
+      input(id="ac-date" type='text' name="ac-date" value="27 апреля 2021" class='input not-empty' readonly)
+    div.file-container
+      h1.label Скан платежного поручения
+      div.file-container-input
+        label(for='ac-file' class='file-input btn success') Выбрать файл
+        input(id="ac-file" type='file' name="ac-file" class='input file')
+        span.file-name Файл не выбран
+  div.fpc_actions
+    button(type='submit' class='btn success') Отправить

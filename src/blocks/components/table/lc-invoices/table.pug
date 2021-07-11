@@ -1,0 +1,10 @@
+- var invoicesCells = ['processing', 'wait-payment', 'reject', 'success'];
+
+div.invoices_table
+  div.it_row_header
+    h1.itr_title №
+    h1.itr_title Дата
+    h1.itr_title Статус
+    h1.itr_title Сумма
+  each product in invoicesCells
+    include cell

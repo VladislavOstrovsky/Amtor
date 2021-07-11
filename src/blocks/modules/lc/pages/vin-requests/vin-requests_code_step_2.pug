@@ -1,0 +1,25 @@
+- var preference = ['Только оригинал', 'Предпочтение 1', 'Предпочтение 2', 'Предпочтение 3'];
+
+div.form-content-step2.flexColumn.alignItemsCenter
+  div.form-spare.js-vr-add-spare-part
+    div.input-container
+      label(for='vrc-name' class='label-input') Название
+      input(id="vrc-name" type='text' name="name" class='input' placeholder='Введите название')
+    div.spare-wrapper
+      div.input-container
+        label(for='vrc-spare-count' class='label-input') Количество, шт.
+        input(id="vrc-spare-count" type='text' name="spare-count" class='input' placeholder='Введите нужное количество')
+      div.select-container
+        p.select-label Предпочтение
+        select(name='preference')
+          option(value='') Выберите предпочтение
+            each option in preference
+              option(value=option) #{option}
+      div.textarea-container
+        label(for='vrc-note' class='label-textarea') Премечание
+        textarea(id="vrc-note" name="note" class='input' placeholder='Введите примечание')
+  div.add_button.js-vr-add-part
+    button(type='button' class='btn link add-spare-part') Добавить запчасть
+  div.buttons.dFlex
+    button(type='button' class='btn transparent prev-btn js-prev-step') Назад
+    button(type='submit' class='btn success') Отправить

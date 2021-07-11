@@ -1,0 +1,39 @@
+extends ../layouts/default
+
+block variables
+    - const title = "Запрос по VIN коду";
+    - const countSteps = 2;
+
+block styles
+  link(rel="stylesheet" href="./styles/lc.css")
+
+block content
+  div#page
+    include ../../blocks/components/header/mobile_menu
+    div.page
+      include ../../blocks/modules/header/header
+      div.container
+        div.bread-crumbs
+          a(href='./home.html' class='text_bc bread-crumbs_item') Главная
+          a(href='./lc-main.html' class='text_bc bread-crumbs_item') Личный кабинет
+          a(href='./lc-vin-requests.html' class='text_bc bread-crumbs_item') VIN запросы
+          span.text_bc.bread-crumbs_item Запрос по VIN коду
+        h1.title_p Запрос по VIN коду
+      div.container
+        div.page_center_wrapper.vin-requests.step-1
+          div.step_page_wrapper
+            h1.sp_counter
+              span.js-step-counter 1
+              span &nbsp;из #{countSteps}
+            p.text шаг
+          div.vin-requests-wrapper
+            h1.title_page.js-vr-title Данные об автомобиле
+            form(action='/request-vin-code' class='form-content' method='POST')
+              include ../../blocks/modules/lc/pages/vin-requests/vin-requests_code_step_1
+              include ../../blocks/modules/lc/pages/vin-requests/vin-requests_code_step_2
+      include ../../blocks/modules/footer/footer
+
+block scripts
+  script(src="js/lc.js")
+  script(src="js/main.js")
+  script(src="js/vendor.js")

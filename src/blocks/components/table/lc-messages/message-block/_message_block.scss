@@ -1,0 +1,121 @@
+.message_block {
+	display: flex;
+	width: 100%;
+	flex-direction: column;
+	align-self: flex-end;
+	border-radius: var(--border-radius);
+	border: 1px solid #D4DBEC;
+	margin-bottom: rem(20);
+	transition: all .2s ease-in-out;
+
+	@include lg(width, rem(750));
+
+	&.__hidden {
+		display: none;
+	}
+
+	.mb_history {
+		display: flex;
+		flex-direction: column;
+		height: rem(450);
+		border-bottom: 1px solid #D4DBEC;
+
+		@include xs(padding, rem(20) 0 rem(20) rem(10));
+		@include md(padding, rem(30) rem(5) rem(30) rem(30));
+
+		.mCSB_container {
+			margin-right: 0 !important;
+			display: flex;
+			flex-direction: column;
+		}
+
+		.mCSB_dragger_bar {
+			background-color: var(--color-base) !important;
+		}
+
+		.mCSB_draggerRail {
+			background: transparent !important;
+		}
+
+		.mbh_item {
+			width: rem(340);
+			padding: rem(20);
+			border-radius: var(--border-radius);
+			background-color: var(--color-extra-light-gray);
+			font: rem(16)/rem(22) Fregat, sans-serif;
+			color: var(--color-marine);
+
+			@include xs(width, calc(100% - 60px));
+			@include md(width, rem(340));
+
+			&:not(:last-of-type) {
+				@include xs(margin-bottom, rem(10));
+				@include md(margin-bottom, rem(20));
+			}
+
+			&.__me {
+				background-color: var(--color-white);
+				box-shadow: inset 0 0 0 1px #D4DBEC;
+
+				@include xs-block() {
+					align-self: flex-start;
+				}
+
+				@include md-block() {
+					align-self: flex-end;
+					margin-right: rem(25);
+				}
+			}
+
+			.mhi_name {
+				display: flex;
+				font: rem(14)/rem(18) Fregat-Bold, sans-serif;
+				margin-bottom: rem(5);
+
+				h1 {
+					margin-right: rem(5);
+				}
+			}
+
+			.mhi_date {
+				font-size: rem(14);
+				line-height: rem(18);
+				opacity: .6;
+				margin-bottom: rem(10);
+			}
+		}
+	}
+
+	.mb_add_message {
+		display: flex;
+		justify-content: space-between;
+
+		@include xs-block() {
+			padding: rem(20);
+			flex-direction: column;
+		}
+
+		@include md-block() {
+			padding: rem(30);
+			flex-direction: row;
+		}
+
+		.mba_input_wrapper {
+			flex: 1;
+			display: flex;
+			flex-direction: column;
+
+			.textarea-input {
+				height: rem(80);
+			}
+
+			.file-container-input {
+				margin-top: rem(10);
+			}
+		}
+
+		.mba_btn_wrapper {
+			@include md(margin-left, rem(20));
+		}
+	}
+}

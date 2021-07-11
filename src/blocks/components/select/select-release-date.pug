@@ -1,0 +1,8 @@
+- var currentYear = 2021;
+
+div.select-container
+  p.select-label Дата выпуска
+  select(name='year')
+    option(value='') Выберите дату выпуска
+    while currentYear > 1989
+      option(value=currentYear) #{currentYear--}

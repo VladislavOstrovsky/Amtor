@@ -1,0 +1,151 @@
+.invoices_table {
+	@include xs(margin-top, rem(30));
+}
+
+.it_row_header {
+	position: relative;
+	display: grid;
+	align-items: center;
+	justify-content: space-between;
+	font: rem(14)/rem(14) Fregat-Bold, sans-serif;
+
+	@include xs(display, none);
+
+	@include md-block() {
+		display: grid;
+		grid-gap: rem(10);
+		grid-template-columns: 0.7fr repeat(2, 1fr) 0.7fr;
+		padding: 0 0 rem(15) 0;
+	}
+
+	@include lg-block() {
+		grid-gap: rem(15);
+		grid-template-columns: repeat(4, 0.5fr) 2fr;
+		padding: 0 rem(20) rem(15) rem(20);
+	}
+}
+
+.it_row {
+	width: 100%;
+	position: relative;
+	display: grid;
+	align-items: center;
+	justify-content: space-between;
+	font: rem(14)/rem(18) Fregat, sans-serif;
+	border-top: 1px solid var(--color-cyan);
+	box-sizing: border-box;
+
+	@include xs-block() {
+		grid-template-columns: 1fr;
+		grid-gap: rem(10);
+		padding: rem(20) 0;
+	}
+
+	@include md-block() {
+		grid-template-columns: 0.7fr repeat(2, 1fr) 0.7fr;
+		grid-template-rows: repeat(2, 1fr);
+		padding: rem(15) 0;
+	}
+
+	@include lg-block() {
+		grid-gap: rem(15);
+		padding: rem(15) rem(20);
+		grid-template-rows: 1fr;
+		grid-template-columns: repeat(4, 0.5fr) 2fr;
+	}
+
+	.mobile_title {
+		font: rem(12)/rem(12) "Open Sans", sans-serif;
+		color: #838181;
+
+		@include xs(display, block);
+		@include md(display, none);
+	}
+
+	.it_date {
+		@include xs(display, none);
+		@include md(display, block);
+	}
+
+	.mobile_value {
+		font: rem(14)/rem(18) Fregat, sans-serif;
+
+		@include xs(display, block);
+		@include md(display, none);
+	}
+
+	.it_number {
+		white-space: nowrap;
+	}
+
+	.itr_item {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+
+		.value {
+			white-space: nowrap;
+			font: rem(14)/rem(16) Fregat-Bold, sans-serif;
+
+			@include xs(font-family, (Fregat-Bold, sans-serif));
+			@include md(font-family, (Fregat, sans-serif));
+		}
+
+		&.it_price {
+			.value {
+				@include md-block() {
+					font-family: Fregat-Bold, sans-serif;
+					font-size: rem(19);
+					line-height: rem(19);
+				}
+			}
+		}
+	}
+
+	.it_extra_links {
+		display: flex;
+		justify-content: space-between;
+		width: 100%;
+		font: rem(14)/rem(18) Fregat, sans-serif;
+
+		@include xs-block() {
+			flex-wrap: wrap;
+			justify-content: flex-start;
+			line-height: rem(28);
+		}
+
+		@include md-block() {
+			line-height: rem(18);
+			display: grid;
+			grid-gap: rem(15);
+			grid-template-columns: 0.7fr repeat(2, 1fr) 0.7fr;
+			grid-row: 2;
+			grid-column: span 4;
+		}
+
+		@include lg-block() {
+			display: flex;
+			flex-wrap: nowrap;
+			grid-gap: 0;
+			grid-row: 1;
+			grid-column: 5;
+		}
+
+		a {
+			color: var(--color-black);
+			white-space: nowrap;
+			text-decoration: underline;
+
+			&:hover {
+				text-decoration: none;
+			}
+
+			&:not(:last-child) {
+				@include xs(margin-right, rem(30));
+				@include md(margin-right, 0);
+				@include lg(margin-right, rem(15));
+				@include xl(margin-right, rem(30));
+			}
+		}
+	}
+}

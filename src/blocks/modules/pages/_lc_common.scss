@@ -3,9 +3,21 @@
 @import "../lc/styles/lc_menu";
 
 .personal_account {
-	@include xs(margin, rem(20) 0 rem(40));
+	display: flex;
+
+	@include xs-block() {
+		flex-direction: column;
+		margin: rem(20) 0 rem(40);
+	}
+
 	@include md(margin, rem(30) 0 rem(60));
-	@include lg(margin, rem(30) 0 rem(80));
+
+	@include lg-block() {
+		flex-direction: row;
+		margin: rem(30) 0 rem(80);
+	}
+
+	&.__main {flex-direction: column;}
 
 	.pa_content {
 		flex: 1;
@@ -46,6 +58,26 @@
 		font: rem(14)/rem(18) Fregat, sans-serif;
 		color: var(--color-marine);
 
+		@include xs(margin, rem(130) 0);
+		@include md(margin, rem(50) 0);
+		@include lg(margin, rem(80) 0);
+
+		&.__common_margin {
+			@include xs(margin, rem(120) 0);
+			@include md(margin, rem(120) 0);
+			@include lg(margin, rem(180) 0);
+		}
+
+		&.with_btn {
+			.btn {
+				margin-top: rem(33);
+
+				@include xs-block() {
+					width: auto;
+				}
+			}
+		}
+
 		.icon {
 			height: auto;
 			max-height: rem(80);
@@ -57,18 +89,16 @@
 				width: rem(80);
 			}
 
-			&.__history {
-				width: rem(65);
-			}
+			&.__history {width: rem(65);}
+			&.__vin_requests {width: rem(70);}
+			&.__invoices {width: rem(67);}
+			&.__invoice_account {width: rem(52);}
+			&.__dispatches {width: rem(80);}
+			&.__messages {width: rem(80);}
+			&.__friends {width: rem(68);}
+			&.__batch_percentage {width: rem(80);}
 
-			svg {
-				width: 100%;
-				height: 100%;
-			}
+			svg {width: 100%;height: 100%;}
 		}
-
-		@include xs(margin, rem(130) 0);
-		@include md(margin, rem(50) 0);
-		@include lg(margin, rem(80) 0);
 	}
 }

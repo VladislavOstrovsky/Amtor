@@ -1,0 +1,60 @@
+.status {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: max-content;
+	white-space: nowrap;
+	color: var(--color-white);
+	border-radius: var(--border-radius-big);
+
+	&.processing {
+		background-color: var(--color-base);
+		&:after {content: 'В обработке';}
+
+		@include xs(color, var(--color-base));
+		@include xs(background-color, transparent);
+		@include md(color, var(--color-white));
+		@include md(background-color, var(--color-base));
+	}
+
+	&.wait-payment {
+		background-color: var(--color-danger);
+		&:after {content: 'Ждет оплаты';}
+
+		@include xs(color, var(--color-danger));
+		@include xs(background-color, transparent);
+		@include md(color, var(--color-white));
+		@include md(background-color, var(--color-danger));
+	}
+
+	&.reject {
+		background-color: #EF4136;
+		&:after {content: 'Отменен';}
+
+		@include xs(color, #EF4136);
+		@include xs(background-color, transparent);
+		@include md(color, var(--color-white));
+		@include md(background-color, #EF4136);
+	}
+
+	&.success {
+		background-color: #299F34;
+		&:after {content: 'Оплачен';}
+
+		@include xs(color, #299F34);
+		@include xs(background-color, transparent);
+		@include md(color, var(--color-white));
+		@include md(background-color, #299F34);
+	}
+
+	@include xs-block() {
+		padding: 0;
+		font-family: Fregat-Bold, sans-serif;
+	}
+
+	@include md-block() {
+		padding: rem(5) rem(10);
+		font-family: Fregat, sans-serif;
+		background-color: inherit;
+	}
+}

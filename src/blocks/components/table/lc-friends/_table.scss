@@ -1,0 +1,67 @@
+.friends_table {
+	width: 100%;
+
+	@include xs(margin, rem(30) 0 rem(15) 0);
+	@include lg(margin, rem(30) 0);
+
+	.ft_header {
+		display: grid;
+		align-items: center;
+		justify-content: space-between;
+		font: rem(16)/rem(16) Fregat-Bold, sans-serif;
+
+		@include xs-block() {
+			grid-template-columns: 1fr 3fr;
+			font-size: rem(12);
+			line-height: rem(12);
+			grid-gap: rem(10);
+			padding: 0 0 rem(15) 0;
+		};
+
+		@include md-block() {
+			grid-template-columns: 2fr 3fr;
+			grid-gap: rem(15);
+			padding: rem(10) 0 rem(15) 0;
+			font-size: rem(16);
+			line-height: rem(16);
+		}
+
+		@include lg-block() {
+			grid-template-columns: repeat(2, 1.5fr) 4fr;
+			padding: 0 rem(20) rem(15) rem(20);
+		}
+	}
+
+	.ft_row {
+		display: grid;
+		align-items: center;
+		justify-content: space-between;
+		font: rem(14)/rem(18) Fregat, sans-serif;
+		border-top: 1px solid #D5DCE8;
+
+		@include xs-block() {
+			grid-gap: rem(10);
+			grid-template-columns: 1fr 3fr;
+			padding: rem(20) 0;
+			font-size: rem(12);
+			line-height: rem(12);
+		}
+
+		@include md-block() {
+			grid-gap: rem(15);
+			grid-template-columns: 2fr 3fr;
+			padding: rem(15) 0;
+			font-size: rem(14);
+			line-height: rem(18);
+		}
+
+		@include lg-block() {
+			grid-template-columns: repeat(2, 1.5fr) 4fr;
+			padding: rem(15) rem(20);
+		}
+
+		.fr_id {
+			font-family: Fregat-Bold, sans-serif;
+		}
+	}
+}
