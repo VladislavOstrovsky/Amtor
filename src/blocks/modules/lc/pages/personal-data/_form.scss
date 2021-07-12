@@ -1,0 +1,41 @@
+.lc_personal_data_wrapper {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.lc_personal_data_form {
+	width: 100%;
+
+	@include lg-block() {
+		width: rem(690);
+		margin: rem(30) 0 rem(20);
+	}
+
+	.title {
+		font: rem(18)/rem(24) Fregat-Bold, sans-serif;
+		color: var(--color-marine);
+		margin-bottom: rem(20);
+	}
+
+	.pd_container {
+		margin-bottom: rem(10);
+
+		.input-container {
+			margin-bottom: rem(20);
+		}
+	}
+
+	.pd_submit_btn {
+		display: flex;
+		justify-content: center;
+
+		@include xs(margin-top, rem(30));
+
+		.btn {
+			@include md-block() {
+				width: rem(209);
+			}
+		}
+	}
+}

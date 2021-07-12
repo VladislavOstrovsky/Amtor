@@ -34,6 +34,20 @@ $(".btn_burger.desktop").click(function (e) {
     });
 });
 
+// lc menu dropdown
+$(".js-open-menu-dropdown").click(function (e) {
+    e.stopPropagation();
+    $(this).toggleClass("__open");
+    $(".lc_menu_dropdown").toggleClass("hidden");
+
+    $(document).click(() => {
+        if ($(this).hasClass("__open")) {
+            $(this).removeClass("__open");
+            $(".lc_menu_dropdown").addClass("hidden");
+        }
+    });
+});
+
 // Add en remove class on menu item hover
 $(".sbc_dropdown > ul > li").mouseover(function () {
     $(this).addClass("show").siblings().removeClass("show");

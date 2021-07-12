@@ -1,0 +1,53 @@
+.lc_return_form {
+	@include xs(margin, rem(20) 0 0);
+	@include md(margin, rem(30) 0 0);
+	@include lg(margin, rem(30) 0 rem(20));
+
+	.form_grid_wrapper {
+		display: grid;
+		align-items: center;
+		justify-content: space-between;
+
+		@include xs-block() {
+			grid-template-columns: 1fr;
+			grid-gap: rem(15);
+		}
+
+		@include md-block() {
+			grid-gap: rem(20);
+			grid-template-columns: 1fr 1fr;
+		}
+
+		.textarea-container {
+			@include md-block() {
+				grid-column: span 2;
+			}
+		}
+
+		.file-container-input {
+			margin-bottom: 0;
+		}
+
+		.file-wrapper {
+
+			.title {
+				font: rem(14)/rem(14) Fregat-Bold, sans-serif;
+				color: var(--color-marine);
+				margin-bottom: rem(10);
+			}
+		}
+	}
+
+	.lcrf_submit_btn {
+		display: flex;
+		justify-content: center;
+
+		@include xs(margin-top, rem(20));
+		@include md(margin-top, rem(30));
+
+		.btn {
+			font-size: rem(14);
+			line-height: rem(14);
+		}
+	}
+}

@@ -1,49 +1,49 @@
 .pabc_table {
-		margin-top: rem(40);
-		width: 100%;
+	margin-top: rem(40);
+	width: 100%;
 
-		@include xs(display, none);
-		@include md(display, table);
+	@include xs(display, none);
+	@include md(display, table);
 
-		.alignRight {
-			text-align: right;
-		}
+	.alignRight {
+		text-align: right;
+	}
 
-		tr {
-			border-top: 1px solid var(--color-cyan);
-			transition: all .2s ease-in;
+	tr {
+		border-top: 1px solid var(--color-cyan);
+		transition: all .2s ease-in;
 
-			&:last-of-type {
-				td {
-					padding-bottom: rem(8);
-				}
+		&:last-of-type {
+			td {
+				padding-bottom: rem(8);
 			}
 		}
+	}
 
-		thead > tr {
-			border: none;
+	thead > tr {
+		border: none;
+	}
+
+	tr > th {
+		padding: 0 rem(15) rem(15) rem(15);
+		font: rem(16)/rem(16) Fregat-Bold, sans-serif;
+
+		&:first-child {
+			@include md(padding-left, 0);
+			@include lg(padding-left, rem(15));
 		}
+	}
 
-		tr > th {
-			padding: 0 rem(15) rem(15) rem(15);
-			font: rem(16)/rem(16) Fregat-Bold, sans-serif;
+	tr > td {
+		font: rem(14)/rem(18) Fregat, sans-serif;
+		vertical-align: top;
+		padding: rem(15);
 
-			&:first-child {
-				@include md(padding-left, 0);
-				@include lg(padding-left, rem(15));
-			}
+		&:first-child {
+			@include md(padding-left, 0);
+			@include lg(padding-left, rem(15));
 		}
-
-		tr > td {
-			font: rem(14)/rem(18) Fregat, sans-serif;
-			vertical-align: top;
-			padding: rem(15);
-
-			&:first-child {
-				@include md(padding-left, 0);
-				@include lg(padding-left, rem(15));
-			}
-		}
+	}
 }
 
 // mobile table

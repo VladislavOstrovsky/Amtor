@@ -35,11 +35,6 @@ footer {
       display: block;
     }
 
-    .header_phone {
-
-
-    }
-
     .header_info {
       flex: 1;
       justify-content: space-evenly;
@@ -108,13 +103,8 @@ footer {
     @include lg(padding, (rem(30) 0));
 
     .content__list {
-      @include xs-block() {
-        flex-direction: column;
-      }
-
-      @include sm-block(){
-        flex-direction: row;
-      }
+      @include xs(flex-direction, column);
+      @include sm(flex-direction, row);
 
       h1 {
         position: relative;
@@ -127,6 +117,15 @@ footer {
           margin-bottom: 0;
         }
 
+        @include sm-block(){
+          font: rem(18)/rem(24) Fregat-Bold, sans-serif;
+          margin-bottom: rem(10);
+
+          .icon_arrow {display: none;}
+        }
+
+        @include lg(margin-bottom, rem(20));
+
         .icon_arrow {
           width: 20px;
           height: 20px;
@@ -138,17 +137,6 @@ footer {
             transform: rotate(180deg);
           }
         }
-
-        @include sm-block(){
-          font: rem(18)/rem(24) Fregat-Bold, sans-serif;
-          margin-bottom: rem(10);
-
-          .icon_arrow {
-            display: none;
-          }
-        }
-
-        @include lg(margin-bottom, rem(20));
       }
 
       .links_wrapper {

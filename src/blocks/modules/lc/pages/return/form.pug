@@ -1,0 +1,41 @@
+form(action='/return-product' class='lc_return_form' method='POST')
+  div.form_grid_wrapper
+    include select-terms-return
+    div.input-container
+      label(for='return-count' class='label-input') Количество возврата
+      input(id="return-count" type='text' name="return-count" class='input' placeholder='Введите колличество возврата')
+    div.file-wrapper
+      h1.title Фото №1
+      div.file-container-input
+        label(for='attach-photo-1' class='file-input btn success') Выбрать файл
+        input(id='attach-photo-1' type='file' name="attach-photo-1" class='input file')
+        span.file-name Файл не выбран
+    div.file-wrapper
+      h1.title Фото №2
+      div.file-container-input
+        label(for='attach-photo-2' class='file-input btn success') Выбрать файл
+        input(id='attach-photo-2' type='file' name="attach-photo-2" class='input file')
+        span.file-name Файл не выбран
+    div.file-wrapper
+      h1.title Фото №3
+      div.file-container-input
+        label(for='attach-photo-3' class='file-input btn success') Выбрать файл
+        input(id='attach-photo-3' type='file' name="attach-photo-3" class='input file')
+        span.file-name Файл не выбран
+    div.file-wrapper
+      h1.title Фото №4
+      div.file-container-input
+        label(for='attach-photo-4' class='file-input btn success') Выбрать файл
+        input(id='attach-photo-4' type='file' name="attach-photo-4" class='input file')
+        span.file-name Файл не выбран
+    div.file-wrapper
+      h1.title Фото №5
+      div.file-container-input
+        label(for='attach-photo-5' class='file-input btn success') Выбрать файл
+        input(id='attach-photo-5' type='file' name="attach-photo-5" class='input file')
+        span.file-name Файл не выбран
+    div.textarea-container
+      label(for='comment' class='label-textarea') Комментарий
+      textarea(id="comment" name="comment" class='input' placeholder='Введите ваш комментарий')
+  div.lcrf_submit_btn
+    button(type='submit' class='btn success big_padding') Создать

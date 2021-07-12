@@ -1,0 +1,8 @@
+- var terms = ['Условия возврата', 'Условия возврата 1', 'Условия возврата 2', 'Условия возврата 3'];
+
+div.select-container
+  p.select-label Условия возврата
+  select(name='terms-return')
+    option(value='') Выберите условие возврата
+    each option in terms
+      option(value=option) #{option}

@@ -11,7 +11,9 @@ if (currentPage.includes('empty') || currentPage.includes('pay-confirmation')) {
        .replace('-pay-confirmation', '');
 }
 
+const activeLinkDropdown = $(".lc_menu_dropdown").find(`[data-url-page="${currentPage}"]`);
 const activeLink = $(".lcm_wrapper_desktop").find(`[data-url-page="${currentPage}"]`);
+activeLinkDropdown.addClass('active');
 activeLink.addClass('active');
 
 $('input[type="file"]').on('change', function () {
@@ -21,13 +23,6 @@ $('input[type="file"]').on('change', function () {
 
 $(".js-history-back").click(function () {
    window.location.href = "./lc-vin-requests.html";
-});
-
-// add spare part
-var $copyEl = $('.js-vr-add-spare-part');
-
-$('.js-vr-add-part').click(function () {
-   $(this).before($copyEl.clone());
 });
 
 // vin request code - steps

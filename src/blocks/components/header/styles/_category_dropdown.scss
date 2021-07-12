@@ -1,0 +1,142 @@
+// category dropdown
+.sbc_dropdown {
+	position: absolute;
+	top: rem(66);
+	left: 0;
+	padding: rem(5);
+	width: rem(875);
+	height: auto;
+
+	display: flex;
+	flex-direction: column;
+	color: var(--color-black);
+	background: var(--color-white);
+	border-radius: var(--border-radius-popup);
+	opacity: 1;
+	z-index: 2;
+	box-sizing: border-box;
+	transition: border 0s, opacity 0.2s linear, height 0.2s linear;
+
+	&.hidden {
+		visibility: hidden;
+		opacity: 0;
+		height: 0;
+	}
+
+	@include md-block() {
+		box-shadow: var(--box-shadow-search-dropdown);
+		margin-left: 0;
+		width: rem(705);
+		height: auto;
+		min-height: rem(548);
+		overflow: auto;
+	}
+
+	@include lg-block() {
+		width: rem(875);
+	}
+
+	.sbc_category {
+		padding: rem(15);
+		display: block;
+		font: rem(16)/rem(24) "Fregat-Bold", sans-serif;
+
+		&.last,
+		&.show {
+			.sbc_tab {
+				&::after {
+					display: none;
+				}
+			}
+		}
+
+		.sbc_tab {
+			position: relative;
+			color: var(--color-black);
+
+			&::after {
+				content: '';
+				position: absolute;
+				left: 0;
+				bottom: rem(-20);
+				width: rem(199);
+				height: rem(1);
+				background: var(--color-extra-light-gray);
+			}
+
+			&:hover {
+				text-decoration: none;
+			}
+		}
+
+		&.show {
+			background: var(--color-extra-light-gray);
+			border-top-left-radius: var(--border-radius);
+			border-bottom-left-radius: var(--border-radius);
+
+			.sbc_subcategory_list {
+				display: flex;
+			}
+		}
+	}
+
+	.sbc_subcategory_list {
+		display: none;
+		position:absolute;
+		top: 0;
+		left: rem(239);
+		flex-direction: column;
+		width: calc(100% - 308px);
+		height: calc(100% - 50px);
+		padding: rem(25) rem(30) rem(25) rem(37);
+		background: var(--color-white);
+		border-left: 2px solid var(--color-extra-light-gray);
+		cursor: default;
+
+		a {
+			color: var(--color-black);
+		}
+
+		.sbc_s_block {
+			margin-bottom: rem(30);
+
+			p {
+				margin-bottom: rem(10);
+			}
+		}
+
+		.sublink {
+			font: rem(14)/rem(28) "Open Sans", sans-serif;
+		}
+
+		.sbc_brands {
+			position: absolute;
+			right: rem(30);
+			top: rem(30);
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			width: rem(90);
+			height: calc(100% - 60px);
+			max-height: 100%;
+
+			.image-wrp {
+				display: flex;
+				height: rem(40);
+				margin-bottom: rem(15);
+
+				img {
+					object-fit: contain;
+				}
+
+				&:last-child {
+					margin-bottom: 0;
+				}
+
+				&:nth-child(n + 11) {
+					display: none;
+				}
+			}
+		}
+	}
+}

@@ -25,6 +25,10 @@
 @import "../lc/pages/batch-percentage/find_form";
 // manager
 @import "../lc/pages/manager/manager_card";
+// return product
+@import "../lc/pages/return/form";
+// personal data
+@import "../lc/pages/personal-data/form";
 // status cell
 @import "../../components/table/status";
 // popups
@@ -34,6 +38,11 @@
 .personal_account {
 	// history
 	&.__history {
+
+		.label-input,
+		.select-label {
+			color: var(--color-black);
+		}
 
 		.pac_empty_wrapper {
 			@include xs(margin, rem(120) 0);

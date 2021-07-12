@@ -84,7 +84,7 @@
 					line-height: rem(14);
 				}
 
-				@include xs-block() {
+				@include md-block() {
 					font-size: rem(18);
 					line-height: rem(18);
 				}

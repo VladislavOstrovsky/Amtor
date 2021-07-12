@@ -1,0 +1,131 @@
+// search dropdown
+.sb_dropdown {
+	position: absolute;
+	left: 0;
+	display: flex;
+	flex-direction: column;
+	padding: rem(5) rem(10) rem(15);
+	pointer-events: auto;
+
+	width: 100%;
+	height: auto;
+	opacity: 1;
+	background: var(--color-white);
+	box-shadow: 0 14px 24px -14px rgba(0, 0, 0, 0.25);
+	border-radius: var(--border-radius-popup);
+	border-top-left-radius: 0;
+	border-top-right-radius: 0;
+	box-sizing: border-box;
+	z-index: 2;
+	transition: border 0s, opacity 0.2s linear, height 0.2s linear;
+
+	&.hidden {
+		visibility: hidden;
+		opacity: 0;
+		height: 0;
+	}
+
+	@include xs-block() {
+		box-shadow: none;
+		margin-left: -20px;
+		width: calc(100% + 40px);
+		height: 89vh;
+		padding-bottom: rem(130);
+		overflow: scroll;
+	}
+
+	@include md-block() {
+		box-shadow: 0 14px 24px -14px rgba(0, 0, 0, 0.25);
+		margin-left: 0;
+		width: 100%;
+		height: auto;
+		overflow: auto;
+		max-height: rem(606);
+		padding-bottom: rem(15);
+	}
+
+	.mCSB_draggerContainer {
+		right: rem(-15) !important;
+	}
+
+	.mCSB_container {
+		margin-right: 0 !important;
+	}
+
+	.mCSB_dragger_bar {
+		background-color: rgba(0, 0, 0, 0.4) !important;
+	}
+
+	.mCSB_draggerRail {
+		background: transparent !important;
+	}
+
+	.sbd_item {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding-top: rem(15);
+		font: rem(12)/rem(18) "Open Sans", sans-serif;
+		color: var(--color-black);
+
+		&:not(:last-of-type) {
+			border-bottom: 1px solid #dbdbdb;
+			padding-bottom: rem(15);
+		}
+
+		.image {
+			flex-shrink: 0;
+			width: rem(60);
+			height: rem(60);
+			margin-right: rem(15);
+			background-color: #EAEFF8;
+			background-image: url('../img/header/search-drp/default-image.svg');
+			background-position: center;
+			background-repeat: no-repeat;
+			border-radius: var(--border-radius-small);
+
+			img {
+				width: rem(60);
+				height: rem(60);
+				object-fit: contain;
+				background: var(--color-white);
+				box-shadow: inset 0 0 0 1px #dbdbdb;
+				border-radius: var(--border-radius-small);
+			}
+
+			@include xs-block() {
+				width: rem(50);
+				height: rem(50);
+
+				img {
+					width: rem(50);
+					height: rem(50);
+				}
+			}
+
+			@include md-block() {
+				width: rem(60);
+				height: rem(60);
+
+				img {
+					width: rem(60);
+					height: rem(60);
+				}
+			}
+		}
+
+		.content {
+			.title {
+				margin-bottom: rem(5);
+			}
+
+			.text {
+				color: #7E7E7E;
+			}
+		}
+
+		.arrow-link {
+			margin: 0 rem(10);
+		}
+	}
+}

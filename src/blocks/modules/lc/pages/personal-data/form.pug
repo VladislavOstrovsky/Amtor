@@ -1,0 +1,52 @@
+div.lc_personal_data_wrapper
+  form(action='/personal-data' class='lc_personal_data_form' method='POST')
+    div.pd_container
+      h1.title Ключевые регистрационные данные
+      div.input-container
+        label(for='email' class='label-input') Email
+        input(id='email' type='email' name="email" class='input' placeholder='Введите Еmail')
+      div.input-container
+        label(for='password' class='label-input') Пароль
+        input(id='password' type='password' name="password" class='input' placeholder='Введите пароль')
+      div.input-container
+        label(for='repeat-password' class='label-input') Подтверждение пароля
+        input(id='repeat-password' type='password' name="repeat-password" class='input' placeholder='Введите повторно пароль')
+    div.pd_container
+      h1.title Ваши контактные данные
+      div.input-container
+        label(for='surname' class='label-input') Фамилия
+        input(id='surname' type='text' name="surname" class='input' placeholder='Введите фамилию')
+      div.input-container
+        label(for='username' class='label-input') Имя
+        input(id='username' type='text' name="username" class='input' placeholder='Введите имя')
+      div.input-container
+        label(for='middle-name' class='label-input') Отчество
+        input(id='middle-name' type='text' name="middle-name" class='input' placeholder='Введите отчество')
+      div.input-container
+        label(for='phone-number' class='label-input') Номер телефона
+        input(id="phone-number" type='text' name="phone-number" class='input' placeholder='Введите номер телефона')
+    div.pd_container
+      h1.title Адрес доставки
+      div.input-container
+        label(for='index' class='label-input') Индекс
+        input(id='index' type='text' name="index" class='input' placeholder='Введите индекс')
+      div.input-container
+        label(for='country' class='label-input') Страна
+        input(id='country' type='text' name="country" class='input' placeholder='Введите страну')
+      div.input-container
+        label(for='region' class='label-input') Регион
+        input(id='region' type='text' name="region" class='input' placeholder='Введите регион')
+      div.input-container
+        label(for='city' class='label-input') Город
+        input(id="city" type='text' name="city" class='input' placeholder='Введите город')
+      div.input-container
+        label(for='street' class='label-input') Улица
+        input(id="street" type='text' name="street" class='input' placeholder='Введите улицу')
+      div.input-container
+        label(for='house-number' class='label-input') Номер дома
+        input(id="house-number" type='text' name="house-number" class='input' placeholder='Введите номер дома')
+      div.input-container
+        label(for='office' class='label-input') Квартира
+        input(id="office" type='text' name="office" class='input' placeholder='Введите номер квартиры')
+    div.pd_submit_btn
+      button(type='submit' class='btn success') Сохранить

@@ -1,0 +1,112 @@
+// mobile menu
+#page {
+	display: flex;
+}
+
+#mobile-menu {
+	position: fixed;
+	top: 0;
+	left: 0;
+	background-color: #f2f2f2;
+	width: rem(269);
+	min-width: rem(269);
+	height: 100vh;
+	color: var(--color-marine);
+	visibility: hidden;
+	transition: all .3s;
+
+	&.show {
+		visibility: visible;
+	}
+
+	@include xs(display, block);
+	@include md(display, none);
+
+	.mm_wrapper {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		padding: rem(30);
+		height: calc(100% - 60px);
+	}
+
+	.mm_links {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		margin-bottom: rem(13);
+
+		a {
+			width: 100%;
+			color: var(--color-marine);
+			padding: rem(17) 0;
+
+			&:not(:last-child) {
+				border-bottom: 1px solid #D8DBE1;
+			}
+		}
+	}
+
+	.catalog-button {
+		display: flex;
+		justify-content: space-between;
+		width: rem(200);
+		padding: rem(13) rem(15);
+
+		.text {
+			display: block;
+		}
+
+		.icon {
+			margin-right: rem(15);
+
+			&.arrow {
+				transform: rotate(180deg);
+				margin-right: 0;
+			}
+		}
+	}
+
+	.mm_social {
+		.social_icons {
+			display: flex;
+			justify-content: space-between;
+			width: 100%;
+			padding-bottom: rem(30);
+			border-bottom: 1px solid #D8DBE1;
+
+			.icon_button {
+				border: none;
+				box-shadow: none;
+			}
+
+			.icon:hover {
+				svg path {
+					fill: var(--color-base);
+				}
+
+				&.instagram {
+					background: url('../img/svg/social-icons/instagram-h.svg') center no-repeat;
+
+					svg {display: none;}
+				}
+			}
+		}
+
+		.phone {
+			display: flex;
+			flex-direction: column;
+			padding: rem(20) 0;
+		}
+
+		.phone_title {
+			font: rem(24)/rem(24) Fregat-Bold, sans-serif;
+			color: var(--color-marine);
+			margin-bottom: rem(4);
+		}
+
+		.phone_text {
+			font: rem(14)/rem(14) Fregat, sans-serif;
+		}
+	}
+}

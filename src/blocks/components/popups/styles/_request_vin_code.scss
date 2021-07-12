@@ -4,6 +4,7 @@
 
 	.inputs_wrapper {
 		display: grid;
+		margin-bottom: rem(20);
 
 		@include xs-block() {
 			grid-template-columns: 1fr;
@@ -17,7 +18,10 @@
 	}
 
 	.field_item {
-		margin-bottom: rem(30);
+
+		&:not(:last-of-type) {
+			margin-bottom: rem(30);
+		}
 	}
 
 	.title {
@@ -36,7 +40,7 @@
 	}
 
 	.select-options {
-		max-height: 150px;
+		height: 115px;
 	}
 
 	.rvc_actions {

@@ -9,6 +9,11 @@
 		@include xs(flex-direction, column);
 		@include lg(flex-direction, row);
 
+		.label-input,
+		.select-label {
+			color: var(--color-black);
+		}
+
 		.pac_datepicker {
 			display: flex;
 			justify-content: space-between;

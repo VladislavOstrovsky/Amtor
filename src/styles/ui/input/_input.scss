@@ -187,7 +187,6 @@ input[type=number] {
 
   .file-name {
     display: block;
-    max-width: rem(130);
     text-overflow: ellipsis;
     font-family: Fregat, sans-serif;
     font-size: rem(14);
@@ -195,6 +194,9 @@ input[type=number] {
     overflow: hidden;
     white-space: nowrap;
     color: var(--color-marine);
+
+    @include xs(max-width, rem(100));
+    @include md(max-width, rem(130));
   }
 
   .file-message {
@@ -208,11 +210,13 @@ input[type=number] {
     @include xs-block() {
       margin-top: rem(15);
       margin-left: 0;
+      font-size: rem(12);
     }
 
     @include md-block() {
       margin-top: 0;
       margin-left: auto;
+      font-size: rem(14);
     }
   }
 }
