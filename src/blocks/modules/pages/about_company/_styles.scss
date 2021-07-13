@@ -1,0 +1,78 @@
+.about_company_title {
+	display: flex;
+	width: 100%;
+	justify-content: center;
+
+	@include md(margin-bottom, rem(10));
+	@include lg(margin-bottom, rem(20));
+}
+
+.about_company_cards {
+	display: grid;
+	grid-gap: rem(20);
+
+	@include xs-block() {
+		grid-template-columns: 1fr 1fr;
+		margin-bottom: rem(20);
+	}
+
+	@include md-block() {
+		grid-template-columns: repeat(4, 1fr);
+	}
+
+	@include lg-block() {
+		margin-bottom: rem(30);
+	}
+
+	.acc_item {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		text-align: center;
+		box-shadow: var(--box-shadow);
+		border-radius: var(--border-radius);
+
+		@include xs-block() {
+			padding: rem(20);
+		}
+
+		@include md-block() {
+			padding: rem(20) rem(10);
+		}
+
+		@include lg-block() {
+			padding: rem(40) 0;
+
+			&.withPadding {
+				padding: rem(40) rem(25);
+			}
+		}
+
+		svg {
+			width: 100%;
+			@include xs(height, rem(86));
+			@include md(height, rem(116));
+		}
+
+		.icon {
+			@include xs(margin-bottom, rem(20));
+			@include md(margin-bottom, rem(30));
+		}
+
+		.text {
+			@include xs(font, (rem(12)/rem(18) "Open Sans", sans-serif));
+			@include md(font, (rem(16)/rem(22) "Open Sans", sans-serif));
+		}
+
+	}
+}
+
+.requests_content {
+	@include xs(font, (rem(15)/rem(24) "Open Sans", sans-serif));
+	@include md(font, (rem(16)/rem(28) "Open Sans", sans-serif));
+
+	.title {
+		font-family: "Open Sans 600", sans-serif;
+		margin-right: rem(3);
+	}
+}

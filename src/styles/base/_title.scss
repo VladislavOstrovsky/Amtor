@@ -7,24 +7,32 @@
 */
 
 .title_h1 {
-  @include xs(font, (rem(20)/rem(38) Fregat-Bold, sans-serif));
+  @include xs(font, (rem(20)/rem(30) Fregat-Bold, sans-serif));
   @include md(font, (rem(32)/rem(38) Fregat-Bold, sans-serif));
+
+  margin-bottom: rem(20);
 }
 
 .title_h2 {
   @include xs(font, (rem(18)/rem(24) Fregat-Bold, sans-serif));
   @include md(font, (rem(22)/rem(34) Fregat-Bold, sans-serif));
   @include lg(font, (rem(24)/rem(34) Fregat-Bold, sans-serif));
+
+  margin-bottom: rem(20);
 }
 
 .title_h3 {
   @include xs(font, (rem(16)/rem(24) Fregat-Bold, sans-serif));
   @include md(font, (rem(18)/rem(24) Fregat-Bold, sans-serif));
+
+  margin-bottom: rem(20);
 }
 
 .title_h4 {
   @include xs(font, (rem(14)/rem(20) Fregat-Bold, sans-serif));
   @include md(font, (rem(16)/rem(24) Fregat-Bold, sans-serif));
+
+  margin-bottom: rem(20);
 }
 
 .title_p {

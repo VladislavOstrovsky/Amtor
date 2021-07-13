@@ -170,6 +170,7 @@
 
 		.achi_item {
 			display: flex;
+			flex-shrink: 0;
 			flex-direction: column;
 
 			@include md-block() {
@@ -203,6 +204,7 @@
 			}
 
 			.title {
+				white-space: nowrap;
 				font: rem(12)/rem(12) "Open Sans", sans-serif;
 				color: #838181;
 
@@ -212,6 +214,7 @@
 			}
 
 			.value {
+				white-space: nowrap;
 				font: rem(24)/rem(24) Fregat-Bold, sans-serif;
 			}
 

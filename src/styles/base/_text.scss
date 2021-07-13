@@ -24,6 +24,32 @@
 .text_img_d {
   font: rem(12)/rem(12) "Open Sans", sans-serif;
   color: #303b44;
+  margin-top: rem(10);
+}
+
+.textCursive {
+  font-style: italic;
+}
+
+.textBold {
+  font-weight: bold;
+}
+
+.textThrough {
+  text-decoration: line-through;
+}
+
+.textUnderline {
+  text-decoration: underline;
+}
+
+.textLink {
+  text-decoration: underline;
+  color: #608caa;
+
+  &:hover {
+    text-decoration: none;
+  }
 }
 
 /* link */

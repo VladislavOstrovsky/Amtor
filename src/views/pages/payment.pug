@@ -1,0 +1,30 @@
+extends ../layouts/default
+
+block variables
+  - const title = "Оплата";
+
+block styles
+
+block content
+  div#page
+    include ../../blocks/components/header/mobile_menu
+    div.page
+      include ../../blocks/modules/header/header
+      div.container
+        div.bread-crumbs
+          a(href='./home.html' class='text_bc bread-crumbs_item') Главная
+          span.text_bc.bread-crumbs_item Оплата
+        h1.title_p Оплата
+      div.container
+        div.page_container_wrapper
+          div.page_container
+            include ../../blocks/modules/pages/payment/bank-card
+            include ../../blocks/modules/pages/payment/cash
+            include ../../blocks/modules/pages/payment/bank-details
+
+        button(type="button" class="btn success scrollTop js-scroll-top")
+      include ../../blocks/modules/footer/footer
+
+block scripts
+  script(src="js/main.js")
+  script(src="js/vendor.js")

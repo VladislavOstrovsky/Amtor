@@ -107,12 +107,17 @@ $(document).ready(function () {
         autoHideScrollbar: true,
     });
 
+    $(".js-custom-scroll-x").mCustomScrollbar({
+        axis:"x", // horizontal scrollbar
+    });
+
     $(window).scroll(function () {
         const sticky = $("header");
         const scroll = $(window).scrollTop();
 
         if (scroll >= 100) {
             sticky.addClass("fixed");
+            $('.js-scroll-top').addClass('__show');
 
             if (isMobile) {
                 $(document.body).css("padding-top", "225px");
@@ -122,6 +127,7 @@ $(document).ready(function () {
         } else {
             sticky.removeClass("fixed");
             $(document.body).css("padding-top", "0");
+            $('.js-scroll-top').removeClass('__show');
         }
     });
 });
@@ -141,9 +147,9 @@ $(".input").on("input change", function (e) {
     if ($(this).hasClass("js-header-search")) {
         // search input
         if ($(this).hasClass("not-empty")) {
-            window.scrollTo(0, 0);
 
             if (isMobile) {
+                window.scrollTo(0, 0);
                 $(document.body).addClass("__hidden");
             }
             $(".sb_dropdown").removeClass("hidden");

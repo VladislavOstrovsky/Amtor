@@ -77,5 +77,12 @@ function hiddenDropDown() {
 
 // toggle message block
 $('.js-toggle-dialog').click(function () {
+   $(this).toggleText('Показать ленту сообщений', 'Скрыть ленту сообщений');
    $(this).closest('.mt_row_wrapper').find('.message_block').toggleClass('__hidden');
 });
+
+$.fn.toggleText = function(t1, t2){
+   if (this.text() == t1) this.text(t2);
+   else                   this.text(t1);
+   return this;
+};

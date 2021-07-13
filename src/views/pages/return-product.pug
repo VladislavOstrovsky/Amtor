@@ -1,0 +1,52 @@
+extends ../layouts/default
+
+block variables
+  - const title = "Возврат товара";
+
+block styles
+
+block content
+  div#page
+    include ../../blocks/components/header/mobile_menu
+    div.page
+      include ../../blocks/modules/header/header
+      div.container
+        div.bread-crumbs
+          a(href='./home.html' class='text_bc bread-crumbs_item') Главная
+          span.text_bc.bread-crumbs_item Возврат товара
+        h1.title_p Возврат товара
+      div.container
+        div.page_container_wrapper
+          div.page_container.__return_product
+            div.return_text_wrapper
+              h1.title_h1 Уважаемые Клиенты!
+              p.text_m Мы прекрасно понимаем, что не всегда купленная Вами автозапчасть подойдет к Вашему автомобилю, поэтому у Вас в распоряжении будет 14 календарных дней после момента получения Вами своей покупки - передача нашим курьером, либо курьером транспортной компании.
+            h2.title_h2 Как вернуть
+            div.return_cards
+              div.rc_item
+                h1.rci_title 01
+                h2.rci_subtitle Принесите товар
+                p.rci_text Принесите товар и упаковку со стикером туда, где вы его забирали. Адрес пункта выдачи и дата, до которой можно вернуть товар, указаны в разделе «Заказы».
+              div.rc_item
+                h1.rci_title 02
+                h2.rci_subtitle Получите деньги
+                p.rci_text Если вы платили на сайте, деньги сразу вернем на баланс. Вы можете вывести их обратно на свою карту в разделе «Баланс» или использовать для следующих покупок на Амтор. Если платили при получении, деньги вернет продавец.
+            div.return_text_wrapper
+              h2.title_h2 Условия
+              p.text_m Чтобы вернуть товар, сохраните упаковку с чехом. В пункте выдачи проверят чек и система сформирует возврат.
+            div.return_text_wrapper
+              h2.title_h2 Заводской брак
+              p.text_m Если вы обнаружили заводской брак, для возврата понадобится чек, подтверждающий оплату товара, и документы из техцентра — заключение о неисправности запчасти и заказ-наряд. С этими документами можно вернуть товар в течение года после покупки, стикер сохранять необязательно.
+            div.return_info_block
+              h1.title Что-то пошло не так?
+              p.text_m Если с возвратом возникли трудности, напишите нам или позвоните, мы поможем.
+              div.rib_actions
+                a(href="mailto:help@amtor.su" class="value") help@amtor.su
+                a(href="tel:8 800 550 5354" class="value phone") 8 800 550 5354
+
+        button(type="button" class="btn success scrollTop js-scroll-top")
+      include ../../blocks/modules/footer/footer
+
+block scripts
+  script(src="js/main.js")
+  script(src="js/vendor.js")

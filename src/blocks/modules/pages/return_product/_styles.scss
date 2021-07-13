@@ -1,0 +1,90 @@
+.page_container {
+
+	.return_text_wrapper {
+		margin-bottom: rem(30);
+
+		.text_m {
+			margin-bottom: 0;
+		}
+	}
+
+	&.__return_product {
+
+		.return_cards {
+			display: grid;
+			grid-gap: rem(20);
+			margin-bottom: rem(30);
+
+			@include xs(grid-template-columns, 1fr);
+			@include md(grid-template-columns, 1fr 1fr);
+
+			.rc_item {
+				padding: rem(20);
+				border-radius: var(--border-radius);
+				box-shadow: var(--box-shadow);
+				cursor: default;
+			}
+
+			.rci_title {
+				font: rem(80)/rem(80) Fregat-Bold, sans-serif;
+				color: var(--color-base);
+
+				@include xs(margin-bottom, rem(10));
+				@include md(margin-bottom, rem(6));
+				@include lg(margin-bottom, rem(20));
+			}
+
+			.rci_subtitle {
+				font: rem(18)/rem(24) Fregat-Bold, sans-serif;
+				@include xs(margin-bottom, rem(10));
+				@include md(margin-bottom, rem(20));
+			}
+
+			.rci_text {
+				@include xs(font, (rem(15)/rem(24) "Open Sans", sans-serif));
+				@include md(font, (rem(16)/rem(24) "Open Sans", sans-serif));
+			}
+		}
+	}
+
+	.return_info_block {
+		padding: rem(20);
+		background: #F3F7FA;
+		border-radius: var(--border-radius);
+
+		.title {
+			@include xs(font, (rem(20)/rem(24) Fregat-Bold, sans-serif));
+			@include md(font, (rem(24)/rem(34) Fregat-Bold, sans-serif));
+			@include xs(margin-bottom, rem(10));
+			@include md(margin-bottom, rem(13));
+		}
+
+		.text_m {
+			@include xs(margin-bottom, rem(20));
+			@include md(margin-bottom, rem(13));
+		}
+	}
+
+	.rib_actions {
+		display: flex;
+		flex-wrap: wrap;
+
+		.value {
+			font: rem(18)/rem(24) Fregat-Bold, sans-serif;
+			color: var(--color-black);
+
+			&:first-child {
+				margin-right: rem(70);
+			}
+
+			&:hover {
+				text-decoration: underline;
+			}
+
+			&.phone {
+				@include xs(margin-top, rem(10));
+				@include md(margin-top, 0);
+			}
+		}
+	}
+}

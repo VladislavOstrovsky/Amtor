@@ -1,0 +1,110 @@
+extends ../layouts/default
+
+block variables
+  - const title = "О компании";
+
+block styles
+
+block content
+  div#page
+    include ../../blocks/components/header/mobile_menu
+    div.page
+      include ../../blocks/modules/header/header
+      div.container
+        div.bread-crumbs
+          a(href='./home.html' class='text_bc bread-crumbs_item') Главная
+          span.text_bc.bread-crumbs_item О компании
+        h1.title_p О компании
+      div.container
+        div.page_container_wrapper
+          div.page_container
+            div.text_container
+              p.text_m В нашем интернет магазине представлено более 80 млн артикулов деталей наличия и наличия партнеров.
+            div.text_container
+              p.text_m Мы специализируемся на оптовой реализации оригинальных автозапчастей с центральных складов автопроизводителей.
+            div.text_container
+              p.text_m Мы постоянно мониторим предложение конкурентов и стараемся дать наиболее выгодные цены на предложение ЦС Toyota, Mobis, а также на продукцию марок Total, Shell, Lukoil
+            h1.title_h1 Основные конкурентные преимущества при работе с нашей компанией:
+            div.text_container
+              p.text_m Мы постоянно мониторим предложение конкурентов и стараемся дать наиболее выгодные цены на предложение ЦС Toyota, Mobis, а также на продукцию марок Total, Shell, Lukoil
+            div.about_company_cards
+              div.acc_item.withPadding
+                div.icon
+                  include ../../img/svg/extra/about-company/range.svg
+                div.text Широкий ассортимент запчастей
+              div.acc_item.withPadding
+                div.icon
+                  include ../../img/svg/extra/about-company/low-price.svg
+                div.text Постоянные низкие цены на продукцию
+              div.acc_item.withPadding
+                div.icon
+                  include ../../img/svg/extra/about-company/original.svg
+                div.text 100% оригинальные запчасти
+              div.acc_item
+                div.icon
+                  include ../../img/svg/extra/about-company/culling.svg
+                div.text Выбраковка дефектных позиций на стадии приемки
+            div.about_company_title
+              p.text_m Одни из самых быстрых сроков доставки по всей территории России и СНГ.
+            div.quote_container
+              div.qc_icon
+                include ../../img/svg/extra/quote.svg
+              div.qc_content
+                div.qcc_text Мы старамемся дать лучшие сервис и цены в России на оригинальные автозапчасти Тойота, Хонда, Киа.
+                div.qcc_author
+                  div.qa_avatar
+                    img(src='./img/test-quote-avatar.png' class='image')
+                  div.qa_info
+                    h1.qa_username Дмитрий Сергеев
+                    h1.qa_role Главный редактор
+            h1.title_h1 Реквизиты нашей Компании
+            div.requests_content
+              div.dFlex.flexWrap
+                h1.title Полное наименование организации:
+                h1 Общество с ограниченной ответственностью «Энергорезерв»
+              div.dFlex.flexWrap
+                h1.title Краткое наименование организации:
+                h1 ООО «Энергорезерв»
+              div.dFlex.flexWrap
+                h1.title Дата регистрации:
+                h1 20.06.2016
+              div.dFlex.flexWrap
+                h1.title Юридический адрес:
+                h1 644122, г. Омск, ул. Сазонова, 64, кв. 86
+              div.dFlex.flexWrap
+                h1.title Адрес основного склада в г. Москва:
+                h1 109472, г. Москва, ул. Ташкентская, дом 28, стр.1
+              div.dFlex.flexWrap
+                h1.title ИНН:
+                h1 5501172225
+              div.dFlex.flexWrap
+                h1.title КПП:
+                h1 550301001
+              div.dFlex.flexWrap
+                h1.title ОГРН:
+                h1 1165543073882
+              div.dFlex.flexWrap
+                h1.title Банк:
+                h1 ТОЧКА ПАО БАНКА "ФК ОТКРЫТИЕ"
+              div.dFlex.flexWrap
+                h1.title Расчетный счет:
+                h1 40702810102500065895
+              div.dFlex.flexWrap
+                h1.title БИК:
+                h1 044525999
+              div.dFlex.flexWrap
+                h1.title Корреспондентский счет:
+                h1 30101810845250000999
+              div.dFlex.flexWrap
+                h1.title Система налогообложения:
+                h1 ОСН
+              div.dFlex.flexWrap
+                h1.title Директор:
+                h1 Емельянов Юрий Иванович
+
+        button(type="button" class="btn success scrollTop js-scroll-top")
+      include ../../blocks/modules/footer/footer
+
+block scripts
+  script(src="js/main.js")
+  script(src="js/vendor.js")

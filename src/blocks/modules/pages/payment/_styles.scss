@@ -1,0 +1,82 @@
+.payment_item_wrapper {
+	@include xs(padding, rem(20) 0);
+	@include md(padding, rem(30) 0);
+
+	&:not(:last-child) {
+		border-bottom: 1px solid #D4DBEC;
+	}
+
+	&:first-child {
+		padding-top: 0;
+	}
+
+	&.__open {
+		.piw_item {
+			.icon {
+				transform: inherit;
+			}
+		}
+
+		.piw_content {
+			display: block;
+		}
+	}
+
+	.piw_item {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		cursor: pointer;
+
+		.title {
+			@include xs(font, (rem(18)/rem(34) Fregat-Bold, sans-serif));
+			@include md(font, (rem(24)/rem(34) Fregat-Bold, sans-serif));
+		}
+
+		.icon {
+			transform: rotate(45deg);
+			transition: all .2s ease-in-out;
+
+			@include xs(width, rem(15));
+			@include md(width, rem(20));
+		}
+	}
+
+	.piw_content {
+		display: none;
+		@include xs(margin-top, rem(10));
+		@include md(margin-top, rem(20));
+
+		.payment_icons {
+			display: grid;
+			row-gap: rem(20);
+			column-gap: rem(30);
+			align-items: center;
+			justify-content: flex-start;
+
+			@include xs-block() {
+				grid-template-columns: repeat(auto-fill, minmax(rem(63), 1fr));
+				margin-bottom: rem(20);
+			}
+
+			@include md-block() {
+				grid-template-columns: repeat(5, auto);
+				margin-bottom: rem(30);
+			}
+		}
+
+		.text_container {
+			&.last {
+				margin-bottom: 0;
+
+				.text_m {
+					margin-bottom: 0;
+				}
+			}
+		}
+
+		.title_h3 {
+			margin-bottom: rem(10);
+		}
+	}
+}

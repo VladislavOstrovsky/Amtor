@@ -227,3 +227,24 @@ function getTextForSelectBox(value) {
     }
     }
 }
+
+// scroll top btn
+$('.js-scroll-top').click(function () {
+    $("html, body").animate({ scrollTop: 0 }, 600);
+   setTimeout(() => {
+       $(this).removeClass('__show');
+   }, 1);
+});
+
+// test page
+$('.image_slider').slick({
+    speed: 300,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    dots: true,
+});
+
+// payment page
+$('.js-payment-item').click(function () {
+    $(this).parent().toggleClass('__open');
+});
